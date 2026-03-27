@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
-export class LandingComponent {}
+export class LandingComponent {
+  showModal = signal(false);
+  showRegisterModal = signal(false);
+
+  toggleModal() {
+    this.showModal.update(v => !v);
+  }
+
+  toggleRegisterModal() {
+    this.showRegisterModal.update(v => !v);
+  }
+}

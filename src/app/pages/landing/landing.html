@@ -6,7 +6,7 @@
       <h1>The Future of Style</h1>
       <p>Entra en una nueva dimensión de e-commerce. Productos diseñados para innovar y colores que cobran vida.</p>
       <div class="cta-buttons">
-        <button class="btn-primary">Ver Colección</button>
+        <button class="btn-primary" (click)="toggleModal()">Ver Colección</button>
         <button class="btn-secondary">Saber Más</button>
       </div>
     </div>
@@ -16,7 +16,7 @@
   <section class="featured-products">
     <div class="section-header">
       <div>
-        <h2>Destacados test</h2>
+        <h2>Destacados</h2>
         <p>Lo más innovador de nuestra tienda.</p>
       </div>
       <a href="#">Ver todos los productos &rarr;</a>
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <!-- Product 3 (Reuse img 1 for demo) -->
+      <!-- Product 3 -->
       <div class="product-card">
         <div class="product-image">
           <img src="/assets/p1.png" alt="Quantum Buds">
@@ -96,8 +96,68 @@
     <div class="promo-content">
       <h2>Únete a la Revolución de TIEND.</h2>
       <p>Más de 50,000 usuarios ya están innovando con nosotros. Sé parte de la comunidad que define el mañana.</p>
-      <button class="promo-btn">Registrarse Ahora</button>
+      <button class="promo-btn" (click)="toggleRegisterModal()">Registrarse Ahora</button>
     </div>
     <div class="promo-visual">STYLE</div>
   </section>
 </div>
+
+@if (showModal()) {
+  <div class="modal-overlay" (click)="toggleModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="toggleModal()">&times;</button>
+      <h2>Nuestras Colecciones</h2>
+      <div class="collections-summary">
+        <div class="collection-item">
+          <h3>Cyberpunk 2026</h3>
+          <p>Inspirada en la estética urbana de un futuro cercano. Ropa técnica, materiales reflectantes y cortes vanguardistas para los pioneros del mañana.</p>
+        </div>
+        <div class="collection-item">
+          <h3>Neon Aura</h3>
+          <p>Una explosión de color y luz. Accesorios con tecnología LED integrada y telas que reaccionan a la luz UV. No pases desapercibido.</p>
+        </div>
+        <div class="collection-item">
+          <h3>Minimal Tech</h3>
+          <p>La máxima expresión de la elegancia funcional. Dispositivos y wearables con un diseño limpio y potencia sin precedentes en tu muñeca.</p>
+        </div>
+      </div>
+      <button class="btn-primary" (click)="toggleModal()" style="margin-top: 2rem; width: 100%;">Explorar Todo</button>
+    </div>
+  </div>
+}
+
+@if (showRegisterModal()) {
+  <div class="modal-overlay" (click)="toggleRegisterModal()">
+    <div class="modal-content register-modal" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="toggleRegisterModal()">&times;</button>
+      <h2>Únete a TIEND</h2>
+      <p style="margin-bottom: 2rem; color: #666;">Completa tus datos para empezar tu experiencia innovadora.</p>
+      
+      <form class="register-form" (submit)="$event.preventDefault(); toggleRegisterModal()">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombres</label>
+            <input type="text" placeholder="Ej: Juan">
+          </div>
+          <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" placeholder="Ej: Pérez">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="juan.perez@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label>Número Celular</label>
+          <input type="tel" placeholder="+57 300 000 0000">
+        </div>
+
+        <button type="submit" class="btn-primary submit-btn">Registrarme Ahora</button>
+        <p class="terms">Al registrarte, aceptas nuestros <a href="#">Términos y Condiciones</a>.</p>
+      </form>
+    </div>
+  </div>
+}
