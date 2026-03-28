@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collection, collectionData, addDoc, updateDoc, deleteDoc, doc, query, orderBy, Timestamp } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, updateDoc, deleteDoc, doc, query, orderBy, Timestamp, onSnapshot, CollectionReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
@@ -8,12 +8,22 @@ import { Product } from '../models/product.model';
 })
 export class ProductService {
   private firestore = inject(Firestore);
-  private productsCollection = collection(this.firestore, 'products');
+  private productsCollection = collection(this.firestore, 'products') as CollectionReference<Product>;
 
   getProducts(): Observable<Product[]> {
-    // Usamos query() para mayor compatibilidad entre versiones de Firebase
-    const q = query(this.productsCollection, orderBy('createdAt', 'desc'));
-    return collectionData(q, { idField: 'id' }) as Observable<Product[]>;
+    return new Observable<Product[]>(subscriber => {
+      const q = query(this.productsCollection, orderBy('createdAt', 'desc'));
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        const products = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        } as Product));
+        subscriber.next(products);
+      }, (error) => {
+        subscriber.error(error);
+      });
+      return () => unsubscribe();
+    });
   }
 
   addProduct(product: Product): Promise<any> {
