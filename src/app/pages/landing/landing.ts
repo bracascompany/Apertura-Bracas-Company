@@ -1,14 +1,17 @@
-import { Component, signal } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, signal, inject } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { CartService, Product } from '../../services/cart.service';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
 export class LandingComponent {
+  public cartService = inject(CartService);
   showModal = signal(false);
   showRegisterModal = signal(false);
 
@@ -18,6 +21,18 @@ export class LandingComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9+ ]*$')])
   });
+
+  onAddToCart(name: string, price: number, category: string, imageUrl: string) {
+    const product: Product = {
+      name,
+      price,
+      category,
+      imageUrl,
+      description: 'Producto destacado de la colección TIEND.',
+      stock: 10
+    };
+    this.cartService.addToCart(product);
+  }
 
   toggleModal() {
     this.showModal.update(v => !v);
