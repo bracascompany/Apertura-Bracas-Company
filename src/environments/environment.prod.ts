@@ -1,11 +1,12 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDHwKpocUR1xHtCdhabnNiEAOOQpaXR6Mk",
+    authDomain: "tiend-app.firebaseapp.com",
+    projectId: "tiend-app",
+    storageBucket: "tiend-app.firebasestorage.app",
+    messagingSenderId: "441509358559",
+    appId: "1:441509350559:web:996a0f06a13a38b13a66aa",
+    measurementId: "G-0XP0146XTK"
   }
 };
