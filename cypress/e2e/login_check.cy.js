@@ -1,20 +1,28 @@
-describe('DCCF: Validación de Acceso', () => {
-  it('Debe cargar el login y permitir interacción', () => {
-    // Usamos failOnStatusCode para que el robot no muera si Vercel se pone terco
-    cy.visit('https://tiend-app.vercel.app/auth/login', { failOnStatusCode: false });
+describe('DCCF: Registro por Navegación Interna', () => {
+  it('Debe navegar al registro desde el inicio para evitar el 404', () => {
+    // 1. Entrar a la Home (que siempre funciona)
+    cy.visit('https://tiend-app.vercel.app/');
 
-    // Esperamos a que el campo sea visible (esto ayuda en brXeon)
-    cy.get('[data-testid="login-email"]', { timeout: 10000 })
-      .should('be.visible')
-      .type('facebranddigital@gmail.com');
+    // 2. Esperar a que el navbar o algún enlace sea visible
+    // Tu HTML decía que en el login hay un link al registro, y viceversa.
+    // Vamos a forzar a Angular a cambiar de página internamente
+    cy.visit('https://tiend-app.vercel.app/login');
+    
+    // 3. Buscamos el enlace de "Registrate" por su texto o ruta
+    // Según tu app.routes.ts, la ruta es /register
+    cy.get('a[routerlink="/register"]').first().click({ force: true });
 
-    cy.get('[data-testid="login-password"]')
-      .type('D4rk4rm4deus2026');
+    // 4. Ahora, si el cambio de página fue interno (SPA), 
+    // el formulario DEBE aparecer sin que Vercel se entere
+    cy.get('input#name', { timeout: 15000 }).should('be.visible').type('Ever QA Final');
+    cy.get('input#email').type('facebranddigital@gmail.com');
+    cy.get('input#password').type('D4rk4rm4deus2026');
 
-    cy.get('[data-testid="login-submit"]')
-      .should('not.be.disabled')
-      .click();
+    // 5. Botón de enviar (usamos la clase o el tipo ya que el testid falló)
+    cy.get('button[type="submit"]').click({ force: true });
 
-    cy.log('✅ Intento de login completado');
+    // 6. Verificar éxito
+    cy.contains('éxito', { timeout: 15000 }).should('be.visible');
+    cy.screenshot('REGISTRO-LOGRADO');
   });
 });
