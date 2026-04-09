@@ -5,7 +5,7 @@
       <p>Ingresa tus credenciales para gestionar tu inventario.</p>
     </header>
 
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="auth-form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
       
       <div class="form-group">
         <label for="email">Correo Electrónico</label>
@@ -43,7 +43,7 @@
     </button>
 
       <div class="auth-links">
-        <p>¿No tienes una cuenta aún? <a routerLink="/auth/register">Regístrate gratis</a></p>
+        <p>¿No tienes una cuenta aún? <a routerLink="/register">Regístrate gratis</a></p>
       </div>
     </form>
   </div>

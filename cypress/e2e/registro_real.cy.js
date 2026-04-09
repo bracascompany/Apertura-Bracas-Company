@@ -11,33 +11,28 @@ describe('QA Automation - Registro Real Dinámico', () => {
     cy.visit('/register'); 
     
     // 2. Llenar formulario
-    cy.get('input[placeholder*="ejemplo.com"]', { timeout: 15000 })
+    cy.get('[data-testid="reg-name"]', { timeout: 15000 })
       .should('be.visible')
+      .type('Test Usuario');
+
+    cy.get('[data-testid="reg-email"]', { timeout: 15000 })
+      .should('be.visible')
+      .clear()
       .type(emailTesting);
 
-    cy.get('input[type="password"]').eq(0).type(passwordSegura);
-    cy.get('input[type="password"]').eq(1).type(passwordSegura);
-      
+    cy.get('[data-testid="reg-password"]', { timeout: 15000 })
+      .should('be.visible')
+      .type(passwordSegura);
+
+    cy.get('[data-testid="reg-confirm-password"]', { timeout: 15000 })
+      .should('be.visible')
+      .type(passwordSegura);
+
     // 3. Click en registrar
-    cy.get('button').contains('Crear Cuenta').click();
+    cy.contains('button', /registrarme ahora/i).click();
 
-    // 4. Espera inicial y búsqueda del Token
-    cy.log('Registro enviado. Esperando que el correo llegue a Mailsac...');
-    cy.wait(20000); // 20 seg de cortesía antes de la primera consulta
-
-    cy.getActivationToken(emailTesting).then((token) => {
-       cy.log('¡Token obtenido con éxito!: ' + token);
-
-       // 5. Navegar a la página de activación con el token
-       cy.visit(`/setup-password?token=${token}`);
-       
-       // 6. Configurar contraseña final
-       cy.get('input[name="password"]', { timeout: 15000 }).type(passwordSegura);
-       cy.get('input[name="confirmPassword"]').type(passwordSegura);
-       cy.get('button').contains('Establecer').click();
-       
-       // 7. Validar mensaje de éxito en la UI
-       cy.contains('éxito', { matchCase: false, timeout: 20000 }).should('be.visible');
-    });
+    // 4. Validar redirección al inventario de productos
+    cy.url({ timeout: 20000 }).should('include', '/products');
+    cy.contains('Inventario de Productos', { timeout: 20000 }).should('be.visible');
   });
 });

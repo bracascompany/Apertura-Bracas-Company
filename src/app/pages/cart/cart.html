@@ -31,8 +31,29 @@
           <span>${{ cartService.total() }}</span>
         </div>
       </div>
-      <button class="btn-checkout">Finalizar Compra</button>
+
+      <div class="payment-section">
+        <h3>Selecciona método de pago</h3>
+        <div class="payment-options">
+          <label *ngFor="let method of paymentMethods" class="payment-option">
+            <input
+              type="radio"
+              name="paymentMethod"
+              [value]="method"
+              [checked]="selectedPaymentMethod() === method"
+              (change)="onSelectMethod(method)"
+            />
+            {{ method }}
+          </label>
+        </div>
+      </div>
+
+      <button class="btn-checkout" data-testid="pay-button" (click)="onCheckout()">Pagar</button>
       <button class="btn-clear" (click)="onClear()">Vaciar Carrito</button>
+
+      <div *ngIf="paymentSuccess()" class="payment-success">
+        <p>Pago realizado con {{ selectedPaymentMethod() }}. ¡Gracias por tu compra!</p>
+      </div>
     </div>
   </div>
 </div>

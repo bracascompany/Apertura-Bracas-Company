@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-setup-password',
-  imports: [],
+  standalone: true,
   templateUrl: './setup-password.html',
-  styleUrl: './setup-password.scss',
+  styleUrls: ['./setup-password.scss'],
 })
 export class SetupPassword {
-
 }

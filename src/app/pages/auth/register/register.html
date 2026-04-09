@@ -52,13 +52,31 @@
         </span>
       </div>
 
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar Contraseña</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          data-testid="reg-confirm-password"
+          formControlName="confirmPassword"
+          placeholder="Repite tu contraseña"
+          [class.invalid]="(registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched) || (registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched)">
+        <span class="error-msg" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+          Confirma tu contraseña
+        </span>
+        <span class="error-msg" *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">
+          Las contraseñas no coinciden
+        </span>
+      </div>
+
       <button type="submit" 
       class="w-full bg-black text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-gray-800 transition-all duration-300 uppercase tracking-wide mt-4">
       Registrarme Ahora
       </button>
 
       <div class="auth-links">
-        <p>¿Ya tienes cuenta? <a routerLink="/auth/login">Inicia sesión</a></p>
+        <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
       </div>
     </form>
   </div>

@@ -71,6 +71,25 @@
     .cart-btn {
       position: relative;
     }
+
+    .btn-login-nav {
+      background: linear-gradient(90deg, #ff41f8, #7702ff);
+      color: white;
+      border: none;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(255, 65, 248, 0.22);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+
+    .btn-login-nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 32px rgba(255, 65, 248, 0.3);
+      opacity: 0.98;
+    }
   }
 }
 
