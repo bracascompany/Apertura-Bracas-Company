@@ -3,41 +3,83 @@
   background-color: #ffffff;
 }
 
-// 1. HERO
+// 1. EL CONTENEDOR PRINCIPAL
 .hero {
-  height: 200vh;
+  min-height: 80vh; // Ajustado para que no sea tan largo
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center; // Centra verticalmente el contenido
+  justify-content: flex-end; // Empuja todo el contenido a la derecha en el PC
   position: relative;
   background: #000;
-  padding-bottom: 4rem;
+  padding: 0 5%; // Espacio de seguridad a los lados
 
+// AJUSTE PARA CELULAR
+  @media (max-width: 480px) {
+    justify-content: center; // En Celular: Todo al centro
+    align-items: flex-end;   // En Celular: Empuja los botones hacia abajo
+    padding-bottom: 40px;    // Espacio para que los botones no toquen el borde inferior
+  }
+ }
+
+// 2. EL LOGO DE FONDO (LA "B")
   .hero-background {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; // Asegura que cubra todo el contenedor hero
     background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), 
-                url('/assets/log1.jpeg') no-repeat center center;
-    background-size: cover;
+                url('/assets/log1.jpeg') no-repeat center center; // 'center center' centra horizontal y verticalmente
+    background-size: cover; // Ajusta la imagen para cubrir la pantalla sin deformarse 
     z-index: 1;
+
+    // AJUSTE PARA CELULAR (Para que la "B" no se vea gigante y cortada)
+   @media (max-width: 480px) {
+    background-size: contain; // Hace que el logo quepa entero en el ancho del cel
+    background-position: center 20%; // Sube el logo para dejar espacio a los botones abajo
+  }
   }
 
+  // 3. LOS BOTONES
   .hero-content {
     position: relative;
-    z-index: 2;
-    .cta-buttons {
-      display: flex; gap: 1.5rem;
-      .btn-primary {
-        background: linear-gradient(90deg, #e46cef, #000000);
-        color: white; padding: 1.2rem 3rem; border-radius: 50px; border: 1px solid white; font-weight: 800; cursor: pointer;
+    z-index: 2; // No le damos 100% de ancho para que no estorbe el centro del logo
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; // Alinea los botones a la derecha uno sobre el otro
+    gap: 1.2rem;
+
+      .cta-buttons {
+      display: flex;
+      flex-direction: column; // Por defecto en fila
+      align-items: flex-end;
+      gap: 1rem;
+      width: 100%;
+      padding-right: 5%;
       }
-      .btn-secondary {
-        background: rgba(228, 108, 239, 0.2); backdrop-filter: blur(10px);
-        color: white; padding: 1.2rem 3rem; border-radius: 50px; border: 1px solid white; font-weight: 800; cursor: pointer;
+ // Ajuste para Celulares
+     @media (max-width: 480px) {
+        flex-direction: column; // Botones uno sobre otro en celular
+        align-items: flex-end;
+        gap: 1rem;
+
+        }
+
+ .btn-primary, .btn-secondary {
+    width: 220px; // Ancho fijo para que se vean iguales que en tu foto
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 50px;
+    border: 1px solid white;
+    font-weight: 700; cursor: pointer;
+    background: linear-gradient(90deg, #e46cef, #000000); // Cambia el color del botón //
+    background: rgba(228, 108, 239, 0.4);
+    backdrop-filter: blur(5px); // Efecto de cristal como en la imagen
+    color: white;
+    cursor: pointer;
       }
     }
-  }
-}
+  
 
 // 2. BANNER MORADO
 .promo-banner {
@@ -108,3 +150,4 @@
     }
   }
 }
+
