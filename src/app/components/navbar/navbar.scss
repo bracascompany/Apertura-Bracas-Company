@@ -11,10 +11,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
+  //Bracascompany
   .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #ff41f8, #7702ff);
+    background: linear-gradient(90deg, #252525, #5CCB5F);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
@@ -73,7 +74,7 @@
     }
 
     .btn-login-nav {
-      background: linear-gradient(90deg, #ff41f8, #7702ff);
+      background: linear-gradient(90deg, #5CCB5F, #2e2e2e);
       color: white;
       border: none;
       padding: 0.9rem 1.6rem;

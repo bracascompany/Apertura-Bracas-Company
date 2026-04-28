@@ -3,85 +3,160 @@
   background-color: #ffffff;
 }
 
-// 1. EL CONTENEDOR PRINCIPAL
+// 1. EL CONTENEDOR PRINCIPAL (UNIFICADO)
 .hero {
-  min-height: 80vh; // Ajustado para que no sea tan largo
+  height: 94vh; // Ocupa toda la pantalla siempre
+  mind-height: 550px;
   display: flex;
-  align-items: center; // Centra verticalmente el contenido
-  justify-content: flex-end; // Empuja todo el contenido a la derecha en el PC
+  flex-direction: column;
+  /* Centra horizontalmente y empuja los botones al fondo en AMBOS */
+  justify-content: flex-start; 
+  align-items: flex-start; 
   position: relative;
-  background: #000;
-  padding: 0 5%; // Espacio de seguridad a los lados
+  background: #133114; // Fondo negro para llenar los laterales en PC
+  padding: 40px 0 0 0; 
+  padding-top: 0 !important;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 
-// AJUSTE PARA CELULAR
   @media (max-width: 480px) {
-    justify-content: center; // En Celular: Todo al centro
-    align-items: flex-end;   // En Celular: Empuja los botones hacia abajo
-    padding-bottom: 40px;    // Espacio para que los botones no toquen el borde inferior
+    padding-bottom: 40px; 
   }
- }
+}
 
 // 2. EL LOGO DE FONDO (LA "B")
-  .hero-background {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; // Asegura que cubra todo el contenedor hero
-    background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), 
-                url('/assets/log1.jpeg') no-repeat center center; // 'center center' centra horizontal y verticalmente
-    background-size: cover; // Ajusta la imagen para cubrir la pantalla sin deformarse 
-    z-index: 1;
+.hero-background {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: 1;
+  
+  // Gradiente para que los botones resalten más
+  background: linear-gradient(180deg, rgba(10,26,11,0.8) 0%, rgba(0,0,0,0) 50%), 
+              url('/assets/log1.jpeg') no-repeat center center;
+  
+  /* CLAVE: 'contain' evita el zoom en PC y mantiene el logo completo */
+  background-size: contain; 
 
-    // AJUSTE PARA CELULAR (Para que la "B" no se vea gigante y cortada)
-   @media (max-width: 480px) {
-    background-size: contain; // Hace que el logo quepa entero en el ancho del cel
-    background-position: center 20%; // Sube el logo para dejar espacio a los botones abajo
+  @media (max-width: 480px) {
+    /* En móvil lo subimos un poco (20%) para que no lo tapen los botones */
+    background-position: center 20%; 
+    background-size: contain;
   }
-  }
+}
 
-  // 3. LOS BOTONES
+// 3. LOS BOTONES (HERO CONTENT)
+.hero-content {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  z-index: 10;
+  min-height: 100px;
+  display: flex;
+  padding-left: 3%;
+  flex-direction: column;
+  align-items: flex-start; // Siempre centrados horizontalmente
+}
+
+
+/* Estilo base para ambos contenedores de botones */
+.cta-buttons-left, 
+.cta-buttons-right {
+  position: absolute;
+  top: 40px; /* Ajusta la distancia desde el borde superior */
+  display: flex;
+  flex-direction: column;
+  gap: 12px; // Más espacio entre botones
+}
+
+.cta-buttons-left { 
+  left: 85px; // Alineado a la izquierda
+}
+
+.cta-buttons-right {
+  right: 40px; // Alineado a la derecha
+}
+
+/* EL BOTÓN PROFESIONAL (Estilo Glassmorphism) */
+.btn-glass {
+  background: rgba(19, 49, 20, 0.6); // Fondo basado en el verde oscuro del log1.jpeg
+  color: #ffffff;
+  border: 1px solid rgba(92, 203, 95, 0.5); // Borde con el verde brillante
+  border-radius: 50px; /* Forma de cápsula */
+  padding: 12px 25px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(12px); /* Desenfoque elegante detrás del botón */
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 180px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Efectos de interacción */
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  transform: translateY(-2px); /* Pequeño salto hacia arriba */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste para que en móviles se vean uno bajo el otro y no se amontonen */
+@media (max-width: 768px) {
   .hero-content {
-    position: relative;
-    z-index: 2; // No le damos 100% de ancho para que no estorbe el centro del logo
     display: flex;
     flex-direction: column;
-    align-items: flex-end; // Alinea los botones a la derecha uno sobre el otro
-    gap: 1.2rem;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .cta-buttons-left, .cta-buttons-right {
+    position: static;
+    margin-bottom: 20px;
+  }
 
-      .cta-buttons {
-      display: flex;
-      flex-direction: column; // Por defecto en fila
-      align-items: flex-end;
-      gap: 1rem;
-      width: 100%;
-      padding-right: 5%;
-      }
- // Ajuste para Celulares
-     @media (max-width: 480px) {
-        flex-direction: column; // Botones uno sobre otro en celular
-        align-items: flex-end;
-        gap: 1rem;
-
-        }
-
- .btn-primary, .btn-secondary {
-    width: 220px; // Ancho fijo para que se vean iguales que en tu foto
-    padding: 1.2rem;
+  .btn-primary, .btn-secondary {
+    width: 230px; // Ancho fijo para mantener la estética de celular en PC
+    max-width: 300px;
+    padding: 0.9rem 1.2rem;
     text-align: center;
     border-radius: 50px;
-    border: 1px solid white;
-    font-weight: 700; cursor: pointer;
-    background: linear-gradient(90deg, #e46cef, #000000); // Cambia el color del botón //
-    background: rgba(228, 108, 239, 0.4);
-    backdrop-filter: blur(5px); // Efecto de cristal como en la imagen
+    border: 1px solid rgba(255, 255, 255, 1);
+    font-weight: 700;
+    font-size: 0.85rem;
     color: white;
+    text-decoration: none;
     cursor: pointer;
-      }
-    }
-  
+        
+    /* EFECTO CRISTAL MORADO */
+    background: rgba(45, 90, 39, 0.6); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 
-// 2. BANNER MORADO
+    @media (max-width: 480px) {
+      width: 85%; // En móviles reales se adapta al ancho de pantalla
+    }
+
+    &:hover {
+      background: rgba(92, 203, 95, 0.3); // Brillo verde al pasar el mouse
+      border-color: #5CCB5F;
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
+      color: #ffffff;
+    }
+  }
+}
+
+// 4. BANNER MORADO
 .promo-banner {
   padding: 80px 5% 40px;
   text-align: center;
@@ -90,19 +165,23 @@
     font-weight: 800;
     max-width: 900px;
     margin: 0 auto;
-    background: linear-gradient(90deg, #000000 0%, #e46cef 100%);
-    -webkit-background-clip: text; background-clip: text;
+    background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
+    -webkit-background-clip: text; 
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 800;
     display: inline-block;
   }
 }
 
-// 3. PRODUCTOS (Fix de imágenes)
+// 5. PRODUCTOS
 .featured-products {
   padding: 20px 5% 100px;
   .section-header {
     display: flex; justify-content: flex-end; margin-bottom: 30px;
-    a { color: #7702ff; font-weight: 600; text-decoration: none; }
+    a { color: #5CCB5F; 
+      font-weight: 800; 
+      text-decoration: none; }
   }
 
   .product-grid {
@@ -118,15 +197,15 @@
       .product-image {
         width: 100%;
         position: relative;
-        padding-top: 100%; // Esto mantiene el cuadro aunque no cargue la imagen
-        background: #eee; // Color de respaldo mientras carga
+        padding-top: 100%; 
+        background: #eee;
         
         img {
           position: absolute;
           top: 0; left: 0;
           width: 100%;
           height: 100%;
-          object-fit: cover; // Crucial para que no se deformen
+          object-fit: cover; 
           display: block;
         }
         
@@ -150,4 +229,3 @@
     }
   }
 }
-

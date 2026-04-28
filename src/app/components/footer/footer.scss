@@ -1,6 +1,6 @@
 .footer {
   background: #111;
-  color: white;
+  color: rgb(64, 179, 101);
   padding: 4rem 5% 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -9,7 +9,7 @@
   h3 {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
-    color: #ff41f8;
+    color: #5CCB5F 100%;
   }
 
   p {
@@ -30,8 +30,8 @@
           text-decoration: none;
           transition: color 0.3s;
 
-          &:hover {
-            color: white;
+          &:hover { // Botones del footer
+            color: #5CCB5F 100%;
           }
         }
       }
@@ -51,11 +51,20 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
+
+       /* AJUSTE: Contorno blanco profesional */
+      border: 1.5px solid rgba(255, 255, 255, 0.9); 
+      color: #ffffff; // Asegura que el icono sea blanco
+      transition: all 0.3s ease;
+
       transition: background 0.3s, transform 0.3s;
 
       &:hover {
-        background: #7702ff;
+        /* Cambio al verde de tu marca y efecto de elevación */
+        background: #5CCB5F;
+        border-color: #5CCB5F;
         transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(92, 203, 95, 0.4);
       }
     }
   }
@@ -71,17 +80,17 @@
         background: #222;
         border: 1px solid #333;
         padding: 0.8rem;
-        color: white;
+        color: rgb(69, 180, 78);
         border-radius: 5px;
         outline: none;
 
         &:focus {
-          border-color: #ff41f8;
+          border-color: #5CCB5F 100%;
         }
       }
 
       button {
-        background: #ff41f8;
+        background: #34d087;
         border: none;
         color: white;
         padding: 0 1.5rem;
@@ -90,7 +99,7 @@
         font-weight: bold;
 
         &:hover {
-          background: #e032d9;
+          background: #5CCB5F 100%;
         }
       }
     }
