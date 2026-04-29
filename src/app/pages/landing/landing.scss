@@ -1,8 +1,11 @@
+/* ============================================================
+   1. ESTILOS BASE (PC / ESCRITORIO)
+   Aquí se conserva tu lógica original para computadoras.
+   ============================================================ */
 .landing-container {
   overflow-x: hidden;
   background-color: #ffffff;
 }
-
 // 1. EL CONTENEDOR PRINCIPAL (UNIFICADO)
 .hero {
   height: 94vh; // Ocupa toda la pantalla siempre
@@ -102,6 +105,102 @@
   letter-spacing: 0.5px;
 }
 
+/* ============================================================
+   2. AJUSTES EXCLUSIVOS PARA MÓVIL (PANTALLAS < 768PX)
+   Aquí es donde solucionamos el problema de la imagen.
+   ============================================================ */
+@media screen and (max-width: 450px) {
+  .hero {
+    height: 30vh; /* Ocupa todo el alto en celular */
+    display: flex; 
+    align-items: center;
+    }
+
+  .hero-background {
+    background-size: contain !important; /* Forzado para que el logo "B" se vea grande al centro */
+    background-position: center center !important;
+    background-repeat: no-repeat;
+
+  }
+
+  .hero-content {
+    flex-direction: row !important; /* FORZAMOS dos columnas laterales */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .cta-buttons-left, 
+  .cta-buttons-right {
+    position: relative !important; /* Quitamos el absolute para que floten a los lados */
+    top: 13%  !important;
+    left: unset !important;
+    right: unset !important;
+    width: 35%; /* Ancho para no tapar el centro */
+    gap: 5px; // Reduce el espacio entre botones
+    display: flex;
+  }
+
+  .cta-buttons-right {
+    align-items: flex-end; /* Alinea los botones al borde derecho del celular */
+  }
+
+  .btn-glass {
+    min-width: unset !important;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 5px 2px !important;
+    font-size: 8px !important; /* Texto pequeño para evitar saltos de línea */
+    background: rgba(0, 30, 0, 0.7);
+    border-color: #5CCB5F;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* NUEVO: Banner blanco inferior "Bracas Company" solo para celular */
+  .hero-footer-banner {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 20px;
+    border-radius: 4px;
+    z-index: 11;
+    border: 2px solid #5CCB5F;
+    display: block;
+    span { color: #000; font-weight: 900; font-size: 1rem; white-space: nowrap; }
+  }
+}
+
+/* ============================================================
+   3. SECCIONES RESTANTES (CONSERVADAS)
+   ============================================================ */
+.promo-banner {
+  padding: 80px 5% 40px;
+  text-align: center;
+  h2 {
+    font-size: 2.8rem;
+    background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+}
+
+.featured-products {
+  padding: 20px 5% 100px;
+  background: linear-gradient(180deg, #121212 0%, #5CCB5F 100%);
+  .section-header a { color: #ffffff; font-weight: 800; text-decoration: none; }
+}
+
+
+
 /* Efectos de interacción */
 .btn-glass:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -177,9 +276,12 @@
 // 5. PRODUCTOS
 .featured-products {
   padding: 20px 5% 100px;
+  background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
   .section-header {
-    display: flex; justify-content: flex-end; margin-bottom: 30px;
-    a { color: #5CCB5F; 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 30px;
+    a { color: #ffffff; 
       font-weight: 800; 
       text-decoration: none; }
   }
