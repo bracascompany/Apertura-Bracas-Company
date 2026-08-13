@@ -1,0 +1,116 @@
+.footer {
+  background: #ffffff;
+  color: rgb(64, 179, 101);
+  padding: 4rem 5% 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+
+  h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #5CCB5F 100%;
+  }
+
+  p {
+    color: #999;
+    line-height: 1.6;
+  }
+
+  .footer-column {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.8rem;
+
+        a {
+          color: #999;
+          text-decoration: none;
+          transition: color 0.3s;
+
+          &:hover { // Botones del footer
+            color: #5CCB5F 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+       /* AJUSTE: Contorno blanco profesional */
+      border: 1.5px solid rgba(255, 255, 255, 0.9); 
+      color: #ffffff; // Asegura que el icono sea blanco
+      transition: all 0.3s ease;
+
+      transition: background 0.3s, transform 0.3s;
+
+      &:hover {
+        /* Cambio al verde de tu marca y efecto de elevación */
+        background: #5CCB5F;
+        border-color: #5CCB5F;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(92, 203, 95, 0.4);
+      }
+    }
+  }
+
+  .newsletter {
+    .signup-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      input {
+        flex: 1;
+        background: #222;
+        border: 1px solid #333;
+        padding: 0.8rem;
+        color: rgb(69, 180, 78);
+        border-radius: 5px;
+        outline: none;
+
+        &:focus {
+          border-color: #5CCB5F 100%;
+        }
+      }
+
+      button {
+        background: #34d087;
+        border: none;
+        color: white;
+        padding: 0 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          background: #5CCB5F 100%;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 1px solid #222;
+    padding-top: 2rem;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+  }
+}
