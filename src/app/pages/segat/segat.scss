@@ -1,0 +1,87 @@
+// Definir variables de color para mayor consistencia
+$primary-color: #007bff; // Un azul profesional para acentos
+$background-color: #f8f9fa;
+$text-color-dark: #333;
+$text-color-light: #666;
+
+// Estilo principal de la página para centrar todo
+.segat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; // Ocupa la mayor parte de la pantalla
+  background-color: $background-color;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Tipografía limpia
+}
+
+// La "tarjeta" que contendrá el logo y el texto
+.segat-card {
+  background: #fff;
+  border-radius: 15px; // Bordes redondeados
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); // Sombra suave para efecto de elevación
+  padding: 50px;
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Pequeña animación al pasar el mouse
+  }
+}
+
+// Estilo para tu imagen de logo circular
+.logo-wrapper {
+  margin-bottom: 30px;
+  display: inline-block; // Necesario para el efecto de borde
+  
+  img {
+    width: 200px; // Tamaño ideal para el logo
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); // Sombra de color para brillo
+    border: 4px solid #fff;
+  }
+}
+
+// Título principal
+h1.fundacion-title {
+  color: $text-color-dark;
+  font-size: 2.5rem; // Grande y llamativo
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Párrafo de la misión
+p.fundacion-mission {
+  color: $text-color-light;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Botón de acción (ejemplo)
+.btn-primary {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

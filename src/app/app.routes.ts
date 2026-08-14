@@ -5,6 +5,7 @@ import { ProductFormComponent } from './pages/products/product-form/product-form
 import { LoginComponent } from './pages/auth/login/login';
 import { RegisterComponent } from './pages/auth/register/register';
 import { CartComponent } from './pages/cart/cart';
+import { Segat } from './pages/segat/segat';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -12,7 +13,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'fundacion-segat', component: ProductListComponent },
+  { path: 'fundacion-segat', component: Segat },
   { 
     path: 'products', 
     component: ProductListComponent,
