@@ -19,6 +19,10 @@ export class LandingComponent {
     this.router.navigate(['/fundacion-segat']);
   }
 
+    goToBracasfood() {
+    window.location.href = "https://bracasfood.vercel.app/";
+  }
+
   showModal = signal(false);
   showRegisterModal = signal(false);
 

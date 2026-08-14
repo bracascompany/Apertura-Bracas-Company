@@ -37,20 +37,21 @@
 
     <div class="product-grid">
       
-      <div class="product-card">
-        <div class="product-image">
-          <img src="assets/log2.jpeg" alt="Bracasfood">
-        </div>
-        <div class="product-info">
-          <h3>Bracasfood</h3>
-          <div class="price-row">
-            <span class="price"></span>
-            <button class="add-btn" (click)="onAddToCart('Bracasfood', 0000, 'Bracasfood', 'log2.jpeg')">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </button>
-          </div>
+      <div class="product-card" (click)="goToBracasfood()" style="cursor: pointer;">
+      <div class="product-image">
+        <img src="assets/log2.jpeg" alt="Bracasfood">
+      </div>
+      <div class="product-info">
+        <h3>Bracasfood</h3>
+        <div class="price-row">
+          <span class="price"></span>
+          <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Bracasfood', 0000, 'Bracasfood', 'log2.jpeg')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
         </div>
       </div>
+    </div>
+    
       <div class="product-card">
         <div class="product-image">
           <img src="assets/log3.jpeg" alt="Brades">
