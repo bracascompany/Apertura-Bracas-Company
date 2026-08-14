@@ -21,7 +21,7 @@
         <button class="btn-glass">Brades</button>
         <button class="btn-glass">Bracastyles</button>
         <button class="btn-glass">C&M[JB]_Studios</button>
-        <button class="btn-glass">Fundación SEGAT</button>
+        <a routerLink="." fragment="segat" class="btn-glass" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">Fundación SEGAT</a>
       </div>
     </div>
   </section>
@@ -94,7 +94,7 @@
         </div>
       </div>
       <div class="product-card">
-        <div class="product-image">
+        <div class="product-image" (click)="goToSegatPage()" style="cursor: pointer;">
           <img src="assets/log6.jpeg" alt="FundaciónSEGAT">
         </div>
         <div class="product-info">

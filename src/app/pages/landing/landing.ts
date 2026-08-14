@@ -1,4 +1,5 @@
 import { Component, signal, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CartService, Product } from '../../services/cart.service';
@@ -6,12 +7,22 @@ import { CartService, Product } from '../../services/cart.service';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, RouterModule, ReactiveFormsModule],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
 export class LandingComponent {
   public cartService = inject(CartService);
+  private router = inject(Router);
+
+  goToSegatPage() {
+    this.router.navigate(['/fundacion-segat']);
+  }
+  private router = inject(Router);
+
+  goToSegatPage() {
+    this.router.navigate(['/fundacion-segat']);
+  }
   showModal = signal(false);
   showRegisterModal = signal(false);
 
