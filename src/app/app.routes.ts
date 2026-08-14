@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'fundacion-segat', component: ProductListComponent },
   { 
     path: 'products', 
     component: ProductListComponent,

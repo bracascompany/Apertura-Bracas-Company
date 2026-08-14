@@ -7,7 +7,7 @@ import { CartService, Product } from '../../services/cart.service';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
@@ -18,11 +18,7 @@ export class LandingComponent {
   goToSegatPage() {
     this.router.navigate(['/fundacion-segat']);
   }
-  private router = inject(Router);
 
-  goToSegatPage() {
-    this.router.navigate(['/fundacion-segat']);
-  }
   showModal = signal(false);
   showRegisterModal = signal(false);
 
