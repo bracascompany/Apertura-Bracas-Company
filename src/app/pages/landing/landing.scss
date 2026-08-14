@@ -220,7 +220,7 @@
   }
   .cta-buttons-left, .cta-buttons-right {
     position: static;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .btn-primary, .btn-secondary {
@@ -344,8 +344,8 @@
   .cta-buttons-left, .cta-buttons-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
-    width: 45% !important;
+    gap: 26px !important;
+    width: 35% !important;
     z-index: 10 !important;
   }
   .btn-glass {
@@ -404,7 +404,7 @@
 }
 @media (max-width: 768px) {
   .hero-content {
-    margin-top: -15px !important;
+    margin-top: -5px !important;
   }
 }
 @media (max-width: 768px) {
@@ -418,5 +418,36 @@
   .hero-background img {
     margin-top: -45px !important;
     transform: scale(1.1) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-buttons-left, .cta-buttons-right {
+    width: 35% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-buttons-left, .cta-buttons-right {
+    width: auto !important;
+    max-width: 45% !important;
+  }
+  .btn-glass {
+    width: max-content !important;
+    min-width: 90px !important;
+    padding: 8px 10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-buttons-left, .cta-buttons-right {
+    width: auto !important;
+  }
+  .btn-glass {
+    width: 140px !important;
+    max-width: 140px !important;
+    padding: 10px 4px !important;
+    text-align: center !important;
+    display: inline-block !important;
   }
 }
