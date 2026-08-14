@@ -15,11 +15,12 @@ export class LandingComponent {
   public cartService = inject(CartService);
   private router = inject(Router);
 
+  // Redirige a la vista ambiental de la Fundación SEGAT
   goToSegatPage() {
     this.router.navigate(['/fundacion-segat']);
   }
 
-    goToBracasfood() {
+  goToBracasfood() {
     window.location.href = "https://bracasfood.vercel.app/";
   }
 
