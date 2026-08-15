@@ -1,5 +1,7 @@
-<nav class="navbar">
-  <div class="logo">Bracascompany</div>
+<nav class="navbar" [ngClass]="{'segat-theme-active': isSegatRoute}">
+  <div class="logo" routerLink="/">
+    {{ isSegatRoute ? 'Fundación SEGAT' : 'Bracascompany' }}
+  </div>
   
   <ul class="nav-links">
     <li><a routerLink="/">Inicio</a></li>

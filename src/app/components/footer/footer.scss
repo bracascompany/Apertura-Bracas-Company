@@ -1,37 +1,61 @@
 .footer {
   background: #ffffff;
   color: rgb(64, 179, 101);
-  padding: 4rem 5% 2rem;
+  padding: 3rem 1.25rem 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  // Forzamos estrictamente 2 columnas idénticas para la vista móvil
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 4rem 5% 2rem;
+    gap: 3rem;
+  }
+
+  .logo-footer {
+    color: #5ccb5f;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
 
   h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    color: #5CCB5F 100%;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #5ccb5f;
   }
 
   p {
     color: #999;
-    line-height: 1.6;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
   }
 
   .footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; // Evita que elementos largos desborden la celda
+
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
 
       li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
 
         a {
           color: #999;
           text-decoration: none;
+          font-size: 0.8rem;
           transition: color 0.3s;
 
-          &:hover { // Botones del footer
-            color: #5CCB5F 100%;
+          &:hover {
+            color: #5ccb5f;
           }
         }
       }
@@ -40,31 +64,23 @@
 
   .social-icons {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
 
     .icon {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       background: #222;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-
-       /* AJUSTE: Contorno blanco profesional */
-      border: 1.5px solid rgba(255, 255, 255, 0.9); 
-      color: #ffffff; // Asegura que el icono sea blanco
-      transition: all 0.3s ease;
-
-      transition: background 0.3s, transform 0.3s;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      color: #ffffff;
 
       &:hover {
-        /* Cambio al verde de tu marca y efecto de elevación */
-        background: #5CCB5F;
-        border-color: #5CCB5F;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(92, 203, 95, 0.4);
+        background: #5ccb5f;
+        border-color: #5ccb5f;
       }
     }
   }
@@ -72,20 +88,22 @@
   .newsletter {
     .signup-form {
       display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
 
       input {
         flex: 1;
+        width: 100%;
         background: #222;
         border: 1px solid #333;
-        padding: 0.8rem;
+        padding: 0.5rem;
         color: rgb(69, 180, 78);
         border-radius: 5px;
         outline: none;
+        font-size: 0.75rem;
 
         &:focus {
-          border-color: #5CCB5F 100%;
+          border-color: #5ccb5f;
         }
       }
 
@@ -93,13 +111,14 @@
         background: #34d087;
         border: none;
         color: white;
-        padding: 0 1.5rem;
+        padding: 0 0.8rem;
         border-radius: 5px;
         cursor: pointer;
         font-weight: bold;
+        font-size: 0.75rem;
 
         &:hover {
-          background: #5CCB5F 100%;
+          background: #5ccb5f;
         }
       }
     }
@@ -108,9 +127,58 @@
   .footer-bottom {
     grid-column: 1 / -1;
     border-top: 1px solid #222;
-    padding-top: 2rem;
+    padding-top: 1.2rem;
     text-align: center;
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+/* --- MODO SEGAT --- */
+.footer.segat-theme-active {
+  background: #f4f8fb !important;
+  border-top: 1px solid #cfe2f3 !important;
+
+  .logo-footer {
+    background: linear-gradient(90deg, #0b2545, #00b4d8) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  h3 {
+    color: #0b2545 !important;
+  }
+
+  p,
+  .footer-column ul li a {
+    color: #134074 !important;
+
+    &:hover {
+      color: #00b4d8 !important;
+    }
+  }
+
+  .social-icons .icon {
+    background: #0b2545 !important;
+    border-color: #00b4d8 !important;
+  }
+
+  .newsletter {
+    .signup-form {
+      input {
+        background: #eef4f9 !important;
+        border-color: #cfe2f3 !important;
+        color: #0b2545 !important;
+      }
+      button {
+        background: #134074 !important;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top-color: #cfe2f3 !important;
+    color: #134074 !important;
   }
 }

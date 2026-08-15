@@ -1,110 +1,108 @@
 /* ============================================================
    1. ESTILOS BASE (PC / ESCRITORIO)
-   Aquí se conserva tu lógica original para computadoras.
    ============================================================ */
 .landing-container {
   overflow-x: hidden;
   background-color: #ffffff;
 }
-// 1. EL CONTENEDOR PRINCIPAL (UNIFICADO)
+
+// 1. EL CONTENEDOR PRINCIPAL
 .hero {
-  height: 94vh; // Ocupa toda la pantalla siempre
-  min-height: 550px;
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  /* Centra horizontalmente y empuja los botones al fondo en AMBOS */
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: center;
+  align-items: center;
   position: relative;
-  background: #133114; // Fondo negro para llenar los laterales en PC
-  padding: 40px 0 0 0; 
-  padding-top: 0 !important;
+  background: #133114;
+  padding: 20px 0;
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 
   @media (max-width: 480px) {
-    padding-bottom: 40px; 
+    padding-bottom: 10px;
   }
 }
 
 // 2. EL LOGO DE FONDO (LA "B")
 .hero-background {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  
-  // Gradiente para que los botones resalten más
-  background: linear-gradient(180deg, rgba(10,26,11,0.8) 0%, rgba(0,0,0,0) 50%), 
-              url('/assets/log1.jpeg') no-repeat center center;
-  
-  /* CLAVE: 'contain' evita el zoom en PC y mantiene el logo completo */
-  background-size: contain; 
+
+  background:
+    linear-gradient(180deg, rgba(10, 26, 11, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%),
+    url('/assets/log1.jpeg') no-repeat center center;
+
+  background-size: contain;
 
   @media (max-width: 480px) {
-    /* En móvil lo subimos un poco (20%) para que no lo tapen los botones */
-    background-position: center 20%; 
+    background-position: center 20%;
     background-size: contain;
   }
 }
 
-// 3. LOS BOTONES (HERO CONTENT)
+// 3. LOS BOTONES (HERO CONTENT - DISTRIBUCIÓN EN ESCRITORIO)
 .hero-content {
   position: relative;
-  height: 100%;
-  padding: 0;
   width: 100%;
+  max-width: 1100px;
+  height: 100%;
   z-index: 10;
-  min-height: 100px;
   display: flex;
-  padding-left: 3%;
-  flex-direction: column;
-  align-items: flex-start; // Siempre centrados horizontalmente
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
 
-
-/* Estilo base para ambos contenedores de botones */
-.cta-buttons-left, 
+/* Contenedores de botones laterales para PC */
+.cta-buttons-left,
 .cta-buttons-right {
-  position: absolute;
-  top: 40px; /* Ajusta la distancia desde el borde superior */
+  position: static !important; /* Quitamos absolute para usar flexbox fluido */
   display: flex;
   flex-direction: column;
-  gap: 12px; // Más espacio entre botones
-}
-
-.cta-buttons-left { 
-  left: 85px; // Alineado a la izquierda
+  gap: 8px;
+  width: 400px;
+  z-index: 10;
 }
 
 .cta-buttons-right {
-  right: 40px; // Alineado a la derecha
+  align-items: flex-end; /* Alinea los botones de la derecha hacia el borde */
 }
 
 /* EL BOTÓN PROFESIONAL (Estilo Glassmorphism) */
 .btn-glass {
-  background: rgba(19, 49, 20, 0.6); // Fondo basado en el verde oscuro del log1.jpeg
+  background: rgba(19, 49, 20, 0.7);
   color: #ffffff;
-  border: 1px solid rgba(92, 203, 95, 0.5); // Borde con el verde brillante
-  border-radius: 50px; /* Forma de cápsula */
-  padding: 12px 25px;
+  border: 1px solid rgba(92, 203, 95, 0.5);
+  border-radius: 50px;
+  padding: 8px 15px;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  backdrop-filter: blur(12px); /* Desenfoque elegante detrás del botón */
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-width: 180px;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
 
+  &:hover {
+    background: rgba(92, 203, 95, 0.3);
+    border-color: #5ccb5f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+}
 /* ============================================================
    2. AJUSTES EXCLUSIVOS PARA MÓVIL (PANTALLAS < 768PX)
    Aquí es donde solucionamos el problema de la imagen.
@@ -112,34 +110,33 @@
 @media screen and (max-width: 450px) {
   .hero {
     height: 30vh; /* Ocupa todo el alto en celular */
-    display: flex; 
+    display: flex;
     align-items: center;
-    }
+  }
 
   .hero-background {
     background-size: contain !important; /* Forzado para que el logo "B" se vea grande al centro */
     background-position: center center !important;
     background-repeat: no-repeat;
-
   }
 
   .hero-content {
     flex-direction: row !important; /* FORZAMOS dos columnas laterales */
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
+    padding: 0 1px;
     width: 100%;
     z-index: 10;
   }
 
-  .cta-buttons-left, 
+  .cta-buttons-left,
   .cta-buttons-right {
     position: relative !important; /* Quitamos el absolute para que floten a los lados */
-    top: 33%  !important;
+    top: 13% !important;
     left: unset !important;
     right: unset !important;
     width: 35%; /* Ancho para no tapar el centro */
-    gap: 5px; // Reduce el espacio entre botones
+    gap: 1px; /* Espacio vertical ultra reducido entre botones */
     display: flex;
   }
 
@@ -150,13 +147,13 @@
   .btn-glass {
     min-width: unset !important;
     white-space: nowrap;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     text-transform: uppercase;
     width: 100%;
-    padding: 5px 2px !important;
-    font-size: 8px !important; /* Texto pequeño para evitar saltos de línea */
+    padding: 2px 1px !important; /* Relleno vertical y horizontal minimizado */
+    font-size: 7.5px !important; /* Texto optimizado para no desbordarse */
     background: rgba(0, 30, 0, 0.7);
-    border-color: #5CCB5F;
+    border-color: #5ccb5f;
     border-radius: 50px;
     backdrop-filter: blur(4px);
   }
@@ -164,28 +161,32 @@
   /* NUEVO: Banner blanco inferior "Bracas Company" solo para celular */
   .hero-footer-banner {
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.9);
-    padding: 5px 20px;
+    padding: 4px 10px;
     border-radius: 4px;
     z-index: 11;
-    border: 2px solid #5CCB5F;
+    border: 2px solid #5ccb5f;
     display: block;
-    span { color: #000; font-weight: 900; font-size: 1rem; white-space: nowrap; }
+    span {
+      color: #000;
+      font-weight: 900;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
   }
 }
-
 /* ============================================================
    3. SECCIONES RESTANTES (CONSERVADAS)
    ============================================================ */
 .promo-banner {
-  padding: 80px 5% 40px;
+  padding: 40px 5% 20px;
   text-align: center;
   h2 {
     font-size: 2.8rem;
-    background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
+    background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -195,11 +196,13 @@
 
 .featured-products {
   padding: 20px 5% 100px;
-  background: linear-gradient(180deg, #121212 0%, #5CCB5F 100%);
-  .section-header a { color: #ffffff; font-weight: 800; text-decoration: none; }
+  background: linear-gradient(180deg, #121212 0%, #5ccb5f 100%);
+  .section-header a {
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+  }
 }
-
-
 
 /* Efectos de interacción */
 .btn-glass:hover {
@@ -209,24 +212,25 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-
 /* Ajuste para que en móviles se vean uno bajo el otro y no se amontonen */
 @media (max-width: 768px) {
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 10px;
   }
-  .cta-buttons-left, .cta-buttons-right {
+  .cta-buttons-left,
+  .cta-buttons-right {
     position: static;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     width: 230px; // Ancho fijo para mantener la estética de celular en PC
     max-width: 300px;
-    padding: 0.9rem 1.2rem;
+    padding: 0.3rem 0.3rem;
     text-align: center;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 1);
@@ -235,9 +239,9 @@
     color: white;
     text-decoration: none;
     cursor: pointer;
-        
+
     /* EFECTO CRISTAL MORADO */
-    background: rgba(45, 90, 39, 0.6); 
+    background: rgba(45, 90, 39, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
@@ -248,7 +252,7 @@
 
     &:hover {
       background: rgba(92, 203, 95, 0.3); // Brillo verde al pasar el mouse
-      border-color: #5CCB5F;
+      border-color: #5ccb5f;
       transform: translateY(-3px);
       box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
       color: #ffffff;
@@ -258,15 +262,15 @@
 
 // 4. BANNER MORADO
 .promo-banner {
-  padding: 80px 5% 40px;
+  padding: 60px 5% 20px;
   text-align: center;
   h2 {
     font-size: 2.8rem;
     font-weight: 800;
     max-width: 900px;
     margin: 0 auto;
-    background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
-    -webkit-background-clip: text; 
+    background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
@@ -277,14 +281,16 @@
 // 5. PRODUCTOS
 .featured-products {
   padding: 20px 5% 100px;
-  background: linear-gradient(90deg, #121212 0%, #5CCB5F 100%);
+  background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
   .section-header {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
-    a { color: #ffffff; 
-      font-weight: 800; 
-      text-decoration: none; }
+    a {
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
   }
 
   .product-grid {
@@ -296,36 +302,63 @@
       background: #f9f9f9;
       border-radius: 20px;
       overflow: hidden;
-      
+
       .product-image {
         width: 100%;
         position: relative;
-        padding-top: 100%; 
+        padding-top: 100%;
         background: #eee;
-        
+
         img {
           position: absolute;
-          top: 0; left: 0;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
-          object-fit: cover; 
+          object-fit: cover;
           display: block;
         }
-        
+
         .badge {
-          position: absolute; top: 15px; left: 15px; background: #ff6702; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; z-index: 5;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          background: #ff6702;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-weight: bold;
+          z-index: 5;
         }
       }
 
       .product-info {
         padding: 1.5rem;
-        h3 { font-size: 1.3rem; margin: 10px 0; color: #111; }
+        h3 {
+          font-size: 1.3rem;
+          margin: 10px 0;
+          color: #111;
+        }
         .price-row {
-          display: flex; justify-content: space-between; align-items: center;
-          .price { font-size: 1.5rem; font-weight: 800; color: #f35100; }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f35100;
+          }
           .add-btn {
-            background: #111; color: white; width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
+            background: #111;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -341,17 +374,18 @@
     width: 100% !important;
     padding: 10px !important;
   }
-  .cta-buttons-left, .cta-buttons-right {
+  .cta-buttons-left,
+  .cta-buttons-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 26px !important;
+    gap: 20px !important;
     width: 35% !important;
     z-index: 10 !important;
   }
   .btn-glass {
     width: 100% !important;
     font-size: 0.72rem !important;
-    padding: 8px 4px !important;
+    padding: 10px 4px !important;
     text-align: center !important;
   }
 }
@@ -370,16 +404,16 @@
   .hero {
     height: auto !important;
     min-height: 100vh !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 10px !important;
   }
   .hero-background {
     position: absolute !important;
-    top: 50%;
+    top: 10%;
     height: 100% !important;
-    z-index: 1 !important
+    z-index: 1 !important;
   }
   .hero-content {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     z-index: 2 !important;
   }
 }
@@ -392,7 +426,7 @@
   }
   .hero-background {
     position: relative !important;
-    margin-top: -150px !important;
+    margin-top: -100px !important;
     height: 280px !important;
     display: block !important;
   }
@@ -409,9 +443,9 @@
 }
 @media (max-width: 768px) {
   .hero-content {
-    margin-top: -350px !important;
+    margin-top: -300px !important; /*/ subir botones to navbar /*/
     position: relative !important;
-    z-index: 99 !important;
+    z-index: 90 !important;
   }
 }
 @media (max-width: 768px) {
@@ -422,32 +456,177 @@
 }
 
 @media (max-width: 768px) {
-  .cta-buttons-left, .cta-buttons-right {
+  .cta-buttons-left,
+  .cta-buttons-right {
     width: 35% !important;
   }
 }
 
 @media (max-width: 768px) {
-  .cta-buttons-left, .cta-buttons-right {
+  .cta-buttons-left,
+  .cta-buttons-right {
     width: auto !important;
     max-width: 45% !important;
   }
   .btn-glass {
     width: max-content !important;
     min-width: 90px !important;
-    padding: 8px 10px !important;
+    padding: 1px 2px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .cta-buttons-left, .cta-buttons-right {
+  .cta-buttons-left,
+  .cta-buttons-right {
     width: auto !important;
   }
   .btn-glass {
     width: 140px !important;
     max-width: 140px !important;
-    padding: 10px 4px !important;
+    padding: 10px 20px !important;
     text-align: center !important;
     display: inline-block !important;
+  }
+}
+.success-header {
+  text-align: center;
+  padding: 1rem 1rem 1rem;
+  position: relative;
+
+  /* Etiqueta tipo "Badge" superior para darle toque corporativo moderno */
+  .badge-subtitle {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5ccb5f;
+    background: rgba(92, 203, 95, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Título principal con degradado y presencia */
+  .success-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -0.5px;
+
+    /* Efecto de color degradado en la palabra "éxito" para resaltar */
+    span.highlight {
+      background: linear-gradient(90deg, #5ccb5f, #34d087);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Puntos animados con efecto de parpadeo */
+    .dots {
+      display: inline-flex;
+      gap: 2px;
+      color: #5ccb5f;
+
+      span {
+        animation: pulseDots 1.4s infinite ease-in-out both;
+
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+      }
+    }
+  }
+
+  /* Subtítulo descriptivo */
+  .success-desc {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0.6rem auto 0;
+    line-height: 1.5;
+  }
+}
+
+/* Animación sutil para los puntos */
+@keyframes pulseDots {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Opcional: Si estás en modo Fundación Segat (Azul), puedes ajustar los tonos automáticamente si usas la clase padre */
+.segat-theme-active {
+  .success-header {
+    .badge-subtitle {
+      color: #00b4d8;
+      background: rgba(0, 180, 216, 0.1);
+    }
+    .success-title .dots {
+      color: #00b4d8;
+    }
+  }
+}
+
+/* === MODIFICACIÓN: 2 COLUMNAS PARA PRODUCTOS / LOGOS EN MÓVIL === */
+@media screen and (max-width: 768px) {
+  .featured-products {
+    padding: 10px 3% 60px !important;
+
+    .product-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important; /* Forzamos exactamente 2 columnas */
+      gap: 12px !important; /* Reducimos el espacio entre tarjetas */
+    }
+
+    .product-card {
+      border-radius: 12px !important;
+
+      .product-info {
+        padding: 0.8rem !important;
+
+        h3 {
+          font-size: 0.85rem !important; /* Letra más pequeña para que quepa bien */
+          margin: 5px 0 !important;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .price-row {
+          justify-content: center !important;
+
+          .add-btn {
+            width: 30px !important;
+            height: 30px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === AJUSTE PARA LAPTOP/ESCRITORIO: ANCHO DE BOTONES ADECUADO === */
+@media screen and (min-width: 769px) {
+  .cta-buttons-left,
+  .cta-buttons-right {
+    width: 280px !important; /* Reducimos el contenedor lateral para que no invadan el centro */
+  }
+
+  .btn-glass {
+    width: 85% !important; /* Hacemos que los botones no ocupen el 100% absoluto y respiren mejor */
+    margin: 0 auto;
+    display: block;
   }
 }

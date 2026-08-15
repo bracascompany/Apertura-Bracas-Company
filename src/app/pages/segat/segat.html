@@ -1,22 +1,63 @@
-<div class="segat-container">
-  <div class="segat-card">
-    
-    <!-- Contenedor del Logo -->
+<div class="encarta-container">
+  <!-- COLUMNA IZQUIERDA -->
+  <div class="encarta-column left">
+    <a routerLink="/products" class="encarta-btn">
+      <span class="icon">🛍️</span>
+      <span class="text">Productos y Servicios</span>
+    </a>
+    <a routerLink="/cart" class="encarta-btn">
+      <span class="icon">🛒</span>
+      <span class="text">Ver Carrito</span>
+    </a>
+    <a routerLink="/fundacion-segat" class="encarta-btn">
+      <span class="icon">🌍</span>
+      <span class="text">Fundación SEGAT</span>
+    </a>
+  </div>
+
+  <!-- CENTRO: LOGO, TÍTULO Y VIDEO INCRUSTADO -->
+  <div class="encarta-center">
     <div class="logo-wrapper">
-      <!-- REEMPLAZA 'path_a_tu_imagen.jpg' CON LA RUTA REAL DE TU LOGO -->
-      <img src="assets/logosega.jpeg" alt="Logo Fundación SEGAT">
+      <img src="assets/logosega.jpeg" alt="Fundación SEGAT Logo" class="encarta-logo-img" />
     </div>
+    <h1 class="encarta-title">Fundación SEGAT</h1>
+    <p class="encarta-subtitle">Innovación, Sostenibilidad y Tecnología</p>
 
-    <!-- Título Principal -->
-    <h1 class="fundacion-title">Fundación SEGAT</h1>
+    <!-- Visor cuadrado con Autoplay -->
+    <div class="video-preview-container" id="videos">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/_cr3k1wF5UY?autoplay=1&mute=1&loop=1&playlist=_cr3k1wF5UY"
+          title="Bracascompany Video"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
 
-    <!-- Párrafo de la Misión -->
-    <p class="fundacion-mission">
-      Estamos dedicados a promover la <strong>Sostenibilidad con Educación, Gestión Ambiental y Tecnología Avanzada</strong>. Trabajamos para construir un futuro más verde y responsable para todos.
-    </p>
-
-    <!-- Botón de Acción (Opcional, para darle interactividad) -->
-    <a href="#" class="btn-primary">Conoce más sobre nosotros</a>
-
+  <!-- COLUMNA DERECHA -->
+  <div class="encarta-column right">
+    <a href="#videos" class="encarta-btn">
+      <span class="icon">🎥</span>
+      <span class="text">Ver Videos</span>
+    </a>
+    <a href="#fotos" class="encarta-btn">
+      <span class="icon">🖼️</span>
+      <span class="text">Galería de Fotos</span>
+    </a>
+    <a href="#about" class="encarta-btn">
+      <span class="icon">👥</span>
+      <span class="text">Quiénes Somos</span>
+    </a>
   </div>
 </div>
