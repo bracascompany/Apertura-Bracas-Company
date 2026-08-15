@@ -22,7 +22,13 @@
         <button
           class="btn-glass"
           (click)="goToSegatPage()"
-          style="text-decoration: none; display: flex; align-items: center; justify-content: center; cursor: pointer;"
+          style="
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          "
         >
           Fundación SEGAT
         </button>
@@ -30,15 +36,14 @@
     </div>
   </section>
 
- <div class="promo-banner success-header">
-   
-    <h2 class="success-title">Casos de éxito <span class="dots"><span>.</span><span>.</span><span>.</span></span></h2>
-    
+  <div class="promo-banner success-header">
+    <h2 class="success-title">
+      Casos de éxito <span class="dots"><span>.</span><span>.</span><span>.</span></span>
+    </h2>
   </div>
 
   <section class="featured-products">
-    <div class="section-header">
-    </div>
+    <div class="section-header"></div>
     <div class="product-grid">
       <div class="product-card" (click)="goToBracasfood()" style="cursor: pointer">
         <div class="product-image">
@@ -202,6 +207,43 @@
           </div>
         </div>
       </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="assets/facebranddigitallogo.jpg" alt="FaceBrand Digital" />
+        </div>
+        <div class="product-info">
+          <h3>Face Brand Digital</h3>
+          <div class="price-row">
+            <span class="price"></span>
+            <button
+              class="add-btn"
+              (click)="
+                onAddToCart(
+                  'Face Brand Digital',
+                  0,
+                  'FaceBrand Digital',
+                  'assets/facebranddigitallogo.jpg'
+                )
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-</div> 
+</div>
