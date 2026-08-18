@@ -92,7 +92,7 @@
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  text-align: left;
+  text-align: right;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
@@ -162,7 +162,7 @@
   .hero-footer-banner {
     position: absolute;
     bottom: 10%;
-    left: 50%;
+    left: 30%;
     transform: translateX(-70%);
     background: rgba(255, 255, 255, 0.9);
     padding: 4px 10px;
@@ -183,7 +183,7 @@
    ============================================================ */
 .promo-banner {
   padding: 40px 5% 20px;
-  text-align: left;
+  text-align: right;
   h2 {
     font-size: 2.8rem;
     background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
@@ -231,7 +231,7 @@
     width: 200px; // Ancho fijo para mantener la estética de celular en PC
     max-width: 300px;
     padding: 0.1rem 0.1rem;
-    text-align: left;
+    text-align: right;
     border-radius: 50px;
     border: 10px solid rgba(255, 255, 255, 1);
     font-weight: 700;
@@ -312,7 +312,7 @@
         img {
           position: absolute;
           top: 0;
-          left: 0;
+          right: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -366,15 +366,43 @@
     }
   }
 }
+/* =========================================
+   1. MEDIA QUERY UNIFICADA (max-width: 768px)
+   ========================================= */
 @media (max-width: 768px) {
+  .hero {
+    height: auto !important;
+    min-height: 30vh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .hero-background {
+    position: relative !important;
+    margin-top: 35px !important;
+    height: 280px !important;
+    display: block !important;
+    z-index: 1 !important;
+  }
+
+  .hero-background img {
+    margin-top: -65px !important;
+    transform: scale(1.5) !important;
+  }
+
   .hero-content {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     width: 100% !important;
     padding: 20px !important;
+    margin-top: -20px !important; /* Subir botones al navbar */
+    position: relative !important;
+    z-index: 90 !important;
   }
+
   .cta-buttons-left,
   .cta-buttons-right {
     display: flex !important;
@@ -383,105 +411,27 @@
     width: 15% !important;
     z-index: 5 !important;
   }
-  .btn-glass {
-    width: 100% !important;
-    font-size: 0.72rem !important;
-    padding: 10px 4px !important;
-    text-align: right !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    height: auto !important;
-    min-height: calc(30vh - 1px) !important;
-    padding-top: 0 !important;
-  }
-  .hero-content {
-    margin-top: 1px !important;
-    align-items: flex-start !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    height: auto !important;
-    min-height: 30vh !important;
-    padding-bottom: 20px !important;
-  }
-  .hero-background {
-    position: absolute !important;
-    top: 20%;
-    height: 100% !important;
-    z-index: 1 !important;
-  }
-  .hero-content {
-    margin-top: 30px !important;
-    z-index: 2 !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    height: auto !important;
-    min-height: 30vh !important;
-    padding-bottom: 0 !important;
-    overflow: hidden !important;
-  }
-  .hero-background {
-    position: relative !important;
-    margin-top: -0px !important;
-    height: 280px !important;
-    display: block !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero-background {
-    margin-top: 35px !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero-content {
-    margin-top: -5px !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero-content {
-    margin-top: -20px !important; /*/ subir botones to navbar /*/
-    position: relative !important;
-    z-index: 90 !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero-background img {
-    margin-top: -65px !important;
-    transform: scale(1.5) !important;
-  }
-}
 
-@media (max-width: 768px) {
-}
-
-@media (max-width: 768px) {
-  .btn-glass {
-    width: max-content !important;
-    min-width: 30px !important;
-    padding: 7px 10px !important;
-  }
-}
-
-@media (max-width: 768px) {
   .btn-glass {
     width: 140px !important;
     max-width: 140px !important;
+    min-width: 30px !important;
+    font-size: 0.72rem !important;
     padding: 7px 10px !important;
-    text-align: left !important;
+    text-align: right !important;
     display: inline-block !important;
   }
 }
+
+/* =========================================
+   2. ESTILOS GENERALES (SUCCESS HEADER)
+   ========================================= */
 .success-header {
   text-align: left;
-  padding: 4rem 4rem 4rem;
+  padding: 4rem;
   position: relative;
 
-  /* Etiqueta tipo "Badge" superior para darle toque corporativo moderno */
+  /* Etiqueta tipo "Badge" */
   .badge-subtitle {
     display: inline-block;
     font-size: 0.75rem;
@@ -490,12 +440,12 @@
     letter-spacing: 2px;
     color: #5ccb5f;
     background: rgba(92, 203, 95, 0.1);
-    padding: 1rem 1rem;
+    padding: 1rem;
     border-radius: 50px;
     margin-bottom: 0.8rem;
   }
 
-  /* Título principal con degradado y presencia */
+  /* Título principal */
   .success-title {
     font-size: 2.3rem;
     font-weight: 800;
@@ -503,14 +453,12 @@
     margin: 0;
     letter-spacing: -0.5px;
 
-    /* Efecto de color degradado en la palabra "éxito" para resaltar */
     span.highlight {
       background: linear-gradient(90deg, #5ccb5f, #34d087);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Puntos animados con efecto de parpadeo */
     .dots {
       display: inline-flex;
       gap: 2px;
@@ -539,11 +487,11 @@
   }
 }
 
-/* Animación sutil para los puntos */
+/* =========================================
+   3. ANIMACIONES Y TEMAS
+   ========================================= */
 @keyframes pulseDots {
-  0%,
-  80%,
-  100% {
+  0%, 80%, 100% {
     transform: scale(0);
     opacity: 0.3;
   }
@@ -553,7 +501,6 @@
   }
 }
 
-/* Opcional: Si estás en modo Fundación Segat (Azul), puedes ajustar los tonos automáticamente si usas la clase padre */
 .segat-theme-active {
   .success-header {
     .badge-subtitle {
@@ -565,7 +512,6 @@
     }
   }
 }
-
 /* === MODIFICACIÓN: 2 COLUMNAS PARA PRODUCTOS / LOGOS EN MÓVIL === */
 @media screen and (max-width: 768px) {
   .featured-products {
@@ -629,30 +575,30 @@
 
   .hero-background {
     position: absolute;
-    width: 680px;
-    height: 680px;
-    top: 2%;  /* envia el logo pa arriba */
-    left: 30%; /* centra el logo */
+    width: 480px;
+    height: 480px;
+    top: 18%;  /* envia el logo pa arriba */
+    left: 35%; /* centra el logo */
     transform: translate(-10%, -7%); /* aqui empezo la cuadracion del logo hacia abajo y a la izq*/
     background: url('/assets/logo1.jpeg') no-repeat center center;
     background-size: contain;
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
     width: 100%;
-    max-width: 700px;
-    height: 600px;
+    max-width: 1000px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
 
     .circular-menu {
-    transform: scale(1);     transform-origin: center center;
+    transform: scale(1.3);     transform-origin: right center;
       position: relative;
       width: 0;
       height: 0;
@@ -666,8 +612,8 @@
         border: 1px solid rgba(74, 222, 128, 0.5);
         color: #ffffff;
         padding: 14px 20px;
-        padding-left: 24px;
-        text-align: left;
+        padding-left: 34px;
+        text-align: right;
         width: 175px;
         border-radius: 50px;
         font-size: 1.1rem;
@@ -704,11 +650,11 @@
     padding: 20px;
 
     .circular-menu {
-    transform: scale(1.1);     transform-origin: center center;
+    transform: scale(1.1);     transform-origin: right center;
       position: relative;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: right;
       gap: 8px;
       width: 100%;
 
@@ -747,7 +693,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
@@ -758,17 +704,17 @@
 .cta-buttons-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
   width: 260px;
   z-index: 10;
 }
 
 .cta-buttons-right {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .btn-glass {
-  text-align: center;
+  text-align: right;
 }
 
 /* Ajustes específicos para Celulares (Pantallas menores a 768px) */
@@ -782,4 +728,21 @@
 
   .btn-glass {
   }
+}
+
+
+/* === AJUSTE FINALES DE ORIENTACIÓN Y ALINEACIÓN === */
+.btn-glass {
+  background: rgba(15, 45, 20, 0.85);
+  border: 1px solid rgba(74, 222, 128, 0.5);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.btn-glass.btn-left {
+}
+
+.btn-glass.btn-right {
 }

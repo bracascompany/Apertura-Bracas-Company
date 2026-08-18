@@ -1,39 +1,27 @@
-<div class="landing-container">
-  <section class="hero">
-    <div class="hero-background"></div>
-    <div class="hero-content">
-  <div class="circular-menu">
-    <button class="btn-glass">Mi Cuenta</button>
-    <button class="btn-glass">Ofertas</button>
-    <button class="btn-glass">Nosotros</button>
-    <button class="btn-glass">Contactos</button>
-    <button class="btn-glass">Soporte</button>
-    <button class="btn-glass">Ubicación</button>
-    <button class="btn-glass">Catálogo</button>
-    <button class="btn-glass">Bracasfood</button>
-    <button class="btn-glass">Brades</button>
-    <button class="btn-glass">Bracastyles</button>
-    <button class="btn-glass">C&M[JB]_Studios</button>
-    <button class="btn-glass btn-right" (click)="goToSegatPage()">Fundación SEGAT</button>
-  </div>
-</div>
-  </section>
+import re
 
-  <div class="promo-banner success-header">
+with open('src/app/pages/landing/landing.html', 'r') as f:
+    content = f.read()
+
+# Definimos la nueva sección moderna de casos de éxito en formato carrusel
+new_cases_section = """  <div class="promo-banner success-header">
     <h2 class="success-title">
       Casos de éxito <span class="dots"><span>.</span><span>.</span><span>.</span></span>
     </h2>
   </div>
 
-  <section class="featured-products">
+  <section class="featured-products success-carousel-section">
     <div class="section-header"></div>
-    <div class="product-grid">
-      <div class="product-card" (click)="goToBracasfood()" style="cursor: pointer">
+    <div class="product-grid horizontal-scroll-grid">
+      
+      <!-- 1. Bracasfood -->
+      <div class="product-card success-card-animated" (click)="goToBracasfood()" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log2.jpeg" alt="Bracasfood" />
         </div>
         <div class="product-info">
           <h3>Bracasfood</h3>
+          <p class="case-desc">¡Tu paladar, nuestra prioridad!</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -61,12 +49,14 @@
         </div>
       </div>
 
-      <div class="product-card">
+      <!-- 2. Brades -->
+      <div class="product-card success-card-animated">
         <div class="product-image">
           <img src="assets/log3.jpeg" alt="Brades" />
         </div>
         <div class="product-info">
           <h3>Brades</h3>
+          <p class="case-desc">Confecciones de calidad y estilo.</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -91,12 +81,15 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- 3. Bracastyles -->
+      <div class="product-card success-card-animated">
         <div class="product-image">
           <img src="assets/log4.jpeg" alt="Bracastyles" />
         </div>
         <div class="product-info">
           <h3>Bracastyles</h3>
+          <p class="case-desc">Moda vanguardista y tendencias.</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -121,12 +114,15 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- 4. Cont&Markets[JB]_Studios -->
+      <div class="product-card success-card-animated">
         <div class="product-image">
           <img src="assets/log5.jpeg" alt="Cont&Markets[JB]_Studios" />
         </div>
         <div class="product-info">
           <h3>Cont&Markets[JB]_Studios</h3>
+          <p class="case-desc">Soluciones estratégicas digitales.</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -158,12 +154,15 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- 5. FundaciónSEGAT -->
+      <div class="product-card success-card-animated">
         <div class="product-image" (click)="goToSegatPage()" style="cursor: pointer">
           <img src="assets/log6.jpeg" alt="FundaciónSEGAT" />
         </div>
         <div class="product-info">
           <h3>FundaciónSEGAT</h3>
+          <p class="case-desc">Innovación, Sostenibilidad y Tecnología.</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -190,12 +189,15 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- 6. Face Brand Digital -->
+      <div class="product-card success-card-animated">
         <div class="product-image">
           <img src="assets/facebranddigitallogo.jpg" alt="FaceBrand Digital" />
         </div>
         <div class="product-info">
           <h3>Face Brand Digital</h3>
+          <p class="case-desc">Transformación digital de impacto.</p>
           <div class="price-row">
             <span class="price"></span>
             <button
@@ -227,6 +229,21 @@
           </div>
         </div>
       </div>
+
     </div>
-  </section>
-</div>
+  </section>"""
+
+# Buscamos el bloque actual de éxito y lo reemplazamos
+pattern = r'  <div class="promo-banner success-header">.*?<\/section>\s*<\/div>'
+updated_content, count = re.subn(pattern, new_cases_section, content, flags=re.DOTALL)
+
+if count > 0:
+    with open('src/app/pages/landing/landing.html', 'w') as f:
+        f.write(updated_content)
+    print("¡Se actualizó con éxito la sección de Casos de Éxito en landing.html!")
+else:
+    print("No se pudo encontrar el patrón exacto, realizando reemplazo alternativo...")
+    # Patrón alternativo más amplio si es necesario
+    start_idx = content.find('Casos de éxito')
+    if start_idx != -1:
+        print("Encontrado 'Casos de éxito', pero se requiere ajuste manual o patrón específico.")
