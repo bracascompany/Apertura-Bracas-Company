@@ -8,22 +8,22 @@
 
 // 1. EL CONTENEDOR PRINCIPAL
 .hero {
-  height: 100vh;
-  min-height: 100px;
+  height: 90vh;
+  min-height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   background: #133114;
-  padding: 20px 0;
+  padding: 20px 1px;
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 
   @media (max-width: 480px) {
-    padding-bottom: 10px;
+    padding-bottom: 9px;
   }
 }
 
@@ -52,10 +52,10 @@
 .hero-content {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 850px;
   height: 100%;
   z-index: 10;
-  display: flex;
+  display: center;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +68,7 @@
   position: static !important; /* Quitamos absolute para usar flexbox fluido */
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 3px;
   width: 400px;
   z-index: 10;
 }
@@ -82,15 +82,15 @@
   background: rgba(19, 49, 20, 0.7);
   color: #ffffff;
   border: 1px solid rgba(92, 203, 95, 0.5);
-  border-radius: 25px;
-  padding: 10px 10px;
+  border-radius: 15px;
+  padding: 10px 60px;
   font-family: 'Segoe UI', Roboto, sans-serif;
   font-size: 33px;
   font-weight: 500;
   cursor: pointer;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   text-align: right;
   text-transform: uppercase;
@@ -99,7 +99,7 @@
   &:hover {
     background: rgba(92, 203, 95, 0.3);
     border-color: #5ccb5f;
-    transform: translateY(-10px); /* forma de circulo para el logo */
+    transform: translateY(10px); /* forma de circulo para el logo */
     box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4);
   }
 }
@@ -124,7 +124,7 @@
     flex-direction: row !important; /* FORZAMOS dos columnas laterales */
     justify-content: space-between;
     align-items: center;
-    padding: 10 10px;
+    padding: 10px 10px;
     width: 100%;
     z-index: 10;
   }
@@ -133,15 +133,15 @@
   .cta-buttons-right {
     position: relative !important; /* Quitamos el absolute para que floten a los lados */
     top: 18% !important;
-    right: 165%;
+    right: 105%;
     right: unset !important;
     width: 15%; /* Ancho para no tapar el centro */
-    gap: 14px; /* Espacio vertical ultra reducido entre botones */
+    gap: 4px; /* Espacio vertical ultra reducido entre botones */
     display: flex;
   }
 
   .cta-buttons-right {
-    align-items: flex-end; /* Alinea los botones al borde derecho del celular */
+    align-items: flex-start; /* Alinea los botones al borde derecho del celular */
   }
 
   .btn-glass {
@@ -150,11 +150,11 @@
     letter-spacing: 0.3px;
     text-transform: uppercase;
     width: 100%;
-    padding: 8px 8px !important; /* Relleno vertical y horizontal minimizado */
+    padding: 18px 18px !important; /* Relleno vertical y horizontal minimizado */
     font-size: 7.5px !important; /* Texto optimizado para no desbordarse */
     background: rgba(0, 30, 0, 0.7);
     border-color: #5ccb5f;
-    border-radius: 50px;
+    border-radius: 33px;
     backdrop-filter: blur(4px);
   }
 
@@ -166,7 +166,7 @@
     transform: translateX(-70%);
     background: rgba(255, 255, 255, 0.9);
     padding: 4px 10px;
-    border-radius: 4px;
+    border-radius: 33px;
     z-index: 11;
     border: 2px solid #5ccb5f;
     display: block;
@@ -183,7 +183,7 @@
    ============================================================ */
 .promo-banner {
   padding: 40px 5% 20px;
-  text-align: right;
+  text-align: center;
   h2 {
     font-size: 2.8rem;
     background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
@@ -208,7 +208,7 @@
 .btn-glass:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: #ffffff;
-  transform: translateY(55px); /* Pequeño salto hacia arriba */
+  transform: translateY(-55px); /* Pequeño salto hacia arriba */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -230,9 +230,9 @@
   .btn-secondary {
     width: 200px; // Ancho fijo para mantener la estética de celular en PC
     max-width: 300px;
-    padding: 0.1rem 0.1rem;
-    text-align: right;
-    border-radius: 50px;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    border-radius: 33px;
     border: 10px solid rgba(255, 255, 255, 1);
     font-weight: 700;
     font-size: 1rem;
@@ -253,7 +253,7 @@
     &:hover {
       background: rgba(92, 203, 95, 0.3); // Brillo verde al pasar el mouse
       border-color: #5ccb5f;
-      transform: translateY(-3px);
+      transform: translateY(3px);
       box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
       color: #ffffff;
     }
@@ -284,7 +284,7 @@
   background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
   .section-header {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 30px;
     a {
       color: #ffffff;
@@ -300,7 +300,7 @@
 
     .product-card {
       background: #f9f9f9;
-      border-radius: 20px;
+      border-radius: 33px;
       overflow: hidden;
 
       .product-image {
@@ -326,7 +326,7 @@
           background: #ff6702;
           color: white;
           padding: 5px 15px;
-          border-radius: 20px;
+          border-radius: 33px;
           font-weight: bold;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
           z-index: 5;
@@ -354,12 +354,12 @@
             color: white;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 33%;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
           }
         }
       }
@@ -374,7 +374,7 @@
     height: auto !important;
     min-height: 30vh !important;
     padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-bottom: 1 !important;
     overflow: hidden !important;
   }
 
@@ -397,7 +397,7 @@
     justify-content: space-between !important;
     align-items: flex-start !important;
     width: 100% !important;
-    padding: 20px !important;
+    padding: 10px !important;
     margin-top: -20px !important; /* Subir botones al navbar */
     position: relative !important;
     z-index: 90 !important;
@@ -407,8 +407,8 @@
   .cta-buttons-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
-    width: 15% !important;
+    gap: 3px !important;
+    width: 95% !important;
     z-index: 5 !important;
   }
 
@@ -417,7 +417,7 @@
     max-width: 140px !important;
     min-width: 30px !important;
     font-size: 0.72rem !important;
-    padding: 7px 10px !important;
+    padding: 20px 20px !important;
     text-align: right !important;
     display: inline-block !important;
   }
@@ -427,8 +427,8 @@
    2. ESTILOS GENERALES (SUCCESS HEADER)
    ========================================= */
 .success-header {
-  text-align: left;
-  padding: 4rem;
+  text-align: right;
+  padding: 7rem;
   position: relative;
 
   /* Etiqueta tipo "Badge" */
@@ -441,7 +441,7 @@
     color: #5ccb5f;
     background: rgba(92, 203, 95, 0.1);
     padding: 1rem;
-    border-radius: 50px;
+    border-radius: 33px;
     margin-bottom: 0.8rem;
   }
 
@@ -555,7 +555,7 @@
 @media screen and (min-width: 769px) {
   .cta-buttons-left,
   .cta-buttons-right {
-    width: 280px !important; /* Reducimos el contenedor lateral para que no invadan el centro */
+    width: 290px !important; /* Reducimos el contenedor lateral para que no invadan el centro */
   }
 
   .btn-glass {
@@ -577,8 +577,8 @@
     position: absolute;
     width: 480px;
     height: 480px;
-    top: 18%;  /* envia el logo pa arriba */
-    left: 35%; /* centra el logo */
+    top: 20%;  /* envia el logo pa arriba */
+    left: 40%; /* centra el logo */
     transform: translate(-10%, -7%); /* aqui empezo la cuadracion del logo hacia abajo y a la izq*/
     background: url('/assets/logo1.jpeg') no-repeat center center;
     background-size: contain;
@@ -603,20 +603,20 @@
       width: 0;
       height: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: left;
+      justify-content: left;
 
       .btn-glass {
         position: absolute;
         background: rgba(15, 45, 20, 0.85);
         border: 1px solid rgba(74, 222, 128, 0.5);
         color: #ffffff;
-        padding: 14px 20px;
-        padding-left: 34px;
-        text-align: right;
-        width: 175px;
-        border-radius: 50px;
-        font-size: 1.1rem;
+        padding: 0.5 55px !important; display: flex !important; align-items: center !important; justify-content: left !important; text-align: center !important;  /* el puta texto y el buton */
+        padding-left: 5px !important;
+        text-align: center;
+        width: 200px;
+        border-radius: 70px;
+        font-size: 1rem !important; font-weight: 900 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important;
         font-weight: 900;
         backdrop-filter: blur(6px);
         white-space: nowrap;
@@ -625,18 +625,21 @@
         transition: all 0.3s ease;
 
         /* Distribución matemática exacta en círculo de radio 230px (12 elementos, separados 30deg) */
-        &:nth-child(1)  { transform: rotate(0deg) translate(210px) rotate(0deg); }
-        &:nth-child(2)  { transform: rotate(30deg) translate(210px) rotate(-30deg); }
-        &:nth-child(3)  { transform: rotate(60deg) translate(210px) rotate(-60deg); }
-        &:nth-child(4)  { transform: rotate(90deg) translate(210px) rotate(-90deg); }
-        &:nth-child(5)  { transform: rotate(120deg) translate(210px) rotate(-120deg); }
-        &:nth-child(6)  { transform: rotate(150deg) translate(210px) rotate(-150deg); }
-        &:nth-child(7)  { transform: rotate(180deg) translate(210px) rotate(-180deg); }
-        &:nth-child(8)  { transform: rotate(210deg) translate(210px) rotate(-210deg); }
-        &:nth-child(9)  { transform: rotate(240deg) translate(210px) rotate(-240deg); }
-        &:nth-child(10) { transform: rotate(270deg) translate(210px) rotate(-270deg); }
-        &:nth-child(11) { transform: rotate(300deg) translate(210px) rotate(-300deg); }
-        &:nth-child(12) { transform: rotate(330deg) translate(210px) rotate(-330deg); }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        &:nth-child(1)  { transform: rotate(0deg) translate(220px) rotate(0deg); } /* Cuenta*/
+        &:nth-child(2)  { transform: rotate(30deg) translate(230px) rotate(-30deg); } /* Ofertas*/
+        &:nth-child(3)  { transform: rotate(60deg) translate(220px) rotate(-60deg); } /* we*/
+        &:nth-child(4)  { transform: rotate(90deg) translate(190px) rotate(-90deg); }  /* Contactos*/
+        &:nth-child(5)  { transform: rotate(120deg) translate(220px) rotate(-120deg); } /* Soporte*/
+        &:nth-child(6)  { transform: rotate(150deg) translate(260px) rotate(-150deg); } /* Ubicacion*/
+        &:nth-child(7)  { transform: rotate(180deg) translate(260px) rotate(-180deg); } /* Catalogo*/
+        &:nth-child(8)  { transform: rotate(210deg) translate(250px) rotate(-210deg); } /* Bracasfood*/
+        &:nth-child(9)  { transform: rotate(240deg) translate(200px) rotate(-240deg); } /* Brades*/
+        &:nth-child(10) { transform: rotate(270deg) translate(210px) rotate(-270deg); } /* Bracasstyle*/
+        &:nth-child(11) { transform: rotate(300deg) translate(200px) rotate(-300deg); } /* C&M*/
+        &:nth-child(12) { transform: rotate(330deg) translate(220px) rotate(-330deg); } /* SEGAT*/
       }
     }
   }
@@ -647,7 +650,7 @@
   .hero .hero-content {
     height: auto;
     min-height: calc(30vh - 10px);
-    padding: 20px;
+    padding: 10px;
 
     .circular-menu {
     transform: scale(1.1);     transform-origin: right center;
@@ -655,7 +658,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: right;
-      gap: 8px;
+      gap: 1px;
       width: 100%;
 
       .btn-glass {
@@ -670,7 +673,7 @@
   .hero {
     height: auto !important;
     min-height: 30vh !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 10px !important;
   }
   .hero-content {
     display: flex !important;
@@ -679,9 +682,9 @@
     margin-top: 10px !important;
   }
   .btn-glass {
-    width: 175px !important;
+    width: 245px !important;
     padding: 12px 20px !important;
-    text-align: left !important;
+    text-align: center !important;
     font-size: 1rem !important;
   }
 }
@@ -693,7 +696,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
@@ -704,17 +707,17 @@
 .cta-buttons-right {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 0.5px;
   width: 260px;
   z-index: 10;
 }
 
 .cta-buttons-right {
-  align-items: flex-start;
+  align-items: right;
 }
 
 .btn-glass {
-  text-align: right;
+  text-align: center;
 }
 
 /* Ajustes específicos para Celulares (Pantallas menores a 768px) */
@@ -736,8 +739,8 @@
   background: rgba(15, 45, 20, 0.85);
   border: 1px solid rgba(74, 222, 128, 0.5);
   color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 30px;
+  padding: 2px 150px;
+  border-radius: 70px;
   white-space: nowrap;
 }
 
