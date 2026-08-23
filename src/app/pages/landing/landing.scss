@@ -776,18 +776,18 @@
   // Redúcelos a un radio de entre 110px y 125px
   .tu-contenedor-de-botones {
     // Ejemplo para los elementos hijos:
-    &:nth-child(1) { transform: rotate(0deg) translate(215px) rotate(0deg) scale(0.85) !important; }
-    &:nth-child(2) { transform: rotate(30deg) translate(215px) rotate(-30deg) scale(0.85) !important; }
-    &:nth-child(3) { transform: rotate(60deg) translate(220px) rotate(-60deg) scale(0.85) !important; }
-    &:nth-child(4) { transform: rotate(90deg) translate(225px) rotate(-90deg) scale(0.85) !important; }
+    &:nth-child(1) { transform: rotate(0deg) translate(105px) rotate(0deg) scale(0.85) !important; }
+    &:nth-child(2) { transform: rotate(30deg) translate(105px) rotate(-30deg) scale(0.85) !important; }
+    &:nth-child(3) { transform: rotate(60deg) translate(100px) rotate(-60deg) scale(0.85) !important; }
+    &:nth-child(4) { transform: rotate(90deg) translate(205px) rotate(-90deg) scale(0.85) !important; }
 
     // Para los botones exteriores más lejanos (líneas 660-664) como CATÁLOGO que usaban 216px:
     // Redúcelos a un radio de máximo 135px y achica un poco el tamaño de la caja (width)
-    &:nth-child(5) { transform: rotate(-120deg) translate(230px) rotate(120deg) scale(0.85) !important; width: 100px !important; }
+    &:nth-child(5) { transform: rotate(-120deg) translate(130px) rotate(120deg) scale(0.85) !important; width: 100px !important; }
     &:nth-child(6) { transform: rotate(-150deg) translate(235px) rotate(150deg) scale(0.85) !important; width: 110px !important; }
-    &:nth-child(7) { transform: rotate(-180deg) translate(275px) rotate(180deg) scale(0.85) !important; width: 110px !important; } /* CATÁLOGO */
-    &:nth-child(8) { transform: rotate(-210deg) translate(275px) rotate(210deg) scale(0.85) !important; width: 115px !important; }
-    &:nth-child(9) { transform: rotate(-240deg) translate(270px) rotate(240deg) scale(0.85) !important; width: 100px !important; }
+    &:nth-child(7) { transform: rotate(-180deg) translate(235px) rotate(180deg) scale(0.85) !important; width: 110px !important; } /* CATÁLOGO */
+    &:nth-child(8) { transform: rotate(-210deg) translate(235px) rotate(210deg) scale(0.85) !important; width: 115px !important; }
+    &:nth-child(9) { transform: rotate(-240deg) translate(230px) rotate(240deg) scale(0.85) !important; width: 100px !important; }
   }
 }
 
@@ -848,7 +848,7 @@
     border-radius: 20px !important;
     white-space: nowrap !important;
     text-align: center !important;
-    top: 1% !important;
+    top: 38% !important;
     left: 0 !important;
   }
 
@@ -865,9 +865,59 @@
 
   .hero-footer-banner {
     position: absolute !important;
-    bottom: -1% !important;
+    bottom: 1% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 12 !important;
+  }
+}
+// ==========================================
+// 2. COMPORTAMIENTO PARA CELULAR (Moto G72 / Realme C55)
+// ==========================================
+@media (max-width: 480px) {
+  .landing-container {
+    width: 92vw !important;   // Le damos el ancho casi total de la pantalla del cel
+    height: 92vw !important;  // Mantiene el contenedor perfectamente cuadrado
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .btn-glass {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    white-space: nowrap;
+    
+    // Mantenemos la fuente compacta para que los textos no se pisen entre sí
+    font-size: 9px !important; 
+    padding: 2px 4px !important; 
+
+    // AUMENTAMOS EL RADIO: Subimos de la medida actual a 39vw para expandir la órbita
+    $radio_celular: 78vw; 
+
+    transform: translate(-10%, -5%) 
+               rotate(var(--angle)) 
+               translateX($radio_celular) 
+               rotate(calc(-1 * var(--angle))) !important;
+  }
+
+
+  /* ========================================================
+     CONTROL INDIVIDUAL DE DISTANCIAS AL BORDE DEL LOGO
+     ======================================================== */
+
+  /* ACERCAR OFERTAS (Si te queda muy lejos del círculo interno) */
+  .btn-glass:nth-child(3) { 
+    --radio-circulo: 52vw !important; 
+  }
+
+  /* ALEJAR UBICACIÓN AL BORDE MÁXIMO EXTERIOR */
+  .btn-glass:nth-child(9) { 
+    --radio-circulo: 184vw !important; 
+  }
+
+  /* ALEJAR CATÁLOGO AL BORDE MÁXIMO EXTERIOR */
+  .btn-glass:nth-child(8) { 
+    --radio-circulo: 100vw !important; 
   }
 }
