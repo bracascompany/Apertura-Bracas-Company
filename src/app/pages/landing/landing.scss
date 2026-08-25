@@ -214,8 +214,6 @@
 
 /* Ajuste para que en móviles se vean uno bajo el otro y no se amontonen */
 @media (max-width: 768px) {
-  .hero-content {
-  }
   .cta-buttons-left,
   .cta-buttons-right {
     position: static;
@@ -410,7 +408,7 @@
     max-width: 140px !important;
     min-width: 10px !important;
     font-size: 0.72rem !important;
-    padding: 20px 20px !important;
+    padding: 10px 20px !important;
     text-align: right !important;
     display: inline-block !important;
   }
@@ -658,9 +656,9 @@
        BLOQUE IZQUIERDO CON DIRECCIÓN RTL (El texto crece hacia afuera automáticamente)
        ========================================================================= */
     &:nth-child(5)  { transform: rotate(-120deg) translate(200px) rotate(120deg);  width: 140px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* SOPORTE */
-    &:nth-child(6)  { transform: rotate(-150deg) translate(215px) rotate(150deg);  width: 160px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* UBICACIÓN */
+    &:nth-child(6)  { transform: rotate(-150deg) translate(195px) rotate(150deg);  width: 160px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* UBICACIÓN */
     &:nth-child(7)  { transform: rotate(-180deg) translate(216px) rotate(180deg);  width: 150px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* CATÁLOGO */
-    &:nth-child(8)  { transform: rotate(-210deg) translate(215px) rotate(210deg);  width: 175px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* BRACASFOOD */
+    &:nth-child(8)  { transform: rotate(-210deg) translate(200px) rotate(210deg);  width: 175px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* BRACASFOOD */
     &:nth-child(9)  { transform: rotate(-240deg) translate(208px) rotate(240deg);  width: 130px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* BRADES */
 
 
@@ -696,7 +694,7 @@
     padding: 1px;
 
     .circular-menu {
-      transform: scale(1);
+      transform: scale(2);
       transform-origin: right center;
       position: relative;
       display: flex;
@@ -717,7 +715,7 @@
   .hero {
     height: auto !important;
     min-height: 30vh !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 6px !important;
   }
   .hero-content {
     display: flex !important;
@@ -785,7 +783,7 @@
     // Redúcelos a un radio de máximo 135px y achica un poco el tamaño de la caja (width)
     &:nth-child(5) { transform: rotate(-120deg) translate(130px) rotate(120deg) scale(0.85) !important; width: 100px !important; }
     &:nth-child(6) { transform: rotate(-150deg) translate(235px) rotate(150deg) scale(0.85) !important; width: 110px !important; }
-    &:nth-child(7) { transform: rotate(-180deg) translate(235px) rotate(180deg) scale(0.85) !important; width: 110px !important; } /* CATÁLOGO */
+    &:nth-child(7) { transform: rotate(-180deg) translate(275px) rotate(180deg) scale(0.85) !important; width: 110px !important; } /* CATÁLOGO */
     &:nth-child(8) { transform: rotate(-210deg) translate(235px) rotate(210deg) scale(0.85) !important; width: 115px !important; }
     &:nth-child(9) { transform: rotate(-240deg) translate(230px) rotate(240deg) scale(0.85) !important; width: 100px !important; }
   }
@@ -865,7 +863,7 @@
 
   .hero-footer-banner {
     position: absolute !important;
-    bottom: 1% !important;
+    bottom: -1% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 12 !important;
@@ -893,9 +891,9 @@
     padding: 2px 4px !important; 
 
     // AUMENTAMOS EL RADIO: Subimos de la medida actual a 39vw para expandir la órbita
-    $radio_celular: 78vw; 
+    $radio_celular: 77vw; 
 
-    transform: translate(-10%, -5%) 
+    transform: translate(-10%, -15%) 
                rotate(var(--angle)) 
                translateX($radio_celular) 
                rotate(calc(-1 * var(--angle))) !important;
@@ -908,16 +906,29 @@
 
   /* ACERCAR OFERTAS (Si te queda muy lejos del círculo interno) */
   .btn-glass:nth-child(3) { 
-    --radio-circulo: 52vw !important; 
+    --radio-circulo: 4vw !important; 
   }
 
   /* ALEJAR UBICACIÓN AL BORDE MÁXIMO EXTERIOR */
   .btn-glass:nth-child(9) { 
-    --radio-circulo: 184vw !important; 
+    --radio-circulo: 244vw !important; 
   }
 
   /* ALEJAR CATÁLOGO AL BORDE MÁXIMO EXTERIOR */
   .btn-glass:nth-child(8) { 
-    --radio-circulo: 100vw !important; 
+    --radio-circulo: 44vw !important; 
+  }
+}
+
+/* ==========================================
+   TERMINAL FORCED PATCH: MI CUENTA ORBIT FIX
+   ========================================== */
+@media screen and (max-width: 480px) {
+  a.btn-glass[style*="-40deg"], 
+  a.btn-glass[style*="-40"] {
+    --radio-circulo: 35vw !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
   }
 }
