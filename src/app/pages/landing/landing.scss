@@ -874,8 +874,8 @@
 // ==========================================
 @media (max-width: 480px) {
   .landing-container {
-    width: 92vw !important;   // Le damos el ancho casi total de la pantalla del cel
-    height: 92vw !important;  // Mantiene el contenedor perfectamente cuadrado
+    width: 100vw !important;   // Le damos el ancho casi total de la pantalla del cel
+    height: 100vw !important;  // Mantiene el contenedor perfectamente cuadrado
     position: relative;
     margin: 0 auto;
   }
@@ -928,7 +928,46 @@
   a.btn-glass[style*="-40"] {
     --radio-circulo: 35vw !important;
     position: absolute !important;
-    top: 50% !important;
+    top: 20% !important;
     left: 50% !important;
+  }
+}
+
+/* ==========================================================================
+   ELIMINAR ESPACIO BLANCO INFERIOR EN MÓVILES
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 360px !important; /* Reducimos la altura fija para cortar el espacio vacío */
+    min-height: auto !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .landing-container {
+    height: auto !important; /* Permitimos que el contenedor se adapte al contenido real */
+    min-height: auto !important;
+  }
+}
+
+/* ==========================================================================
+   REDUCCIÓN ABSOLUTA DEL BANNER DE ANUNCIO EN MÓVILES
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .promo-banner.success-header {
+    padding: 8px 0 !important;       /* Reduce el espacio interno superior e inferior al mínimo */
+    margin: 0 auto !important;       /* Elimina márgenes exteriores empujados */
+    min-height: auto !important;     /* Rompe cualquier alto mínimo forzado */
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Si deseas que el texto interior se vea más plano y compacto */
+  .promo-banner.success-header * {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;      /* Hace la letra del anuncio sutil */
   }
 }
