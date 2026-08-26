@@ -794,7 +794,7 @@
    ======================================================================== */
 @media screen and (max-width: 480px) {
   .hero {
-    height: 520px !important;
+    height: 600px !important;
     position: relative !important;
     display: block !important;
     width: 100% !important;
@@ -970,4 +970,12 @@
     padding: 0 !important;
     font-size: 12px !important;      /* Hace la letra del anuncio sutil */
   }
+}
+.splash-logo {
+  width: 800px;  /* Subido de 130px a 180px */
+  height: 800px; /* Subido de 130px a 180px */
+  border-radius: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 50px;
+  object-fit: cover;
 }

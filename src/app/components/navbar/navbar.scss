@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* Empuja las acciones automáticamente a la derecha */
   align-items: center;
   padding: 1rem 5%;
   background: rgba(255, 255, 255, 0.85);
@@ -12,7 +12,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 
-  /* Logo por defecto (Verde Bracascompany) */
+  /* LOGO CENTRADO ABSOLUTO (Eje de pantalla exacto) */
   .logo {
     font-size: 1.9rem;  
     font-weight: 800;
@@ -21,29 +21,20 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-
-    a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-
-      &:hover {
-        color: #41d195;
-      }
-    }
+    
+    /* El truco del centro perfecto */
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    white-space: nowrap !important;
   }
 
   .nav-actions {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    z-index: 10; /* Se mantiene arriba para que sea clickeable */
 
     .icon-btn {
       background: none;
@@ -58,21 +49,6 @@
         transform: scale(1.1);
         color: #5CCB5F;
       }
-    }
-
-    .cart-count {
-      background: #5CCB5F;
-      color: white;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 10px;
-      position: absolute;
-      top: -5px;
-      right: -10px;
-    }
-
-    .cart-btn {
-      position: relative;
     }
 
     .btn-login-nav {
@@ -96,7 +72,7 @@
   }
 }
 
-/* --- MODO SEGAT (Se activa automáticamente al entrar a la ruta de la fundación) --- */
+/* --- MODO SEGAT --- */
 .navbar.segat-theme-active {
   border-bottom: 1px solid #cfe2f3 !important;
   box-shadow: 0 4px 12px rgba(11, 37, 69, 0.08) !important;
@@ -109,16 +85,6 @@
     -webkit-text-fill-color: transparent !important;
   }
 
-  .nav-links {
-    a {
-      color: #134074 !important;
-
-      &:hover {
-        color: #00b4d8 !important;
-      }
-    }
-  }
-
   .nav-actions {
     .icon-btn {
       color: #134074 !important;
@@ -126,10 +92,6 @@
       &:hover {
         color: #00b4d8 !important;
       }
-    }
-
-    .cart-count {
-      background: #00b4d8 !important;
     }
 
     .btn-login-nav {
@@ -143,107 +105,26 @@
   }
 }
 
-/* --- AJUSTE DEFINITIVO PARA MÓVIL (Motorola G72, G55, Realme C55) --- */
+/* --- ADAPTABILIDAD MÓVIL (Moto G72 / Realme C55) --- */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.6rem 2% !important;
-    gap: 4px !important;
+    padding: 0.6rem 5% !important;
 
     .logo {
-      font-size: 1.2rem !important;
-      margin-right: 0 !important;
-      flex-shrink: 0 !important;
-    }
-
-    .nav-links {
-      display: flex !important;
-      gap: 0.4rem !important;
-      flex: 1 !important;
-      justify-content: center !important;
-      margin: 0 4px !important;
-
-      a {
-        font-size: 0.93rem !important;
-        font-weight: 600 !important;
-        white-space: nowrap !important;
-      }
+      font-size: 1.25rem !important; /* Escalado proporcional para pantallas pequeñas */
     }
 
     .nav-actions {
-      gap: 0.5rem !important;
-      flex-shrink: 0 !important;
+      gap: 0.8rem !important;
 
       .icon-btn svg, .icon-btn i {
-        font-size: 1rem !important;
-        width: 16px !important;
-        height: 16px !important;
+        width: 18px !important;
+        height: 18px !important;
       }
 
       .btn-login-nav {
-        padding: 0.3rem 0.6rem !important;
-        font-size: 0.69rem !important;
-        border-radius: 50px !important;
-        box-shadow: none !important;
-      }
-
-      .cart-count {
-        top: -6px !important;
-        right: -8px !important;
-        padding: 1px 4px !important;
-        font-size: 0.5rem !important;
-      }
-    }
-  }
-}
-/* --- AJUSTE ULTRA-ESPECÍFICO PARA REALME C55 Y PANTALLAS ESTRECHAS (≤ 412px) --- */
-@media screen and (max-width: 412px) {
-  .navbar {
-    padding: 0.5rem 3% !important;
-    gap: 2px !important;
-
-    /* Ajuste especial para que "Fundación SEGAT" quepa en una sola línea */
-    .logo {
-      font-size: 1.05rem !important;
-      letter-spacing: -0.3px !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-    }
-
-    .nav-links {
-      gap: 0.25rem !important;
-      margin: 0 2px !important;
-
-      a {
-        font-size: 0.82rem !important;
-        font-weight: 600 !important;
-        white-space: nowrap !important;
-      }
-    }
-
-    .nav-actions {
-      gap: 0.35rem !important;
-      flex-shrink: 0 !important;
-
-      .icon-btn {
-        padding: 2px !important;
-
-        svg, i {
-          width: 17px !important;
-          height: 17px !important;
-        }
-      }
-
-      .btn-login-nav {
-        padding: 0.3rem 0.55rem !important;
-        font-size: 0.68rem !important;
-        letter-spacing: 0 !important;
-      }
-
-      .cart-count {
-        top: -5px !important;
-        right: -6px !important;
-        font-size: 0.48rem !important;
-        padding: 1px 3px !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
       }
     }
   }
