@@ -21,7 +21,7 @@ export class LandingComponent {
   }
 
   goToBracasfood() {
-    window.location.href = "https://vercel.app";
+    window.location.href = "https://bracasfood.vercel.app/";
   }
 
   goToFaceBrand() {
