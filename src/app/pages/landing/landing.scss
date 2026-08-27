@@ -979,3 +979,96 @@
   margin-bottom: 50px;
   object-fit: cover;
 }
+::ng-deep {
+  .seccion-banner-succes-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 3rem 1.5rem !important;
+    background: #0a0a0a !important; // Fondo negro puro temporal para probar
+    border-bottom: 2px solid #16a34a !important;
+
+    h2 {
+      font-size: 2.8rem !important;
+      font-weight: 900 !important;
+      color: #4ade80 !important; // Verde neón directo para asegurar el cambio
+      text-transform: uppercase !important;
+      letter-spacing: 3px !important;
+      margin: 0 auto !important;
+    }
+
+    .dots span {
+      color: #4ade80 !important;
+      animation: neonBlink 1.4s infinite both;
+      
+      &:nth-child(2) { animation-delay: .2s; }
+      &:nth-child(3) { animation-delay: .4s; }
+    }
+  }
+}
+
+@keyframes neonBlink {
+  0%, 100% { opacity: .1; }
+  50% { opacity: 1; }
+}
+
+/* ===== OPTIMIZACIÓN RESPONSIVA PARA MÓVILES (Realme C55 / Smartphones) ===== */
+@media screen and (max-width: 500px) {
+  .casos-exito-section {
+    padding: 20px 10px !important; /* Reduce el espacio exagerado superior e inferior */
+  }
+
+  .casos-header {
+    margin-bottom: 25px !important; /* Reduce la separación con el contenido inferior */
+  }
+
+  .casos-title {
+    font-size: 1rem !important; /* Baja el tamaño de la letra drásticamente para que quepa bien */
+    letter-spacing: 2px !important; /* Reduce el espaciado entre letras */
+    line-height: 1.2 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  .casos-divider {
+    width: 50px !important; /* Hace la línea decorativa más corta y armónica */
+    height: 3px !important;
+  }
+}
+
+/* ===== REDUCCIÓN DE ESPACIOS EN BLANCO PARA MÓVILES ===== */
+@media screen and (max-width: 500px) {
+  /* Forzar al contenedor principal a no tener espacios gigantes */
+  .casos-exito-section {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Ajustar el contenedor interno del texto */
+  .casos-header, 
+  .seccion-banner-succes-header, 
+  [style*="padding:50px"] {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+}
+
+/* ===== AJUSTE DE PRECISIÓN PARA REALME C55 ===== */
+@media screen and (max-width: 420px) {
+  .casos-title {
+    font-size: 1.4rem !important; /* Achica el texto lo suficiente para que entre en una sola línea */
+    letter-spacing: 1px !important; /* Comprime el espacio entre letras */
+    display: inline-block !important;
+    white-space: nowrap !important; /* Fuerza a que se mantenga en una sola línea pase lo que pase */
+  }
+
+  .casos-header {
+    padding: 5px 0 !important;
+    margin: 5px auto !important;
+  }
+}
