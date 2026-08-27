@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   private router = inject(Router);
 
   isSegatRoute: boolean = false;
+  isFbdRoute: boolean = false;
 
   ngOnInit() {
     this.checkRoute(this.router.url);
@@ -30,6 +31,7 @@ export class NavbarComponent implements OnInit {
 
   private checkRoute(url: string) {
     this.isSegatRoute = url.includes('fundacion-segat');
+    this.isFbdRoute = url.includes('facebrand-digital');
   }
 
   onLogout() {
