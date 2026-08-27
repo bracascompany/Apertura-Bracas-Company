@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -11,9 +11,10 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./footer.scss'],
 })
 export class FooterComponent implements OnInit {
+  private router = inject(Router);
+  
   isSegatRoute: boolean = false;
-
-  constructor(private router: Router) {}
+  isFbdRoute: boolean = false;
 
   ngOnInit() {
     this.checkRoute(this.router.url);
@@ -26,5 +27,6 @@ export class FooterComponent implements OnInit {
 
   private checkRoute(url: string) {
     this.isSegatRoute = url.includes('fundacion-segat');
+    this.isFbdRoute = url.includes('facebrand-digital');
   }
 }

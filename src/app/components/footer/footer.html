@@ -1,16 +1,19 @@
-<footer class="footer" [ngClass]="{ 'segat-theme-active': isSegatRoute }">
+<footer class="footer" [ngClass]="{ 'segat-theme-active': isSegatRoute, 'fbd-theme-active': isFbdRoute }">
   <div class="footer-column">
     <div class="logo-footer" style="font-size: 1.3rem; font-weight: 850; margin-bottom: 1.5rem">
-      {{ isSegatRoute ? 'Fundación SEGAT' : 'Bracascompany' }}
+      <span *ngIf="isSegatRoute">Fundación SEGAT</span>
+      <span *ngIf="isFbdRoute">Face Brand Digital</span>
+      <span *ngIf="!isSegatRoute && !isFbdRoute">Bracascompany</span>
     </div>
     <p>
-      La mejor selección de productos innovadores con el estilo que te define. Innovación y calidad
-      en cada detalle.
+      {{ isFbdRoute 
+        ? 'Soluciones digitales de alto impacto para posicionar y escalar tu identidad de marca en el entorno digital.' 
+        : 'La mejor selección de productos innovadores con el estilo que te define. Innovación y calidad en cada detalle.' }}
     </p>
     <div class="social-icons">
       <a href="#" class="icon"
         ><svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://w3.org"
           width="20"
           height="20"
           viewBox="0 0 24 24"
@@ -24,7 +27,7 @@
       ></a>
       <a href="#" class="icon"
         ><svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://w3.org"
           width="20"
           height="20"
           viewBox="0 0 24 24"
@@ -40,7 +43,7 @@
       ></a>
       <a href="#" class="icon"
         ><svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://w3.org"
           width="20"
           height="20"
           viewBox="0 0 24 24"
@@ -87,7 +90,10 @@
   </div>
 
   <div class="footer-bottom">
-    &copy; 2026 {{ isSegatRoute ? 'Fundación SEGAT' : 'Bracascompany S.A.S. & Asociados' }}. Todos
-    los derechos reservados.
+    &copy; 2026 
+    <span *ngIf="isSegatRoute">Fundación SEGAT</span>
+    <span *ngIf="isFbdRoute">Face Brand Digital</span>
+    <span *ngIf="!isSegatRoute && !isFbdRoute">Bracascompany S.A.S. & Asociados</span>. 
+    Todos los derechos reservados.
   </div>
 </footer>

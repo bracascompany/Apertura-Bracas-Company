@@ -182,3 +182,155 @@
     color: #134074 !important;
   }
 }
+
+/* --- MODO FACE BRAND DIGITAL (FBD) --- */
+.footer.fbd-theme-active {
+  background: #0a0f1d !important;
+  border-top: 1.5px solid #1a66ff !important;
+  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.25) !important;
+
+  .logo-footer {
+    background: linear-gradient(90deg, #ffffff, #1a66ff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 0 8px rgba(26, 102, 255, 0.6));
+  }
+
+  h3 {
+    color: #1a66ff !important;
+    font-weight: 700;
+  }
+
+  p {
+    color: #94a3b8 !important;
+  }
+
+  .footer-column ul li a {
+    color: #64748b !important;
+    transition: color 0.25s, text-shadow 0.25s;
+
+    &:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 5px #1a66ff;
+    }
+  }
+
+  .social-icons .icon {
+    background: #0f172a !important;
+    border-color: rgba(26, 102, 255, 0.4) !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background: #1a66ff !important;
+      border-color: #1a66ff !important;
+      box-shadow: 0 0 10px #1a66ff;
+    }
+  }
+
+  .newsletter {
+    .signup-form {
+      input {
+        background: #0f172a !important;
+        border: 1px solid rgba(26, 102, 255, 0.3) !important;
+        color: #ffffff !important;
+
+        &:focus {
+          border-color: #1a66ff !important;
+          box-shadow: 0 0 8px rgba(26, 102, 255, 0.5);
+        }
+      }
+
+      button {
+        background: #1a66ff !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 8px rgba(26, 102, 255, 0.3);
+
+        &:hover {
+          background: #0052cc !important;
+          box-shadow: 0 0 12px #1a66ff;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top-color: #0f172a !important;
+    color: #64748b !important;
+  }
+}
+
+/* --- MODO FACE BRAND DIGITAL (FBD) --- */
+.footer.fbd-theme-active {
+  background: #0a0f1d !important; // Azul oscuro de la nebulosa externa
+  border-top: 1.5px solid #1a66ff !important; // Separador azul eléctrico
+  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.25) !important;
+
+  .logo-footer {
+    background: linear-gradient(90deg, #ffffff, #1a66ff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 0 8px rgba(26, 102, 255, 0.6));
+  }
+
+  h3 {
+    color: #1a66ff !important; // Títulos en azul eléctrico
+    font-weight: 700;
+  }
+
+  p {
+    color: #94a3b8 !important; // Gris claro legible sobre fondo oscuro
+  }
+
+  .footer-column ul li a {
+    color: #64748b !important;
+    transition: color 0.25s, text-shadow 0.25s;
+
+    &:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 5px #1a66ff;
+    }
+  }
+
+  .social-icons .icon {
+    background: #0f172a !important;
+    border-color: rgba(26, 102, 255, 0.4) !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background: #1a66ff !important;
+      border-color: #1a66ff !important;
+      box-shadow: 0 0 10px #1a66ff;
+    }
+  }
+
+  .newsletter {
+    .signup-form {
+      input {
+        background: #0f172a !important;
+        border: 1px solid rgba(26, 102, 255, 0.3) !important;
+        color: #ffffff !important;
+
+        &:focus {
+          border-color: #1a66ff !important;
+          box-shadow: 0 0 8px rgba(26, 102, 255, 0.5);
+        }
+      }
+
+      button {
+        background: #1a66ff !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 8px rgba(26, 102, 255, 0.3);
+
+        &:hover {
+          background: #0052cc !important;
+          box-shadow: 0 0 12px #1a66ff;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top-color: #0f172a !important;
+    color: #64748b !important;
+  }
+}
