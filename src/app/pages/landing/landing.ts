@@ -21,7 +21,11 @@ export class LandingComponent {
   }
 
   goToBracasfood() {
-    window.location.href = "https://bracasfood.vercel.app/";
+    window.location.href = "https://vercel.app";
+  }
+
+  goToFaceBrand() {
+    window.open("https://facebook.com", "_blank");
   }
 
   showModal = signal(false);
