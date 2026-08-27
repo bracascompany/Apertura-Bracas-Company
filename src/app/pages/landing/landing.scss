@@ -1072,3 +1072,73 @@
     margin: 5px auto !important;
   }
 }
+
+/* ===== ESTILOS MODAL DE VIDEO FACE BRAND DIGITAL ===== */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(22, 163, 74, 0.3);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.modal-video-player {
+  width: 100%;
+  display: block;
+  height: auto;
+  max-height: 80vh;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.video-close-btn:hover {
+  background: #dc2626;
+}
+
+/* Ajuste fino para celulares como Realme C55 */
+@media screen and (max-width: 500px) {
+  .video-modal-content {
+    width: 95%;
+  }
+  .video-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+}

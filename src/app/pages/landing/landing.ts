@@ -25,7 +25,7 @@ export class LandingComponent {
   }
 
   goToFaceBrand() {
-    window.open("https://facebook.com", "_blank");
+    this.router.navigate(["/facebrand-digital"]);
   }
 
   showModal = signal(false);

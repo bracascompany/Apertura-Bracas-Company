@@ -14,6 +14,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'fundacion-segat', component: Segat },
+  { path: 'facebrand-digital', loadComponent: () => import('./pages/facebrand/facebrand').then(m => m.FacebrandComponent) },
   { 
     path: 'products', 
     component: ProductListComponent,
