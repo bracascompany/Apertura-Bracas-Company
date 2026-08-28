@@ -1,9 +1,11 @@
-// --- PALETA DE COLORES DEL LOGO (SEGAT) ---
-$segat-blue-dark: #0b2545; // Azul oscuro profundo del océano/mundo
-$segat-blue-mid: #134074; // Azul intermedio corporativo
-$segat-cyan-bright: #00b4d8; // Cian tecnológico brillante de los anillos
-$segat-cyan-light: #90e0ef; // Cian claro ambiental
-$segat-bg-light: #f4f8fb; // Fondo general limpio
+// --- PALETA DE COLORES CORPORATIVA CON EFECTO DE LUZ ---
+$segat-blue-dark: #0b2545;   // Azul oscuro profundo
+$segat-blue-mid: #134074;    // Azul intermedio corporativo
+$segat-cyan-bright: #00b4d8; // Cian tecnológico
+$segat-bg-dark: #030811;     // Fondo base ultra oscuro de la captura
+
+// El sombreado azulado eléctrico idéntico a tu captura
+$neon-blue-glow: rgba(0, 102, 255, 0.6); 
 
 .encarta-container {
   display: grid;
@@ -12,7 +14,8 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
   justify-content: center;
   min-height: 85vh;
   padding: 2rem 5%;
-  background: linear-gradient(135deg, $segat-bg-light 0%, #e0edf5 100%);
+  /* Degradado de fondo oscuro que emula la atmósfera de la captura */
+  background: radial-gradient(circle at center, #0a162b 0%, $segat-bg-dark 100%);
   gap: 2rem;
   box-sizing: border-box;
 }
@@ -29,20 +32,20 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #ffffff;
-  border: 2px solid #cfe2f3;
+  background: #091526; 
+  border: 1px solid rgba(0, 102, 255, 0.3); // Borde azulado sutil
   padding: 1rem 1.2rem;
   border-radius: 12px;
   text-decoration: none;
-  color: $segat-blue-dark;
+  color: #ffffff; 
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(11, 37, 69, 0.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 
   .icon {
     font-size: 1.5rem;
-    background: #eef4f9;
+    background: rgba($segat-blue-dark, 0.6);
     padding: 8px;
     border-radius: 8px;
     display: flex;
@@ -53,12 +56,9 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
   &:hover {
     transform: translateY(-3px);
     border-color: $segat-cyan-bright;
-    box-shadow: 0 8px 15px rgba(0, 180, 216, 0.15);
-    color: $segat-blue-mid;
-
-    .icon {
-      background: #e0f4fc;
-    }
+    /* Resplandor azulado eléctrico al hacer hover */
+    box-shadow: 0 0 15px 3px $neon-blue-glow;
+    color: #ffffff;
   }
 }
 
@@ -78,16 +78,15 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 6px solid #ffffff;
-      box-shadow: 0 15px 35px rgba(11, 37, 69, 0.2);
+      border: 3px solid $segat-cyan-bright;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.4); 
     }
   }
 
-  // TÍTULO: Con los tonos azul oscuro y cian del mundo del logo
   .encarta-title {
     font-size: 2.3rem;
     font-weight: 800;
-    background: linear-gradient(90deg, $segat-blue-dark, $segat-blue-mid, $segat-cyan-bright);
+    background: linear-gradient(90deg, #ffffff, $segat-cyan-bright, #0066ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,27 +95,35 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
   }
 
   .encarta-subtitle {
-    color: $segat-blue-mid;
+    color: #a0aec0;
     font-size: 0.95rem;
     font-weight: 600;
     margin: 0 0 1.5rem 0;
   }
 }
 
-// Visor de video cuadrado con reproducción automática
+// --- VISOR DE VIDEO CON EL SOMBREADO AZULADO DE TU CAPTURA ---
 .video-preview-container {
   width: 100%;
   max-width: 300px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  background: #091526;
+  padding: 12px; 
+  border-radius: 16px;
+  /* Borde azulado brillante */
+  border: 1px solid rgba(0, 102, 255, 0.7);
+  
+  /* LA TÉCNICA CLAVE: Doble sombra exterior neón azul + interior difuminada */
+  box-shadow: 0 0 35px 6px $neon-blue-glow, 
+              inset 0 0 20px 2px rgba(0, 102, 255, 0.4);
 
   .video-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 100%; // Cuadrado perfecto 1:1
+    padding-top: 100%; // 1:1 Cuadrado
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(11, 37, 69, 0.18);
     background: #000;
 
     iframe {
@@ -130,7 +137,7 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
   }
 }
 
-/* --- MEDIA QUERY PARA MÓVILES (Motorola y Realme) --- */
+/* --- MEDIA QUERY PARA MÓVILES --- */
 @media (max-width: 900px) {
   .encarta-container {
     grid-template-columns: 1fr;
@@ -142,27 +149,10 @@ $segat-bg-light: #f4f8fb; // Fondo general limpio
     order: -1;
     padding: 0.5rem 0;
 
-    .logo-wrapper .encarta-logo-img {
-      width: 130px;
-      height: 130px;
-      border-width: 4px;
-    }
-
-    .encarta-title {
-      font-size: 1.8rem;
-    }
-
     .video-preview-container {
       max-width: 240px;
+      box-shadow: 0 0 25px 4px $neon-blue-glow, 
+                  inset 0 0 15px rgba(0, 102, 255, 0.3);
     }
-  }
-
-  .encarta-column {
-    gap: 0.8rem;
-  }
-
-  .encarta-btn {
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
   }
 }
