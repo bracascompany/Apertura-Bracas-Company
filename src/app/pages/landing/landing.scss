@@ -109,7 +109,7 @@
    ============================================================ */
 @media screen and (max-width: 450px) {
   .hero {
-    height: 10vh; /* Ocupa todo el alto en celular */
+    height: 1vh; /* Ocupa todo el alto en celular */
     display: flex;
     align-items: center;
   }
@@ -133,10 +133,9 @@
   .cta-buttons-right {
     position: relative !important; /* Quitamos el absolute para que floten a los lados */
     top: 1% !important;
-    right: 105%;
-    right: unset !important;
-    width: 15%; /* Ancho para no tapar el centro */
-    gap: 4px; /* Espacio vertical ultra reducido entre botones */
+    right: 55%;
+    width: 10%; /* Ancho para no tapar el centro */
+    gap: 1px; /* Espacio vertical ultra reducido entre botones */
     display: flex;
   }
 
@@ -145,13 +144,13 @@
   }
 
   .btn-glass {
-    min-width: unset !important;
+    min-width: 10px;
     white-space: nowrap;
     letter-spacing: 0.3px;
     text-transform: uppercase;
-    width: 100%;
+    width: 50%;
     padding: 18px 18px !important; /* Relleno vertical y horizontal minimizado */
-    font-size: 7.5px !important; /* Texto optimizado para no desbordarse */
+    font-size: 5px !important; /* Texto optimizado para no desbordarse */
     background: rgba(0, 30, 0, 0.7);
     border-color: #5ccb5f;
     border-radius: 33px;
@@ -185,7 +184,7 @@
   padding: 40px 5% 20px;
   text-align: center;
   h2 {
-    font-size: 2.8rem;
+    font-size: 1rem;
     background: linear-gradient(90deg, #121212 0%, #5ccb5f 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -217,13 +216,13 @@
   .cta-buttons-left,
   .cta-buttons-right {
     position: static;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .btn-primary,
   .btn-secondary {
-    width: 150px; // Ancho fijo para mantener la estética de celular en PC
-    max-width: 250px;
+    width: 15px; // Ancho fijo para mantener la estética de celular en PC
+    max-width: 15px;
     padding: 0.5rem 0.5rem;
     text-align: center;
     border-radius: 33px;
@@ -238,13 +237,13 @@
     background: rgba(45, 90, 39, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
     @media (max-width: 480px) {
-      width: 85%; // En móviles reales se adapta al ancho de pantalla
+      width: 25%; // En móviles reales se adapta al ancho de pantalla
     }
 
-      transform: translateY(3px);
+      transform: translateY(1px);
       box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
       color: #ffffff;
     }
@@ -358,12 +357,12 @@
   }
 }
 /* =========================================
-   1. MEDIA QUERY UNIFICADA (max-width: 768px)
+   1. MEDIA QUERY UNIFICADA Moto g72 (max-width: 768px)
    ========================================= */
 @media (max-width: 768px) {
   .hero {
     height: auto !important;
-    min-height: 30vh !important;
+    min-height: 5vh !important;
     padding-top: 0 !important;
     padding-bottom: 1 !important;
     overflow: hidden !important;
@@ -372,14 +371,14 @@
   .hero-background {
     position: relative !important;
     margin-top: 35px !important;
-    height: 280px !important;
+    height: 300px !important;
     display: block !important;
     z-index: 1 !important;
   }
 
   .hero-background img {
     margin-top: -65px !important;
-    transform: scale(1.5) !important;
+    transform: scale(1) !important;
   }
 
   .hero-content {
@@ -399,15 +398,15 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 1px !important;
-    width: 95% !important;
+    width: 10% !important;
     z-index: 5 !important;
   }
 
   .btn-glass {
-    width: 140px !important;
-    max-width: 140px !important;
-    min-width: 10px !important;
-    font-size: 0.72rem !important;
+    width: 5px !important;   /* buttons sizes*/
+    max-width: 5px !important;
+    min-width: 2px !important;
+    font-size: 0.5rem !important;
     padding: 10px 20px !important;
     text-align: right !important;
     display: inline-block !important;
@@ -419,7 +418,7 @@
    ========================================= */
 .success-header {
   text-align: right;
-  padding: 7rem;
+  padding: 1rem;
   position: relative;
 
   /* Etiqueta tipo "Badge" */
@@ -438,7 +437,7 @@
 
   /* Título principal */
   .success-title {
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #1a1a1a;
     margin: 0;
@@ -701,7 +700,7 @@
       flex-wrap: wrap;
       justify-content: right;
       gap: 1px;
-      width: 300%;
+      width: 100%;
 
       .btn-glass {
         position: relative !important;
@@ -714,7 +713,7 @@
 @media (max-width: 768px) {
   .hero {
     height: auto !important;
-    min-height: 30vh !important;
+    min-height: 10vh !important;
     padding-bottom: 6px !important;
   }
   .hero-content {
@@ -724,7 +723,7 @@
     margin-top: 10px !important;
   }
   .btn-glass {
-    width: 210px;
+    width: 110px;
     padding: 12px 20px !important;
     text-align: center !important;
     font-size: 1rem !important;
@@ -749,7 +748,7 @@
   .hero-content > div,
   .hero-circular-menu {
     position: absolute !important;
-    top: 15% !important;
+    top: 25% !important;
     left: 14% !important;
     width: 80px !important; // Mantiene el tamaño original de escritorio internamente
     height: 80px !important;
@@ -839,7 +838,7 @@
   .btn-glass {
     position: absolute !important;
     width: auto !important;
-    min-width: 95px !important;
+    min-width: 15px !important;
     max-width: 115px !important;
     padding: 6px 10px !important;
     font-size: 9.5px !important;
