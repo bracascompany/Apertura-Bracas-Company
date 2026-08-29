@@ -8,24 +8,19 @@
 
 // 1. EL CONTENEDOR PRINCIPAL
 .hero {
-  height: 90vh;
-  min-height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: #133114;
-  padding: 20px 1px;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-
-  @media (max-width: 480px) {
-    padding-bottom: 9px;
-  }
+  position: relative !important;
+  width: 100% !important;
+  height: 480px !important; 
+  min-height: 480px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: visible !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  
 }
+
 
 // 2. EL LOGO DE FONDO (LA "B")
 .hero-background {
@@ -79,7 +74,7 @@
 
 /* EL BOTÓN PROFESIONAL (Estilo Glassmorphism) */
 .btn-glass {
-  background: rgba(19, 49, 20, 0.7);
+  background: rgba(89, 210, 93, 0.7);
   color: #ffffff;
   border: 1px solid rgba(92, 203, 95, 0.5);
   border-radius: 15px;
@@ -151,7 +146,7 @@
     width: 50%;
     padding: 18px 18px !important; /* Relleno vertical y horizontal minimizado */
     font-size: 5px !important; /* Texto optimizado para no desbordarse */
-    background: rgba(0, 30, 0, 0.7);
+    background: rgba(74, 177, 74, 0.7);
     border-color: #5ccb5f;
     border-radius: 33px;
     backdrop-filter: blur(4px);
@@ -361,8 +356,8 @@
    ========================================= */
 @media (max-width: 768px) {
   .hero {
-    height: auto !important;
-    min-height: 5vh !important;
+    height: 150px important;
+    min-height: 8vh !important;
     padding-top: 0 !important;
     padding-bottom: 1 !important;
     overflow: hidden !important;
@@ -370,14 +365,14 @@
 
   .hero-background {
     position: relative !important;
-    margin-top: 35px !important;
-    height: 300px !important;
+    margin-top: 1px !important;
+    height: 450px !important;
     display: block !important;
     z-index: 1 !important;
   }
 
   .hero-background img {
-    margin-top: -65px !important;
+    margin-top: -5px !important;
     transform: scale(1) !important;
   }
 
@@ -388,7 +383,7 @@
     align-items: flex-start !important;
     width: 100% !important;
     padding: 10px !important;
-    margin-top: -20px !important; /* Subir botones al navbar */
+    margin-top: 100px !important; /* Subir botones al navbar */
     position: relative !important;
     z-index: 90 !important;
   }
@@ -557,13 +552,19 @@
   }
 }
 .hero {
-  position: relative;
-  width: 90%;
-  min-height: 30vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0b1d10;
+  position: relative !important;
+  width: 100% !important;
+  height: 480px !important; 
+  min-height: 480px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: visible !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  
+}
+
 
   .hero-background {
     position: absolute;
@@ -683,461 +684,111 @@
       }
     }
   }
-}
-
-/* Diseño adaptable en móviles */
-@media (max-width: 768px) {
-  .hero .hero-content {
-    height: 300%;
-    min-height: calc(30vh - 10px);
-    padding: 1px;
-
-    .circular-menu {
-      transform: scale(2);
-      transform-origin: right center;
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: right;
-      gap: 1px;
-      width: 100%;
-
-      .btn-glass {
-        position: relative !important;
-        
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: auto !important;
-    min-height: 10vh !important;
-    padding-bottom: 6px !important;
-  }
-  .hero-content {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin-top: 10px !important;
-  }
-  .btn-glass {
-    width: 110px;
-    padding: 12px 20px !important;
-    text-align: center !important;
-    font-size: 1rem !important;
-  }
-}
-
-
-
-/* ========================================================
-   PARCHE DEFINITIVO DE ESCALADO TOTAL: MOTO G72 / REALME C55
-   ======================================================== */
-@media screen and (max-width: 480px) {
-  // Aseguramos un contenedor padre alto que no colapse
-  .hero, .hero-content {
-    display: block !important;
-    height: 420px !important;
-    position: relative !important;
-    margin: 0 auto !important;
-  }
-
-  // Capturamos el elemento circular o el contenedor directo que contiene la rueda
-  .hero-content > div,
-  .hero-circular-menu {
-    position: absolute !important;
-    top: 25% !important;
-    left: 14% !important;
-    width: 80px !important; // Mantiene el tamaño original de escritorio internamente
-    height: 80px !important;
-    
-    // Forzamos el encogimiento total preservando las coordenadas originales
-    transform: translate(-50%, 80%) scale(0.5) !important;
-    transform-origin: center center !important;
-  }
-
-  // Forzamos a los botones individuales a no heredar anchos de lista
-  .hero-content a, 
-  .hero-content span,
-  .menu-item {
-    width: auto !important;
-    max-width: none !important;
-  }
-}
-@media screen and (max-width: 780px) {
-  /* Achicamos el contenedor de los botones y reducimos el radio de órbita */
-  
-  // Para los primeros botones (líneas 633-651 y 669-681) que usaban ~170px/190px:
-  // Redúcelos a un radio de entre 110px y 125px
-  .tu-contenedor-de-botones {
-    // Ejemplo para los elementos hijos:
-    &:nth-child(1) { transform: rotate(0deg) translate(105px) rotate(0deg) scale(0.85) !important; }
-    &:nth-child(2) { transform: rotate(30deg) translate(105px) rotate(-30deg) scale(0.85) !important; }
-    &:nth-child(3) { transform: rotate(60deg) translate(100px) rotate(-60deg) scale(0.85) !important; }
-    &:nth-child(4) { transform: rotate(90deg) translate(205px) rotate(-90deg) scale(0.85) !important; }
-
-    // Para los botones exteriores más lejanos (líneas 660-664) como CATÁLOGO que usaban 216px:
-    // Redúcelos a un radio de máximo 135px y achica un poco el tamaño de la caja (width)
-    &:nth-child(5) { transform: rotate(-120deg) translate(130px) rotate(120deg) scale(0.85) !important; width: 100px !important; }
-    &:nth-child(6) { transform: rotate(-150deg) translate(235px) rotate(150deg) scale(0.85) !important; width: 110px !important; }
-    &:nth-child(7) { transform: rotate(-180deg) translate(275px) rotate(180deg) scale(0.85) !important; width: 110px !important; } /* CATÁLOGO */
-    &:nth-child(8) { transform: rotate(-210deg) translate(235px) rotate(210deg) scale(0.85) !important; width: 115px !important; }
-    &:nth-child(9) { transform: rotate(-240deg) translate(230px) rotate(240deg) scale(0.85) !important; width: 100px !important; }
-  }
-}
-
-/* ========================================================================
-   PARCHE FINAL ABSOLUTO: RUEDA MATEMÁTICA PARA REALME C55 / MOTO G72
-   ======================================================================== */
-@media screen and (max-width: 480px) {
-  .hero {
-    height: 600px !important;
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .hero-background {
-    position: absolute !important;
-    width: 290px !important;
-    height: 290px !important;
-    top: 18% !important; /*sube el logo nel cel*/
-    left: 50% !important;
-    transform: translate(-50%, -30%) !important;
-    background-size: contain !important;
-    background-position: center center !important;
-    border-radius: 50% !important;
-    z-index: 1 !important;
-  }
-
-  .hero-content {
-    position: absolute !important;
-    top: -10% !important; /*sube botones nel cel*/
-    left: 50% !important;
-    width: 0px !important;
-    height: 0px !important;
-    transform: none !important;
-    display: block !important;
-    padding: 0 !important;
-    z-index: 10 !important;
-  }
-
-  .cta-buttons-left,
-  .cta-buttons-right {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 0px !important;
-    height: 0px !important;
-    display: block !important;
-  }
-
-  .btn-glass {
-    position: absolute !important;
-    width: auto !important;
-    min-width: 15px !important;
-    max-width: 115px !important;
-    padding: 6px 10px !important;
-    font-size: 9.5px !important;
-    border-radius: 20px !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-    top: 38% !important;
-    left: 0 !important;
-  }
-
-  /* Distribución de órbita forzada con !important absoluto */
-  .cta-buttons-left .btn-glass:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translate(323px) rotate(0deg) !important; }
-  .cta-buttons-left .btn-glass:nth-child(2) { transform: translate(-50%, -50%) rotate(35deg) translate(324px) rotate(-35deg) !important; }
-  .cta-buttons-left .btn-glass:nth-child(3) { transform: translate(-50%, -50%) rotate(70deg) translate(325px) rotate(-70deg) !important; }
-  .cta-buttons-left .btn-glass:nth-child(4) { transform: translate(-50%, -50%) rotate(105deg) translate(324px) rotate(-105deg) !important; }
-
-  .cta-buttons-right .btn-glass:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translate(323px) rotate(0deg) !important; }
-  .cta-buttons-right .btn-glass:nth-child(2) { transform: translate(-50%, -50%) rotate(-35deg) translate(324px) rotate(35deg) !important; }
-  .cta-buttons-right .btn-glass:nth-child(3) { transform: translate(-50%, -50%) rotate(-70deg) translate(325px) rotate(70deg) !important; }
-  .cta-buttons-right .btn-glass:nth-child(4) { transform: translate(-50%, -50%) rotate(-105deg) translate(324px) rotate(105deg) !important; }
-
-  .hero-footer-banner {
-    position: absolute !important;
-    bottom: -1% !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 12 !important;
-  }
-}
-// ==========================================
-// 2. COMPORTAMIENTO PARA CELULAR (Moto G72 / Realme C55)
-// ==========================================
-@media (max-width: 480px) {
-  .landing-container {
-    width: 100vw !important;   // Le damos el ancho casi total de la pantalla del cel
-    height: 100vw !important;  // Mantiene el contenedor perfectamente cuadrado
-    position: relative;
-    margin: 0 auto;
-  }
-
-  .btn-glass {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    white-space: nowrap;
-    
-    // Mantenemos la fuente compacta para que los textos no se pisen entre sí
-    font-size: 9px !important; 
-    padding: 2px 4px !important; 
-
-    // AUMENTAMOS EL RADIO: Subimos de la medida actual a 39vw para expandir la órbita
-    $radio_celular: 77vw; 
-
-    transform: translate(-10%, -15%) 
-               rotate(var(--angle)) 
-               translateX($radio_celular) 
-               rotate(calc(-1 * var(--angle))) !important;
-  }
-
-
-  /* ========================================================
-     CONTROL INDIVIDUAL DE DISTANCIAS AL BORDE DEL LOGO
-     ======================================================== */
-
-  /* ACERCAR OFERTAS (Si te queda muy lejos del círculo interno) */
-  .btn-glass:nth-child(3) { 
-    --radio-circulo: 4vw !important; 
-  }
-
-  /* ALEJAR UBICACIÓN AL BORDE MÁXIMO EXTERIOR */
-  .btn-glass:nth-child(9) { 
-    --radio-circulo: 244vw !important; 
-  }
-
-  /* ALEJAR CATÁLOGO AL BORDE MÁXIMO EXTERIOR */
-  .btn-glass:nth-child(8) { 
-    --radio-circulo: 44vw !important; 
-  }
-}
-
-/* ==========================================
-   TERMINAL FORCED PATCH: MI CUENTA ORBIT FIX
-   ========================================== */
-@media screen and (max-width: 480px) {
-  a.btn-glass[style*="-40deg"], 
-  a.btn-glass[style*="-40"] {
-    --radio-circulo: 35vw !important;
-    position: absolute !important;
-    top: 20% !important;
-    left: 50% !important;
-  }
-}
 
 /* ==========================================================================
-   ELIMINAR ESPACIO BLANCO INFERIOR EN MÓVILES
-   ========================================================================== */
-@media screen and (max-width: 480px) {
-  .hero {
-    height: 360px !important; /* Reducimos la altura fija para cortar el espacio vacío */
-    min-height: auto !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  
-  .landing-container {
-    height: auto !important; /* Permitimos que el contenedor se adapte al contenido real */
-    min-height: auto !important;
-  }
-}
 
 /* ==========================================================================
-   REDUCCIÓN ABSOLUTA DEL BANNER DE ANUNCIO EN MÓVILES
+
+/* ==========================================================================
+   DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (MOTO G72 / REALME C55)
    ========================================================================== */
-@media screen and (max-width: 480px) {
-  .promo-banner.success-header {
-    padding: 8px 0 !important;       /* Reduce el espacio interno superior e inferior al mínimo */
-    margin: 0 auto !important;       /* Elimina márgenes exteriores empujados */
-    min-height: auto !important;     /* Rompe cualquier alto mínimo forzado */
-    height: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  /* Si deseas que el texto interior se vea más plano y compacto */
-  .promo-banner.success-header * {
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 12px !important;      /* Hace la letra del anuncio sutil */
-  }
-}
-.splash-logo {
-  width: 800px;  /* Subido de 130px a 180px */
-  height: 800px; /* Subido de 130px a 180px */
-  border-radius: 100%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  margin-bottom: 50px;
-  object-fit: cover;
-}
-::ng-deep {
-  .seccion-banner-succes-header {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 3rem 1.5rem !important;
-    background: #0a0a0a !important; // Fondo negro puro temporal para probar
-    border-bottom: 2px solid #16a34a !important;
-
-    h2 {
-      font-size: 2.8rem !important;
-      font-weight: 900 !important;
-      color: #4ade80 !important; // Verde neón directo para asegurar el cambio
-      text-transform: uppercase !important;
-      letter-spacing: 3px !important;
+@media screen and (max-width: 768px) {
+  ::ng-deep {
+    
+    /* Contenedor padre con fondo oscuro para dar contraste al texto blanco de los botones */
+    .hero {
+      position: relative !important;
+      width: 100% !important;
+      height: 480px !important; 
+      min-height: 480px !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      overflow: visible !important;
       margin: 0 auto !important;
-    }
-
-    .dots span {
-      color: #4ade80 !important;
-      animation: neonBlink 1.4s infinite both;
+      padding: 0 !important;
       
-      &:nth-child(2) { animation-delay: .2s; }
-      &:nth-child(3) { animation-delay: .4s; }
     }
-  }
-}
 
-@keyframes neonBlink {
-  0%, 100% { opacity: .1; }
-  50% { opacity: 1; }
-}
+    /* Redondeamos el contenedor del logo y lo centramos geométricamente */
+    .hero .hero-background {
+      position: absolute !important;
+      top: 35% !important; 
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 200px !important;  /* Ajustamos a 200px para que ruede mejor con el texto */
+      height: 200px !important; 
+      border-radius: 50% !important; 
+      box-shadow: none !important; 
+      margin: 0 !important;
+      z-index: 1 !important;
+    }
 
-/* ===== OPTIMIZACIÓN RESPONSIVA PARA MÓVILES (Realme C55 / Smartphones) ===== */
-@media screen and (max-width: 500px) {
-  .casos-exito-section {
-    padding: 20px 10px !important; /* Reduce el espacio exagerado superior e inferior */
-  }
+    .hero .hero-background img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+    }
 
-  .casos-header {
-    margin-bottom: 25px !important; /* Reduce la separación con el contenido inferior */
-  }
+    /* Punto de origen central de la órbita de botones */
+    .hero .hero-content {
+      position: absolute !important;
+      top: 10% !important; 
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 0px !important;
+      height: 0px !important;
+      z-index: 10 !important;
+    }
 
-  .casos-title {
-    font-size: 1rem !important; /* Baja el tamaño de la letra drásticamente para que quepa bien */
-    letter-spacing: 2px !important; /* Reduce el espaciado entre letras */
-    line-height: 1.2 !important;
-    display: block !important;
-    width: 100% !important;
-  }
-  
-  .casos-divider {
-    width: 50px !important; /* Hace la línea decorativa más corta y armónica */
-    height: 3px !important;
-  }
-}
+    /* Forzamos el contenedor interno a resetear la escala de PC */
+    .hero .hero-content .circular-menu {
+      position: absolute !important;
+      transform: scale(1) !important; 
+      transform-origin: center center !important;
+      width: 0px !important;
+      height: 0px !important;
+      display: block !important;
+    }
 
-/* ===== REDUCCIÓN DE ESPACIOS EN BLANCO PARA MÓVILES ===== */
-@media screen and (max-width: 500px) {
-  /* Forzar al contenedor principal a no tener espacios gigantes */
-  .casos-exito-section {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
+    /* ESTILOS BASE CORREGIDOS: Estructura horizontal sólida para los botones */
+    .hero .hero-content .circular-menu .btn-glass,
+    .hero .hero-content .circular-menu > * {
+      position: absolute !important;
+      display: block !important;       /* Desactivamos flexbox aquí para evitar el colapso vertical */
+      width: 95px !important;          /* Ancho físico fijo garantizado */
+      min-width: 95px !important;      /* Bloqueamos que el navegador lo encoja */
+      font-size: 0.65rem !important;   /* Letra perfectamente escalada */
+      padding: 6px 2px !important;    
+      text-align: center !important;
+      white-space: nowrap !important;  /* Evita que el texto salte de línea */
+      transform-origin: center center !important; 
+      border-radius: 20px !important;
+      background: rgba(13, 35, 18, 0.95) !important; /* Fondo interno de los botones */
+      border: 1px solid rgba(74, 222, 128, 0.8) !important; /* Borde verde brillante nítido */
+      color: #effaef !important;       /* Texto blanco forzado */
+      
+      /* Coordenadas de calibración para el nuevo tamaño horizontal */
+      top: -100% !important;         
+      left: -47px !important;
+      z-index: 11 !important;
+    }
 
-  /* Ajustar el contenedor interno del texto */
-  .casos-header, 
-  .seccion-banner-succes-header, 
-  [style*="padding:50px"] {
-    padding-top: 15px !important;
-    padding-bottom: 10px !important;
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
-  }
-}
+    /* --------------------------------==================================
+       MATEMÁTICA DE ÓRBITA MÓVIL: AJUSTADA A UN RADIO IDEAL DE 135px
+       --------------------------------================================== */
 
-/* ===== AJUSTE DE PRECISIÓN PARA REALME C55 ===== */
-@media screen and (max-width: 420px) {
-  .casos-title {
-    font-size: 1.4rem !important; /* Achica el texto lo suficiente para que entre en una sola línea */
-    letter-spacing: 1px !important; /* Comprime el espacio entre letras */
-    display: inline-block !important;
-    white-space: nowrap !important; /* Fuerza a que se mantenga en una sola línea pase lo que pase */
-  }
+    /* BLOQUE DERECHO */
+    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(0deg) translate(135px) rotate(0deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(30deg) translate(135px) rotate(-30deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(60deg) translate(135px) rotate(-60deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(90deg) translate(135px) rotate(-90deg) !important; }
 
-  .casos-header {
-    padding: 5px 0 !important;
-    margin: 5px auto !important;
-  }
-}
-
-/* ===== ESTILOS MODAL DE VIDEO FACE BRAND DIGITAL ===== */
-.video-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999 !important;
-}
-
-.video-modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  background: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(22, 163, 74, 0.3);
-  border: 1px solid rgba(22, 163, 74, 0.2);
-}
-
-.modal-video-player {
-  width: 100%;
-  display: block;
-  height: auto;
-  max-height: 80vh;
-}
-
-.video-close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  transition: background 0.2s ease;
-}
-
-.video-close-btn:hover {
-  background: #dc2626;
-}
-
-/* Ajuste fino para celulares como Realme C55 */
-@media screen and (max-width: 500px) {
-  .video-modal-content {
-    width: 95%;
-  }
-  .video-close-btn {
-    top: 10px;
-    right: 10px;
-    width: 35px;
-    height: 35px;
-    font-size: 1.5rem;
+    /* BLOQUE IZQUIERDO */
+    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(-120deg) translate(135px) rotate(120deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(-150deg) translate(135px) rotate(150deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(-180deg) translate(135px) rotate(180deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(-210deg) translate(135px) rotate(210deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(9) { transform: rotate(-240deg) translate(135px) rotate(240deg) !important; }
   }
 }
