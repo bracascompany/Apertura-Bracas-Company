@@ -692,7 +692,7 @@
 /* ==========================================================================
    DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (MOTO G72 / REALME C55)
    ========================================================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   ::ng-deep {
     
     /* Contenedor padre con fondo oscuro para dar contraste al texto blanco de los botones */
@@ -790,5 +790,57 @@
     .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(-180deg) translate(135px) rotate(180deg) !important; }
     .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(-210deg) translate(135px) rotate(210deg) !important; }
     .hero .hero-content .circular-menu > *:nth-child(9) { transform: rotate(-240deg) translate(135px) rotate(240deg) !important; }
+  }
+}
+
+/* ==========================================================================
+
+/* ==========================================================================
+   6. CORRECCIÓN DE CÁPSULAS PARA MONITOR / LAPTOP (PANTALLAS GRANDES)
+   ========================================================================== */
+@media screen and (min-width: 769px) {
+  ::ng-deep {
+    
+    .hero .hero-content .circular-menu {
+      transform: scale(1.5) !important; 
+      display: block !important;
+      width: 0px !important;
+      height: 0px !important;
+    }
+
+    .hero .hero-content .circular-menu .btn-glass,
+    .hero .hero-content .circular-menu > * {
+      display: flex !important;         
+      justify-content: center !important;
+      align-items: center !important;
+      width: 140px !important;           
+      min-width: 140px !important;       
+      max-width: 180px !important;
+      font-size: 0.8rem !important;      
+      padding: 12px 8px !important;      
+      white-space: nowrap !important;
+      border-radius: 50px !important;    
+      background: #092212 !important;     
+      border: 1.5px solid #16a34a !important; 
+      color: #ffffff !important;
+      top: -25px !important;
+      left: -70px !important;
+    }
+
+    /* --------------------------------==================================
+       MATEMÁTICA DE ÓRBITA PC SIMÉTRICA CALIBRADA (4 VS 4 COMPACTOS)
+       --------------------------------================================== */
+    
+    /* BLOQUE DERECHO LAPTOP (Ángulos cerrados para reducir el espacio vertical) */
+    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-10deg) translate(203px) rotate(10deg) !important; } /* OFERTAS */
+    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(10deg)  translate(205px) rotate(-10deg) !important; } /* SOPORTE */
+    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(30deg)  translate(207px) rotate(-30deg) !important; } /* MI CUENTA */
+    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(50deg)  translate(206px) rotate(-50deg) !important; } /* C&M STUDIOS */
+
+    /* BLOQUE IZQUIERDO LAPTOP (Simetría compacta coincidente a la izquierda) */
+    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(130deg) translate(238px) rotate(-130deg) !important; } /* FUNDACIÓN SEGAT */
+    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(150deg) translate(238px) rotate(-150deg) !important; } /* BRACASFOOD */
+    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(238px) rotate(-170deg) !important; } /* UBICACIÓN */
+    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(190deg) translate(238px) rotate(-190deg) !important; } /* CONTACTOS */
   }
 }
