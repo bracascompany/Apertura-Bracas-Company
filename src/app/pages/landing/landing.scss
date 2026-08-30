@@ -602,9 +602,9 @@
 
       .btn-glass {
         position: absolute;
-        background: rgba(15, 45, 20, 0.85);
-        border: 1px solid rgba(74, 222, 128, 0.5);
-        color: #ffffff;
+        background: linear-gradient(145deg, #09a04391 0%, #14532d 60%, #086129af 100%) !important; /* Degradado metalizado tridimensional */
+        border: 1.5px solid rgba(74, 222, 128, 0.65) !important; /* Borde cromado verde brillante como el reflejo de la B */
+        color: #05d24d6c;
         padding: 8px 16px !important;
         display: inline-block !important;
         text-align: center;
@@ -618,7 +618,10 @@
         backdrop-filter: blur(6px);
         white-space: nowrap;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        box-shadow: 
+  inset 0 2px 4px rgba(2, 231, 94, 0.444), /* Reflejo interno de luz superior */
+  0 4px 10px rgba(3, 143, 27, 0.342) !important;  /* Sombra exterior para dar volumen flotante */
+
         transition: all 0.3s ease;
 
         /* Distribución matemática exacta en círculo (Corrección de alineación izquierda) */
@@ -677,7 +680,7 @@
         } /* C&M[JB] STUDIOS */
         &:nth-child(12) {
           transform: rotate(330deg) translate(173px) rotate(-330deg);
-          width: 180px;
+          width: 222px;
           text-align: left;
           justify-content: flex-start;
         } /* FUNDACIÓN SEGAT */
@@ -752,7 +755,7 @@
     .hero .hero-content .circular-menu > * {
       position: absolute !important;
       display: block !important;       /* Desactivamos flexbox aquí para evitar el colapso vertical */
-      width: 95px !important;          /* Ancho físico fijo garantizado */
+      width: 100px !important;          /* Ancho físico fijo garantizado */
       min-width: 95px !important;      /* Bloqueamos que el navegador lo encoja */
       font-size: 0.65rem !important;   /* Letra perfectamente escalada */
       padding: 6px 2px !important;    
@@ -760,7 +763,7 @@
       white-space: nowrap !important;  /* Evita que el texto salte de línea */
       transform-origin: center center !important; 
       border-radius: 20px !important;
-      background: rgba(13, 35, 18, 0.95) !important; /* Fondo interno de los botones */
+      background: rgba(166, 245, 170, 0.7);  /* Fondo interno de los botones */
       border: 1px solid rgba(74, 222, 128, 0.8) !important; /* Borde verde brillante nítido */
       color: #effaef !important;       /* Texto blanco forzado */
       
@@ -805,13 +808,13 @@ section.hero,
   width: 100% !important;
   
   /* Forzamos quirúrgicamente a encoger el alto total a 360px en móviles */
-  height: 360px !important; 
-  min-height: 360px !important;
+  height: 330px !important; 
+  min-height: 330px !important;
   max-height: 300px !important; /* Bloquea por completo que se estire a 480px */
   
   display: flex !important;
   justify-content: center !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   overflow: visible !important;
   margin: 0 auto !important;
   padding: 0 !important;
@@ -881,13 +884,13 @@ section.hero,
       white-space: nowrap !important;  
       transform-origin: center center !important; 
       border-radius: 20px !important;
-      background: #092212 !important; 
+      background: rgba(166, 245, 170, 0.7); 
       border: 1px solid #15803d !important; 
       color: #ffffff !important;       
       box-shadow: none !important; 
       
       /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
-      top: 35px !important;         /* sube o baja botones celular */
+      top: 27px !important;         /* sube o baja botones celular */
       left: -52px !important;        /* Centrado horizontal respecto a su ancho */
       z-index: 11 !important;
     }
@@ -936,8 +939,8 @@ section.hero,
       padding: 12px 8px !important;      
       white-space: nowrap !important;
       border-radius: 50px !important;    
-      background: #092212 !important;     
-      border: 1.5px solid #16a34a !important; 
+      background: rgba(166, 245, 170, 0.7);    
+      border: 1.5px solid #03f65c !important; 
       color: #ffffff !important;
       top: -55px !important;
       left: -70px !important;
