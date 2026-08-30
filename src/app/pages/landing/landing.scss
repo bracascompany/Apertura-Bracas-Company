@@ -3,7 +3,8 @@
    ============================================================ */
 .landing-container {
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: #abaeac !important;
+  background: #c5c7c6 !important;
 }
 
 // 1. EL CONTENEDOR PRINCIPAL
@@ -127,7 +128,7 @@
   .cta-buttons-left,
   .cta-buttons-right {
     position: relative !important; /* Quitamos el absolute para que floten a los lados */
-    top: 1% !important;
+    top: 10% !important;
     right: 55%;
     width: 10%; /* Ancho para no tapar el centro */
     gap: 1px; /* Espacio vertical ultra reducido entre botones */
@@ -383,7 +384,7 @@
     align-items: flex-start !important;
     width: 60% !important;
     padding: 0px !important;
-    margin-top: 100px !important; /* Subir botones al navbar */
+    margin-top: 80px !important; /* Subir botones al navbar */
     position: relative !important;
     z-index: 0 !important;
   }
@@ -715,8 +716,8 @@
       top: 35% !important; 
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
-      width: 200px !important;  /* Ajustamos a 200px para que ruede mejor con el texto */
-      height: 200px !important; 
+      width: 280px !important;  /* Ajustamos a 200px para que ruede mejor con el texto */
+      height: 280px !important; 
       border-radius: 50% !important; 
       box-shadow: none !important; 
       margin: 0 !important;
@@ -818,7 +819,7 @@ section.hero,
   overflow: visible !important;
   margin: 0 auto !important;
   padding: 0 !important;
-  background: #ecefec !important; 
+  background: #c5c7c6 !important; 
 }
 
 
@@ -828,10 +829,10 @@ section.hero,
       top: 49% !important; /* Centrado vertical absoluto en la sección */
       left: 50% !important; /* Centrado horizontal absoluto en la sección */
       transform: translate(-50%, -50%) !important;
-      width: 200px !important;  /* Dimensión circular perfecta para pantallas móviles */
-      height: 200px !important; 
-      min-width: 140px !important;  
-      min-height: 0px !important;
+      width: 280px !important;  /* Dimensión circular perfecta para pantallas móviles */
+      height: 280px !important; 
+      min-width: 280px !important;  
+      min-height: 280px !important;
       border-radius: 50% !important; 
       box-shadow: none; 
       margin: 0 !important;
@@ -851,7 +852,7 @@ section.hero,
     /* Eje central de la órbita (Compartiendo la misma coordenada 50% del logo) */
     .hero .hero-content {
       position: absolute !important;
-      top: 5% !important; 
+      top: 15% !important; 
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
       width: 0px !important;
@@ -862,7 +863,7 @@ section.hero,
 
     .hero .hero-content .circular-menu {
       position: absolute !important;
-      transform: scale(0.92) !important; 
+      transform: scale(1.2) !important; 
       display: block !important;
       width: 0px !important;
       height: 0px !important;
@@ -890,7 +891,7 @@ section.hero,
       box-shadow: none !important; 
       
       /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
-      top: 27px !important;         /* sube o baja botones celular */
+      top: 7px !important;         /* sube o baja botones celular */
       left: -52px !important;        /* Centrado horizontal respecto a su ancho */
       z-index: 11 !important;
     }
@@ -921,7 +922,7 @@ section.hero,
   ::ng-deep {
     
     .hero .hero-content .circular-menu {
-      transform: scale(1.5) !important; 
+      transform: scale(1.7) !important; 
       display: block !important;
       width: 0px !important;
       height: 0px !important;
@@ -942,7 +943,7 @@ section.hero,
       background: rgba(166, 245, 170, 0.7);    
       border: 1.5px solid #03f65c !important; 
       color: #ffffff !important;
-      top: -55px !important;
+      top: -45px !important;
       left: -70px !important;
     }
 
