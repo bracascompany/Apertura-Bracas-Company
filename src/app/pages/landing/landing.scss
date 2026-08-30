@@ -110,7 +110,7 @@
   }
 
   .hero-background {
-    background-size: contain !important; /* Forzado para que el logo "B" se vea grande al centro */
+    background-size: 180px 180px !important;
     background-position: center center !important;
     background-repeat: no-repeat;
   }
@@ -794,9 +794,119 @@
 }
 
 /* ==========================================================================
+   4. QUERY RESPONSIVE UNIFICADA COMPACTA (MOTO G72 / REALME C55)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  ::ng-deep {
+    
+    .hero {
+      position: relative !important;
+      width: 100% !important;
+      height: 360px !important; 
+      min-height: 360px !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      overflow: visible !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      background: #ecefec !important; 
+    }
+
+    /* FORZAMOS LA REAPARICIÓN DEL LOGO CON UN ANCHO Y ALTO REALES Y FIJOS */
+    .hero .hero-background {
+      position: absolute !important;
+      top: 26% !important; /* Centrado vertical absoluto en la sección */
+      left: 50% !important; /* Centrado horizontal absoluto en la sección */
+      transform: translate(-50%, -50%) !important;
+      width: 200px !important;  /* Dimensión circular perfecta para pantallas móviles */
+      height: 200px !important; 
+      min-width: 180px !important;  
+      min-height: 180px !important;
+      border-radius: 50% !important; 
+      box-shadow: none; 
+      margin: 0 !important;
+      z-index: 1 !important;
+      background-color: transparent !important;
+      display: block !important; /* Fuerza la carga del renderizado */
+      overflow: visible !important;
+    }
+
+    .hero .hero-background img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+    }
+
+    /* Eje central de la órbita (Compartiendo la misma coordenada 50% del logo) */
+    .hero .hero-content {
+      position: absolute !important;
+      top: 5% !important; 
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 0px !important;
+      height: 0px !important;
+      overflow: visible !important;
+      z-index: 10 !important;
+    }
+
+    .hero .hero-content .circular-menu {
+      position: absolute !important;
+      transform: scale(0.92) !important; 
+      display: block !important;
+      width: 0px !important;
+      height: 0px !important;
+      overflow: visible !important;
+    }
+
+    /* Estilos base de botones móviles ajustados al nuevo eje central */
+    .hero .hero-content .circular-menu .btn-glass,
+    .hero .hero-content .circular-menu > * {
+      position: absolute !important;
+      display: flex !important;         
+      justify-content: center !important;
+      align-items: center !important;
+      width: 105px !important;          
+      min-width: 105px !important;      
+      font-size: 0.62rem !important;   
+      padding: 6px 4px !important;    
+      text-align: center !important;
+      white-space: nowrap !important;  
+      transform-origin: center center !important; 
+      border-radius: 20px !important;
+      background: #092212 !important; 
+      border: 1px solid #15803d !important; 
+      color: #ffffff !important;       
+      box-shadow: none !important; 
+      
+      /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
+      top: -13px !important;         /* Alinea el centro del botón con el centro del logo */
+      left: -52px !important;        /* Centrado horizontal respecto a su ancho */
+      z-index: 11 !important;
+    }
+
+    /* --------------------------------==================================
+       MATEMÁTICA DE ÓRBITA MÓVIL PARALELA (RADIO COMPACTADO A 120px)
+       --------------------------------================================== */
+
+/* BLOQUE DERECHO MÓVIL (Nivelado y con pasos perfectos de 20 en 20 grados) */
+.hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-30deg) translate(150px) rotate(30deg) !important; }  /* OFERTAS */
+.hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(-10deg) translate(150px) rotate(10deg) !important; }  /* SOPORTE */
+.hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(10deg)  translate(145px) rotate(-10deg) !important; } /* MI CUENTA */
+.hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(30deg)  translate(145px) rotate(-30deg) !important; } /* C&M STUDIOS */
+
+/* BLOQUE IZQUIERDO MÓVIL (Tu bloque actual que ya está perfecto) */
+.hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(150deg) translate(145px) rotate(-150deg) !important; } /* CATÁLOGO */
+.hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(170deg) translate(145px) rotate(-170deg) !important; } /* UBICACIÓN */
+.hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(190deg) translate(145px) rotate(-190deg) !important; } /* BRACASFOOD */
+.hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(210deg) translate(150px) rotate(-210deg) !important; } /* FUNDACIÓN SEGAT */
+
+  }
+}
 
 /* ==========================================================================
-   6. CORRECCIÓN DE CÁPSULAS PARA MONITOR / LAPTOP (PANTALLAS GRANDES)
+   5. REAJUSTE DE ANCHOS EXCLUSIVO PARA LAPTOP Y ESCRITORIO (TU BLOQUE INTACTO)
    ========================================================================== */
 @media screen and (min-width: 769px) {
   ::ng-deep {
@@ -827,20 +937,16 @@
       left: -70px !important;
     }
 
-    /* --------------------------------==================================
-       MATEMÁTICA DE ÓRBITA PC SIMÉTRICA CALIBRADA (4 VS 4 COMPACTOS)
-       --------------------------------================================== */
-    
-    /* BLOQUE DERECHO LAPTOP (Ángulos cerrados para reducir el espacio vertical) */
-    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-5deg)  translate(190px) rotate(5deg) !important; }  /* OFERTAS */
-    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(10deg)  translate(205px) rotate(-10deg) !important; } /* SOPORTE */
-    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(25deg)  translate(215px) rotate(-25deg) !important; } /* MI CUENTA */
-    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(40deg)  translate(230px) rotate(-40deg) !important; } /* C&M STUDIOS */
+    /* BLOQUE DERECHO LAPTOP */
+    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-5deg)  translate(190px) rotate(5deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(10deg)  translate(205px) rotate(-10deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(25deg)  translate(215px) rotate(-25deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(40deg)  translate(230px) rotate(-40deg) !important; }
 
-    /* BLOQUE IZQUIERDO LAPTOP (Ángulos cerrados a juego de 15 en 15 grados) */
-    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(140deg) translate(268px) rotate(-140deg) !important; } /* CATÁLOGO */ 
-    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(155deg) translate(265px) rotate(-155deg) !important; } /* UBICACIÓN */ 
-    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(252px) rotate(-170deg) !important; } /* BRACASFOOD */
-    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(185deg) translate(232px) rotate(-185deg) !important; } /* FUNDACIÓN SEGAT */
+    /* BLOQUE IZQUIERDO LAPTOP */
+    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(140deg) translate(268px) rotate(-140deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(155deg) translate(265px) rotate(-155deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(252px) rotate(-170deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(185deg) translate(232px) rotate(-185deg) !important; }
   }
 }
