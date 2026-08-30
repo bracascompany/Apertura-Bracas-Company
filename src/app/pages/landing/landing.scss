@@ -11,7 +11,7 @@
   position: relative !important;
   width: 100% !important;
   height: 480px !important; 
-  min-height: 480px !important;
+  min-height: 0px !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -356,23 +356,23 @@
    ========================================= */
 @media (max-width: 768px) {
   .hero {
-    height: 150px important;
-    min-height: 8vh !important;
+    height: 0px important;
+    min-height: 0px !important;
     padding-top: 0 !important;
-    padding-bottom: 1 !important;
+    padding-bottom: 0px !important;
     overflow: hidden !important;
   }
 
   .hero-background {
     position: relative !important;
-    margin-top: 1px !important;
-    height: 450px !important;
+    margin-top: 0px !important;
+    height: 0px !important;
     display: block !important;
     z-index: 1 !important;
   }
 
   .hero-background img {
-    margin-top: -5px !important;
+    margin-top: 0px !important;
     transform: scale(1) !important;
   }
 
@@ -381,11 +381,11 @@
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: flex-start !important;
-    width: 100% !important;
-    padding: 10px !important;
+    width: 60% !important;
+    padding: 0px !important;
     margin-top: 100px !important; /* Subir botones al navbar */
     position: relative !important;
-    z-index: 90 !important;
+    z-index: 0 !important;
   }
 
   .cta-buttons-left,
@@ -413,7 +413,7 @@
    ========================================= */
 .success-header {
   text-align: right;
-  padding: 1rem;
+  padding: 0.2rem;
   position: relative;
 
   /* Etiqueta tipo "Badge" */
@@ -427,7 +427,7 @@
     background: rgba(92, 203, 95, 0.1);
     padding: 1rem;
     border-radius: 33px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   /* Título principal */
@@ -555,7 +555,7 @@
   position: relative !important;
   width: 100% !important;
   height: 480px !important; 
-  min-height: 480px !important;
+  min-height: 0px !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -686,10 +686,6 @@
   }
 
 /* ==========================================================================
-
-/* ==========================================================================
-
-/* ==========================================================================
    DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (MOTO G72 / REALME C55)
    ========================================================================== */
 @media screen and (max-width: 800px) {
@@ -699,8 +695,8 @@
     .hero {
       position: relative !important;
       width: 100% !important;
-      height: 480px !important; 
-      min-height: 480px !important;
+      height: 300px !important; 
+      min-height: 0px !important;
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
@@ -798,35 +794,45 @@
    ========================================================================== */
 @media screen and (max-width: 768px) {
   ::ng-deep {
-    
-    .hero {
-      position: relative !important;
-      width: 100% !important;
-      height: 360px !important; 
-      min-height: 360px !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      overflow: visible !important;
-      margin: 0 auto !important;
-      padding: 0 !important;
-      background: #ecefec !important; 
-    }
+    /* ==========================================================================
+   BUSCA LA CLASE DEL CONTENEDOR EN TU QUERY MÓVIL Y CÁMBIALA EXACTAMENTE ASÍ:
+   ========================================================================== */
+
+/* Añadimos el prefijo "section" antes del punto para ganarle la prioridad al HTML */
+section.hero,
+.hero {
+  position: relative !important;
+  width: 100% !important;
+  
+  /* Forzamos quirúrgicamente a encoger el alto total a 360px en móviles */
+  height: 360px !important; 
+  min-height: 360px !important;
+  max-height: 300px !important; /* Bloquea por completo que se estire a 480px */
+  
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: visible !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: #ecefec !important; 
+}
+
 
     /* FORZAMOS LA REAPARICIÓN DEL LOGO CON UN ANCHO Y ALTO REALES Y FIJOS */
     .hero .hero-background {
       position: absolute !important;
-      top: 26% !important; /* Centrado vertical absoluto en la sección */
+      top: 49% !important; /* Centrado vertical absoluto en la sección */
       left: 50% !important; /* Centrado horizontal absoluto en la sección */
       transform: translate(-50%, -50%) !important;
       width: 200px !important;  /* Dimensión circular perfecta para pantallas móviles */
       height: 200px !important; 
-      min-width: 180px !important;  
-      min-height: 180px !important;
+      min-width: 140px !important;  
+      min-height: 0px !important;
       border-radius: 50% !important; 
       box-shadow: none; 
       margin: 0 !important;
-      z-index: 1 !important;
+      z-index: 10 !important;
       background-color: transparent !important;
       display: block !important; /* Fuerza la carga del renderizado */
       overflow: visible !important;
@@ -881,7 +887,7 @@
       box-shadow: none !important; 
       
       /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
-      top: -13px !important;         /* Alinea el centro del botón con el centro del logo */
+      top: 35px !important;         /* sube o baja botones celular */
       left: -52px !important;        /* Centrado horizontal respecto a su ancho */
       z-index: 11 !important;
     }
