@@ -823,7 +823,7 @@
       background: #092212 !important;     
       border: 1.5px solid #16a34a !important; 
       color: #ffffff !important;
-      top: -25px !important;
+      top: -55px !important;
       left: -70px !important;
     }
 
@@ -832,15 +832,15 @@
        --------------------------------================================== */
     
     /* BLOQUE DERECHO LAPTOP (Ángulos cerrados para reducir el espacio vertical) */
-    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-10deg) translate(203px) rotate(10deg) !important; } /* OFERTAS */
+    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-5deg)  translate(190px) rotate(5deg) !important; }  /* OFERTAS */
     .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(10deg)  translate(205px) rotate(-10deg) !important; } /* SOPORTE */
-    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(30deg)  translate(207px) rotate(-30deg) !important; } /* MI CUENTA */
-    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(50deg)  translate(206px) rotate(-50deg) !important; } /* C&M STUDIOS */
+    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(25deg)  translate(215px) rotate(-25deg) !important; } /* MI CUENTA */
+    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(40deg)  translate(230px) rotate(-40deg) !important; } /* C&M STUDIOS */
 
-    /* BLOQUE IZQUIERDO LAPTOP (Simetría compacta coincidente a la izquierda) */
-    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(130deg) translate(238px) rotate(-130deg) !important; } /* FUNDACIÓN SEGAT */
-    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(150deg) translate(238px) rotate(-150deg) !important; } /* BRACASFOOD */
-    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(238px) rotate(-170deg) !important; } /* UBICACIÓN */
-    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(190deg) translate(238px) rotate(-190deg) !important; } /* CONTACTOS */
+    /* BLOQUE IZQUIERDO LAPTOP (Ángulos cerrados a juego de 15 en 15 grados) */
+    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(140deg) translate(268px) rotate(-140deg) !important; } /* CATÁLOGO */ 
+    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(155deg) translate(265px) rotate(-155deg) !important; } /* UBICACIÓN */ 
+    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(252px) rotate(-170deg) !important; } /* BRACASFOOD */
+    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(185deg) translate(232px) rotate(-185deg) !important; } /* FUNDACIÓN SEGAT */
   }
 }
