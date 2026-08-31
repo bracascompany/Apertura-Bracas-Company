@@ -103,7 +103,7 @@
    ============================================================ */
 @media screen and (max-width: 450px) {
   .hero {
-    height: 1vh; /* Ocupa todo el alto en celular */
+    height: auto; /* Ocupa todo el alto en celular */
     display: flex;
     align-items: center;
   }
@@ -128,7 +128,7 @@
     position: relative !important; /* Quitamos el absolute para que floten a los lados */
     top: 10% !important;
     right: 55%;
-    width: 10%; /* Ancho para no tapar el centro */
+    width: 15px; /* Ancho para no tapar el centro */
     gap: 1px; /* Espacio vertical ultra reducido entre botones */
     display: flex;
   }
@@ -175,13 +175,13 @@
    3. SECCIONES RESTANTES (CONSERVADAS)
    ============================================================ */
 .promo-banner {
-  padding: 40px 5% 20px;
+  padding: 30px 5% 20px;
   text-align: center;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   h2 {
-    font-size: 2.2rem !important;
+    font-size: 1.2rem !important;
     font-weight: 900 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -373,7 +373,7 @@
 
   .hero-background img {
     margin-top: 0px !important;
-    transform: scale(1.5) !important;
+    transform: scale(1) !important;
   }
 
   .hero-content {
@@ -727,7 +727,7 @@
 }
 
 /* ==========================================================================
-   DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (MOTO G72 / REALME C55)
+   DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (REALME C55)
    ========================================================================== */
 @media screen and (max-width: 800px) {
   ::ng-deep {
@@ -735,12 +735,10 @@
     .hero {
       position: relative !important;
       width: 100% !important;
-      height: 300px !important;
-      min-height: 0px !important; 
-      height: auto !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
+height: 100% !important;
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
       overflow: visible !important;
       margin: 0 auto !important;
       padding: 0 !important;
@@ -749,11 +747,11 @@
     /* Redondeamos el contenedor del logo y lo centramos geométricamente */
     .hero .hero-background {
       position: absolute !important;
-      top: 35% !important;
+      top: 20% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
-      width: 280px !important; /* Ajustamos a 200px para que ruede mejor con el texto */
-      height: 280px !important;
+      width: 180px !important; /* Ajustamos a 200px para que ruede mejor con el texto */
+      height: 180px !important;
       border-radius: 50% !important;
       box-shadow: none !important;
       margin: 0 !important;
@@ -769,7 +767,7 @@
     /* Punto de origen central de la órbita de botones */
     .hero .hero-content {
       position: absolute !important;
-      top: 10% !important;
+      top: 50% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
       width: 0px !important;
@@ -780,7 +778,7 @@
     /* Forzamos el contenedor interno a resetear la escala de PC */
     .hero .hero-content .circular-menu {
       position: absolute !important;
-      transform: scale(1) !important;
+      transform: scale(1.1) !important;
       transform-origin: center center !important;
       width: 0px !important;
       height: 0px !important;
@@ -999,7 +997,7 @@
       align-items: center !important;
       width: 140px !important;
       min-width: 140px !important;
-      max-width: 180px !important;
+      max-width: 140px !important;
       font-size: 0.8rem !important;
       padding: 12px 8px !important;
       white-space: nowrap !important;
@@ -1046,7 +1044,7 @@
    ============================================================ */
 @media (max-width: 768px) {
   .promo-banner {
-    margin-top: -140px !important;  /* Jala el texto hacia arriba eliminando el hueco */
+    margin-top: -120px !important;  /* Jala el texto hacia arriba eliminando el hueco */
     padding-top: 0px !important;
     padding-bottom: 1px !important;
   }
@@ -1061,9 +1059,34 @@
 @media (max-width: 768px) {
   .hero .hero-content .circular-menu .btn-glass,
   .hero .hero-content .circular-menu > * {
-    width: 130px !important;
-    min-width: 135px !important;
+    width: 220px !important;
+    min-width: 125px !important;
     padding: 8px 8px !important;
     font-size: 0.85rem !important;
+  }
+}
+/* ============================================================
+   REGLAS QUIRÚRGICAS EXCLUSIVAS PARA MOTO G72 (NO AFECTA AL REALME C55)
+   ============================================================ */
+@media screen and (min-width: 410px) and (max-width: 415px) {
+  /* Escalamos la caja contenedora del logo un 25% más grande solo aquí */
+  .hero .hero-background {
+    width: 650px !important; 
+    top: 55% !important;
+  }
+
+  /* Removemos el achicamiento de la escala de los botones solo aquí */
+  .hero .hero-content .circular-menu {
+    transform: scale(2) !important;
+    top: 15px !important;
+  }
+
+  /* Le damos más cuerpo físico a las cajas de los botones solo aquí */
+  .hero .hero-content .circular-menu .btn-glass,
+  .hero .hero-content .circular-menu > * {
+    width: 225px !important;
+    min-width: 200px !important;
+    font-size: 1.5rem !important;
+    padding: 15px 8px !important;
   }
 }
