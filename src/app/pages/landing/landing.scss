@@ -213,7 +213,7 @@
   .cta-buttons-left,
   .cta-buttons-right {
     position: static;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .btn-primary,
@@ -359,7 +359,7 @@
     height: 0px important;
     min-height: 0px !important;
     padding-top: 0 !important;
-    padding-bottom: 0px !important;
+    padding-bottom: 1px !important;
     overflow: hidden !important;
   }
 
@@ -373,7 +373,7 @@
 
   .hero-background img {
     margin-top: 0px !important;
-    transform: scale(1) !important;
+    transform: scale(1.5) !important;
   }
 
   .hero-content {
@@ -398,7 +398,7 @@
   }
 
   .btn-glass {
-    width: 5px !important; /* buttons sizes*/
+    width: 15px !important; /* buttons sizes*/
     max-width: 5px !important;
     min-width: 2px !important;
     font-size: 0.5rem !important;
@@ -852,10 +852,7 @@
    ========================================================================== */
 @media screen and (max-width: 768px) {
   ::ng-deep {
-    /* ==========================================================================
-   BUSCA LA CLASE DEL CONTENEDOR EN TU QUERY MÓVIL Y CÁMBIALA EXACTAMENTE ASÍ:
-   ========================================================================== */
-
+  
     /* Añadimos el prefijo "section" antes del punto para ganarle la prioridad al HTML */
     section.hero,
     .hero {
@@ -945,7 +942,7 @@
 
       /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
       top: 7px !important; /* sube o baja botones celular */
-      left: -52px !important; /* Centrado horizontal respecto a su ancho */
+      left: -65px !important; /* Centrado horizontal respecto a su ancho */
       z-index: 11 !important;
     }
 
@@ -955,30 +952,30 @@
 
     /* BLOQUE DERECHO MÓVIL (Nivelado y con pasos perfectos de 20 en 20 grados) */
     .hero .hero-content .circular-menu > *:nth-child(1) {
-      transform: rotate(-30deg) translate(150px) rotate(30deg) !important;
+      transform: rotate(-35deg) translate(150px) rotate(35deg) !important;
     } /* OFERTAS */
     .hero .hero-content .circular-menu > *:nth-child(2) {
-      transform: rotate(-10deg) translate(150px) rotate(10deg) !important;
+      transform: rotate(-15deg) translate(150px) rotate(15deg) !important;
     } /* SOPORTE */
     .hero .hero-content .circular-menu > *:nth-child(3) {
-      transform: rotate(10deg) translate(145px) rotate(-10deg) !important;
+      transform: rotate(3deg) translate(145px) rotate(-3deg) !important;
     } /* MI CUENTA */
     .hero .hero-content .circular-menu > *:nth-child(4) {
-      transform: rotate(30deg) translate(145px) rotate(-30deg) !important;
+      transform: rotate(20deg) translate(145px) rotate(-20deg) !important;
     } /* C&M STUDIOS */
 
     /* BLOQUE IZQUIERDO MÓVIL (Tu bloque actual que ya está perfecto) */
     .hero .hero-content .circular-menu > *:nth-child(5) {
-      transform: rotate(150deg) translate(145px) rotate(-150deg) !important;
+      transform: rotate(156deg) translate(145px) rotate(-156deg) !important;
     } /* CATÁLOGO */
     .hero .hero-content .circular-menu > *:nth-child(6) {
-      transform: rotate(170deg) translate(145px) rotate(-170deg) !important;
+      transform: rotate(175deg) translate(145px) rotate(-175deg) !important;
     } /* UBICACIÓN */
     .hero .hero-content .circular-menu > *:nth-child(7) {
-      transform: rotate(190deg) translate(145px) rotate(-190deg) !important;
+      transform: rotate(193deg) translate(145px) rotate(-193deg) !important;
     } /* BRACASFOOD */
     .hero .hero-content .circular-menu > *:nth-child(8) {
-      transform: rotate(210deg) translate(150px) rotate(-210deg) !important;
+      transform: rotate(209deg) translate(165px) rotate(-209deg) !important;
     } /* FUNDACIÓN SEGAT */
   }
 }
@@ -1041,5 +1038,32 @@
     .hero .hero-content .circular-menu > *:nth-child(8) {
       transform: rotate(185deg) translate(232px) rotate(-185deg) !important;
     }
+  }
+}
+
+/* ============================================================
+   AJUSTE EXCLUSIVO PARA MÓVILES (NO AFECTA A LA COMPUTADORA)
+   ============================================================ */
+@media (max-width: 768px) {
+  .promo-banner {
+    margin-top: -140px !important;  /* Jala el texto hacia arriba eliminando el hueco */
+    padding-top: 0px !important;
+    padding-bottom: 1px !important;
+  }
+  .featured-products {
+    padding-top: 1px !important;
+  }
+}
+
+/* ============================================================
+   INCREMENTO DE TAMAÑO DE BOTONES EXCLUSIVO PARA MÓVILES
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero .hero-content .circular-menu .btn-glass,
+  .hero .hero-content .circular-menu > * {
+    width: 130px !important;
+    min-width: 135px !important;
+    padding: 8px 8px !important;
+    font-size: 0.85rem !important;
   }
 }
