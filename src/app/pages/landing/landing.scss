@@ -11,7 +11,7 @@
 .hero {
   position: relative !important;
   width: 100% !important;
-  height: 480px !important; 
+  height: 480px !important;
   min-height: 0px !important;
   display: flex !important;
   justify-content: center !important;
@@ -19,9 +19,7 @@
   overflow: visible !important;
   margin: 0 auto !important;
   padding: 0 !important;
-  
 }
-
 
 // 2. EL LOGO DE FONDO (LA "B")
 .hero-background {
@@ -192,7 +190,6 @@
   }
 }
 
-
 .featured-products {
   background: linear-gradient(180deg, #c5c7c6 0%, #14532d 25%, #092212 100%) !important;
   padding: 30px 14px !important;
@@ -243,14 +240,13 @@
       width: 25%; // En móviles reales se adapta al ancho de pantalla
     }
 
-      transform: translateY(1px);
-      box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
-      color: #ffffff;
-    }
+    transform: translateY(1px);
+    box-shadow: 0 0 20px rgba(92, 203, 95, 0.4); // Efecto Glow
+    color: #ffffff;
   }
+}
 
-
-// 4. BANNER 
+// 4. BANNER
 .promo-banner {
   padding: 40px 5% 20px;
   text-align: center;
@@ -266,9 +262,6 @@
     text-shadow: 0 0 12px rgba(3, 246, 92, 0.85);
   }
 }
-
-
-
 
 // 5. PRODUCTOS
 .featured-products {
@@ -405,7 +398,7 @@
   }
 
   .btn-glass {
-    width: 5px !important;   /* buttons sizes*/
+    width: 5px !important; /* buttons sizes*/
     max-width: 5px !important;
     min-width: 2px !important;
     font-size: 0.5rem !important;
@@ -447,6 +440,7 @@
 
     span.highlight {
       background: linear-gradient(90deg, #5ccb5f, #34d087);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -561,7 +555,7 @@
 .hero {
   position: relative !important;
   width: 100% !important;
-  height: 480px !important; 
+  height: 480px !important;
   min-height: 0px !important;
   display: flex !important;
   justify-content: center !important;
@@ -569,163 +563,199 @@
   overflow: visible !important;
   margin: 0 auto !important;
   padding: 0 !important;
-  
 }
 
+.hero-background {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: 15%; /* envia el logo pa arriba */
+  left: 33%; /* centra el logo */
+  transform: translate(-10%, -7%); /* aqui empezo la cuadracion del logo hacia abajo y a la izq*/
+  background: url('/assets/logo1.jpeg') no-repeat center center;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+  z-index: 1;
+}
 
-  .hero-background {
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    top: 15%; /* envia el logo pa arriba */
-    left: 33%; /* centra el logo */
-    transform: translate(-10%, -7%); /* aqui empezo la cuadracion del logo hacia abajo y a la izq*/
-    background: url('/assets/logo1.jpeg') no-repeat center center;
-    background-size: contain;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
-    z-index: 1;
-  }
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 
-  .hero-content {
+  .circular-menu {
+    transform: scale(1.2);
+    transform-origin: right center;
     position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 60px;
+    width: 0;
+    height: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 2;
+    justify-content: left;
 
-    .circular-menu {
-      transform: scale(1.2);
-      transform-origin: right center;
-      position: relative;
-      width: 0;
-      height: 0;
+    .btn-glass {
+      position: absolute;
+      background: linear-gradient(
+        145deg,
+        #09a04391 0%,
+        #14532d 60%,
+        #086129af 100%
+      ) !important; /* Degradado metalizado tridimensional */
+      border: 1.5px solid rgba(74, 222, 128, 0.65) !important; /* Borde cromado verde brillante como el reflejo de la B */
+      color: #05d24d6c;
+      padding: 8px 16px !important;
+      display: inline-block !important;
+      text-align: center;
+      width: 150px;
+      border-radius: 50px;
+      font-size: 1rem !important;
+      font-weight: 900 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      font-weight: 900;
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+      cursor: pointer;
+      box-shadow:
+        inset 0 2px 4px rgba(2, 231, 94, 0.444),
+        /* Reflejo interno de luz superior */ 0 4px 10px rgba(3, 143, 27, 0.342) !important; /* Sombra exterior para dar volumen flotante */
+
+      transition: all 0.3s ease;
+
+      /* Distribución matemática exacta en círculo (Corrección de alineación izquierda) */
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: left;
 
-      .btn-glass {
-        position: absolute;
-        background: linear-gradient(145deg, #09a04391 0%, #14532d 60%, #086129af 100%) !important; /* Degradado metalizado tridimensional */
-        border: 1.5px solid rgba(74, 222, 128, 0.65) !important; /* Borde cromado verde brillante como el reflejo de la B */
-        color: #05d24d6c;
-        padding: 8px 16px !important;
-        display: inline-block !important;
+      /* BLOQUE DERECHO: Alineados a la izquierda, texto a la izquierda */
+      &:nth-child(1) {
+        transform: rotate(0deg) translate(170px) rotate(0deg);
+        width: 140px;
+        text-align: left;
+        justify-content: flex-start;
+      } /* MI CUENTA */
+      &:nth-child(2) {
+        transform: rotate(30deg) translate(170px) rotate(-30deg);
+        width: 130px;
+        text-align: left;
+        justify-content: flex-start;
+      } /* OFERTAS */
+      &:nth-child(3) {
+        transform: rotate(60deg) translate(180px) rotate(-60deg);
+        width: 110px;
         text-align: center;
-        width: 150px;
-        border-radius: 50px;
-        font-size: 1rem !important;
-        font-weight: 900 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
-        font-weight: 900;
-        backdrop-filter: blur(6px);
-        white-space: nowrap;
-        cursor: pointer;
-        box-shadow: 
-  inset 0 2px 4px rgba(2, 231, 94, 0.444), /* Reflejo interno de luz superior */
-  0 4px 10px rgba(3, 143, 27, 0.342) !important;  /* Sombra exterior para dar volumen flotante */
-
-        transition: all 0.3s ease;
-
-        /* Distribución matemática exacta en círculo (Corrección de alineación izquierda) */
-        display: flex;
         justify-content: center;
-        align-items: center;
+      } /* NOSOTROS */
+      &:nth-child(4) {
+        transform: rotate(90deg) translate(190px) rotate(-90deg);
+        width: 150px;
+        text-align: center;
+        justify-content: center;
+      } /* CONTACTOS */
 
-        /* BLOQUE DERECHO: Alineados a la izquierda, texto a la izquierda */
-        &:nth-child(1) {
-          transform: rotate(0deg) translate(170px) rotate(0deg);
-          width: 140px;
-          text-align: left;
-          justify-content: flex-start;
-        } /* MI CUENTA */
-        &:nth-child(2) {
-          transform: rotate(30deg) translate(170px) rotate(-30deg);
-          width: 130px;
-          text-align: left;
-          justify-content: flex-start;
-        } /* OFERTAS */
-        &:nth-child(3) {
-          transform: rotate(60deg) translate(180px) rotate(-60deg);
-          width: 110px;
-          text-align: center;
-          justify-content: center;
-        } /* NOSOTROS */
-        &:nth-child(4) {
-          transform: rotate(90deg) translate(190px) rotate(-90deg);
-          width: 150px;
-          text-align: center;
-          justify-content: center;
-        } /* CONTACTOS */
-
-           /* =========================================================================
+      /* =========================================================================
        BLOQUE IZQUIERDO CON DIRECCIÓN RTL (El texto crece hacia afuera automáticamente)
        ========================================================================= */
-    &:nth-child(5)  { transform: rotate(-120deg) translate(200px) rotate(120deg);  width: 140px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* SOPORTE */
-    &:nth-child(6)  { transform: rotate(-150deg) translate(195px) rotate(150deg);  width: 160px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* UBICACIÓN */
-    &:nth-child(7)  { transform: rotate(-180deg) translate(216px) rotate(180deg);  width: 150px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* CATÁLOGO */
-    &:nth-child(8)  { transform: rotate(-210deg) translate(200px) rotate(210deg);  width: 175px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* BRACASFOOD */
-    &:nth-child(9)  { transform: rotate(-240deg) translate(208px) rotate(240deg);  width: 130px; direction: rtl; display: flex !important; justify-content: flex-start; text-align: left; }  /* BRADES */
+      &:nth-child(5) {
+        transform: rotate(-120deg) translate(200px) rotate(120deg);
+        width: 140px;
+        direction: rtl;
+        display: flex !important;
+        justify-content: flex-start;
+        text-align: left;
+      } /* SOPORTE */
+      &:nth-child(6) {
+        transform: rotate(-150deg) translate(195px) rotate(150deg);
+        width: 160px;
+        direction: rtl;
+        display: flex !important;
+        justify-content: flex-start;
+        text-align: left;
+      } /* UBICACIÓN */
+      &:nth-child(7) {
+        transform: rotate(-180deg) translate(216px) rotate(180deg);
+        width: 150px;
+        direction: rtl;
+        display: flex !important;
+        justify-content: flex-start;
+        text-align: left;
+      } /* CATÁLOGO */
+      &:nth-child(8) {
+        transform: rotate(-210deg) translate(200px) rotate(210deg);
+        width: 175px;
+        direction: rtl;
+        display: flex !important;
+        justify-content: flex-start;
+        text-align: left;
+      } /* BRACASFOOD */
+      &:nth-child(9) {
+        transform: rotate(-240deg) translate(208px) rotate(240deg);
+        width: 130px;
+        direction: rtl;
+        display: flex !important;
+        justify-content: flex-start;
+        text-align: left;
+      } /* BRADES */
 
-
-        /* BLOQUE SUPERIOR DERECHO */
-        &:nth-child(10) {
-          transform: rotate(270deg) translate(190px) rotate(-270deg);
-          width: 190px;
-          text-align: center;
-          justify-content: center;
-        } /* BRACASSTYLES */
-        &:nth-child(11) {
-          transform: rotate(300deg) translate(177px) rotate(-300deg);
-          width: 190px;
-          text-align: left;
-          justify-content: flex-start;
-        } /* C&M[JB] STUDIOS */
-        &:nth-child(12) {
-          transform: rotate(330deg) translate(173px) rotate(-330deg);
-          width: 222px;
-          text-align: left;
-          justify-content: flex-start;
-        } /* FUNDACIÓN SEGAT */
-      }
+      /* BLOQUE SUPERIOR DERECHO */
+      &:nth-child(10) {
+        transform: rotate(270deg) translate(190px) rotate(-270deg);
+        width: 190px;
+        text-align: center;
+        justify-content: center;
+      } /* BRACASSTYLES */
+      &:nth-child(11) {
+        transform: rotate(300deg) translate(177px) rotate(-300deg);
+        width: 190px;
+        text-align: left;
+        justify-content: flex-start;
+      } /* C&M[JB] STUDIOS */
+      &:nth-child(12) {
+        transform: rotate(330deg) translate(173px) rotate(-330deg);
+        width: 222px;
+        text-align: left;
+        justify-content: flex-start;
+      } /* FUNDACIÓN SEGAT */
     }
   }
+}
 
 /* ==========================================================================
    DISTRIBUCIÓN RADIAL COMPACTA PARA CELULARES (MOTO G72 / REALME C55)
    ========================================================================== */
 @media screen and (max-width: 800px) {
   ::ng-deep {
-    
     /* Contenedor padre con fondo oscuro para dar contraste al texto blanco de los botones */
     .hero {
       position: relative !important;
       width: 100% !important;
-      height: 300px !important; 
-      min-height: 0px !important;
+      height: 300px !important;
+      min-height: 0px !important; 
+      height: auto !important;
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
       overflow: visible !important;
       margin: 0 auto !important;
       padding: 0 !important;
-      
     }
 
     /* Redondeamos el contenedor del logo y lo centramos geométricamente */
     .hero .hero-background {
       position: absolute !important;
-      top: 35% !important; 
+      top: 35% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
-      width: 280px !important;  /* Ajustamos a 200px para que ruede mejor con el texto */
-      height: 280px !important; 
-      border-radius: 50% !important; 
-      box-shadow: none !important; 
+      width: 280px !important; /* Ajustamos a 200px para que ruede mejor con el texto */
+      height: 280px !important;
+      border-radius: 50% !important;
+      box-shadow: none !important;
       margin: 0 !important;
       z-index: 1 !important;
     }
@@ -739,7 +769,7 @@
     /* Punto de origen central de la órbita de botones */
     .hero .hero-content {
       position: absolute !important;
-      top: 10% !important; 
+      top: 10% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
       width: 0px !important;
@@ -750,7 +780,7 @@
     /* Forzamos el contenedor interno a resetear la escala de PC */
     .hero .hero-content .circular-menu {
       position: absolute !important;
-      transform: scale(1) !important; 
+      transform: scale(1) !important;
       transform-origin: center center !important;
       width: 0px !important;
       height: 0px !important;
@@ -761,21 +791,21 @@
     .hero .hero-content .circular-menu .btn-glass,
     .hero .hero-content .circular-menu > * {
       position: absolute !important;
-      display: block !important;       /* Desactivamos flexbox aquí para evitar el colapso vertical */
-      width: 100px !important;          /* Ancho físico fijo garantizado */
-      min-width: 95px !important;      /* Bloqueamos que el navegador lo encoja */
-      font-size: 0.65rem !important;   /* Letra perfectamente escalada */
-      padding: 6px 2px !important;    
+      display: block !important; /* Desactivamos flexbox aquí para evitar el colapso vertical */
+      width: 100px !important; /* Ancho físico fijo garantizado */
+      min-width: 95px !important; /* Bloqueamos que el navegador lo encoja */
+      font-size: 0.65rem !important; /* Letra perfectamente escalada */
+      padding: 6px 2px !important;
       text-align: center !important;
-      white-space: nowrap !important;  /* Evita que el texto salte de línea */
-      transform-origin: center center !important; 
+      white-space: nowrap !important; /* Evita que el texto salte de línea */
+      transform-origin: center center !important;
       border-radius: 20px !important;
-      background: rgba(166, 245, 170, 0.7);  /* Fondo interno de los botones */
+      background: rgba(166, 245, 170, 0.7); /* Fondo interno de los botones */
       border: 1px solid rgba(74, 222, 128, 0.8) !important; /* Borde verde brillante nítido */
-      color: #effaef !important;       /* Texto blanco forzado */
-      
+      color: #effaef !important; /* Texto blanco forzado */
+
       /* Coordenadas de calibración para el nuevo tamaño horizontal */
-      top: -100% !important;         
+      top: -100% !important;
       left: -47px !important;
       z-index: 11 !important;
     }
@@ -785,17 +815,35 @@
        --------------------------------================================== */
 
     /* BLOQUE DERECHO */
-    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(0deg) translate(135px) rotate(0deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(30deg) translate(135px) rotate(-30deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(60deg) translate(135px) rotate(-60deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(90deg) translate(135px) rotate(-90deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(1) {
+      transform: rotate(0deg) translate(135px) rotate(0deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(2) {
+      transform: rotate(30deg) translate(135px) rotate(-30deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(3) {
+      transform: rotate(60deg) translate(135px) rotate(-60deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(4) {
+      transform: rotate(90deg) translate(135px) rotate(-90deg) !important;
+    }
 
     /* BLOQUE IZQUIERDO */
-    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(-120deg) translate(135px) rotate(120deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(-150deg) translate(135px) rotate(150deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(-180deg) translate(135px) rotate(180deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(-210deg) translate(135px) rotate(210deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(9) { transform: rotate(-240deg) translate(135px) rotate(240deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(5) {
+      transform: rotate(-120deg) translate(135px) rotate(120deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(6) {
+      transform: rotate(-150deg) translate(135px) rotate(150deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(7) {
+      transform: rotate(-180deg) translate(135px) rotate(180deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(8) {
+      transform: rotate(-210deg) translate(135px) rotate(210deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(9) {
+      transform: rotate(-240deg) translate(135px) rotate(240deg) !important;
+    }
   }
 }
 
@@ -808,39 +856,38 @@
    BUSCA LA CLASE DEL CONTENEDOR EN TU QUERY MÓVIL Y CÁMBIALA EXACTAMENTE ASÍ:
    ========================================================================== */
 
-/* Añadimos el prefijo "section" antes del punto para ganarle la prioridad al HTML */
-section.hero,
-.hero {
-  position: relative !important;
-  width: 100% !important;
-  
-  /* Forzamos quirúrgicamente a encoger el alto total a 360px en móviles */
-  height: 330px !important; 
-  min-height: 330px !important;
-  max-height: 300px !important; /* Bloquea por completo que se estire a 480px */
-  
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  overflow: visible !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: #c5c7c6 !important; 
-}
+    /* Añadimos el prefijo "section" antes del punto para ganarle la prioridad al HTML */
+    section.hero,
+    .hero {
+      position: relative !important;
+      width: 100% !important;
 
+      /* Forzamos quirúrgicamente a encoger el alto total a 360px en móviles */
+      height: 330px !important;
+      min-height: 330px !important;
+      max-height: 300px !important; /* Bloquea por completo que se estire a 480px */
+
+      display: flex !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      overflow: visible !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      background: #c5c7c6 !important;
+    }
 
     /* FORZAMOS LA REAPARICIÓN DEL LOGO CON UN ANCHO Y ALTO REALES Y FIJOS */
     .hero .hero-background {
       position: absolute !important;
-      top: 49% !important; /* Centrado vertical absoluto en la sección */
+      top: 30% !important; /* Centrado vertical absoluto en la sección */
       left: 50% !important; /* Centrado horizontal absoluto en la sección */
       transform: translate(-50%, -50%) !important;
-      width: 280px !important;  /* Dimensión circular perfecta para pantallas móviles */
-      height: 280px !important; 
-      min-width: 280px !important;  
+      width: 280px !important; /* Dimensión circular perfecta para pantallas móviles */
+      height: 280px !important;
+      min-width: 280px !important;
       min-height: 280px !important;
-      border-radius: 50% !important; 
-      box-shadow: none; 
+      border-radius: 50% !important;
+      box-shadow: none;
       margin: 0 !important;
       z-index: 10 !important;
       background-color: transparent !important;
@@ -858,7 +905,7 @@ section.hero,
     /* Eje central de la órbita (Compartiendo la misma coordenada 50% del logo) */
     .hero .hero-content {
       position: absolute !important;
-      top: 15% !important; 
+      top: 1% !important; /* buttons up */
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
       width: 0px !important;
@@ -869,7 +916,7 @@ section.hero,
 
     .hero .hero-content .circular-menu {
       position: absolute !important;
-      transform: scale(1.2) !important; 
+      transform: scale(0.8) !important; /* buttons size */
       display: block !important;
       width: 0px !important;
       height: 0px !important;
@@ -880,25 +927,25 @@ section.hero,
     .hero .hero-content .circular-menu .btn-glass,
     .hero .hero-content .circular-menu > * {
       position: absolute !important;
-      display: flex !important;         
+      display: flex !important;
       justify-content: center !important;
       align-items: center !important;
-      width: 105px !important;          
-      min-width: 105px !important;      
-      font-size: 0.62rem !important;   
-      padding: 6px 4px !important;    
+      width: 105px !important;
+      min-width: 105px !important;
+      font-size: 0.62rem !important;
+      padding: 6px 4px !important;
       text-align: center !important;
-      white-space: nowrap !important;  
-      transform-origin: center center !important; 
+      white-space: nowrap !important;
+      transform-origin: center center !important;
       border-radius: 20px !important;
-      background: rgba(166, 245, 170, 0.7); 
-      border: 1px solid #15803d !important; 
-      color: #ffffff !important;       
-      box-shadow: none !important; 
-      
+      background: rgba(166, 245, 170, 0.7);
+      border: 1px solid #15803d !important;
+      color: #ffffff !important;
+      box-shadow: none !important;
+
       /* EQUILIBRIO DE EJE VERTICAL MÓVIL: */
-      top: 7px !important;         /* sube o baja botones celular */
-      left: -52px !important;        /* Centrado horizontal respecto a su ancho */
+      top: 7px !important; /* sube o baja botones celular */
+      left: -52px !important; /* Centrado horizontal respecto a su ancho */
       z-index: 11 !important;
     }
 
@@ -906,18 +953,33 @@ section.hero,
        MATEMÁTICA DE ÓRBITA MÓVIL PARALELA (RADIO COMPACTADO A 120px)
        --------------------------------================================== */
 
-/* BLOQUE DERECHO MÓVIL (Nivelado y con pasos perfectos de 20 en 20 grados) */
-.hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-30deg) translate(150px) rotate(30deg) !important; }  /* OFERTAS */
-.hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(-10deg) translate(150px) rotate(10deg) !important; }  /* SOPORTE */
-.hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(10deg)  translate(145px) rotate(-10deg) !important; } /* MI CUENTA */
-.hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(30deg)  translate(145px) rotate(-30deg) !important; } /* C&M STUDIOS */
+    /* BLOQUE DERECHO MÓVIL (Nivelado y con pasos perfectos de 20 en 20 grados) */
+    .hero .hero-content .circular-menu > *:nth-child(1) {
+      transform: rotate(-30deg) translate(150px) rotate(30deg) !important;
+    } /* OFERTAS */
+    .hero .hero-content .circular-menu > *:nth-child(2) {
+      transform: rotate(-10deg) translate(150px) rotate(10deg) !important;
+    } /* SOPORTE */
+    .hero .hero-content .circular-menu > *:nth-child(3) {
+      transform: rotate(10deg) translate(145px) rotate(-10deg) !important;
+    } /* MI CUENTA */
+    .hero .hero-content .circular-menu > *:nth-child(4) {
+      transform: rotate(30deg) translate(145px) rotate(-30deg) !important;
+    } /* C&M STUDIOS */
 
-/* BLOQUE IZQUIERDO MÓVIL (Tu bloque actual que ya está perfecto) */
-.hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(150deg) translate(145px) rotate(-150deg) !important; } /* CATÁLOGO */
-.hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(170deg) translate(145px) rotate(-170deg) !important; } /* UBICACIÓN */
-.hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(190deg) translate(145px) rotate(-190deg) !important; } /* BRACASFOOD */
-.hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(210deg) translate(150px) rotate(-210deg) !important; } /* FUNDACIÓN SEGAT */
-
+    /* BLOQUE IZQUIERDO MÓVIL (Tu bloque actual que ya está perfecto) */
+    .hero .hero-content .circular-menu > *:nth-child(5) {
+      transform: rotate(150deg) translate(145px) rotate(-150deg) !important;
+    } /* CATÁLOGO */
+    .hero .hero-content .circular-menu > *:nth-child(6) {
+      transform: rotate(170deg) translate(145px) rotate(-170deg) !important;
+    } /* UBICACIÓN */
+    .hero .hero-content .circular-menu > *:nth-child(7) {
+      transform: rotate(190deg) translate(145px) rotate(-190deg) !important;
+    } /* BRACASFOOD */
+    .hero .hero-content .circular-menu > *:nth-child(8) {
+      transform: rotate(210deg) translate(150px) rotate(-210deg) !important;
+    } /* FUNDACIÓN SEGAT */
   }
 }
 
@@ -926,9 +988,8 @@ section.hero,
    ========================================================================== */
 @media screen and (min-width: 769px) {
   ::ng-deep {
-    
     .hero .hero-content .circular-menu {
-      transform: scale(1.7) !important; 
+      transform: scale(1.7) !important;
       display: block !important;
       width: 0px !important;
       height: 0px !important;
@@ -936,33 +997,49 @@ section.hero,
 
     .hero .hero-content .circular-menu .btn-glass,
     .hero .hero-content .circular-menu > * {
-      display: flex !important;         
+      display: flex !important;
       justify-content: center !important;
       align-items: center !important;
-      width: 140px !important;           
-      min-width: 140px !important;       
+      width: 140px !important;
+      min-width: 140px !important;
       max-width: 180px !important;
-      font-size: 0.8rem !important;      
-      padding: 12px 8px !important;      
+      font-size: 0.8rem !important;
+      padding: 12px 8px !important;
       white-space: nowrap !important;
-      border-radius: 50px !important;    
-      background: rgba(166, 245, 170, 0.7);    
-      border: 1.5px solid #03f65c !important; 
+      border-radius: 50px !important;
+      background: rgba(166, 245, 170, 0.7);
+      border: 1.5px solid #03f65c !important;
       color: #ffffff !important;
       top: -45px !important;
       left: -70px !important;
     }
 
     /* BLOQUE DERECHO LAPTOP */
-    .hero .hero-content .circular-menu > *:nth-child(1) { transform: rotate(-5deg)  translate(190px) rotate(5deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(2) { transform: rotate(10deg)  translate(205px) rotate(-10deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(3) { transform: rotate(25deg)  translate(215px) rotate(-25deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(4) { transform: rotate(40deg)  translate(230px) rotate(-40deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(1) {
+      transform: rotate(-5deg) translate(190px) rotate(5deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(2) {
+      transform: rotate(10deg) translate(205px) rotate(-10deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(3) {
+      transform: rotate(25deg) translate(215px) rotate(-25deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(4) {
+      transform: rotate(40deg) translate(230px) rotate(-40deg) !important;
+    }
 
     /* BLOQUE IZQUIERDO LAPTOP */
-    .hero .hero-content .circular-menu > *:nth-child(5) { transform: rotate(140deg) translate(268px) rotate(-140deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(6) { transform: rotate(155deg) translate(265px) rotate(-155deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(7) { transform: rotate(170deg) translate(252px) rotate(-170deg) !important; }
-    .hero .hero-content .circular-menu > *:nth-child(8) { transform: rotate(185deg) translate(232px) rotate(-185deg) !important; }
+    .hero .hero-content .circular-menu > *:nth-child(5) {
+      transform: rotate(140deg) translate(268px) rotate(-140deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(6) {
+      transform: rotate(155deg) translate(265px) rotate(-155deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(7) {
+      transform: rotate(170deg) translate(252px) rotate(-170deg) !important;
+    }
+    .hero .hero-content .circular-menu > *:nth-child(8) {
+      transform: rotate(185deg) translate(232px) rotate(-185deg) !important;
+    }
   }
 }
