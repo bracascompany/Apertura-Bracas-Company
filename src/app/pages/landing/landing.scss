@@ -181,7 +181,7 @@
   border: none !important;
   box-shadow: none !important;
   h2 {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     font-weight: 900 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -254,7 +254,7 @@
   border: none !important;
   box-shadow: none !important;
   h2 {
-    font-size: 2.2rem !important;
+    font-size: 1rem !important; 
     font-weight: 900 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -432,7 +432,7 @@
 
   /* Título principal */
   .success-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #1a1a1a;
     margin: 0;
@@ -855,12 +855,12 @@ align-items: center !important;
     section.hero,
     .hero {
       position: relative !important;
-      width: 100% !important;
+      width: 50% !important;
 
       /* Forzamos quirúrgicamente a encoger el alto total a 360px en móviles */
-      height: 330px !important;
-      min-height: 330px !important;
-      max-height: 300px !important; /* Bloquea por completo que se estire a 480px */
+      height: 230px !important;
+      min-height: 230px !important;
+      max-height: 230px !important; /* Bloquea por completo que se estire a 480px */
 
       display: flex !important;
       justify-content: center !important;
@@ -874,13 +874,13 @@ align-items: center !important;
     /* FORZAMOS LA REAPARICIÓN DEL LOGO CON UN ANCHO Y ALTO REALES Y FIJOS */
     .hero .hero-background {
       position: absolute !important;
-      top: 30% !important; /* Centrado vertical absoluto en la sección */
+      top: 40% !important; /* sube banner */
       left: 50% !important; /* Centrado horizontal absoluto en la sección */
       transform: translate(-50%, -50%) !important;
-      width: 280px !important; /* Dimensión circular perfecta para pantallas móviles */
-      height: 280px !important;
-      min-width: 280px !important;
-      min-height: 280px !important;
+      width: 100px !important; /* Dimensión circular perfecta para pantallas móviles */
+      height: 100px !important;
+      min-width: 155px !important;
+      min-height: 155px !important;
       border-radius: 50% !important;
       box-shadow: none;
       margin: 0 !important;
