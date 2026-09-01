@@ -1170,8 +1170,8 @@ align-items: center !important;
 
   /* Reducimos el tamaño de las esferas para que quepan en viewports de 353px */
   .featured-products .product-grid .product-card {
-    width: 135px !important;           /* Tamaño ideal para que dos columnas sumen 270px */
-    height: 135px !important;          /* Mantiene la geometría circular perfecta */
+    width: 155px !important;           /* Tamaño ideal para que dos columnas sumen 270px */
+    height: 15px !important;          /* Mantiene la geometría circular perfecta */
     max-width: 140px !important;
     min-width: 0 !important;
     margin: 0 auto !important;         /* Centra cada logo en su mitad de pantalla */
@@ -1185,33 +1185,39 @@ align-items: center !important;
 }
 
 /* ============================================================
-   CALIBRACIÓN FINAL DE TAMAÑO Y SIMETRÍA PARA MÓVILES (<768PX)
+   AJUSTE DE IMPACTO: LOGOS DE EMPRESAS EN MÓVIL Realme C55
    ============================================================ */
 @media screen and (max-width: 768px) {
-  /* Blindamos el contenedor de la grilla para que use el ancho real exacto de la pantalla */
-  .featured-products .product-grid {
+  /* Forzamos a que la grilla ocupe todo el ancho real y oculte desbordes */
+  .featured-products .product-grid,
+  .product-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;               /* Reducimos el espacio entre esferas */
-    padding: 15px 6px !important;       /* Relleno compacto para dar aire en los bordes */
+    grid-template-columns: repeat(2, 1fr) !important; /* Dos columnas estrictas */
+    gap: 20px !important;            /* Más espacio de separación entre esferas */
+    padding: 20px 12px !important;   /* Margen interno para dar aire en los bordes */
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;        /* Corta de raíz cualquier desborde fantasma lateral */
+    overflow: hidden !important;
   }
 
-  /* Ajustamos las esferas a un tamaño más refinado y compacto */
-  .featured-products .product-grid .product-card {
-    width: 110px !important;            /* Bajamos de 135px a 110px para garantizar espacio libre */
-    height: 110px !important;           /* Mantiene la proporción esférica perfecta */
-    max-width: 110px !important;
-    min-width: 0 !important;
-    margin: 0 auto !important;          /* Centrado absoluto dentro de su respectiva columna */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4) !important;
+  /* Agrandamos los círculos de las empresas con dimensiones robustas */
+  .featured-products .product-grid .product-card,
+  .product-card {
+    width: 150px !important;         /* ¡Aumentamos el tamaño para que se vean imponentes! */ 
+    height: 150px !important;        /* Mantiene la geometría esférica perfecta */
+    max-width: 175px !important;
+    min-width: 150px !important;
+    margin: 0 auto !important;       /* Centrado perfecto en su columna para que NINGUNO se parta */
+    background: transparent !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important; /* Sombra premium realzada */
   }
 
-  /* Aseguramos que la imagen ocupe el 100% de la nueva dimensión esférica */
-  .featured-products .product-grid .product-card img {
+  /* Garantizamos que la imagen interna llene todo el nuevo tamaño gigante */
+  .featured-products .product-grid .product-card img,
+  .product-card img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -1219,21 +1225,33 @@ align-items: center !important;
 }
 
 /* ============================================================
-   ACTIVACIÓN DE MOVIMIENTO FLUIDO PARA PARALLAX JAVASCRIPT
+   ESTILOS MAESTROS DE ESCRITORIO: FORZAR CUADRÍCULA 3x2 EN PC
    ============================================================ */
-.product-card {
-  position: relative !important;
-  overflow: hidden !important; /* Mantiene el recorte circular rígido */
-}
+@media screen and (min-width: 769px) {
+  /* Forzamos a la grilla principal a trabajar estrictamente a 3 columnas */
+  .featured-products .product-grid,
+  .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Forzamos 3 columnas fijas en PC */
+    gap: 40px 50px !important;                         /* Separación ideal entre tarjetas */
+    justify-content: center !important;
+    align-items: center !important;
+    justify-items: center !important;                 /* Centra cada esfera dentro de su celda */
+    width: 100% !important;
+    max-width: 960px !important;                       /* Contenedor compacto para enmarcar el 3x2 */
+    margin: 0 auto !important;
+  }
 
-.product-card .product-image img,
-.product-card img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  /* Permitimos que JavaScript altere el transform dinámicamente sin bloqueos */
-  transform-origin: center center !important; 
+  /* Aseguramos que las tarjetas mantengan el tamaño premium circular */
+  .featured-products .product-grid .product-card,
+  .product-card {
+    width: 220px !important;
+    height: 220px !important;
+    max-width: 220px !important;
+    min-width: 220px !important;
+    margin: 0 auto !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
 }
