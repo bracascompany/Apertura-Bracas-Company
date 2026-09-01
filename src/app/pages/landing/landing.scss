@@ -109,7 +109,7 @@
   }
 
   .hero-background {
-    background-size: 180px 180px !important;
+    background-size: 200px 200px !important; /* butones cell */
     background-position: center center !important;
     background-repeat: no-repeat;
   }
@@ -1142,4 +1142,98 @@ align-items: center !important;
 .featured-products + footer, .featured-products + .footer, footer {
   margin-top: 0 !important;
   border-top: none !important;
+}
+
+/* ============================================================
+   MÁSCARA OBLIGATORIA PARA EL EFECTO SIMPLE-PARALLAX
+   ============================================================ */
+.product-card {
+  position: relative !important;
+  overflow: hidden !important; /* Corta la imagen para que el movimiento no se salga del círculo */
+}
+.product-card img {
+  will-change: transform !important; /* Optimización de hardware para el celular */
+}
+/* ============================================================
+   CORRECCIÓN ADAPTATIVA DE LOGOS PARA REALME C55 Y MOTO G72
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  /* Forzamos que la grilla divida la pantalla estrictamente en dos mitades iguales */
+  .featured-products .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;              /* Espacio intermedio reducido */
+    padding: 10px 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reducimos el tamaño de las esferas para que quepan en viewports de 353px */
+  .featured-products .product-grid .product-card {
+    width: 135px !important;           /* Tamaño ideal para que dos columnas sumen 270px */
+    height: 135px !important;          /* Mantiene la geometría circular perfecta */
+    max-width: 140px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;         /* Centra cada logo en su mitad de pantalla */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Ocultamos textos residuales que puedan empujar el diseño hacia abajo */
+  .featured-products .product-grid .product-card .product-info {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   CALIBRACIÓN FINAL DE TAMAÑO Y SIMETRÍA PARA MÓVILES (<768PX)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  /* Blindamos el contenedor de la grilla para que use el ancho real exacto de la pantalla */
+  .featured-products .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;               /* Reducimos el espacio entre esferas */
+    padding: 15px 6px !important;       /* Relleno compacto para dar aire en los bordes */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;        /* Corta de raíz cualquier desborde fantasma lateral */
+  }
+
+  /* Ajustamos las esferas a un tamaño más refinado y compacto */
+  .featured-products .product-grid .product-card {
+    width: 110px !important;            /* Bajamos de 135px a 110px para garantizar espacio libre */
+    height: 110px !important;           /* Mantiene la proporción esférica perfecta */
+    max-width: 110px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;          /* Centrado absoluto dentro de su respectiva columna */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Aseguramos que la imagen ocupe el 100% de la nueva dimensión esférica */
+  .featured-products .product-grid .product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ============================================================
+   ACTIVACIÓN DE MOVIMIENTO FLUIDO PARA PARALLAX JAVASCRIPT
+   ============================================================ */
+.product-card {
+  position: relative !important;
+  overflow: hidden !important; /* Mantiene el recorte circular rígido */
+}
+
+.product-card .product-image img,
+.product-card img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  /* Permitimos que JavaScript altere el transform dinámicamente sin bloqueos */
+  transform-origin: center center !important; 
 }
