@@ -2,32 +2,38 @@
   <section class="hero">
     <div class="hero-background"></div>
     <div class="hero-content">
-  <div class="circular-menu">
-<!-- LADO DERECHO (Ángulos mucho más juntos entre sí) -->
-<a class="btn-glass" style="--angle: 23deg;">OFERTAS</a>
-<a class="btn-glass" style="--angle: 26deg;">SOPORTE</a>
-<a class="btn-glass" style="--angle: 30deg;">MI CUENTA</a>
-<a class="btn-glass" style="--angle: 35deg;">C&M STUDIOS</a>
+      <div class="circular-menu">
+        <!-- LADO DERECHO (Sin enlaces, solo visuales) -->
+        <a class="btn-glass" style="--angle: 23deg;">OFERTAS</a>
+        <a class="btn-glass" style="--angle: 26deg;">SOPORTE</a>
+        <a class="btn-glass" style="--angle: 30deg;">MI CUENTA</a>
+        <a class="btn-glass" style="--angle: 35deg;">C&M STUDIOS</a>
 
-<!-- LADO IZQUIERDO (Mantén tus valores actuales) -->
-<a class="btn-glass" style="--angle: 135deg;">CATÁLOGO</a>
-<a class="btn-glass" style="--angle: 158deg;">UBICACIÓN</a>
-<a class="btn-glass" style="--angle: 180deg;">BRACASFOOD</a>
-<a class="btn-glass" style="--angle: 225deg;">FUNDACIÓN SEGAT</a>
-
-</div>
-</div>
+        <!-- LADO IZQUIERDO (Sin enlaces, solo visuales) -->
+        <a class="btn-glass" style="--angle: 135deg;">CATÁLOGO</a>
+        <a class="btn-glass" style="--angle: 158deg;">UBICACIÓN</a>
+        <a class="btn-glass" style="--angle: 180deg;">BRACASFOOD</a>
+        <a class="btn-glass" style="--angle: 225deg;">FUNDACIÓN SEGAT</a>
+      </div>
+    </div>
   </section>
 
   <div class="promo-banner success-header">
     <h2 class="success-title">
-<div style="display:block!important;width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important;text-align:center!important;padding:50px 0 20px 0!important;background:transparent!important;"><h2 style="font-family:'Orbitron','Inter',sans-serif!important;font-size:3.5rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 15px auto!important;display:inline-block!important;background:linear-gradient(90deg, #01180b 0%, #052711 50%, #16a34a 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 15px rgba(74,222,128,0.5))!important;">bracascompany<span style="-webkit-text-fill-color:#19291f!important;animation:blink 1.4s infinite!important;"></span></h2><div style="width:80px!important;height:4px!important;background:#062411!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 10px #22c55e!important;"></div></div>
+      <div style="display:block!important;width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important;text-align:center!important;padding:50px 0 20px 0!important;background:transparent!important;">
+        <h2 style="font-family:'Orbitron','Inter',sans-serif!important;font-size:3.5rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 15px auto!important;display:inline-block!important;background:linear-gradient(90deg, #01180b 0%, #052711 50%, #16a34a 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 15px rgba(74,222,128,0.5))!important;">
+          bracascompany<span style="-webkit-text-fill-color:#19291f!important;animation:blink 1.4s infinite!important;"></span>
+        </h2>
+        <div style="width:80px!important;height:4px!important;background:#062411!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 10px #22c55e!important;"></div>
+      </div>
     </h2>
   </div>
 
   <section class="featured-products">
     <div class="section-header"></div>
     <div class="product-grid">
+      
+      <!-- Bracasfood / Brades -->
       <div class="product-card" (click)="goToBracasfood()" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log2.jpeg" alt="Bracasfood" />
@@ -36,32 +42,15 @@
           <h3>Bracasfood</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="
-                $event.stopPropagation(); onAddToCart('Bracasfood', 0000, 'Bracasfood', 'log2.jpeg')
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Bracasfood', 0, 'Bracasfood', 'log2.jpeg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
 
-      <div class="product-card">
+      <!-- Brades -->
+      <div class="product-card" routerLink="/brades" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log3.jpeg" alt="Brades" />
         </div>
@@ -69,29 +58,15 @@
           <h3>Brades</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="onAddToCart('Brades', 0000, 'Brades', 'assets/Brades.jpeg')"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Brades', 0, 'Brades', 'assets/Brades.jpeg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- Bracastyles -->
+      <div class="product-card" routerLink="/bracas-styles" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log4.jpeg" alt="Bracastyles" />
         </div>
@@ -99,29 +74,15 @@
           <h3>Bracastyles</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="onAddToCart('Bracastyles', 0000, 'Bracastyles', 'assets/Bracastyles.jpeg')"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Bracastyles', 0, 'Bracastyles', 'assets/Bracastyles.jpeg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
-      <div class="product-card">
+
+      <!-- C&M Studios -->
+      <div class="product-card" routerLink="/cm-studio" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log5.jpeg" alt="Cont&Markets[JB]_Studios" />
         </div>
@@ -129,104 +90,45 @@
           <h3>Cont&Markets[JB]_Studios</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="
-                onAddToCart(
-                  'Cont&Markets[JB]_Studios',
-                  0000,
-                  'Cont&Markets[JB]_Studios',
-                  'assets/Cont&Markets[JB]_Studios.jpeg'
-                )
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Cont&Markets[JB]_Studios', 0, 'Cont&Markets[JB]_Studios', 'assets/Cont&Markets[JB]_Studios.jpeg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-image" (click)="goToSegatPage()" style="cursor: pointer">
+
+      <!-- Fundación SEGAT -->
+      <div class="product-card" routerLink="/fundacion-segat" style="cursor: pointer">
+        <div class="product-image">
           <img src="assets/log6.jpeg" alt="FundaciónSEGAT" />
         </div>
         <div class="product-info">
           <h3>FundaciónSEGAT</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="
-                onAddToCart('FundaciónSEGAT', 0, 'FundaciónSEGAT', 'assets/FundaciónSEGAT.jpeg')
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('FundaciónSEGAT', 0, 'FundaciónSEGAT', 'assets/FundaciónSEGAT.jpeg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
-      <div class="product-card" (click)="goToFaceBrand()" style="cursor: pointer;">
+
+      <!-- Face Brand Digital -->
+      <div class="product-card" routerLink="/facebrand-digital" style="cursor: pointer; border: 2px solid rgba(26, 102, 255, 0.6); box-shadow: 0 0 15px rgba(26, 102, 255, 0.3);">
         <div class="product-image">
           <img src="assets/facebranddigitallogo.jpg" alt="FaceBrand Digital" />
         </div>
         <div class="product-info">
-          <h3 style="cursor:pointer;" (click)="goToFaceBrand()">Face Brand Digital</h3>
+          <h3>Face Brand Digital</h3>
           <div class="price-row">
             <span class="price"></span>
-            <button
-              class="add-btn"
-              (click)="
-                onAddToCart(
-                  'Face Brand Digital',
-                  0,
-                  'FaceBrand Digital',
-                  'assets/facebranddigitallogo.jpg'
-                )
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+            <button class="add-btn" (click)="$event.stopPropagation(); onAddToCart('Face Brand Digital', 0, 'FaceBrand Digital', 'assets/facebranddigitallogo.jpg')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 </div>

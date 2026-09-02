@@ -1,16 +1,74 @@
-<div class="encarta-container">
-  <div class="encarta-header">
-    <a routerLink="/" class="encarta-btn">
+<div class="encarta-container" style="display: flex; flex-direction: column; min-height: 100vh; background-color: #0a0f1d; color: #ffffff; padding: 2rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  
+  <!-- Encabezado / Navbar Superior -->
+  <div class="encarta-header" style="width: 100%; max-width: 1200px; margin: 0 auto 2rem auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1a66ff; padding-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(26, 102, 255, 0.35);">
+    <a routerLink="/" class="encarta-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color: transparent; border: 1.5px solid #1a66ff; color: #ffffff; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
       <span class="icon">←</span>
       <span class="text">Volver al Inicio</span>
     </a>
-    <h1 class="encarta-title">Face Brand Digital</h1>
+    <h1 class="encarta-title" style="font-size: 2rem; font-weight: 800; color: #ffffff; margin: 0; text-shadow: 0 0 12px rgba(26, 102, 255, 0.6);">Face Brand Digital</h1>
+    <div style="width: 130px;"></div> <!-- Espaciador para centrar título -->
   </div>
 
-  <div class="video-container">
-    <video controls autoplay class="main-video-player">
-      <source src="assets/fbdvideo.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de videos.
-    </video>
+  <!-- Contenedor Principal en Dos Columnas (Video TikTok a un lado, Botones al otro) -->
+  <div class="fbd-main-grid" style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 3rem; width: 100%; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+    
+    <!-- COLUMNA IZQUIERDA: Reproductor Vertical Tipo TikTok (9:16) -->
+    <div class="video-container-tiktok" style="width: 100%; max-width: 340px; background-color: #10172a; border: 2px solid rgba(26, 102, 255, 0.6); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(26, 102, 255, 0.4);">
+      <video controls autoplay muted loop class="main-video-player" style="width: 100%; display: block; aspect-ratio: 9 / 16; object-fit: cover; background-color: #000000;">
+        <source src="assets/fbdvideo.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+    </div>
+
+    <!-- COLUMNA DERECHA: Logo, Título y Botones de Acceso Rápido -->
+    <div class="content-column" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 2rem;">
+      
+      <!-- Logo Circular con Neón -->
+      <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <div style="width: 90px; height: 90px; border-radius: 50%; border: 2px solid #1a66ff; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(26, 102, 255, 0.6); background: rgba(16, 23, 42, 0.8);">
+          <img src="assets/facebranddigitallogo.jpg" alt="Face Brand Digital" style="width: 78px; height: 78px; border-radius: 50%; object-fit: cover;" />
+        </div>
+        <div>
+          <h2 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin: 0 0 0.3rem 0; text-shadow: 0 0 10px rgba(26, 102, 255, 0.5);">Innovación y Medios</h2>
+          <p style="margin: 0; color: #94a3b8; font-size: 0.95rem;">Transformación digital y contenido multimedia oficial.</p>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Navegación / Accesos -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+        
+        <!-- Tarjeta 1 -->
+        <div class="dash-card" 
+             style="background: #10172a; border: 1.5px solid rgba(26, 102, 255, 0.5); border-radius: 12px; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; cursor: pointer; transition: all 0.25s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+             onmouseover="this.style.borderColor='#1a66ff'; this.style.boxShadow='0 0 20px rgba(26, 102, 255, 0.5)'; this.style.transform='translateY(-2px)';"
+             onmouseout="this.style.borderColor='rgba(26, 102, 255, 0.5)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)';">
+          <div style="background: rgba(26, 102, 255, 0.2); padding: 0.8rem; border-radius: 10px; color: #1a66ff; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(26, 102, 255, 0.3);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <div>
+            <h4 style="margin: 0; color: #ffffff; font-size: 1.1rem; text-shadow: 0 0 8px rgba(26, 102, 255, 0.4);">Plataforma Digital</h4>
+            <p style="margin: 0.3rem 0 0 0; color: #94a3b8; font-size: 0.85rem;">Explora nuestros servicios web y portales</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="dash-card" 
+             style="background: #10172a; border: 1.5px solid rgba(26, 102, 255, 0.5); border-radius: 12px; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; cursor: pointer; transition: all 0.25s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+             onmouseover="this.style.borderColor='#1a66ff'; this.style.boxShadow='0 0 20px rgba(26, 102, 255, 0.5)'; this.style.transform='translateY(-2px)';"
+             onmouseout="this.style.borderColor='rgba(26, 102, 255, 0.5)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)';">
+          <div style="background: rgba(26, 102, 255, 0.2); padding: 0.8rem; border-radius: 10px; color: #1a66ff; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(26, 102, 255, 0.3);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          </div>
+          <div>
+            <h4 style="margin: 0; color: #ffffff; font-size: 1.1rem; text-shadow: 0 0 8px rgba(26, 102, 255, 0.4);">Galería de Videos</h4>
+            <p style="margin: 0.3rem 0 0 0; color: #94a3b8; font-size: 0.85rem;">Reproductor multimedia oficial optimizado</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </div>

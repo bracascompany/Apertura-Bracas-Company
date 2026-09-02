@@ -1,0 +1,240 @@
+
+:host {
+  --brand-primary: #ffd60a;
+  --brand-secondary: #9333ea;
+  --brand-glow: rgba(255, 214, 10, 0.65);
+  --brand-btn-bg: linear-gradient(135deg, rgba(255, 214, 10, 0.18) 0%, rgba(147, 51, 234, 0.12) 100%);
+}
+
+// --- PALETA DE COLORES CORPORATIVA CON EFECTO DE LUZ ---
+$segat-blue-dark: #0b2545;   // Azul oscuro profundo
+$segat-blue-mid: #134074;    // Azul intermedio corporativo
+$segat-cyan-bright: #00b4d8; // Cian tecnológico
+$segat-bg-dark: #030811;     // Fondo base ultra oscuro de la captura
+
+// El sombreado azulado eléctrico idéntico a tu captura
+$neon-blue-glow: rgba(0, 102, 255, 0.6); 
+
+.encarta-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 2rem 5%;
+  /* Degradado de fondo oscuro que emula la atmósfera de la captura */
+  background: radial-gradient(circle at center, #0a162b 0%, $segat-bg-dark 100%);
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+// Columnas de botones laterales
+.encarta-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.encarta-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #091526; 
+  border: 1px solid rgba(0, 102, 255, 0.3); // Borde azulado sutil
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #ffffff; 
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+
+  .icon {
+    font-size: 1.5rem;
+    background: rgba($segat-blue-dark, 0.6);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: $segat-cyan-bright;
+    /* Resplandor azulado eléctrico al hacer hover */
+    box-shadow: 0 0 15px 3px $neon-blue-glow;
+    color: #ffffff;
+  }
+}
+
+// Sección central (Logo, Título y Video)
+.encarta-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+
+  .logo-wrapper {
+    margin-bottom: 1rem;
+
+    .encarta-logo-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid $segat-cyan-bright;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.4); 
+    }
+  }
+
+  .encarta-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffffff, $segat-cyan-bright, #0066ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 0.3rem 0;
+    letter-spacing: -0.5px;
+  }
+
+  .encarta-subtitle {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+// --- VISOR DE VIDEO CON EL SOMBREADO AZULADO DE TU CAPTURA ---
+.video-preview-container {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #091526;
+  padding: 12px; 
+  border-radius: 16px;
+  /* Borde azulado brillante */
+  border: 1px solid rgba(0, 102, 255, 0.7);
+  
+  /* LA TÉCNICA CLAVE: Doble sombra exterior neón azul + interior difuminada */
+  box-shadow: 0 0 35px 6px $neon-blue-glow, 
+              inset 0 0 20px 2px rgba(0, 102, 255, 0.4);
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; // 1:1 Cuadrado
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+/* --- MEDIA QUERY PARA MÓVILES --- */
+@media (max-width: 900px) {
+  .encarta-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .encarta-center {
+    order: -1;
+    padding: 0.5rem 0;
+
+    .video-preview-container {
+      max-width: 240px;
+      box-shadow: 0 0 25px 4px $neon-blue-glow, 
+                  inset 0 0 15px rgba(0, 102, 255, 0.3);
+    }
+  }
+}
+
+
+/* Fondo general de la página con los tonos de la marca */
+.encarta-container, .segat-container {
+  background: radial-gradient(circle at center, #1e1b04 0%, #050502 100%) !important;
+}
+
+/* Contenedor y logo circulares con marco de neón */
+.logo-wrapper {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px auto;
+  border-radius: 50% !important;
+  border: 3px solid var(--brand-primary) !important;
+  box-shadow: 0 0 40px var(--brand-glow), inset 0 0 15px var(--brand-secondary) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.encarta-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+/* Título principal con degradado hexadecimal exacto */
+.encarta-title {
+  background: linear-gradient(135deg, #ffd60a 0%, #9333ea 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 18px var(--brand-glow));
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+/* Botones laterales con fondo, bordes y sombras inspiradas en el color de la marca */
+.encarta-btn {
+  background: linear-gradient(135deg, rgba(255, 214, 10, 0.18) 0%, rgba(147, 51, 234, 0.12) 100%) !important;
+  border: 2px solid var(--brand-primary) !important;
+  box-shadow: 0 0 20px var(--brand-glow), inset 0 0 12px var(--brand-secondary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.encarta-btn:hover {
+  background: linear-gradient(135deg, #ffd60a 0%, #9333ea 100%) !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 35px var(--brand-glow), 0 0 15px var(--brand-secondary) !important;
+  transform: translateY(-3px);
+}
+
+.encarta-btn:hover .text {
+  color: #fff !important;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.encarta-btn .text {
+  color: #fff !important;
+  text-shadow: 0 0 8px var(--brand-glow);
+}
+
+/* Contenedor del video */
+.video-preview-container {
+  border: 2.5px solid var(--brand-primary) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 35px var(--brand-glow), inset 0 0 15px var(--brand-secondary) !important;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}

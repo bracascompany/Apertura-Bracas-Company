@@ -48,7 +48,7 @@ export class BracasCompanyBotComponent {
     switch (action) {
       case 'bracasfood':
         responseText = '🍔 <strong>Bracasfood</strong>: Tu paladar al siguiente nivel con la mejor comida rápida y antojos.';
-        linkUrl = 'https://wa.me/573113355665';
+        linkUrl = 'https://wa.me/573218119383';
         linkText = 'Pedir en Bracasfood (WhatsApp)';
         break;
       case 'brades':
@@ -58,12 +58,12 @@ export class BracasCompanyBotComponent {
         break;
       case 'styles':
         responseText = '🕶️ <strong>Bracas Styles</strong>: Los accesorios y complementos ideales para tu outfit.';
-        linkUrl = 'https://wa.me/573113355665';
+        linkUrl = 'https://wa.me/573173966891';
         linkText = 'Contactar Bracas Styles';
         break;
       case 'cm':
-        responseText = '📈 <strong>C&M Studios</strong>: Marketing digital, posicionamiento de marca y estrategias comerciales.';
-        linkUrl = 'https://wa.me/573113355665';
+        responseText = '📈 <strong>C&M[JB]_Studios</strong>: Marketing digital, posicionamiento de marca y estrategias comerciales.';
+        linkUrl = 'https://wa.me/573173966891';
         linkText = 'Asesoría C&M Studios';
         break;
       case 'fundacion':
