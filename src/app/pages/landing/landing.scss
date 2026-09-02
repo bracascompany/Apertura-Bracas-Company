@@ -1223,35 +1223,3 @@ align-items: center !important;
     object-fit: cover !important;
   }
 }
-
-/* ============================================================
-   ESTILOS MAESTROS DE ESCRITORIO: FORZAR CUADRÍCULA 3x2 EN PC
-   ============================================================ */
-@media screen and (min-width: 769px) {
-  /* Forzamos a la grilla principal a trabajar estrictamente a 3 columnas */
-  .featured-products .product-grid,
-  .product-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Forzamos 3 columnas fijas en PC */
-    gap: 40px 50px !important;                         /* Separación ideal entre tarjetas */
-    justify-content: center !important;
-    align-items: center !important;
-    justify-items: center !important;                 /* Centra cada esfera dentro de su celda */
-    width: 100% !important;
-    max-width: 960px !important;                       /* Contenedor compacto para enmarcar el 3x2 */
-    margin: 0 auto !important;
-  }
-
-  /* Aseguramos que las tarjetas mantengan el tamaño premium circular */
-  .featured-products .product-grid .product-card,
-  .product-card {
-    width: 220px !important;
-    height: 220px !important;
-    max-width: 220px !important;
-    min-width: 220px !important;
-    margin: 0 auto !important;
-    background: transparent !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-  }
-}

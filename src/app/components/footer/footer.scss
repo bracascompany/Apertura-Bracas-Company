@@ -1,11 +1,51 @@
 .footer {
   background: #ffffff;
   color: rgb(64, 179, 101);
-  padding: 3rem 1.25rem 1.5rem;
-  display: grid;
-  // Forzamos estrictamente 2 columnas idénticas para la vista móvil
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 1.5rem;
+  padding: 2rem 0.75rem 1.5rem !important; /* Más espacio a los lados reduciendo el padding */
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* Mantenemos las 2 columnas fijas */
+  gap: 1.5rem 0.5rem !important; /* Reducimos el gap horizontal a 0.5rem para ganar ancho de texto */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  /* Reducimos la letra en pantallas muy pequeñas como Realme/Moto para que no se encime */
+  font-size: 0.75rem !important;
+
+  h3 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  p {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .footer-column ul li a {
+    font-size: 0.75rem !important;
+  }
+
+  /* Forzamos a que el campo de texto de email y el botón no se deformen */
+  form, .subscribe-form {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 4px !important;
+    
+    input {
+      width: 70% !important;
+      min-width: 0 !important;
+      padding: 6px !important;
+      font-size: 0.7rem !important;
+    }
+    
+    button, .btn {
+      width: 30% !important;
+      padding: 6px !important;
+      font-size: 0.7rem !important;
+      text-align: center !important;
+    }
+  }
   transition: all 0.3s ease;
   box-sizing: border-box;
 
@@ -17,7 +57,7 @@
 
   .logo-footer {
     color: #5ccb5f;
-    font-size: 1rem;
+    font-size: 0.6rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
   }

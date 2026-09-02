@@ -1,0 +1,53 @@
+<!-- Botón Flotante para abrir el Bot -->
+<div class="action-buttons">
+  <button class="float-btn ai" (click)="toggleChat()">
+    <img src="assets/logo1.jpeg" alt="Bracas Logo" class="float-logo">
+  </button>
+</div>
+
+<!-- Ventana del Chat -->
+@if (isOpen()) {
+  <div class="chat-container">
+    <div class="chat-header">
+      <h3>Bracas Company Assistant</h3>
+      <button class="close-btn" (click)="toggleChat()">×</button>
+    </div>
+
+    <div class="chat-body">
+      @for (msg of messages(); track $index) {
+        <div class="message-bubble" [ngClass]="{'bot-msg': msg.sender === 'bot', 'user-msg': msg.sender === 'user'}">
+          <p [innerHTML]="msg.text"></p>
+
+          <!-- Opciones interactivas de empresas -->
+          @if (msg.options) {
+            <div class="bot-grid-buttons">
+              @for (opt of msg.options; track opt.action) {
+                <button class="btn-bot-item" (click)="selectOption(opt.action)">
+                  {{ opt.label }}
+                </button>
+              }
+            </div>
+          }
+
+          <!-- Botón / Enlace dinámico de redirección -->
+          @if (msg.linkUrl) {
+            <a [href]="msg.linkUrl" target="_blank" class="btn-nequi-link">
+              {{ msg.linkText }}
+            </a>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="chat-footer">
+      <input 
+        type="text" 
+        [ngModel]="userInput()" 
+        (ngModelChange)="userInput.set($event)" 
+        (keyup.enter)="sendMessage()" 
+        placeholder="Escribe un mensaje..." 
+      />
+      <button (click)="sendMessage()">Enviar</button>
+    </div>
+  </div>
+}
