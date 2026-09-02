@@ -1,39 +1,50 @@
 <div class="landing-container">
-  <section class="hero">
+  <!-- SECCIÓN SUPERIOR: Logo central y botones a los lados -->
+  <section class="hero" style="padding: 40px 0;">
     <div class="hero-background"></div>
-    <div class="hero-content">
-      <div class="circular-menu">
-        <!-- LADO DERECHO (Sin enlaces, solo visuales) -->
-        <a class="btn-glass" style="--angle: 23deg;">OFERTAS</a>
-        <a class="btn-glass" style="--angle: 26deg;">SOPORTE</a>
-        <a class="btn-glass" style="--angle: 30deg;">MI CUENTA</a>
-        <a class="btn-glass" style="--angle: 35deg;">C&M STUDIOS</a>
+    <div class="hero-content" style="width: 100%; max-width: 1300px; margin: 0 auto;">
+      
+      <!-- Menú circular con botones a los lados y la imagen del logo en el centro -->
+      <div class="circular-menu" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+        <!-- LADO IZQUIERDO -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a class="btn-glass" href="/fundacion-segat">FUNDACIÓN SEGAT</a>
+          <a class="btn-glass" href="/bracasfood">BRACASFOOD</a>
+          <a class="btn-glass" href="/contacto">UBICACIÓN</a>
+          <a class="btn-glass" href="/productos">CATÁLOGO</a>
+        </div>
 
-        <!-- LADO IZQUIERDO (Sin enlaces, solo visuales) -->
-        <a class="btn-glass" style="--angle: 135deg;">CATÁLOGO</a>
-        <a class="btn-glass" style="--angle: 158deg;">UBICACIÓN</a>
-        <a class="btn-glass" style="--angle: 180deg;">BRACASFOOD</a>
-        <a class="btn-glass" style="--angle: 225deg;">FUNDACIÓN SEGAT</a>
+        <!-- LOGO CENTRAL CON IMAGEN -->
+        <div class="hero-logo-container" style="text-align: center; margin: 0 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <img src="assets/log1.jpeg" alt="Bracas Company Logo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(34, 197, 94, 0.8); box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);" />
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a class="btn-glass" href="/ofertas">OFERTAS</a>
+          <a class="btn-glass" href="/soporte">SOPORTE</a>
+          <a class="btn-glass" href="/cuenta">MI CUENTA</a>
+          <a class="btn-glass" href="/cm-studio">C&M STUDIOS</a>
+        </div>
       </div>
+
+      <!-- Título Verde Neón Fluorescente Abajo del Logo y los Botones -->
+      <div style="text-align: center; margin-top: 10px;">
+        <h2 style="font-family:'Orbitron','Inter',sans-serif!important;font-size:2.8rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 10px auto!important;display:inline-block!important;background:linear-gradient(90deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 15px rgba(74,222,128,0.6))!important;">
+          BRACAS COMPANY
+        </h2>
+        <div style="width:80px!important;height:4px!important;background:#16a34a!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 10px #22c55e!important;"></div>
+      </div>
+
     </div>
   </section>
 
-  <div class="promo-banner success-header">
-    <h2 class="success-title">
-      <div style="display:block!important;width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important;text-align:center!important;padding:50px 0 20px 0!important;background:transparent!important;">
-        <h2 style="font-family:'Orbitron','Inter',sans-serif!important;font-size:3.5rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 15px auto!important;display:inline-block!important;background:linear-gradient(90deg, #01180b 0%, #052711 50%, #16a34a 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 15px rgba(74,222,128,0.5))!important;">
-          bracascompany<span style="-webkit-text-fill-color:#19291f!important;animation:blink 1.4s infinite!important;"></span>
-        </h2>
-        <div style="width:80px!important;height:4px!important;background:#062411!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 10px #22c55e!important;"></div>
-      </div>
-    </h2>
-  </div>
-
+  <!-- SECCIÓN INFERIOR: Las 6 tarjetas en Grid 3x2 -->
   <section class="featured-products">
     <div class="section-header"></div>
     <div class="product-grid">
       
-      <!-- Bracasfood / Brades -->
+      <!-- 1. Bracasfood -->
       <div class="product-card" (click)="goToBracasfood()" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log2.jpeg" alt="Bracasfood" />
@@ -49,7 +60,7 @@
         </div>
       </div>
 
-      <!-- Brades -->
+      <!-- 2. Brades -->
       <div class="product-card" routerLink="/brades" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log3.jpeg" alt="Brades" />
@@ -65,7 +76,7 @@
         </div>
       </div>
 
-      <!-- Bracastyles -->
+      <!-- 3. Bracastyles -->
       <div class="product-card" routerLink="/bracas-styles" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log4.jpeg" alt="Bracastyles" />
@@ -81,7 +92,7 @@
         </div>
       </div>
 
-      <!-- C&M Studios -->
+      <!-- 4. C&M Studios (Justo después de Bracas Styles) -->
       <div class="product-card" routerLink="/cm-studio" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log5.jpeg" alt="Cont&Markets[JB]_Studios" />
@@ -97,7 +108,7 @@
         </div>
       </div>
 
-      <!-- Fundación SEGAT -->
+      <!-- 5. Fundación SEGAT -->
       <div class="product-card" routerLink="/fundacion-segat" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log6.jpeg" alt="FundaciónSEGAT" />
@@ -113,7 +124,7 @@
         </div>
       </div>
 
-      <!-- Face Brand Digital -->
+      <!-- 6. Face Brand Digital -->
       <div class="product-card" routerLink="/facebrand-digital" style="cursor: pointer; border: 2px solid rgba(26, 102, 255, 0.6); box-shadow: 0 0 15px rgba(26, 102, 255, 0.3);">
         <div class="product-image">
           <img src="assets/facebranddigitallogo.jpg" alt="FaceBrand Digital" />
