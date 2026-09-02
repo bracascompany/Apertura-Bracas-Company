@@ -108,9 +108,25 @@
   .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 258, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.8rem;
     color: #64748b;
+  }
+}
+
+/* --- TEMA: FACE BRAND DIGITAL (FBD) (#1a66ff) --- */
+.footer.fbd-theme-footer {
+  border-top: 1.5px solid #1a66ff !important;
+  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.25);
+
+  .footer-col {
+    .footer-brand-title { color: #1a66ff; }
+    ul li a:hover { color: #1a66ff; }
+    .social-icons a:hover { color: #1a66ff; }
+    .newsletter-form {
+      input:focus { border-color: #1a66ff; }
+      button { background: #1a66ff; }
+    }
   }
 }
 
@@ -148,36 +164,43 @@
   }
 }
 
-/* --- TEMA: BRACAS STYLES (#d946ef) --- */
+/* --- TEMA: BRACAS STYLES (#d946ef Magenta/Violeta) --- */
 .footer.styles-theme-footer {
   border-top: 1.5px solid #d946ef !important;
   box-shadow: 0 -4px 20px rgba(217, 70, 239, 0.25);
+
   .footer-col {
     .footer-brand-title { color: #d946ef; }
     ul li a:hover { color: #d946ef; }
     .social-icons a:hover { color: #d946ef; }
-    .newsletter-form input:focus { border-color: #d946ef; }
-    .newsletter-form button { background: #d946ef; }
+    .newsletter-form {
+      input:focus { border-color: #d946ef; }
+      button { background: #d946ef; }
+    }
   }
 }
 
-/* --- TEMA: BRADES (#3b82f6) --- */
+/* --- TEMA: BRADES (#3b82f6 Azul Neón) --- */
 .footer.brades-theme-footer {
   border-top: 1.5px solid #3b82f6 !important;
   box-shadow: 0 -4px 20px rgba(59, 130, 246, 0.25);
+
   .footer-col {
     .footer-brand-title { color: #3b82f6; }
     ul li a:hover { color: #3b82f6; }
     .social-icons a:hover { color: #3b82f6; }
-    .newsletter-form input:focus { border-color: #3b82f6; }
-    .newsletter-form button { background: #3b82f6; }
+    .newsletter-form {
+      input:focus { border-color: #3b82f6; }
+      button { background: #3b82f6; }
+    }
   }
 }
 
-/* --- TEMA: C&M --- */
+/* --- TEMA: C&M (Cont&Markets [JB] Studios) (#ec4899 / #facc15) --- */
 .footer.cm-theme-footer {
   border-top: 1.5px solid #ec4899 !important;
   box-shadow: 0 -4px 20px rgba(236, 72, 153, 0.25);
+
   .footer-col {
     .footer-brand-title {
       background: linear-gradient(90deg, #facc15, #ec4899);
@@ -187,35 +210,49 @@
     }
     ul li a:hover { color: #facc15; }
     .social-icons a:hover { color: #facc15; }
-    .newsletter-form button { 
-      background: linear-gradient(90deg, #ec4899, #facc15);
-      color: #0a0f1d;
-      font-weight: 800;
+    .newsletter-form {
+      input:focus { border-color: #ec4899; }
+      button { 
+        background: linear-gradient(90deg, #ec4899, #facc15);
+        color: #0a0f1d;
+        font-weight: 800;
+      }
     }
   }
 }
 
-/* --- TEMA: FACEBRAND GENERAL CORP --- */
+/* --- TEMA: FACEBRAND GENERAL CORP (#38bdf8) --- */
 .footer.facebrand-theme-footer {
   border-top: 1.5px solid #38bdf8 !important;
   box-shadow: 0 -4px 20px rgba(56, 189, 248, 0.25);
+
   .footer-col {
     .footer-brand-title { color: #38bdf8; }
     ul li a:hover { color: #38bdf8; }
     .social-icons a:hover { color: #38bdf8; }
-    .newsletter-form button { background: #38bdf8; color: #0f172a; }
+    .newsletter-form {
+      input:focus { border-color: #38bdf8; }
+      button { background: #38bdf8; color: #0f172a; }
+    }
   }
 }
 
+/* --- ADAPTABILIDAD MÓVIL --- */
 @media (max-width: 900px) {
   .footer {
     padding: 2rem 5% 1rem 5%;
-    .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
   }
 }
 
 @media (max-width: 600px) {
   .footer {
-    .footer-container { grid-template-columns: 1fr; gap: 1.8rem; }
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
   }
 }

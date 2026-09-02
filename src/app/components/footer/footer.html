@@ -1,5 +1,6 @@
 <footer class="footer" [ngClass]="{
   'segat-theme-footer': isSegatRoute,
+  'fbd-theme-footer': isFbdRoute,
   'styles-theme-footer': isStylesRoute,
   'brades-theme-footer': isBradesRoute,
   'cm-theme-footer': isCmRoute,
@@ -16,7 +17,7 @@
         <span *ngIf="isBradesRoute">Brades</span>
         <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
         <span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span>
-        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Face Brand Digital</span>
+        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>
       </h3>
       <p class="footer-desc">
         <span *ngIf="isSegatRoute">Transformando vidas con inclusión y desarrollo social sostenible.</span>
@@ -25,7 +26,7 @@
         <span *ngIf="isBradesRoute">Confección y Calidad Exclusiva adaptada a tus necesidades más exigentes.</span>
         <span *ngIf="isCmRoute">Marketing & Creative Solutions para llevar tu marca al siguiente nivel corporativo.</span>
         <span *ngIf="isFacebrandGeneralRoute">Soluciones tecnológicas globales y desarrollo de ecosistemas digitales avanzados.</span>
-        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Elevando digitalmente a las empresas con confianza y excelente identidad de marca en ecommerce digital.</span>
+        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Innovación, calidad y desarrollo integral para todas nuestras líneas de negocio.</span>
       </p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
@@ -38,9 +39,10 @@
     <div class="footer-col links-col">
       <h4>Navegación</h4>
       <ul>
+        <li><a routerLink="/">Inicio</a></li>
         <li><a routerLink="/productos">Productos y Servicios</a></li>
-        <li><a routerLink="/carrito">Ver Carrito</a></li>
-        <li><a routerLink="/">Volver al inicio</a></li>
+        <li><a routerLink="/galeria">Galería</a></li>
+        <li><a routerLink="/quienes-somos">Quiénes Somos</a></li>
       </ul>
     </div>
 
@@ -68,6 +70,6 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 Face Brand Digital. Todos los derechos reservados.</p>
+    <p>&copy; 2026 <span *ngIf="isSegatRoute">Fundación SEGAT</span><span *ngIf="isFbdRoute">Face Brand Digital</span><span *ngIf="isStylesRoute">Bracas Styles</span><span *ngIf="isBradesRoute">Brades</span><span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span><span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span><span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>. Todos los derechos reservados.</p>
   </div>
 </footer>
