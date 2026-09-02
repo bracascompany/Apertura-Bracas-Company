@@ -1,32 +1,30 @@
 <footer class="footer" [ngClass]="{
+  'bracas-company-theme': isLandingPage || (!isSegatRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFbdRoute && !isFacebrandGeneralRoute),
   'segat-theme-footer': isSegatRoute,
-  'fbd-theme-footer': isFbdRoute,
   'styles-theme-footer': isStylesRoute,
   'brades-theme-footer': isBradesRoute,
   'cm-theme-footer': isCmRoute,
-  'facebrand-theme-footer': isFacebrandGeneralRoute
+  'fbd-theme-footer': isFbdRoute || isFacebrandGeneralRoute
 }">
   <div class="footer-container">
     
-    <!-- Columna 1: Identidad y Descripción -->
+    <!-- Columna 1: Identidad y Redes Sociales -->
     <div class="footer-col brand-col">
       <h3 class="footer-brand-title">
         <span *ngIf="isSegatRoute">Fundación SEGAT</span>
-        <span *ngIf="isFbdRoute">Face Brand Digital</span>
         <span *ngIf="isStylesRoute">Bracas Styles</span>
         <span *ngIf="isBradesRoute">Brades</span>
         <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
-        <span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span>
-        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>
+        <span *ngIf="isFbdRoute || isFacebrandGeneralRoute">Face Brand Digital</span>
+        <span *ngIf="isLandingPage || (!isSegatRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFbdRoute && !isFacebrandGeneralRoute)">Bracas Company</span>
       </h3>
       <p class="footer-desc">
         <span *ngIf="isSegatRoute">Transformando vidas con inclusión y desarrollo social sostenible.</span>
-        <span *ngIf="isFbdRoute">Elevando digitalmente a las empresas con confianza y excelente identidad de marca en ecommerce digital.</span>
         <span *ngIf="isStylesRoute">Tendencia, moda exclusiva y estilo único para destacar en cada temporada.</span>
         <span *ngIf="isBradesRoute">Confección y Calidad Exclusiva adaptada a tus necesidades más exigentes.</span>
         <span *ngIf="isCmRoute">Marketing & Creative Solutions para llevar tu marca al siguiente nivel corporativo.</span>
-        <span *ngIf="isFacebrandGeneralRoute">Soluciones tecnológicas globales y desarrollo de ecosistemas digitales avanzados.</span>
-        <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Innovación, calidad y desarrollo integral para todas nuestras líneas de negocio.</span>
+        <span *ngIf="isFbdRoute || isFacebrandGeneralRoute">Elevando digitalmente a las empresas con confianza y excelente identidad en ecommerce digital.</span>
+        <span *ngIf="isLandingPage || (!isSegatRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFbdRoute && !isFacebrandGeneralRoute)">Innovación, calidad y desarrollo integral para todas nuestras líneas de negocio.</span>
       </p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
@@ -70,6 +68,13 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 <span *ngIf="isSegatRoute">Fundación SEGAT</span><span *ngIf="isFbdRoute">Face Brand Digital</span><span *ngIf="isStylesRoute">Bracas Styles</span><span *ngIf="isBradesRoute">Brades</span><span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span><span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span><span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>. Todos los derechos reservados.</p>
+    <p>&copy; 2026 
+      <span *ngIf="isSegatRoute">Fundación SEGAT</span>
+      <span *ngIf="isStylesRoute">Bracas Styles</span>
+      <span *ngIf="isBradesRoute">Brades</span>
+      <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
+      <span *ngIf="isFbdRoute || isFacebrandGeneralRoute">Face Brand Digital</span>
+      <span *ngIf="isLandingPage || (!isSegatRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFbdRoute && !isFacebrandGeneralRoute)">Bracas Company</span>. Todos los derechos reservados.
+    </p>
   </div>
 </footer>

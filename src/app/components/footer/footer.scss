@@ -1,16 +1,19 @@
 .footer {
-  background: #0a0f1d;
+  background: #070a13;
   color: #94a3b8;
-  padding: 3rem 5% 1rem 5%;
-  border-top: 1.5px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 5% 1.5rem 5%;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.08);
   font-size: 0.9rem;
+  box-sizing: border-box;
   transition: all 0.3s ease;
 
   .footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 
     .footer-col {
       h4, .footer-brand-title {
@@ -21,7 +24,7 @@
       }
 
       .footer-brand-title {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
       }
 
       .footer-desc {
@@ -74,8 +77,8 @@
 
         input {
           flex: 1;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.12);
           padding: 0.6rem 0.9rem;
           border-radius: 6px;
           color: #ffffff;
@@ -83,12 +86,12 @@
           outline: none;
 
           &:focus {
-            border-color: #1a66ff;
+            border-color: #10b981;
           }
         }
 
         button {
-          background: #1a66ff;
+          background: #10b981;
           color: #ffffff;
           border: none;
           padding: 0.6rem 1.2rem;
@@ -106,153 +109,149 @@
   }
 
   .footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-size: 0.8rem;
     color: #64748b;
   }
 }
 
-/* --- TEMA: FACE BRAND DIGITAL (FBD) (#1a66ff) --- */
-.footer.fbd-theme-footer {
-  border-top: 1.5px solid #1a66ff !important;
-  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.25);
+/* --- TEMA: BRACAS COMPANY (Landing Principal - Fondo y tonos verdes integrados) --- */
+.footer.bracas-company-theme {
+  background: linear-gradient(180deg, #0b2216 0%, #05140d 100%) !important;
+  border-top: 1.5px solid #10b981 !important;
+  box-shadow: 0 -4px 25px rgba(16, 185, 129, 0.2);
+  color: #a7f3d0 !important;
 
   .footer-col {
-    .footer-brand-title { color: #1a66ff; }
-    ul li a:hover { color: #1a66ff; }
-    .social-icons a:hover { color: #1a66ff; }
-    .newsletter-form {
-      input:focus { border-color: #1a66ff; }
-      button { background: #1a66ff; }
+    h4, .footer-brand-title { color: #ffffff !important; }
+    .footer-brand-title { color: #34d399 !important; }
+    .footer-desc { color: #93c5fd !important; color: #a7f3d0 !important; opacity: 0.85; }
+    
+    ul li a {
+      color: #a7f3d0 !important;
+      opacity: 0.8;
+      &:hover {
+        color: #ffffff !important;
+        opacity: 1;
+      }
     }
+
+    .social-icons a {
+      color: #34d399 !important;
+      &:hover { color: #ffffff !important; }
+    }
+
+    .newsletter-form {
+      input {
+        background: rgba(16, 185, 129, 0.08) !important;
+        border: 1px solid rgba(16, 185, 129, 0.3) !important;
+        color: #ffffff !important;
+        &::placeholder { color: #6ee7b7; opacity: 0.6; }
+        &:focus { border-color: #34d399 !important; }
+      }
+      button {
+        background: #10b981 !important;
+        color: #05140d !important;
+        font-weight: 800;
+        &:hover { background: #34d399 !important; }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(16, 185, 129, 0.15) !important;
+    color: #6ee7b7 !important;
+    opacity: 0.7;
+  }
+}
+
+/* --- TEMA: FACE BRAND DIGITAL (#1a66ff) --- */
+.footer.fbd-theme-footer {
+  border-top: 1.5px solid #1a66ff !important;
+  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.2);
+  .footer-col {
+    .footer-brand-title { color: #1a66ff !important; }
+    ul li a:hover { color: #1a66ff !important; }
+    .social-icons a:hover { color: #1a66ff !important; }
+    .newsletter-form input:focus { border-color: #1a66ff !important; }
+    .newsletter-form button { background: #1a66ff !important; }
   }
 }
 
 /* --- TEMA: FUNDACIÓN SEGAT (#0b2545 / #00b4d8) --- */
 .footer.segat-theme-footer {
-  background: #f4f8fb !important;
-  color: #334155 !important;
   border-top: 1.5px solid #00b4d8 !important;
-  box-shadow: 0 -4px 20px rgba(0, 180, 216, 0.15);
-
+  box-shadow: 0 -4px 20px rgba(0, 180, 216, 0.2);
   .footer-col {
-    h4, .footer-brand-title { color: #0b2545 !important; }
-    .footer-desc { color: #475569 !important; }
-    ul li a {
-      color: #334155 !important;
-      &:hover { color: #00b4d8 !important; }
-    }
-    .social-icons a {
-      color: #0b2545 !important;
-      &:hover { color: #00b4d8 !important; }
-    }
-    .newsletter-form {
-      input {
-        background: #ffffff !important;
-        border: 1px solid #cbd5e1 !important;
-        color: #0b2545 !important;
-        &:focus { border-color: #00b4d8 !important; }
-      }
-      button { background: #0b2545 !important; color: #ffffff !important; }
-    }
-  }
-  .footer-bottom {
-    border-top: 1px solid #cbd5e1 !important;
-    color: #64748b !important;
+    .footer-brand-title { color: #00b4d8 !important; }
+    ul li a:hover { color: #00b4d8 !important; }
+    .social-icons a:hover { color: #00b4d8 !important; }
+    .newsletter-form input:focus { border-color: #00b4d8 !important; }
+    .newsletter-form button { background: #00b4d8 !important; color: #0b2545 !important; font-weight: 800; }
   }
 }
 
-/* --- TEMA: BRACAS STYLES (#d946ef Magenta/Violeta) --- */
+/* --- TEMA: BRACAS STYLES (#d946ef) --- */
 .footer.styles-theme-footer {
   border-top: 1.5px solid #d946ef !important;
   box-shadow: 0 -4px 20px rgba(217, 70, 239, 0.25);
-
   .footer-col {
-    .footer-brand-title { color: #d946ef; }
-    ul li a:hover { color: #d946ef; }
-    .social-icons a:hover { color: #d946ef; }
-    .newsletter-form {
-      input:focus { border-color: #d946ef; }
-      button { background: #d946ef; }
-    }
+    .footer-brand-title { color: #d946ef !important; }
+    ul li a:hover { color: #d946ef !important; }
+    .social-icons a:hover { color: #d946ef !important; }
+    .newsletter-form input:focus { border-color: #d946ef !important; }
+    .newsletter-form button { background: #d946ef !important; }
   }
 }
 
-/* --- TEMA: BRADES (#3b82f6 Azul Neón) --- */
+/* --- TEMA: BRADES (#3b82f6) --- */
 .footer.brades-theme-footer {
   border-top: 1.5px solid #3b82f6 !important;
   box-shadow: 0 -4px 20px rgba(59, 130, 246, 0.25);
-
   .footer-col {
-    .footer-brand-title { color: #3b82f6; }
-    ul li a:hover { color: #3b82f6; }
-    .social-icons a:hover { color: #3b82f6; }
-    .newsletter-form {
-      input:focus { border-color: #3b82f6; }
-      button { background: #3b82f6; }
-    }
+    .footer-brand-title { color: #3b82f6 !important; }
+    ul li a:hover { color: #3b82f6 !important; }
+    .social-icons a:hover { color: #3b82f6 !important; }
+    .newsletter-form input:focus { border-color: #3b82f6 !important; }
+    .newsletter-form button { background: #3b82f6 !important; }
   }
 }
 
-/* --- TEMA: C&M (Cont&Markets [JB] Studios) (#ec4899 / #facc15) --- */
+/* --- TEMA: C&M STUDIOS (#ec4899 / #facc15) --- */
 .footer.cm-theme-footer {
   border-top: 1.5px solid #ec4899 !important;
   box-shadow: 0 -4px 20px rgba(236, 72, 153, 0.25);
-
   .footer-col {
     .footer-brand-title {
       background: linear-gradient(90deg, #facc15, #ec4899);
-      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    ul li a:hover { color: #facc15; }
-    .social-icons a:hover { color: #facc15; }
-    .newsletter-form {
-      input:focus { border-color: #ec4899; }
-      button { 
-        background: linear-gradient(90deg, #ec4899, #facc15);
-        color: #0a0f1d;
-        font-weight: 800;
-      }
+    ul li a:hover { color: #facc15 !important; }
+    .social-icons a:hover { color: #facc15 !important; }
+    .newsletter-form input:focus { border-color: #ec4899 !important; }
+    .newsletter-form button { 
+      background: linear-gradient(90deg, #ec4899, #facc15) !important;
+      color: #070a13 !important;
+      font-weight: 800;
     }
   }
 }
 
-/* --- TEMA: FACEBRAND GENERAL CORP (#38bdf8) --- */
-.footer.facebrand-theme-footer {
-  border-top: 1.5px solid #38bdf8 !important;
-  box-shadow: 0 -4px 20px rgba(56, 189, 248, 0.25);
-
-  .footer-col {
-    .footer-brand-title { color: #38bdf8; }
-    ul li a:hover { color: #38bdf8; }
-    .social-icons a:hover { color: #38bdf8; }
-    .newsletter-form {
-      input:focus { border-color: #38bdf8; }
-      button { background: #38bdf8; color: #0f172a; }
-    }
-  }
-}
-
-/* --- ADAPTABILIDAD MÓVIL --- */
 @media (max-width: 900px) {
-  .footer {
-    padding: 2rem 5% 1rem 5%;
-    .footer-container {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
+  .footer .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .footer {
-    .footer-container {
-      grid-template-columns: 1fr;
-      gap: 1.8rem;
-    }
+  .footer .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
 }

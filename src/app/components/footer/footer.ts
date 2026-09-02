@@ -1,6 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -8,38 +8,50 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.scss'
+  styleUrls: ['./footer.scss']
 })
 export class FooterComponent implements OnInit {
-  private router = inject(Router);
+  isLandingPage = false;
+  isSegatRoute = false;
+  isStylesRoute = false;
+  isBradesRoute = false;
+  isCmRoute = false;
+  isFbdRoute = false;
+  isFacebrandGeneralRoute = false;
 
-  isSegatRoute: boolean = false;
-  isFbdRoute: boolean = false;
-  isStylesRoute: boolean = false;
-  isBradesRoute: boolean = false;
-  isCmRoute: boolean = false;
-  isFacebrandGeneralRoute: boolean = false;
+  constructor(private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.checkRoute(this.router.url);
+
     this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
       this.checkRoute(event.urlAfterRedirects);
     });
   }
 
-  private checkRoute(url: string) {
-    this.isSegatRoute = url.includes('fundacion-segat');
-    this.isFbdRoute = url.includes('facebrand-digital');
-    this.isStylesRoute = url.includes('bracas-styles');
-    this.isBradesRoute = url.includes('brades');
-    this.isCmRoute = url.includes('cont-markets') || url.includes('cm') || url.includes('studio');
-    this.isFacebrandGeneralRoute = url.includes('facebrand') && !url.includes('digital');
+  private checkRoute(url: string): void {
+    // Normalizamos la URL por si tiene parámetros o barras al final
+    const cleanUrl = url.split('?')[0].toLowerCase();
+
+    this.isSegatRoute = cleanUrl.includes('/segat') || cleanUrl.includes('fundacion-segat');
+    this.isStylesRoute = cleanUrl.includes('/bracas-styles') || cleanUrl.includes('/styles');
+    this.isBradesRoute = cleanUrl.includes('/brades');
+    this.isCmRoute = cleanUrl.includes('/cm-studio') || cleanUrl.includes('/contmarkets');
+    this.isFbdRoute = cleanUrl.includes('/face-brand-digital') || cleanUrl.includes('/fbd');
+    this.isFacebrandGeneralRoute = cleanUrl.includes('/facebrand');
+    
+    // La landing principal solo aplica si estamos estrictamente en la raíz ('/' o '') 
+    // y NINGUNA de las banderas de subempresas es verdadera.
+    const isSubRouteActive = this.isSegatRoute || this.isStylesRoute || this.isBradesRoute || 
+                             this.isCmRoute || this.isFbdRoute || this.isFacebrandGeneralRoute;
+
+    this.isLandingPage = (cleanUrl === '/' || cleanUrl === '') && !isSubRouteActive;
   }
 
-  onSubscribe(event: Event) {
+  onSubscribe(event: Event): void {
     event.preventDefault();
-    // Lógica opcional de suscripción
+    alert('¡Gracias por suscribirte a nuestro newsletter!');
   }
 }
