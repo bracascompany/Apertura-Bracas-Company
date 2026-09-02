@@ -1,32 +1,10 @@
-<nav class="navbar" [ngClass]="{
-  'segat-theme-active': isSegatRoute, 
-  'fbd-theme-active': isFbdRoute,
-  'styles-theme-active': isStylesRoute,
-  'brades-theme-active': isBradesRoute,
-  'cm-theme-active': isCmRoute,
-  'facebrand-theme-active': isFacebrandGeneralRoute
-}">
-  <!-- Logotipo principal centrado dinámico -->
-  <div class="logo" routerLink="/">
-    <span *ngIf="isSegatRoute">Fundación SEGAT</span>
-    <span *ngIf="isFbdRoute">Face Brand Digital</span>
-    <span *ngIf="isStylesRoute">Bracas Styles</span>
-    <span *ngIf="isBradesRoute">Brades</span>
-    <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
-    <span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span>
-    <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/" class="navbar-brand">
+      Face Brand <span>Digital</span>
+    </a>
   </div>
-
-  <!-- Acciones del Navbar -->
-  <div class="nav-actions">
-    <ng-container *ngIf="authService.isLoggedIn$ | async; else noAuth">
-      <button class="icon-btn user-btn" (click)="onLogout()" title="Cerrar Sesión">
-        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-      </button>
-    </ng-container>
-    
-    <ng-template #noAuth>
-      <button class="btn-login-nav" routerLink="/login">Login</button>
-    </ng-template>
+  <div class="navbar-right">
+    <button class="login-btn" routerLink="/login">Login</button>
   </div>
 </nav>

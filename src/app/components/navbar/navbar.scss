@@ -2,47 +2,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  width: 100%;
+  padding: 0.8rem 2rem;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
+  box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 
-  .navbar-brand {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #0f172a;
-    text-decoration: none;
+  .navbar-left {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
-    span {
-      color: #10b981; /* Color verde característico */
+    .navbar-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+
+      span {
+        color: #10b981;
+      }
     }
   }
 
-  .navbar-menu {
+  .navbar-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-
-    a, button {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
 
     .login-btn {
       background: #10b981;
       color: #ffffff;
       border: none;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1.25rem;
       border-radius: 6px;
-      transition: background 0.2s;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         background: #059669;
