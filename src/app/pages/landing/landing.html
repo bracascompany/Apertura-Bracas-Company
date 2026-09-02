@@ -1,45 +1,45 @@
 <div class="landing-container">
-  <!-- SECCIÓN SUPERIOR: Logo central y botones a los lados -->
-  <section class="hero" style="padding: 40px 0;">
+  <!-- SECCIÓN SUPERIOR -->
+  <section class="hero">
     <div class="hero-background"></div>
-    <div class="hero-content" style="width: 100%; max-width: 1300px; margin: 0 auto;">
+    <div class="hero-content">
       
-      <!-- Menú circular con botones a los lados y la imagen del logo en el centro -->
-      <div class="circular-menu" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+      <!-- Bloque central: Botones a los lados y Logo en el Centro -->
+      <div class="circular-menu">
         <!-- LADO IZQUIERDO -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a class="btn-glass" href="/fundacion-segat">FUNDACIÓN SEGAT</a>
-          <a class="btn-glass" href="/bracasfood">BRACASFOOD</a>
-          <a class="btn-glass" href="/contacto">UBICACIÓN</a>
-          <a class="btn-glass" href="/productos">CATÁLOGO</a>
+        <div class="menu-column">
+          <a class="central-btn" href="/fundacion-segat">FUNDACIÓN SEGAT</a>
+          <a class="central-btn" href="/bracasfood">BRACASFOOD</a>
+          <a class="central-btn" href="/contacto">UBICACIÓN</a>
+          <a class="central-btn" href="/productos">CATÁLOGO</a>
         </div>
 
-        <!-- LOGO CENTRAL CON IMAGEN -->
-        <div class="hero-logo-container" style="text-align: center; margin: 0 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-          <img src="assets/log1.jpeg" alt="Bracas Company Logo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(34, 197, 94, 0.8); box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);" />
+        <!-- LOGO CENTRAL -->
+        <div class="hero-logo-wrapper">
+          <img src="assets/log1.jpeg" alt="Bracas Company Logo" class="central-logo" />
         </div>
 
         <!-- LADO DERECHO -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a class="btn-glass" href="/ofertas">OFERTAS</a>
-          <a class="btn-glass" href="/soporte">SOPORTE</a>
-          <a class="btn-glass" href="/cuenta">MI CUENTA</a>
-          <a class="btn-glass" href="/cm-studio">C&M STUDIOS</a>
+        <div class="menu-column">
+          <a class="central-btn" href="/ofertas">OFERTAS</a>
+          <a class="central-btn" href="/soporte">SOPORTE</a>
+          <a class="central-btn" href="/cuenta">MI CUENTA</a>
+          <a class="central-btn" href="/cm-studio">C&M STUDIOS</a>
         </div>
       </div>
 
-      <!-- Título Verde Neón Fluorescente Abajo del Logo y los Botones -->
-      <div style="text-align: center; margin-top: 10px;">
-        <h2 style="font-family:'Orbitron','Inter',sans-serif!important;font-size:2.8rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 10px auto!important;display:inline-block!important;background:linear-gradient(90deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 15px rgba(74,222,128,0.6))!important;">
+      <!-- TÍTULO NEÓN DE BRACAS COMPANY ABAJO DEL TODO (LOGO Y BOTONES) -->
+      <div class="bottom-neon-title-container">
+        <h2 class="neon-title" style="font-family:'Orbitron','Inter',sans-serif!important;font-size:2.5rem!important;font-weight:900!important;letter-spacing:6px!important;text-transform:uppercase!important;margin:0 auto 10px auto!important;display:inline-block!important;background:linear-gradient(90deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:drop-shadow(0 0 18px rgba(74,222,128,0.7))!important;">
           BRACAS COMPANY
         </h2>
-        <div style="width:80px!important;height:4px!important;background:#16a34a!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 10px #22c55e!important;"></div>
+        <div style="width:90px!important;height:4px!important;background:#16a34a!important;margin:0 auto!important;border-radius:2px!important;box-shadow:0 0 12px #22c55e!important;"></div>
       </div>
 
     </div>
   </section>
 
-  <!-- SECCIÓN INFERIOR: Las 6 tarjetas en Grid 3x2 -->
+  <!-- SECCIÓN INFERIOR: Las Tarjetas -->
   <section class="featured-products">
     <div class="section-header"></div>
     <div class="product-grid">
@@ -92,7 +92,7 @@
         </div>
       </div>
 
-      <!-- 4. C&M Studios (Justo después de Bracas Styles) -->
+      <!-- 4. C&M Studios -->
       <div class="product-card" routerLink="/cm-studio" style="cursor: pointer">
         <div class="product-image">
           <img src="assets/log5.jpeg" alt="Cont&Markets[JB]_Studios" />
