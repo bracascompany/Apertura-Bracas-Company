@@ -1,168 +1,51 @@
 .navbar {
   display: flex;
-  justify-content: flex-end; /* Empuja las acciones automáticamente a la derecha */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 
-  /* LOGO CENTRADO ABSOLUTO (Eje de pantalla exacto) */
-  .logo {
-    font-size: 1.9rem;  
-    font-weight: 800;
-    background: linear-gradient(90deg, #252525, #5CCB5F);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    
-    /* El truco del centro perfecto */
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    white-space: nowrap !important;
-  }
-
-  .nav-actions {
+  .navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
     display: flex;
-    gap: 1.5rem;
     align-items: center;
-    z-index: 10; /* Se mantiene arriba para que sea clickeable */
+    gap: 0.5rem;
 
-    .icon-btn {
-      background: none;
-      border: none;
+    span {
+      color: #10b981; /* Color verde característico */
+    }
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    a, button {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
       cursor: pointer;
-      color: #333;
-      display: flex;
-      align-items: center;
-      transition: transform 0.2s, color 0.2s;
-
-      &:hover {
-        transform: scale(1.1);
-        color: #5CCB5F;
-      }
     }
 
-    .btn-login-nav {
-      background: linear-gradient(90deg, #5CCB5F, #2e2e2e);
-      color: white;
+    .login-btn {
+      background: #10b981;
+      color: #ffffff;
       border: none;
-      padding: 0.9rem 1.6rem;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      box-shadow: 0 14px 28px rgba(92, 203, 95, 0.22);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-    }
-
-    .btn-login-nav:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 32px rgba(92, 203, 95, 0.3);
-      opacity: 0.98;
-    }
-  }
-}
-
-/* --- MODO SEGAT --- */
-.navbar.segat-theme-active {
-  border-bottom: 1px solid #cfe2f3 !important;
-  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.08) !important;
-  background: rgba(244, 248, 251, 0.9) !important;
-
-  .logo {
-    background: linear-gradient(90deg, #0b2545, #00b4d8) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-  }
-
-  .nav-actions {
-    .icon-btn {
-      color: #134074 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      transition: background 0.2s;
 
       &:hover {
-        color: #00b4d8 !important;
-      }
-    }
-
-    .btn-login-nav {
-      background: linear-gradient(90deg, #0b2545, #134074) !important;
-      box-shadow: 0 14px 28px rgba(11, 37, 69, 0.2) !important;
-
-      &:hover {
-        box-shadow: 0 18px 32px rgba(11, 37, 69, 0.3) !important;
-      }
-    }
-  }
-}
-
-/* --- ADAPTABILIDAD MÓVIL (Moto G72 / Realme C55) --- */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.6rem 5% !important;
-
-    .logo {
-      font-size: 1.25rem !important; /* Escalado proporcional para pantallas pequeñas */
-    }
-
-    .nav-actions {
-      gap: 0.8rem !important;
-
-      .icon-btn svg, .icon-btn i {
-        width: 18px !important;
-        height: 18px !important;
-      }
-
-      .btn-login-nav {
-        padding: 0.5rem 1rem !important;
-        font-size: 0.75rem !important;
-      }
-    }
-  }
-}
- 
-/* --- MODO FACE BRAND DIGITAL (FBD) --- */
-.navbar.fbd-theme-active {
-  background: rgba(10, 15, 29, 0.9) !important;
-  border-bottom: 1.5px solid #1a66ff !important;
-  box-shadow: 0 4px 20px rgba(26, 102, 255, 0.3) !important;
-
-  .logo {
-    background: linear-gradient(90deg, #ffffff, #1a66ff) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    filter: drop-shadow(0 0 10px rgba(26, 102, 255, 0.5));
-  }
-
-  .nav-actions {
-    .icon-btn {
-      color: #ffffff !important;
-
-      &:hover {
-        color: #1a66ff !important;
-        filter: drop-shadow(0 0 8px #1a66ff);
-      }
-    }
-
-    .btn-login-nav {
-      background: linear-gradient(90deg, #1a66ff, #0a0f1d) !important;
-      color: #ffffff !important;
-      border: 1px solid rgba(26, 102, 255, 0.5) !important;
-      box-shadow: 0 14px 28px rgba(26, 102, 255, 0.25) !important;
-
-      &:hover {
-        box-shadow: 0 18px 32px rgba(26, 102, 255, 0.45) !important;
-        border-color: #1a66ff !important;
+        background: #059669;
       }
     }
   }

@@ -1,9 +1,20 @@
-<nav class="navbar" [ngClass]="{'segat-theme-active': isSegatRoute, 'fbd-theme-active': isFbdRoute}">
-  <!-- Logotipo principal centrado -->
+<nav class="navbar" [ngClass]="{
+  'segat-theme-active': isSegatRoute, 
+  'fbd-theme-active': isFbdRoute,
+  'styles-theme-active': isStylesRoute,
+  'brades-theme-active': isBradesRoute,
+  'cm-theme-active': isCmRoute,
+  'facebrand-theme-active': isFacebrandGeneralRoute
+}">
+  <!-- Logotipo principal centrado dinámico -->
   <div class="logo" routerLink="/">
     <span *ngIf="isSegatRoute">Fundación SEGAT</span>
     <span *ngIf="isFbdRoute">Face Brand Digital</span>
-    <span *ngIf="!isSegatRoute && !isFbdRoute">Bracascompany</span>
+    <span *ngIf="isStylesRoute">Bracas Styles</span>
+    <span *ngIf="isBradesRoute">Brades</span>
+    <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
+    <span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span>
+    <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>
   </div>
 
   <!-- Acciones del Navbar -->

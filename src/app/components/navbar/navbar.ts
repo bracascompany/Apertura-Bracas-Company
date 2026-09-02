@@ -19,6 +19,10 @@ export class NavbarComponent implements OnInit {
 
   isSegatRoute: boolean = false;
   isFbdRoute: boolean = false;
+  isStylesRoute: boolean = false;
+  isBradesRoute: boolean = false;
+  isCmRoute: boolean = false;
+  isFacebrandGeneralRoute: boolean = false;
 
   ngOnInit() {
     this.checkRoute(this.router.url);
@@ -32,6 +36,10 @@ export class NavbarComponent implements OnInit {
   private checkRoute(url: string) {
     this.isSegatRoute = url.includes('fundacion-segat');
     this.isFbdRoute = url.includes('facebrand-digital');
+    this.isStylesRoute = url.includes('bracas-styles');
+    this.isBradesRoute = url.includes('brades');
+    this.isCmRoute = url.includes('cont-markets') || url.includes('cm') || url.includes('studio');
+    this.isFacebrandGeneralRoute = url.includes('facebrand') && !url.includes('digital');
   }
 
   onLogout() {
