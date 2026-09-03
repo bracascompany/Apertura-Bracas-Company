@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 .hero-background {
@@ -30,31 +30,31 @@
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Bloque principal: Botones izq, Logo centro, Botones der */
+/* Menú circular optimizado para mantener los botones a los lados incluso en pantallas angostas */
 .circular-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 15px;
   flex-wrap: nowrap;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .menu-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 220px;
+  gap: 8px;
+  width: 155px; /* Ancho ajustado para celulares angostos */
+  flex-shrink: 0;
 }
 
-/* Variante clave para posicionar los botones rodeando el círculo */
 .menu-column.left-column {
   align-items: flex-end;
 }
@@ -66,25 +66,24 @@
 .central-btn {
   background: rgba(22, 163, 74, 0.25);
   border: 1.5px solid rgba(34, 197, 94, 0.6);
-  padding: 12px 20px;
-  border-radius: 20px;
+  padding: 8px 10px;
+  border-radius: 16px;
   color: #fff;
   text-decoration: none;
   font-weight: 800;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  font-size: 0.72rem; /* Tamaño de fuente ideal para que quepa bien en el Realme */
+  letter-spacing: 0.3px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.25);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
   transition: all 0.3s ease;
   display: inline-block;
   white-space: nowrap;
   width: 100%;
-  max-width: 200px;
 }
 
 .central-btn:hover {
   background: rgba(34, 197, 94, 0.4);
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
   transform: scale(1.03);
 }
 
@@ -95,59 +94,36 @@
   align-items: center; 
   justify-content: center;
   flex-shrink: 0;
+  margin: 0 5px;
 }
 
 .central-logo {
-  width: 160px;
-  height: 160px;
+  width: 125px; /* Tamaño del logo perfecto para equilibrar el espacio lateral */
+  height: 125px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(34, 197, 94, 0.8);
-  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
 }
 
 .bottom-neon-title-container {
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-@media (max-width: 900px) {
-  .hero {
-    min-height: auto;
-    padding: 25px 0;
-  }
-
-  .circular-menu {
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-
-  .central-logo {
-    width: 130px;
-    height: 130px;
-  }
-
+/* Breakpoint solo para pantallas extremadamente pequeñas (< 350px) */
+@media (max-width: 350px) {
   .menu-column {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
-    max-width: 400px;
-    align-items: stretch !important;
+    width: 135px;
   }
-
   .central-btn {
-    padding: 10px 9px;
-    font-size: 0.75rem;
-    white-space: normal;
-    max-width: 100%;
+    font-size: 0.65rem;
+    padding: 7px 6px;
   }
-
-  .neon-title {
-    font-size: 1.8rem !important;
-    letter-spacing: 3px !important;
+  .central-logo {
+    width: 110px;
+    height: 110px;
   }
 }
 
