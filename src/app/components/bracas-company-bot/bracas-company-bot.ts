@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -18,13 +18,14 @@ interface Message {
   styleUrls: ['./bracas-company-bot.scss']
 })
 export class BracasCompanyBotComponent {
+  constructor(private cdr: ChangeDetectorRef) {}
   userMessage: string = '';
-  isOpen = signal<boolean>(false);
+  isOpen: boolean = false;
   
   messages = signal<Message[]>([
     {
       sender: 'bot',
-      text: '¡Hola! Bienvenido a Bracas Company. 🌐 Selecciona la unidad de negocio o marca que deseas explorar:',
+      text: '¡Hola! Bienvenido a <strong>Bracas Company</strong>. 🌐 Selecciona la unidad de negocio o marca que deseas explorar:',
       options: [
         { label: '🍔 Bracasfood (Comidas)', action: 'bracasfood' },
         { label: '🧵 Brades (Confecciones)', action: 'brades' },
@@ -37,6 +38,8 @@ export class BracasCompanyBotComponent {
   ]);
 
   toggleChat(): void {
+    this.isOpen = !this.isOpen;
+    this.cdr.detectChanges();
   }
 
   selectOption(action: string): void {
