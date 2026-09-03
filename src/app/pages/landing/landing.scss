@@ -310,3 +310,63 @@
     min-height: 70px !important;
   }
 }
+/* MEDIA QUERY RESPONSIVO PARA MÓVILES (Moto G72, Realme C55 y celulares) */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 10px 0;
+  }
+
+  .circular-menu {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  
+  .menu-column {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 32% !important;
+    flex-shrink: 0 !important;
+    gap: 6px !important;
+  }
+
+  .hero-logo-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32% !important;
+    flex-shrink: 0 !important;
+    margin: 0 2px !important;
+  }
+
+  .central-btn {
+    font-size: 0.52rem !important;
+    padding: 6px 2px !important;
+    letter-spacing: -0.2px !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+
+  .central-logo {
+    width: 85px !important;
+    height: 85px !important;
+    min-width: 85px !important;
+    min-height: 85px !important;
+    border-width: 2px !important;
+  }
+
+  .neon-title {
+    font-size: 1.6rem !important;
+    letter-spacing: 3px !important;
+  }
+}
