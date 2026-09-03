@@ -10,7 +10,7 @@ import { FooterComponent } from '../../../components/footer/footer';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss'
 })

@@ -18,13 +18,13 @@ interface Message {
   styleUrls: ['./bracas-company-bot.scss']
 })
 export class BracasCompanyBotComponent {
+  userMessage: string = '';
   isOpen = signal<boolean>(false);
-  userInput = signal<string>('');
   
   messages = signal<Message[]>([
     {
       sender: 'bot',
-      text: '¡Hola! Bienvenido a <strong>Bracas Company</strong>. 🌐 Selecciona la unidad de negocio o marca que deseas explorar:',
+      text: '¡Hola! Bienvenido a Bracas Company. 🌐 Selecciona la unidad de negocio o marca que deseas explorar:',
       options: [
         { label: '🍔 Bracasfood (Comidas)', action: 'bracasfood' },
         { label: '🧵 Brades (Confecciones)', action: 'brades' },
@@ -37,7 +37,6 @@ export class BracasCompanyBotComponent {
   ]);
 
   toggleChat(): void {
-    this.isOpen.update(val => !val);
   }
 
   selectOption(action: string): void {
@@ -88,14 +87,13 @@ export class BracasCompanyBotComponent {
   }
 
   sendMessage(): void {
-    const text = this.userInput().trim();
-    if (!text) return;
+    const text = this.userMessage.trim();
 
     this.messages.update(msgs => [
       ...msgs,
       { sender: 'user', text },
       { sender: 'bot', text: `Recibido. Un asesor de Bracas Company te atenderá pronto respecto a: "${text}".` }
     ]);
-    this.userInput.set('');
+    this.userMessage = '';
   }
 }

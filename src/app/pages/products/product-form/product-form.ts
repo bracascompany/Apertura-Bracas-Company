@@ -10,7 +10,7 @@ import { FooterComponent } from '../../../components/footer/footer';
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './product-form.html',
   styleUrl: './product-form.scss'
 })
