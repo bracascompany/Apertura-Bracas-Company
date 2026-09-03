@@ -105,16 +105,17 @@
 }
 
 /* MEDIA QUERY PARA MÓVILES (Realme C55 y Moto G72) */
-@media (max-width: 600px) {
+@media (max-width: 360px) {
   .hero {
     min-height: auto;
-    padding: 20px 0;
+    padding: 1px 0 0 0; /* Menos espacio arriba para que suba hacia el navbar */
   }
 
   .circular-menu {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 20px;
+    margin-top: 5px; /* Controla qué tan pegado está del navbar superior */
   }
 
   .central-logo {
@@ -127,13 +128,13 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr; /* 2 columns of buttons side-by-side */
     gap: 10px;
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    max-width: 80%;
   }
 
   .central-btn {
     padding: 10px 8px;
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     white-space: normal;
   }
 
@@ -157,7 +158,7 @@
   align-items: stretch;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 360px) {
   .product-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -232,4 +233,80 @@
 
 .add-btn:hover {
   background: #22c55e;
+}
+
+/* Query exclusiva agregada para ajustar el Realme C55 sin alterar el resto */
+
+@media (max-width: 100px) {
+  .circular-menu {
+    flex-wrap: nowrap !important;
+    gap: 2px !important;
+  }
+  
+  .menu-column {
+    width: 100px !important;
+    min-width: 50px !important;
+  }
+
+  .hero-logo-wrapper {
+    width: 32% !important;
+    min-width: 55px !important;
+    margin: 0 !important;
+  }
+
+  .central-btn {
+    font-size: 0.3rem !important;
+    padding: 6px 1px;      /* Controla qué tan altos/gorditos son los botones */
+    letter-spacing: -0.1px !important;
+    width: 50%;           /* Hace que el botón ocupe todo el ancho de su columna */
+  }
+
+  .central-logo {
+    width: 65px !important;
+    height: 65px !important;
+  }
+}
+
+/* Forzar fila horizontal estricta para el Realme C55 */
+@media (max-width: 380px) {
+  .circular-menu {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    width: 100% !important;
+  }
+  
+  .menu-column {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 31% !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-logo-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34% !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+
+  .central-btn {
+    font-size: 0.38rem !important;
+    padding: 3px 1px !important;
+    letter-spacing: -0.3px !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+  }
+
+  .central-logo {
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
+    min-height: 70px !important;
+  }
 }
