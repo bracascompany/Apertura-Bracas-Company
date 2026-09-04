@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectorRef } from '@angular/core';
+import { Component, signal, ChangeDetectorRef, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,7 +17,9 @@ interface Message {
   templateUrl: './bracas-company-bot.html',
   styleUrls: ['./bracas-company-bot.scss']
 })
-export class BracasCompanyBotComponent {
+export class BracasCompanyBotComponent implements AfterViewChecked {
+  @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
+
   constructor(private cdr: ChangeDetectorRef) {}
   userMessage: string = '';
   isOpen: boolean = false;
@@ -36,6 +38,18 @@ export class BracasCompanyBotComponent {
       ]
     }
   ]);
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try {
+      if (this.scrollContainer) {
+        this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+      }
+    } catch(err) { }
+  }
 
   toggleChat(): void {
     this.isOpen = !this.isOpen;
@@ -64,7 +78,7 @@ export class BracasCompanyBotComponent {
         linkText = 'Contactar Bracas Styles';
         break;
       case 'cm':
-        responseText = '📈 <strong>C&M[JB]_Studios</strong>: Marketing digital, posicionamiento de marca y estrategias comerciales.';
+        responseText = '📈 <strong>C&M Studios</strong>: Marketing digital, posicionamiento de marca y estrategias comerciales.';
         linkUrl = 'https://wa.me/573173966891';
         linkText = 'Asesoría C&M Studios';
         break;
@@ -91,6 +105,7 @@ export class BracasCompanyBotComponent {
 
   sendMessage(): void {
     const text = this.userMessage.trim();
+    if (!text) return;
 
     this.messages.update(msgs => [
       ...msgs,
