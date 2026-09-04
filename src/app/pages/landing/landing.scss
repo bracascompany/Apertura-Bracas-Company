@@ -370,153 +370,28 @@
     letter-spacing: 3px !important;
   }
 }
-@media (max-width: 480px) {
+
+
+@media screen and (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
-    padding: 0 10px;
+    padding: 0 10px !important;
+    width: 100% !important;
   }
-}
-
-/* Tarjetas de productos convertidas en círculos con resplandor neón personalizado */
-.product-card {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-.product-image {
-  width: 170px !important;
-  height: 170px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: #051208 !important;
-  border: 3px solid rgba(34, 197, 94, 0.8) !important;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4) !important;
-  margin: 0 auto 10px auto !important;
-  transition: box-shadow 0.3s ease;
-}
-
-.product-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
-
-.product-card:hover .product-image {
-  transform: none !important;
-  box-shadow: 0 0 30px rgba(34, 197, 94, 0.7);
-}
-
-/* Resplandores específicos por tarjeta según su identidad */
-/* 1. Bracasfood (Verde cálido / Naranja de su logo) */
-.product-card:nth-child(1) .product-image {
-  border-color: rgba(249, 115, 22, 0.8);
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
-}
-.product-card:nth-child(1):hover .product-image {
-  box-shadow: 0 0 30px rgba(249, 115, 22, 0.7);
-}
-
-/* 2. Brades (Azulado / Confecciones) */
-.product-card:nth-child(2) .product-image {
-  border-color: rgba(56, 189, 248, 0.8);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-.product-card:nth-child(2):hover .product-image {
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.7);
-}
-
-/* 3. Bracastyles (Verde esmeralda clásico) */
-.product-card:nth-child(3) .product-image {
-  border-color: rgba(34, 197, 94, 0.8);
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
-}
-
-/* 4. C&M Studios (Verde brillante) */
-.product-card:nth-child(4) .product-image {
-  border-color: rgba(74, 222, 128, 0.8);
-  box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
-}
-
-/* 5. Fundación SEGAT */
-.product-card:nth-child(5) .product-image {
-  border-color: rgba(16, 185, 129, 0.8);
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
-}
-
-/* 6. Face Brand Digital (Azul eléctrico distintivo) */
-.product-card:nth-child(6) .product-image {
-  border-color: rgba(26, 102, 255, 0.9) !important;
-  box-shadow: 0 0 25px rgba(26, 102, 255, 0.6) !important;
-}
-.product-card:nth-child(6):hover .product-image {
-  box-shadow: 0 0 35px rgba(26, 102, 255, 0.9);
-}
-
-/* Ocultar elementos sobrantes para dejar la tarjeta limpia enfocada en el círculo y texto */
-.product-info {
-  padding: 5px 0 !important;
-  background: transparent !important;
-}
-.product-info h3 {
-  font-size: 0.9rem !important;
-  margin-bottom: 5px !important;
-  color: #fff !important;
-}
-.price-row {
-  display: none !important; /* Ocultamos la fila vacía de precios para limpiar */
-}
-
-.product-image {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-}
-
-.product-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
-.product-image {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-}
-
-.product-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
-.product-image {
-  position: relative !important;
-  overflow: hidden !important;
-  transform: none !important;
-  will-change: auto !important;
-}
-
-.product-image img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  transform: none !important;
+  
+  .product-image {
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    margin: 0 auto 8px auto !important;
+  }
+  
+  .product-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
 }
