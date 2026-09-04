@@ -1,25 +1,27 @@
-<nav class="navbar">
-  <div class="logo">Bracascompany</div>
-  
-  <ul class="nav-links">
-    <li><a routerLink="/">Inicio</a></li>
-    <li *ngIf="authService.isLoggedIn$ | async"><a routerLink="/products">Productos</a></li>
-    <li><a href="#">Categorías</a></li>
-    <li><a href="#">Ofertas</a></li>
-  </ul>
+<nav class="navbar" [ngClass]="{
+  'segat-theme-active': isSegatRoute, 
+  'fbd-theme-active': isFbdRoute,
+  'styles-theme-active': isStylesRoute,
+  'brades-theme-active': isBradesRoute,
+  'cm-theme-active': isCmRoute,
+  'facebrand-theme-active': isFacebrandGeneralRoute
+}">
+  <!-- Logotipo principal centrado dinámico -->
+  <div class="logo" routerLink="/">
+    <span *ngIf="isSegatRoute">Fundación SEGAT</span>
+    <span *ngIf="isFbdRoute">Face Brand Digital</span>
+    <span *ngIf="isStylesRoute">Bracas Styles</span>
+    <span *ngIf="isBradesRoute">Brades</span>
+    <span *ngIf="isCmRoute">Cont&Markets [JB] Studios</span>
+    <span *ngIf="isFacebrandGeneralRoute">Facebrand Digital Corp</span>
+    <span *ngIf="!isSegatRoute && !isFbdRoute && !isStylesRoute && !isBradesRoute && !isCmRoute && !isFacebrandGeneralRoute">Bracascompany</span>
+  </div>
 
+  <!-- Acciones del Navbar -->
   <div class="nav-actions">
-    <button class="icon-btn search-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    </button>
-    <button class="icon-btn cart-btn" routerLink="/cart">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      <span class="cart-count">{{ cartService.count() }}</span>
-    </button>
-    
     <ng-container *ngIf="authService.isLoggedIn$ | async; else noAuth">
       <button class="icon-btn user-btn" (click)="onLogout()" title="Cerrar Sesión">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       </button>
     </ng-container>
     

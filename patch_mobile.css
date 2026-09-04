@@ -1,0 +1,57 @@
+/* ============================================================
+   2. AJUSTES EXCLUSIVOS PARA MÓVIL (PANTALLAS < 768PX)
+   ============================================================ */
+@media screen and (max-width: 450px) {
+  .hero {
+    height: auto !important;
+    min-height: 520px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  .hero-content {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box;
+  }
+
+  .cta-buttons-left,
+  .cta-buttons-right {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 38% !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+  }
+
+  .cta-buttons-left {
+    align-items: flex-start !important;
+  }
+
+  .cta-buttons-right {
+    align-items: flex-end !important;
+  }
+
+  .btn-glass {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+}

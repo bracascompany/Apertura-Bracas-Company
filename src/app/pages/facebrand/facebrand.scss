@@ -1,0 +1,97 @@
+// Variables de Marca (Extraídas de tu logo FBD)
+$fbd-bg-dark: #0a0f1d;       // Azul oscuro profundo (Fondo de pantalla)
+$fbd-bg-card: #10172a;       // Azul grisáceo oscuro para contenedores
+$fbd-blue-brand: #1a66ff;   // Azul eléctrico del escudo FBD
+$fbd-white: #ffffff;        // Blanco puro para textos principales
+$fbd-text-muted: #94a3b8;   // Gris azulado para textos secundarios
+$fbd-glow: rgba(26, 102, 255, 0.35);
+
+// Contenedor principal de la página (Fondo Oscuro de la Nebulosa)
+.encarta-container {
+    background-color: $fbd-bg-dark;
+    color: $fbd-white;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Encabezado / Navbar Superior
+.encarta-header {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $fbd-blue-brand;
+    box-shadow: 0 4px 15px (-4px) $fbd-glow;
+    margin-bottom: 2.5rem;
+}
+
+// Título de la marca con efecto sutil de resplandor azul
+.encarta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $fbd-white;
+    margin: 0;
+    text-shadow: 0 0 12px rgba(26, 102, 255, 0.6);
+}
+
+// Botón "Volver al Inicio" adaptado al estilo FBD
+.encarta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1.5px solid $fbd-blue-brand;
+    color: $fbd-white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 0 8px $fbd-glow;
+    transition: all 0.25s ease-in-out;
+
+    .icon {
+        font-size: 1.1rem;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        background-color: $fbd-blue-brand;
+        box-shadow: 0 0 15px $fbd-blue-brand;
+        transform: translateY(-1px);
+
+        .icon {
+            transform: translateX(-3px); // Efecto dinámico en la flecha hacia la izquierda
+        }
+    }
+}
+
+// Contenedor del Reproductor de Video
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: $fbd-bg-card;
+    border: 2px solid rgba(26, 102, 255, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px $fbd-glow;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+        border-color: $fbd-blue-brand;
+    }
+}
+
+// Reproductor de Video Nativo HTML5
+.main-video-player {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background-color: #000000;
+}

@@ -1,0 +1,183 @@
+/* --- ESTILOS POR DEFECTO (Landing principal con verde Bracascompany) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+
+  .logo {
+    font-size: 1.9rem;  
+    font-weight: 800;
+    background: linear-gradient(90deg, #252525, #5CCB5F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #41d195;
+      }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s, color 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        color: #5CCB5F;
+      }
+    }
+
+    .cart-count {
+      background: #5CCB5F;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 10px;
+      position: absolute;
+      top: -5px;
+      right: -10px;
+    }
+
+    .cart-btn {
+      position: relative;
+    }
+
+    .btn-login-nav {
+      background: linear-gradient(90deg, #5CCB5F, #2e2e2e);
+      color: white;
+      border: none;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 14px 28px rgba(92, 203, 95, 0.22);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 32px rgba(92, 203, 95, 0.3);
+        opacity: 0.98;
+      }
+    }
+  }
+}
+
+/* --- MODO SEGAT (Se activa dinámicamente cuando estás en /fundacion-segat) --- */
+.navbar.segat-theme-active {
+  border-bottom: 1px solid #cfe2f3 !important;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.08) !important;
+
+  .logo {
+    background: linear-gradient(90deg, #0b2545, #00b4d8) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  .nav-links a {
+    color: #134074 !important;
+    &:hover { color: #00b4d8 !important; }
+  }
+
+  .nav-actions {
+    .icon-btn { color: #134074 !important; }
+    .cart-count { background: #00b4d8 !important; }
+    .btn-login-nav {
+      background: linear-gradient(90deg, #0b2545, #134074) !important;
+      box-shadow: 0 14px 28px rgba(11, 37, 69, 0.2) !important;
+
+      &:hover {
+        box-shadow: 0 18px 32px rgba(11, 37, 69, 0.3) !important;
+      }
+    }
+  }
+}
+
+/* --- AJUSTE DEFINITIVO PARA MÓVIL (Motorola G72, G55, Realme C55) --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 2% !important;
+    gap: 4px !important;
+
+    .logo {
+      font-size: 1.2rem !important;
+      margin-right: 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .nav-links {
+      display: flex !important;
+      gap: 0.4rem !important;
+      flex: 1 !important;
+      justify-content: center !important;
+      margin: 0 4px !important;
+
+      a {
+        font-size: 0.93rem !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    .nav-actions {
+      gap: 0.5rem !important;
+      flex-shrink: 0 !important;
+
+      .icon-btn svg, .icon-btn i {
+        font-size: 1rem !important;
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      .btn-login-nav {
+        padding: 0.3rem 0.6rem !important;
+        font-size: 0.69rem !important;
+        border-radius: 50px !important;
+        box-shadow: none !important;
+      }
+
+      .cart-count {
+        top: -6px !important;
+        right: -8px !important;
+        padding: 1px 4px !important;
+        font-size: 0.5rem !important;
+      }
+    }
+  }
+}

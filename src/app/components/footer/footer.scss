@@ -1,116 +1,257 @@
 .footer {
-  background: #ffffff;
-  color: rgb(64, 179, 101);
-  padding: 4rem 5% 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  background: #070a13;
+  color: #94a3b8;
+  padding: 3rem 5% 1.5rem 5%;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 
-  h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    color: #5CCB5F 100%;
-  }
+  .footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
 
-  p {
-    color: #999;
-    line-height: 1.6;
-  }
+    .footer-col {
+      h4, .footer-brand-title {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
 
-  .footer-column {
-    ul {
-      list-style: none;
-      padding: 0;
+      .footer-brand-title {
+        font-size: 1.25rem;
+      }
 
-      li {
-        margin-bottom: 0.8rem;
+      .footer-desc {
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+        font-size: 0.88rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.6rem;
+
+          a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
 
         a {
-          color: #999;
-          text-decoration: none;
-          transition: color 0.3s;
+          color: #94a3b8;
+          display: flex;
+          align-items: center;
+          transition: color 0.2s, transform 0.2s;
 
-          &:hover { // Botones del footer
-            color: #5CCB5F 100%;
+          &:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+
+        input {
+          flex: 1;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          padding: 0.6rem 0.9rem;
+          border-radius: 6px;
+          color: #ffffff;
+          font-size: 0.85rem;
+          outline: none;
+
+          &:focus {
+            border-color: #10b981;
+          }
+        }
+
+        button {
+          background: #10b981;
+          color: #ffffff;
+          border: none;
+          padding: 0.6rem 1.2rem;
+          border-radius: 6px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: opacity 0.2s;
+
+          &:hover {
+            opacity: 0.9;
           }
         }
       }
     }
   }
 
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+  .footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+}
 
-    .icon {
-      width: 40px;
-      height: 40px;
-      background: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
+/* --- TEMA: BRACAS COMPANY (Landing Principal - Fondo y tonos verdes integrados) --- */
+.footer.bracas-company-theme {
+  background: linear-gradient(180deg, #0b2216 0%, #05140d 100%) !important;
+  border-top: 1.5px solid #10b981 !important;
+  box-shadow: 0 -4px 25px rgba(16, 185, 129, 0.2);
+  color: #a7f3d0 !important;
 
-       /* AJUSTE: Contorno blanco profesional */
-      border: 1.5px solid rgba(255, 255, 255, 0.9); 
-      color: #ffffff; // Asegura que el icono sea blanco
-      transition: all 0.3s ease;
-
-      transition: background 0.3s, transform 0.3s;
-
+  .footer-col {
+    h4, .footer-brand-title { color: #ffffff !important; }
+    .footer-brand-title { color: #34d399 !important; }
+    .footer-desc { color: #93c5fd !important; color: #a7f3d0 !important; opacity: 0.85; }
+    
+    ul li a {
+      color: #a7f3d0 !important;
+      opacity: 0.8;
       &:hover {
-        /* Cambio al verde de tu marca y efecto de elevación */
-        background: #5CCB5F;
-        border-color: #5CCB5F;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(92, 203, 95, 0.4);
+        color: #ffffff !important;
+        opacity: 1;
       }
     }
-  }
 
-  .newsletter {
-    .signup-form {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
+    .social-icons a {
+      color: #34d399 !important;
+      &:hover { color: #ffffff !important; }
+    }
 
+    .newsletter-form {
       input {
-        flex: 1;
-        background: #222;
-        border: 1px solid #333;
-        padding: 0.8rem;
-        color: rgb(69, 180, 78);
-        border-radius: 5px;
-        outline: none;
-
-        &:focus {
-          border-color: #5CCB5F 100%;
-        }
+        background: rgba(16, 185, 129, 0.08) !important;
+        border: 1px solid rgba(16, 185, 129, 0.3) !important;
+        color: #ffffff !important;
+        &::placeholder { color: #6ee7b7; opacity: 0.6; }
+        &:focus { border-color: #34d399 !important; }
       }
-
       button {
-        background: #34d087;
-        border: none;
-        color: white;
-        padding: 0 1.5rem;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-
-        &:hover {
-          background: #5CCB5F 100%;
-        }
+        background: #10b981 !important;
+        color: #05140d !important;
+        font-weight: 800;
+        &:hover { background: #34d399 !important; }
       }
     }
   }
 
   .footer-bottom {
-    grid-column: 1 / -1;
-    border-top: 1px solid #222;
-    padding-top: 2rem;
-    text-align: center;
-    color: #555;
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(16, 185, 129, 0.15) !important;
+    color: #6ee7b7 !important;
+    opacity: 0.7;
+  }
+}
+
+/* --- TEMA: FACE BRAND DIGITAL (#1a66ff) --- */
+.footer.fbd-theme-footer {
+  border-top: 1.5px solid #1a66ff !important;
+  box-shadow: 0 -4px 20px rgba(26, 102, 255, 0.2);
+  .footer-col {
+    .footer-brand-title { color: #1a66ff !important; }
+    ul li a:hover { color: #1a66ff !important; }
+    .social-icons a:hover { color: #1a66ff !important; }
+    .newsletter-form input:focus { border-color: #1a66ff !important; }
+    .newsletter-form button { background: #1a66ff !important; }
+  }
+}
+
+/* --- TEMA: FUNDACIÓN SEGAT (#0b2545 / #00b4d8) --- */
+.footer.segat-theme-footer {
+  border-top: 1.5px solid #00b4d8 !important;
+  box-shadow: 0 -4px 20px rgba(0, 180, 216, 0.2);
+  .footer-col {
+    .footer-brand-title { color: #00b4d8 !important; }
+    ul li a:hover { color: #00b4d8 !important; }
+    .social-icons a:hover { color: #00b4d8 !important; }
+    .newsletter-form input:focus { border-color: #00b4d8 !important; }
+    .newsletter-form button { background: #00b4d8 !important; color: #0b2545 !important; font-weight: 800; }
+  }
+}
+
+/* --- TEMA: BRACAS STYLES (#d946ef) --- */
+.footer.styles-theme-footer {
+  border-top: 1.5px solid #d946ef !important;
+  box-shadow: 0 -4px 20px rgba(217, 70, 239, 0.25);
+  .footer-col {
+    .footer-brand-title { color: #d946ef !important; }
+    ul li a:hover { color: #d946ef !important; }
+    .social-icons a:hover { color: #d946ef !important; }
+    .newsletter-form input:focus { border-color: #d946ef !important; }
+    .newsletter-form button { background: #d946ef !important; }
+  }
+}
+
+/* --- TEMA: BRADES (#3b82f6) --- */
+.footer.brades-theme-footer {
+  border-top: 1.5px solid #3b82f6 !important;
+  box-shadow: 0 -4px 20px rgba(59, 130, 246, 0.25);
+  .footer-col {
+    .footer-brand-title { color: #3b82f6 !important; }
+    ul li a:hover { color: #3b82f6 !important; }
+    .social-icons a:hover { color: #3b82f6 !important; }
+    .newsletter-form input:focus { border-color: #3b82f6 !important; }
+    .newsletter-form button { background: #3b82f6 !important; }
+  }
+}
+
+/* --- TEMA: C&M STUDIOS (#ec4899 / #facc15) --- */
+.footer.cm-theme-footer {
+  border-top: 1.5px solid #ec4899 !important;
+  box-shadow: 0 -4px 20px rgba(236, 72, 153, 0.25);
+  .footer-col {
+    .footer-brand-title {
+      background: linear-gradient(90deg, #facc15, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    ul li a:hover { color: #facc15 !important; }
+    .social-icons a:hover { color: #facc15 !important; }
+    .newsletter-form input:focus { border-color: #ec4899 !important; }
+    .newsletter-form button { 
+      background: linear-gradient(90deg, #ec4899, #facc15) !important;
+      color: #070a13 !important;
+      font-weight: 800;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
 }

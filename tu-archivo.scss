@@ -1,0 +1,117 @@
+/* ============================================================ 
+   1. ESTILOS BASE (PC / ESCRITORIO)
+   ============================================================ */
+.landing-container {
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+.hero {
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #0b1a0c;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  z-index: 1;
+  background: url("/assets/log1.jpeg") no-repeat center center;
+  background-size: contain;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.cta-buttons-left, .cta-buttons-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 280px;
+  z-index: 12;
+}
+
+.btn-glass {
+  background: #2b5927;
+  color: #ffffff;
+  border: 1px solid #5ccb5f;
+  border-radius: 20px;
+  padding: 10px 22px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+
+  &:hover {
+    background: #387533;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(92, 203, 95, 0.5);
+    transform: scale(1.03);
+  }
+}
+
+.btn-izq-1 { margin-left: 55px; }
+.btn-izq-2 { margin-left: 15px; }
+.btn-izq-3 { margin-left: 55px; }
+
+.btn-der-1 { margin-right: 55px; }
+.btn-der-2 { margin-right: 15px; }
+.btn-der-3 { margin-right: 55px; }
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 60px 20px;
+  }
+  .hero-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 40px;
+  }
+  .hero-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .cta-buttons-left, .cta-buttons-right {
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn-izq-1, .btn-izq-2, .btn-izq-3,
+  .btn-der-1, .btn-der-2, .btn-der-3 {
+    margin: 0 !important;
+  }
+}

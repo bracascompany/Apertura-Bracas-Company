@@ -1,0 +1,32 @@
+<!-- Botón flotante independiente -->
+<button class="chat-toggle-btn" (click)="toggleChat()" type="button" aria-label="Abrir Chatbot">
+  <img src="assets/chatbot.jpeg" alt="Bracas Company Bot" class="bot-avatar-icon" />
+</button>
+
+<div class="chat-window" *ngIf="isOpen">
+  <div class="chat-header">
+    <h3>Bracas Company Assistant</h3>
+    <button class="close-btn" (click)="toggleChat()" type="button" aria-label="Cerrar Chat">✕</button>
+  </div>
+
+  <div class="chat-body">
+    <div *ngFor="let msg of messages()" [ngClass]="['chat-message', msg.sender]">
+      <div [innerHTML]="msg.text"></div>
+
+      <div *ngIf="msg.options" class="bot-grid-buttons">
+        <button *ngFor="let opt of msg.options" class="btn-bot-item" (click)="selectOption(opt.action)" type="button">
+          {{ opt.label }}
+        </button>
+      </div>
+
+      <div *ngIf="msg.linkUrl" class="bot-link-container">
+        <a [href]="msg.linkUrl" target="_blank" class="btn-bot-link">{{ msg.linkText }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Escribe tu mensaje..." />
+    <button (click)="sendMessage()" type="button">Enviar</button>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import { FooterComponent } from '../../../components/footer/footer';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './register.html',
   styleUrl: './register.scss'
 })

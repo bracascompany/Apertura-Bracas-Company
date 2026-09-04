@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Bracas Company</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+    <div class="splash-container">
+      <div class="splash-content">
+        <img src="assets/logo1.jpeg" alt="Bracas Company Logo" class="splash-logo" />
+        <div class="splash-spinner"></div>
+        <p class="splash-text">Cargando plataforma...</p>
+      </div>
+    </div>
+
+    <style>
+      .splash-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #0b2914 0%, #153e20 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+        font-family: sans-serif;
+      }
+      .splash-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .splash-logo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        margin-bottom: 25px;
+        object-fit: cover;
+      }
+      .splash-spinner {
+        width: 45px;
+        height: 45px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+      }
+      .splash-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </app-root>
+</body>
+</html>

@@ -1,0 +1,205 @@
+.landing-container {
+  width: 100%;
+  min-height: 150vh;
+  background-color: #0b1a10;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(11,26,16,1) 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Forzamos que SIEMPRE mantenga los botones a los lados y el logo al centro en cualquier pantalla */
+.circular-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 125px;
+  flex-shrink: 0;
+}
+
+.menu-column.left-column {
+  align-items: flex-end;
+}
+
+.menu-column.right-column {
+  align-items: flex-start;
+}
+
+.central-btn {
+  background: rgba(22, 163, 74, 0.25);
+  border: 1px solid rgba(34, 197, 94, 0.6);
+  padding: 7px 6px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.62rem;
+  letter-spacing: 0.2px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.25);
+  transition: all 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.central-btn:hover {
+  background: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.5);
+  transform: scale(1.03);
+}
+
+.hero-logo-wrapper {
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+
+.central-logo {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.bottom-neon-title-container {
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.featured-products {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.product-card {
+  background: rgba(13, 31, 19, 0.85);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #051208;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  background: #16a34a;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #22c55e;
+}
