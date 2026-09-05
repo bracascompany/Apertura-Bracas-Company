@@ -9,7 +9,7 @@
     <button class="close-btn" (click)="toggleChat()" type="button" aria-label="Cerrar Chat">✕</button>
   </div>
 
-  <div class="chat-body">
+  <div class="chat-body" #scrollContainer>
     <div *ngFor="let msg of messages()" [ngClass]="['chat-message', msg.sender]">
       <div [innerHTML]="msg.text"></div>
 
