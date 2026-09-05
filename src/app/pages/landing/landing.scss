@@ -90,9 +90,9 @@
   margin: 0 10px;
 }
 
-.central-logo {
-  width: 140px;
-  height: 140px;
+.central-logo {  /* laptop*/
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(34, 197, 94, 0.8);
@@ -189,10 +189,10 @@
   }
 
   .central-logo {
-    width: 85px !important;
-    height: 85px !important;
-    min-width: 85px !important;
-    min-height: 85px !important;
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 130px !important;
+    min-height: 130px !important;
   }
 
   .product-grid, .cards-grid {
@@ -226,8 +226,8 @@
 /* Aumentar tamaño de logo central, botones y fuente en el Moto G72 sin romper la alineación de 3 columnas */
 @media screen and (max-width: 820px) {
   .central-logo {
-  width: 180px !important;    /* Ancho del logo */
-  height: 180px !important;   /* Alto del logo */
+  width: 170px !important;    /* Ancho del logo */
+  height: 170px !important;   /* Alto del logo */
   min-width: 150px !important;
   min-height: 150px !important;
   border-radius: 50% !important;
@@ -287,7 +287,7 @@
   pointer-events: auto;
   width: 145px !important;    /* <-- Aumenta o disminuye el ancho aquí */
   height: 55px !important;   /* <-- Aumenta o disminuye el alto aquí */
-  font-size: 1rem !important; /* <-- Tamaño del texto dentro del botón */
+  font-size: 0.95rem !important; /* <-- Tamaño del texto dentro del botón */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
