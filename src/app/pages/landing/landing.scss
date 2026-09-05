@@ -1,3 +1,6 @@
+/* ==========================================
+   1. CONTENEDOR GENERAL Y HERO (DESKTOP)
+   ========================================== */
 .landing-container {
   width: 100%;
   min-height: 100vh;
@@ -5,6 +8,7 @@
   color: #fff;
   margin: 0 !important;
   padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .hero {
@@ -14,8 +18,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 20px 0;
-  margin-top: 4px;
+  padding: 40px 0 20px 0;
+  margin-top: 3px !important;
 }
 
 .hero-background {
@@ -39,74 +43,105 @@
   align-items: center;
 }
 
-/* Menú circular superior */
+/* ==========================================
+   2. MENÚ ORBITAL Y LOGO CENTRAL (DESKTOP)
+   ========================================== */
 .circular-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-}
-
-.menu-column {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  flex: 1;
-}
-
-.central-btn {
-  background: transparent !important;
-  border: 1.5px solid rgba(34, 197, 94, 0.6);
-  padding: 12px 16px;
-  border-radius: 20px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.25);
-  transition: all 0.3s ease;
-  display: block;
-  word-break: break-word;
-}
-
-.central-btn:hover {
-  background: transparent !important;
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
-  transform: scale(1.03);
+  position: relative !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  height: 380px !important;
+  margin: 20px auto 10px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .hero-logo-wrapper {
-  text-align: center; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  z-index: 20 !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 40% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  margin: 0 !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin: 0 10px;
 }
 
-.central-logo {  /* laptop*/
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
+.central-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50% !important;
+  object-fit: cover !important;
   border: 3px solid rgba(34, 197, 94, 0.8);
   box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
 }
 
+.menu-column {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none;
+}
+
+.menu-column .central-btn {
+  position: absolute !important;
+  pointer-events: auto;
+  width: 145px !important;
+  height: 55px !important;
+  font-size: 0.95rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  border-radius: 25px !important;
+  background: rgba(11, 26, 16, 0.9) !important;
+  border: 1.5px solid rgba(34, 197, 94, 0.8) !important;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4) !important;
+  transform: translate(-50%, -50%) !important;
+  transition: all 0.3s ease;
+  word-break: break-word;
+  z-index: 1;
+}
+
+.central-btn:hover {
+  background: rgba(11, 26, 16, 1) !important;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.7) !important;
+  transform: translate(-50%, -50%) scale(1.03) !important;
+}
+
+/* Botones de escritorio bien separados hacia afuera para no tapar el logo */
+.menu-column:first-child .central-btn:nth-child(1) { top: 12% !important; left: -35% !important; }
+.menu-column:first-child .central-btn:nth-child(2) { top: 32% !important; left: -38% !important; }
+.menu-column:first-child .central-btn:nth-child(3) { top: 52% !important; left: -38% !important; }
+.menu-column:first-child .central-btn:nth-child(4) { top: 72% !important; left: -35% !important; }
+
+.menu-column:last-child .central-btn:nth-child(1) { top: 12% !important; left: 145% !important; }
+.menu-column:last-child .central-btn:nth-child(2) { top: 32% !important; left: 160% !important; }
+.menu-column:last-child .central-btn:nth-child(3) { top: 52% !important; left: 160% !important; }
+.menu-column:last-child .central-btn:nth-child(4) { top: 72% !important; left: 145% !important; }
+
 .bottom-neon-title-container {
   text-align: center;
   width: 100%;
-  margin-top: 2px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-/* SECCIÓN DE EMPRESAS / PRODUCTOS INFERIOR: 3 columnas en PC, Círculos puros sin texto ni botón */
+/* ==========================================
+   3. SECCIÓN DE PRODUCTOS INFERIOR
+   ========================================== */
 .featured-products {
   padding: 10px 20px 40px 20px;
   max-width: 1000px;
@@ -135,13 +170,11 @@
   justify-content: center !important;
 }
 
-/* Ocultar textos, títulos y botones de acción en las tarjetas inferiores */
 .product-card h3, .product-card p, .product-card .card-title, .product-card button, .product-card .add-btn, .product-card .price-row, .product-card span, .product-info,
 .card h3, .card p, .card .card-title, .card button, .card .add-btn, .card span {
   display: none !important;
 }
 
-/* Contenedor de imagen e imágenes convertidas en círculos perfectos respetando sombras originales */
 .product-image, .card-circle, .product-card img, .card img {
   width: 150px !important;
   height: 150px !important;
@@ -175,6 +208,7 @@
   }
 
   .hero-logo-wrapper {
+  z-index: 20 !important;
     width: 32% !important;
     margin: 0 2px !important;
   }
@@ -243,7 +277,7 @@
   }
 
   .circular-menu {
-    gap: 6px !important;
+    gap: 7px !important;
   }
 
   .menu-column {
@@ -264,6 +298,7 @@
 
 /* El logo se queda estático y centrado en el medio del círculo */
 .hero-logo-wrapper {
+  z-index: 20 !important;
   position: absolute !important;
   left: 50% !important;
   top: 35% !important;
