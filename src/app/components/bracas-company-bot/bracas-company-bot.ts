@@ -140,13 +140,43 @@ export class BracasCompanyBotComponent {
           { label: '⚙️ Automatización de Procesos', action: 'tech_automatizacion' },
           { label: '📊 Medición y Analítica de Datos', action: 'tech_medicion' },
           { label: '🔒 Ciberseguridad y Arquitectura Web', action: 'tech_seguridad' }
-        ];
+        ]; 
         break;
 
+      // --- Subopciones específicas de Bracasfood ---
+      case 'pedir_salchipapa':
+        responseText = '🍟 ¡Perfecto! Has seleccionado la <strong>Salchipapa Especial</strong>. Haz clic abajo para coordinar tu pedido por WhatsApp con este producto específico:';
+        linkUrl = 'https://wa.me/573218119383?text=Hola,%20quiero%20pedir%20la%20Salchipapa%20Especial';
+        linkText = 'Pedir Salchipapa Especial';
+        break;
+
+      case 'pedir_aborrajada':
+        responseText = '📦 ¡Excelente elección de antojos! Haz clic abajo para pedir tu <strong>Pasa-aborrajada</strong> por WhatsApp:';
+        linkUrl = 'https://wa.me/573218119383?text=Hola,%20quiero%20pedir%20Pasa-aborrajada%20y%20Antojos';
+        linkText = 'Pedir Pasa-aborrajada';
+        break;
+
+      case 'pedir_bebidas':
+        responseText = '🥤 ¡Refrescante! Haz clic abajo para agregar <strong>Bebidas y Bolos</strong> a tu pedido:';
+        linkUrl = 'https://wa.me/573218119383?text=Hola,%20quiero%20pedir%20Bebidas%20y%20Bolos';
+        linkText = 'Pedir Bebidas';
+        break;
+
+      // --- Subopciones de Brades (Confecciones) ---
+      case 'ropa_hoodies':
+      case 'ropa_cargo':
+      case 'ropa_camisetas':
+        responseText = `🧵 Estilo urbano seleccionado (${action.replace('ropa_', '').toUpperCase()}). Un asesor de Brades te atenderá con las tallas disponibles:`;
+        linkUrl = `https://wa.me/573113355665?text=Hola,%20me%20interesa%20la%20prenda:%20${action}`;
+        linkText = 'Cotizar en Brades';
+        break;
+
+      // --- Subopciones generales para el resto de marcas ---
       default:
-        responseText = '¿En qué más te podemos ayudar desde Bracas Company?';
-        // Si es una opción interna de los cuestionarios que el usuario presiona:
         responseText = `Opción seleccionada: <strong>${action.replace('_', ' ').toUpperCase()}</strong>. ¡Un asesor te contactará con los detalles!`;
+        linkUrl = 'https://wa.me/573218119383?text=Hola,%20vengo%20del%20chatbot%20y%20me%20interesa:%20' + encodeURIComponent(action);
+        linkText = 'Contactar Asesor';
+        break;
     }
 
     // Actualizamos el chat con la nueva interacción
