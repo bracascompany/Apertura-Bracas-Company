@@ -366,8 +366,8 @@
 @media screen and (max-width: 393px) {
   /* Tamaño más compacto del logo central en Realme */
   .central-logo {
-    width: 145px !important;
-    height: 145px !important;
+    width: 130px !important;
+    height: 130px !important;
     min-width: 100px !important;
     min-height: 100px !important;
     left: 50%;
@@ -375,8 +375,8 @@
 
   /* Tamaño más compacto de los botones en Realme */
   .menu-column .central-btn {
-    width: 115px !important; /* largor del boton */
-    height: 42px !important;
+    width: 110px !important; /* largor del boton */
+    height: 36px !important;
     left: 49%;
     font-size: 0.85rem !important;
   }
@@ -395,15 +395,15 @@
   left: 23% !important; /* Antes estaba más a la orilla, súbelo a 34% o bájalo a 30% */
 }
 .menu-column:first-child .central-btn:nth-child(2) {
-  top: 28% !important;
+  top: 29% !important;
   left: 18% !important; /* Acércalo al 35% si quieres que peguen más al logo */
 }
 .menu-column:first-child .central-btn:nth-child(3) {
-  top: 42% !important;
-  left: 16% !important;
+  top: 43.5% !important;
+  left: 18% !important;
 }
 .menu-column:first-child .central-btn:nth-child(4) {
-  top: 56% !important;
+  top: 58% !important;
   left: 23% !important;
 }
 
@@ -413,15 +413,15 @@
   left: 79% !important; /* Bájalo a 66% o súbelo a 70% para acercarlo */
 }
 .menu-column:last-child .central-btn:nth-child(2) {
-  top: 28% !important;
+  top: 29% !important;
   left: 84% !important; /* Acércalo bajándolo a 65% o déjalo cerca del centro */
 }
 .menu-column:last-child .central-btn:nth-child(3) {
-  top: 42% !important;
-  left: 85% !important;
+  top: 43.5% !important;
+  left: 84% !important;
 }
 .menu-column:last-child .central-btn:nth-child(4) {
-  top: 56% !important;
+  top: 58% !important;
   left: 78% !important;
 }
 }
