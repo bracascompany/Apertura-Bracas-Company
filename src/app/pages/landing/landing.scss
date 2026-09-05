@@ -102,8 +102,8 @@
 .bottom-neon-title-container {
   text-align: center;
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 1px;
+  margin-bottom: 5px;
 }
 
 /* SECCIÓN DE EMPRESAS / PRODUCTOS INFERIOR: 3 columnas en PC, Círculos puros sin texto ni botón */
@@ -163,7 +163,7 @@
     justify-content: center !important;
     gap: 4px !important;
     width: 100% !important;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .menu-column {
@@ -226,11 +226,15 @@
 /* Aumentar tamaño de logo central, botones y fuente en el Moto G72 sin romper la alineación de 3 columnas */
 @media screen and (max-width: 820px) {
   .central-logo {
-    width: 125px !important;
-    height: 125px !important;
-    min-width: 125px !important;
-    min-height: 125px !important;
-  }
+  width: 180px !important;    /* Ancho del logo */
+  height: 180px !important;   /* Alto del logo */
+  min-width: 150px !important;
+  min-height: 150px !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+  border: 3px solid rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+}
 
   .central-btn {
     font-size: 0.65rem !important;
@@ -245,4 +249,116 @@
   .menu-column {
     gap: 8px !important;
   }
+}
+/* Contenedor principal que sirve de plano cartesiano para ubicar los botones */
+.circular-menu {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  height: 400px !important; /* Espacio circular de trabajo */
+  margin: 20px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* El logo se queda estático y centrado en el medio del círculo */
+.hero-logo-wrapper {
+  position: absolute !important;
+  left: 50% !important;
+  top: 35% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  margin: 0 !important;
+}
+
+/* Contenedores o botones individuales listos para mover a pulso */
+.menu-column {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none; /* Para que el contenedor no estorbe, solo los botones */
+}
+
+.menu-column .central-btn {
+  position: absolute !important;
+  pointer-events: auto;
+  width: 145px !important;    /* <-- Aumenta o disminuye el ancho aquí */
+  height: 55px !important;   /* <-- Aumenta o disminuye el alto aquí */
+  font-size: 1rem !important; /* <-- Tamaño del texto dentro del botón */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  border-radius: 25px !important; /* <-- Bordes redondeados más amplios */
+  background: rgba(11, 26, 16, 0.9) !important;
+  border: 1.5px solid rgba(34, 197, 94, 0.8) !important;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4) !important;
+  transform: translate(-50%, -50%) !important; 
+}
+
+/* 
+  ¡AQUÍ MUEVES CADA BOTÓN A TU ANTOJO CON PORCENTAJES!
+  Modifica el 'top' y el 'left' de cada uno para armar el círculo perfecto:
+*/
+
+/* Botón 1 (Ej: Arriba Izquierda) */
+.menu-column:first-child .central-btn:nth-child(1) {
+  top: 10% !important;
+  left: 20% !important;
+}
+
+/* Botón 2 (Ej: Centro Izquierda) */
+.menu-column:first-child .central-btn:nth-child(2) {
+  top: 28% !important;
+  left: 12% !important;
+}
+
+/* Botón 3 (Ej: Abajo Izquierda) */
+.menu-column:first-child .central-btn:nth-child(3) {
+  top: 46% !important;
+  left: 13% !important;
+}
+
+/* Botón 4 (Ej: Fondo Izquierda) */
+.menu-column:first-child .central-btn:nth-child(4) {
+  top: 64% !important;
+  left: 20% !important;
+}
+
+/* Botón 5 (Ej: Arriba Derecha) */
+.menu-column:last-child .central-btn:nth-child(1) {
+  top: 10% !important;
+  left: 80% !important;
+}
+
+/* Botón 6 (Ej: Centro Derecha) */
+.menu-column:last-child .central-btn:nth-child(2) {
+  top: 28% !important;
+  left: 88% !important;
+}
+
+/* Botón 7 (Ej: Abajo Derecha) */
+.menu-column:last-child .central-btn:nth-child(3) {
+  top: 46% !important;
+  left: 87% !important;
+}
+
+/* Botón 8 (Ej: Fondo Derecha) */
+.menu-column:last-child .central-btn:nth-child(4) {
+  top: 64% !important;
+  left: 80% !important;
+}
+/* Compactar el contenedor circular y acercar el título BRACAS COMPANY */
+.circular-menu {
+  height: 280px !important;     /* Reducimos la altura total del óvalo invisible para cerrar el espacio */
+  max-width: 380px !important;
+  margin: 0 auto -20px auto !important; /* Un margen inferior negativo chupa el espacio hacia arriba */
+}
+
+.bottom-neon-title-container {
+  margin-top: -10px !important;  /* Empuja el título hacia arriba para que quede pegado a los botones */
+  margin-bottom: 10px !important;
 }
