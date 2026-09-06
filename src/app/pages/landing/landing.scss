@@ -460,3 +460,45 @@
   left: 78% !important;
 }
 }
+
+
+
+/* --- Imagen de fondo fija y controlada en el centro para todas las pantallas --- */
+.landing-container::before, .hero::before {
+  content: "";
+}
+
+/* --- Landing compacta y perfectamente alineada --- */
+.landing-container, .hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  gap: 15px;
+  background-color: #0a140a;
+}
+
+.landing-container::before, .hero::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/indigena.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.landing-container > *, .hero > * {
+  position: relative;
+  z-index: 1;
+}
