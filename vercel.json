@@ -1,6 +1,6 @@
 {
   "buildCommand": "ng build --configuration production",
-  "outputDirectory": "dist/tiend-app",
+  "outputDirectory": "dist/tiend-app/browser",
   "rewrites": [
     {
       "source": "/((?!assets/).*)",
