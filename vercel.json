@@ -1,7 +1,10 @@
 {
   "buildCommand": "ng build --configuration production",
-  "outputDirectory": "dist/bracas-company/browser",
+  "outputDirectory": "dist/tiend-app",
   "rewrites": [
-    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
   ]
-} 
+}
