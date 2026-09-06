@@ -1,108 +1,184 @@
-import { Component, AfterViewInit, Inject, inject, signal } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { CartService, Product } from '../../services/cart.service';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+
+class HexNode {
+  x: number;
+  y: number;
+  size: number;
+  connections: HexNode[] = [];
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+    this.size = Math.random() * 16 + 26;
+  }
+
+  draw(ctx: CanvasRenderingContext2D) {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const angle = (Math.PI / 3) * i;
+      const hx = this.size * Math.cos(angle);
+      const hy = this.size * Math.sin(angle);
+      if (i === 0) ctx.moveTo(hx, hy);
+      else ctx.lineTo(hx, hy);
+    }
+    ctx.closePath();
+
+    const grad = ctx.createLinearGradient(-this.size, -this.size, this.size, this.size);
+    grad.addColorStop(0, '#042414');
+    grad.addColorStop(0.5, '#011007');
+    grad.addColorStop(1, '#000603');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(0, 255, 136, 0.35)';
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+
+    ctx.fillStyle = '#00ff88';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('BC', 0, 0);
+
+    ctx.restore();
+  }
+}
+
+class Pulse {
+  start: HexNode;
+  end: HexNode;
+  progress: number;
+  speed: number;
+
+  constructor(start: HexNode, end: HexNode) {
+    this.start = start;
+    this.end = end;
+    this.progress = Math.random();
+    this.speed = 0.003 + Math.random() * 0.003;
+  }
+
+  update() {
+    this.progress += this.speed;
+    if (this.progress >= 1) this.progress = 0;
+  }
+
+  draw(ctx: CanvasRenderingContext2D) {
+    const px = this.start.x + (this.end.x - this.start.x) * this.progress;
+    const py = this.start.y + (this.end.y - this.start.y) * this.progress;
+
+    ctx.beginPath();
+    ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#00ff88';
+    ctx.shadowBlur = 12;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+}
 
 @Component({
   selector: 'app-landing',
-  standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
-  templateUrl: './landing.html',
-  styleUrl: './landing.scss'
+  templateUrl: './landing.html',     // ✅ Nombre correcto
+  styleUrls: ['./landing.scss']      // ✅ Nombre correcto
 })
-export class LandingComponent implements AfterViewInit {
-    ngAfterViewInit() {
-    // PARALLAX NATIVO OPTIMIZADO PARA LOGOS CIRCULARES
-    const cards = document.querySelectorAll(".product-card");
-    
-    if (cards.length > 0 && typeof window !== "undefined") {
-      window.addEventListener("scroll", () => {
-        window.requestAnimationFrame(() => {
-          cards.forEach(card => {
-            const img = card.querySelector("img");
-            if (!img) return;
+export class LandingComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('heroCircuitCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('heroInteractiveNode') nodeCardRef!: ElementRef<HTMLDivElement>;
 
-            const rect = card.getBoundingClientRect();
-            const viewHeight = window.innerHeight;
+  private ctx!: CanvasRenderingContext2D;
+  private width = 0;
+  private height = 0;
+  private hexNodes: HexNode[] = [];
+  private pulses: Pulse[] = [];
+  private animFrameId: number | null = null;
 
-            // Validamos si la esfera está visible en la pantalla del celular
-            if (rect.top < viewHeight && rect.bottom > 0) {
-              // Calculamos el porcentaje de desplazamiento del elemento en pantalla
-              const relativeY = rect.top + rect.height / 2;
-              const screenCenter = viewHeight / 2;
-              const diff = relativeY - screenCenter;
-
-              // Movemos la imagen sutilmente en el eje Y inverso (efecto profundidad)
-              // Multiplicador 0.15 controla la velocidad del efecto
-              const translateY = diff * 0.15; 
-
-              // Aplicamos un ligero zoom base (scale 1.2) para tener margen de movimiento sin dejar bordes vacíos
-              img.style.transform = `scale(1.2) translateY(${translateY}px)`;
-              img.style.transition = "transform 0.1s ease-out";
-            }
-          });
-        });
-      }, { passive: true });
+  ngAfterViewInit(): void {
+    if (this.canvasRef) {
+      const canvas = this.canvasRef.nativeElement;
+      this.ctx = canvas.getContext('2d')!;
+      this.resizeCanvas();
+      this.animate();
     }
   }
 
-  public cartService = inject(CartService);
-  private router = inject(Router);
-
-  // Redirige a la vista ambiental de la Fundación SEGAT
-  goToSegatPage() {
-    this.router.navigate(['/fundacion-segat']);
-  }
-
-  goToBracasfood() {
-    window.location.href = "https://bracasfood.vercel.app/";
-  }
-
-  goToFaceBrand() {
-    this.router.navigate(["/facebrand-digital"]);
-  }
-
-  showModal = signal(false);
-  showRegisterModal = signal(false);
-
-  registerForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9+ ]*$')])
-  });
-
-  onAddToCart(name: string, price: number, category: string, imageUrl: string) {
-    const product: Product = {
-      name,
-      price,
-      category,
-      imageUrl,
-      description: 'Producto destacado de la colección TIEND.',
-      stock: 10
-    };
-    this.cartService.addToCart(product);
-  }
-
-  toggleModal() {
-    this.showModal.update((v: boolean) => !v);
-  }
-
-  toggleRegisterModal() {
-    if (!this.showRegisterModal()) {
-      this.registerForm.reset();
-    }
-    this.showRegisterModal.update((v: boolean) => !v);
-  }
-
-  onSubmit() {
-    if (this.registerForm.valid) {
-      console.log('Form Submitted', this.registerForm.value);
-      this.toggleRegisterModal();
-      alert('¡Registro exitoso! Bienvenido a TIEND.');
-    } else {
-      this.registerForm.markAllAsTouched();
+  ngOnDestroy(): void {
+    if (this.animFrameId) {
+      cancelAnimationFrame(this.animFrameId);
     }
   }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.resizeCanvas();
+  }
+
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    if (!this.nodeCardRef) return;
+    const card = this.nodeCardRef.nativeElement;
+    const rect = card.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const rotX = ((e.clientY - centerY) / window.innerHeight) * -10;
+    const rotY = ((e.clientX - centerX) / window.innerWidth) * 10;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  }
+
+  private resizeCanvas() {
+    if (!this.canvasRef) return;
+    const canvas = this.canvasRef.nativeElement;
+    this.width = canvas.width = window.innerWidth;
+    this.height = canvas.height = window.innerHeight;
+    this.initGrid();
+  }
+
+  private initGrid() {
+    this.hexNodes = [];
+    this.pulses = [];
+    const count = Math.min(Math.floor(this.width / 60), 24);
+
+    for (let i = 0; i < count; i++) {
+      const x = Math.random() * (this.width * 0.5) + (this.width * 0.45);
+      const y = Math.random() * this.height;
+      this.hexNodes.push(new HexNode(x, y));
+    }
+
+    for (let i = 0; i < this.hexNodes.length; i++) {
+      for (let j = i + 1; j < this.hexNodes.length; j++) {
+        const dist = Math.hypot(this.hexNodes[i].x - this.hexNodes[j].x, this.hexNodes[i].y - this.hexNodes[j].y);
+        if (dist < 220) {
+          this.hexNodes[i].connections.push(this.hexNodes[j]);
+          this.pulses.push(new Pulse(this.hexNodes[i], this.hexNodes[j]));
+        }
+      }
+    }
+  }
+
+  private animate = () => {
+    this.ctx.clearRect(0, 0, this.width, this.height);
+
+    for (const node of this.hexNodes) {
+      for (const target of node.connections) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(node.x, node.y);
+        this.ctx.lineTo(target.x, target.y);
+        this.ctx.strokeStyle = 'rgba(0, 255, 136, 0.15)';
+        this.ctx.lineWidth = 1;
+        this.ctx.stroke();
+      }
+    }
+
+    for (const node of this.hexNodes) node.draw(this.ctx);
+    for (const pulse of this.pulses) {
+      pulse.update();
+      pulse.draw(this.ctx);
+    }
+
+    this.animFrameId = requestAnimationFrame(this.animate);
+  };
 }

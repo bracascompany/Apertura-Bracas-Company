@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #fcfcfc;
-  color: #111;
+  background-color: #030a06; /* Cambiado a oscuro para coincidir con la estética */
+  color: #ffffff;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -21,11 +21,94 @@ button {
 html,
 body {
   overflow-x: hidden;
-}
-html { scroll-behavior: smooth !important; }
-
-/* Añadido para asegurar el scroll suave hacia los cuestionarios */
-html, body {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   height: 100%;
+}
+
+/* =========================================
+   SECCIÓN HERO Y FONDO DE PANTALLA
+   ========================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Utiliza la ruta correcta de assets según tu estructura en VS Code */
+  background-image: url('/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+/* Capa de degradado sutil para legibilidad de textos */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    rgba(3, 10, 6, 0.85) 0%, 
+    rgba(3, 10, 6, 0.4) 40%, 
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Eleva el contenido textual por encima del fondo */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+/* =========================================
+   ESTILOS DE TIPOGRAFÍA Y TEXTO EN HERO
+   ========================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  padding-left: 8%; /* Ajusta el margen lateral respecto a la pantalla */
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-green-glow {
+  color: #10b981;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.text-emerald {
+  color: #34d399;
+}
+
+.title-line {
+  width: 140px;
+  height: 3px;
+  background: #059669;
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
 }
