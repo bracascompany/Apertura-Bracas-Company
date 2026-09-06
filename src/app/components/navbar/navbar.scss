@@ -261,3 +261,54 @@
     }
   }
 }
+/* Custom Glassmorphism Styles */
+.glass-nav {
+  background: rgba(10, 25, 18, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 136, 0.28);
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 255, 136, 0.08);
+}
+
+.glass-pill-btn {
+  background: linear-gradient(135deg, #00ff88 0%, #00b359 100%);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.45);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 136, 0.85);
+    transform: translateY(-2px);
+  }
+}
+
+.text-glow-bright {
+  color: #00ff88;
+  text-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+}
+
+.text-glow-emerald {
+  color: #00e676;
+  text-shadow: 0 0 30px rgba(0, 230, 118, 0.45);
+}
+
+.glass-card {
+  background: rgba(8, 22, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  transition: all 0.35s ease;
+
+  &:hover {
+    border-color: rgba(0, 255, 136, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15);
+  }
+}
+
+.hero-line-accent {
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, #00ff88 0%, rgba(0, 255, 136, 0.1) 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
+}
