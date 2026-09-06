@@ -181,4 +181,5 @@ export class LandingComponent implements AfterViewInit, OnDestroy {
 
     this.animFrameId = requestAnimationFrame(this.animate);
   };
+  
 }
