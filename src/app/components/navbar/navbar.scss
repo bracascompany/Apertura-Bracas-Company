@@ -263,6 +263,8 @@
 }
 /* Custom Glassmorphism Styles */
 .glass-nav {
+  position: fixed;
+  width: 90%;
   background: rgba(10, 25, 18, 0.55);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
