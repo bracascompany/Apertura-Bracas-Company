@@ -1,25 +1,42 @@
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010c06]/90 backdrop-blur-md border-b border-emerald-500/20">
-  <div class="max-w-7xl mx-auto px-12 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
-    <!-- Logo / Brand -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010c06]/90 backdrop-blur-md border-b border-emerald-500/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <!-- Logo / Brand con la imagen translúcida del chatbot -->
     <a href="#" class="flex items-center gap-2 sm:gap-3 group">
-      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
-        <i class="fa-solid fa-microchip text-base sm:text-lg"></i>
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(0,255,136,0.3)]">
+        <img src="assets/chatbot.jpeg" alt="Bracas Company Logo" class="w-full h-full object-cover mix-blend-screen opacity-95">
       </div>
       <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-white">
         Bracas<span class="text-emerald-400">company</span>
       </span>
     </a>
 
-    <!-- Navigation Links -->
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-      <a href="#soluciones" class="hover:text-emerald-400 transition-colors">Soluciones</a>
-      <a href="#unidades" class="hover:text-emerald-400 transition-colors">Unidades</a>
-      <a href="#ecosistema" class="hover:text-emerald-400 transition-colors">Ecosistema</a>
+    <!-- Navigation Links con efecto neón más grueso y vivo -->
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-base font-semibold">
+      <a href="#nosotros" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+        <span>Nosotros</span>
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#unidades" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+        <span>Unidades</span>
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#soluciones" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+        <span>Soluciones</span>
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#impacto" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+        <span>Impacto SEGAT</span>
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#contacto" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+        <span>Contacto</span>
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
     </nav>
 
     <!-- Action Buttons -->
     <div class="flex items-center gap-2">
-      <a href="#login" class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-400 hover:text-black transition-all">
+      <a href="#login" class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] transition-all">
         Login
       </a>
     </div>
