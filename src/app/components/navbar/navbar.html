@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010c06]/90 backdrop-blur-md border-b border-emerald-500/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010c06]/95 backdrop-blur-md border-b border-emerald-500/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
     <!-- Logo / Brand con la imagen translúcida del chatbot -->
     <a href="#" class="flex items-center gap-2 sm:gap-3 group">
@@ -10,7 +10,7 @@
       </span>
     </a>
 
-    <!-- Navigation Links con efecto neón más grueso y vivo -->
+    <!-- Navigation Links para Computador (Escritorio) -->
     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-base font-semibold">
       <a href="#nosotros" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
         <span>Nosotros</span>
@@ -34,11 +34,42 @@
       </a>
     </nav>
 
-    <!-- Action Buttons -->
-    <div class="flex items-center gap-2">
+    <!-- Acciones (Login + Botón Hamburguesa Móvil) -->
+    <div class="flex items-center gap-3">
       <a href="#login" class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] transition-all">
         Login
       </a>
+
+      <!-- Botón Hamburguesa para Celular -->
+      <button (click)="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 focus:outline-none shadow-[0_0_15px_rgba(0,255,136,0.2)]">
+        <svg class="w-6 h-6 transition-transform duration-300" [ngClass]="{'rotate-90': isMobileMenuOpen}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path *ngIf="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <path *ngIf="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
   </div>
-</header>
+
+  <!-- Menú Desplegable Móvil (Alineado a la derecha y con color neón) -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden absolute top-full left-0 right-0 bg-[#010c06]/98 backdrop-blur-xl border-b border-emerald-500/30 shadow-[0_20px_40px_rgba(0,0,0,0.9)] px-6 py-6 flex flex-col gap-4 animate-fadeIn text-right">
+    <a href="#nosotros" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+      <span class="text-xs text-gray-500">01</span>
+      <span>Nosotros</span>
+    </a>
+    <a href="#unidades" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+      <span class="text-xs text-gray-500">02</span>
+      <span>Unidades</span>
+    </a>
+    <a href="#soluciones" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+      <span class="text-xs text-gray-500">03</span>
+      <span>Soluciones</span>
+    </a>
+    <a href="#impacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+      <span class="text-xs text-gray-500">04</span>
+      <span>Impacto SEGAT</span>
+    </a>
+    <a href="#contacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 flex items-center justify-between transition-colors">
+      <span class="text-xs text-gray-500">05</span>
+      <span>Contacto</span>
+    </a>
+  </div>

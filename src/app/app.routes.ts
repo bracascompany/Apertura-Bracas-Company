@@ -13,25 +13,24 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
+  
+  // Apuntando temporalmente a LandingComponent mientras creas sus vistas dedicadas
+  { path: 'nosotros', component: LandingComponent },
+  { path: 'unidades', component: LandingComponent },
+  { path: 'soluciones', component: LandingComponent },
+  { path: 'contacto', component: LandingComponent },
+
+  // Unidades de Negocio Existentes
   { path: 'fundacion-segat', component: Segat },
   { path: 'facebrand-digital', loadComponent: () => import('./pages/facebrand/facebrand').then(m => m.FacebrandComponent) },
   { path: 'brades', loadComponent: () => import('./pages/brades/brades').then(m => m.BradesComponent) },
   { path: 'bracas-styles', loadComponent: () => import('./pages/bracas-styles/bracas-styles').then(m => m.BracasStylesComponent) },
   { path: 'cm-studio', loadComponent: () => import('./pages/cm-studio/cm-studio').then(m => m.CmStudioComponent) },
-  { 
-    path: 'products', 
-    component: ProductListComponent,
-    canActivate: [authGuard]
-  },
-  { 
-    path: 'products/new', 
-    component: ProductFormComponent,
-    canActivate: [authGuard]
-  },
-  { 
-    path: 'products/edit/:id', 
-    component: ProductFormComponent,
-    canActivate: [authGuard]
-  },
+  
+  // Productos
+  { path: 'products', component: ProductListComponent, canActivate: [authGuard] },
+  { path: 'products/new', component: ProductFormComponent, canActivate: [authGuard] },
+  { path: 'products/edit/:id', component: ProductFormComponent, canActivate: [authGuard] },
+  
   { path: '**', redirectTo: '' }
 ];

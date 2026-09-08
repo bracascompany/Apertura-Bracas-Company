@@ -24,6 +24,9 @@ export class NavbarComponent implements OnInit {
   isCmRoute: boolean = false;
   isFacebrandGeneralRoute: boolean = false;
 
+  // Estado del menú hamburguesa en móvil
+  isMobileMenuOpen: boolean = false;
+
   ngOnInit() {
     this.checkRoute(this.router.url);
     this.router.events.pipe(
@@ -31,6 +34,14 @@ export class NavbarComponent implements OnInit {
     ).subscribe((event: any) => {
       this.checkRoute(event.urlAfterRedirects);
     });
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
   }
 
   private checkRoute(url: string) {
