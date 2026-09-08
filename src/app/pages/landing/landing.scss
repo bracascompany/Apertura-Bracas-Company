@@ -1,4 +1,7 @@
-/* Custom Glassmorphism Styles */
+/* =========================================
+   ESTILOS DE LA LANDING - LIMPIO Y OPTIMIZADO
+   ========================================= */
+
 .glass-nav {
   background: rgba(10, 25, 18, 0.55);
   backdrop-filter: blur(20px);
@@ -44,62 +47,48 @@
 
 .hero-line-accent {
   width: 140px;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, #00ff88 0%, rgba(0, 255, 136, 0.1) 100%);
   border-radius: 2px;
   box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
 }
-/* --- 1. EFECTOS GENERALES Y HOVER (Funcionan en PC y móvil) --- */
-.glass-card {
-  background: rgba(8, 22, 15, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 255, 136, 0.2);
-  transition: all 0.35s ease;
+
+
+/* Estilos por defecto (para Computador) */
+.mi-clase {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
 }
 
-/* Si usas CSS plano (no SCSS), el hover va por separado: */
-.glass-card:hover {
-  border-color: rgba(0, 255, 136, 0.6);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15);
-}
-
-.glass-pill-btn {
-  background: linear-gradient(135deg, #00ff88 0%, #00b359 100%);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.45);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-pill-btn:hover {
-  box-shadow: 0 0 35px rgba(0, 255, 136, 0.85);
-  transform: translateY(-2px);
-}
-@media screen and (min-width: 768px) {
-  /* Anula el daño de min-h-screen y justify-between en PC */
-  .min-h-screen.flex.flex-col.justify-between {
-    min-height: auto !important;
-    display: block !important;
-    justify-content: flex-start !important;
-    margin: -45%; /* mueve el container */
+/* Para Celular (pantallas menores a 768px) */
+@media screen and (max-width: 7px) {
+  .mi-clase {
+    display: block;
+    width: 50%;
+    padding: 2rem;
   }
 }
-/* --- Ajustar el logo BC dentro del botón flotante --- */
-.chatbot-icon img, 
-.chat-widget-container img,
-div:has(> img[src*="BC"]) img, /* O la clase específica que envuelve esa imagen */
-.fixed img[alt*="BC"] {
-  width: 10% !important;     /* Reduce el tamaño interno al 75% para que no toque los bordes */
-  height: 10% !important;
-  object-fit: contain !important;
-  margin: auto !important;
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 5vh;
+  background-image: url('/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
 }
-
-/* Asegura que el contenedor mantenga su forma circular y centre la imagen */
-.chatbot-icon, 
-.chat-widget-container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  z-index: 1;
 }

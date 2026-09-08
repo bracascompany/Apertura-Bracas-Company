@@ -1,5 +1,4 @@
-<div class="relative min-h-screen bg-[#010c06] text-gray-100 flex flex-col justify-between overflow-x-hidden font-sans">
-
+<div class="relative bg-[#010c06] text-gray-100 overflow-x-hidden font-sans pt-20 pb-16">
   <!-- Canvas Interactivo para los circuitos animados de fondo -->
   <div class="fixed inset-0 pointer-events-none z-0">
     <canvas #heroCircuitCanvas class="w-full h-full block"></canvas>
@@ -7,14 +6,12 @@
     <div class="absolute inset-0 bg-gradient-to-t from-[#010c06] via-transparent to-[#010c06]/60"></div>
   </div>
 
-  
-
   <!-- Hero Principal -->
-  <main class="relative z-10 flex-grow max-w-7xl mx-auto w-full px-6 sm:px-12 pt-12 pb-20 lg:py-24">
+  <main class="relative z-30 max-w-7xl mx-auto w-full px-6 sm:px-12 pt-10 lg:pt-16 pb-20 lg:pb-24">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
       
       <!-- Text Content -->
-      <div class="lg:col-span-6 flex flex-col justify-center space-y-7">
+      <div class="lg:col-span-6 flex flex-col justify-start space-y-7">
         <div class="space-y-1">
           <h1 class="font-display text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-[1.05]">
             <span class="block text-white">Creamos.</span>
@@ -46,8 +43,8 @@
         <div #heroInteractiveNode class="relative z-10 w-full max-w-md aspect-square transition-transform duration-200 ease-out cursor-pointer">
           <div class="absolute inset-0 bg-brand-400/20 rounded-full filter blur-[90px] pointer-events-none"></div>
 
-          <div class="w-full h-full glass-card rounded-3xl p-8 flex flex-col justify-between border border-brand-400/40 relative overflow-hidden group">
-            <div class="flex items-center justify-between relative z-10">
+          <div class="w-full h-full glass-card rounded-3xl p-8 flex flex-col border border-brand-400/40 relative overflow-hidden group">
+            <div class="flex items-center relative z-10">
               <span class="text-xs font-mono text-brand-400 bg-brand-950/80 px-3 py-1 rounded-full border border-brand-400/30 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
                 NODO BC // ACTIVO
@@ -72,7 +69,7 @@
               </div>
             </div>
 
-            <div class="flex items-center justify-between text-xs text-gray-400 border-t border-brand-400/20 pt-4 relative z-10">
+            <div class="flex items-center text-xs text-gray-400 border-t border-brand-400/20 pt-4 relative z-10">
               <span>Sistemas Neón v2.4</span>
               <span class="font-mono text-brand-400">100% Sostenible</span>
             </div>
@@ -92,7 +89,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between space-y-6">
+      <div class="glass-card rounded-2xl p-7 flex flex-col space-y-6">
         <div class="space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-400/10 border border-brand-400/30 flex items-center justify-center text-brand-400 text-xl">
             <i class="fa-solid fa-leaf"></i>
@@ -100,13 +97,13 @@
           <h3 class="text-xl font-bold text-white">AgroTech & Alimentos</h3>
           <p class="text-xs text-gray-400 leading-relaxed">Optimizamos la cadena de valor alimentaria con trazabilidad digital y procesos sostenibles de alto estándar.</p>
         </div>
-        <div class="pt-4 border-t border-brand-400/15 flex items-center justify-between text-xs font-semibold text-brand-400">
+        <div class="pt-4 border-t border-brand-400/15 flex items-center text-xs font-semibold text-brand-400">
           <span>Sostenibilidad Agro</span>
           <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between space-y-6">
+      <div class="glass-card rounded-2xl p-7 flex flex-col space-y-6">
         <div class="space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-400/10 border border-brand-400/30 flex items-center justify-center text-brand-400 text-xl">
             <i class="fa-solid fa-network-wired"></i>
@@ -114,13 +111,13 @@
           <h3 class="text-xl font-bold text-white">Impacto SEGAT</h3>
           <p class="text-xs text-gray-400 leading-relaxed">Monitoreo ambiental, análisis de datos en tiempo real y gestión inteligente para la transformación de ecosistemas.</p>
         </div>
-        <div class="pt-4 border-t border-brand-400/15 flex items-center justify-between text-xs font-semibold text-brand-400">
+        <div class="pt-4 border-t border-brand-400/15 flex items-center text-xs font-semibold text-brand-400">
           <span>Monitoreo Activo</span>
           <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
 
-      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between space-y-6">
+      <div class="glass-card rounded-2xl p-7 flex flex-col space-y-6">
         <div class="space-y-4">
           <div class="w-12 h-12 rounded-xl bg-brand-400/10 border border-brand-400/30 flex items-center justify-center text-brand-400 text-xl">
             <i class="fa-solid fa-shield-halved"></i>
@@ -128,7 +125,7 @@
           <h3 class="text-xl font-bold text-white">Software Empresarial</h3>
           <p class="text-xs text-gray-400 leading-relaxed">Desarrollo de infraestructura robusta, automatización de flujos de trabajo y seguridad digital avanzada.</p>
         </div>
-        <div class="pt-4 border-t border-brand-400/15 flex items-center justify-between text-xs font-semibold text-brand-400">
+        <div class="pt-4 border-t border-brand-400/15 flex items-center text-xs font-semibold text-brand-400">
           <span>Desarrollo a Medida</span>
           <i class="fa-solid fa-arrow-right"></i>
         </div>
@@ -136,20 +133,4 @@
 
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="relative z-10 py-8 border-t border-brand-400/10 bg-[#010c06]/95 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-      <div class="flex items-center gap-3">
-        <span class="font-display font-bold text-white">Bracas<span class="text-brand-400">company</span></span>
-        <span>© 2026 Todos los derechos reservados.</span>
-      </div>
-      <div class="flex items-center space-x-6">
-        <a href="#" class="hover:text-brand-400 transition-colors">Términos</a>
-        <a href="#" class="hover:text-brand-400 transition-colors">Privacidad</a>
-        <a href="#" class="hover:text-brand-400 transition-colors">Soporte</a>
-      </div>
-    </div>
-  </footer>
-
 </div>
