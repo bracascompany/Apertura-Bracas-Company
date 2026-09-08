@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-contacto',
-  imports: [],
-  templateUrl: './contacto.html',
-  styleUrl: './contacto.scss',
+  selector: "app-contacto",
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: "./contacto.html",
+  styleUrls: ["./contacto.scss"]
 })
 export class Contacto {}

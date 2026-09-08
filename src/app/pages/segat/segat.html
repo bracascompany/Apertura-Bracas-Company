@@ -1,63 +1,131 @@
-<div class="encarta-container">
-  <!-- COLUMNA IZQUIERDA -->
-  <div class="encarta-column left">
-    <a routerLink="/products" class="encarta-btn">
-      <span class="icon">🛍️</span>
-      <span class="text">Productos y Servicios</span>
-    </a>
-    <a routerLink="/cart" class="encarta-btn">
-      <span class="icon">🛒</span>
-      <span class="text">Ver Carrito</span>
-    </a>
-    <a routerLink="/fundacion-segat" class="encarta-btn">
-      <span class="icon">🌍</span>
-      <span class="text">Fundación SEGAT</span>
-    </a>
-  </div>
+<div class="min-h-screen bg-[#010c06] text-white pt-24 pb-20 px-4 sm:px-8 relative overflow-hidden font-sans">
+  <!-- Fondo con resplandor neón ambiental -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px] pointer-events-none"></div>
 
-  <!-- CENTRO: LOGO, TÍTULO Y VIDEO INCRUSTADO -->
-  <div class="encarta-center">
-    <div class="logo-wrapper">
-      <img src="assets/logosega.jpeg" alt="Fundación SEGAT Logo" class="encarta-logo-img" />
-    </div>
-    <h1 class="encarta-title">Fundación SEGAT</h1>
-    <p class="encarta-subtitle">Innovación, Sostenibilidad y Tecnología</p>
-
-    <!-- Visor cuadrado con Autoplay -->
-    <div class="video-preview-container" id="videos">
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/_cr3k1wF5UY?autoplay=1&mute=1&loop=1&playlist=_cr3k1wF5UY"
-          title="Bracascompany Video"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-          "
-          allowfullscreen
-        >
-        </iframe>
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- ENCABEZADO -->
+    <div class="text-center mb-12">
+      <h1 class="font-extrabold text-4xl sm:text-6xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 drop-shadow-[0_0_25px_rgba(0,255,136,0.6)]">
+        Fundación SEGAT
+      </h1>
+      <div class="inline-block mt-3 px-6 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/40 shadow-[0_0_20px_rgba(0,255,136,0.25)]">
+        <p class="text-emerald-400 tracking-[0.3em] uppercase text-xs sm:text-sm font-bold">
+          Brazo de Sostenibilidad e Impacto
+        </p>
       </div>
     </div>
-  </div>
 
-  <!-- COLUMNA DERECHA -->
-  <div class="encarta-column right">
-    <a href="#videos" class="encarta-btn">
-      <span class="icon">🎥</span>
-      <span class="text">Ver Videos</span>
-    </a>
-    <a href="#fotos" class="encarta-btn">
-      <span class="icon">🖼️</span>
-      <span class="text">Galería de Fotos</span>
-    </a>
-    <a href="#about" class="encarta-btn">
-      <span class="icon">👥</span>
-      <span class="text">Quiénes Somos</span>
-    </a>
+    <!-- NODO CENTRAL CONECTOR (Logotipo) -->
+    <div class="flex justify-center mb-10 relative">
+      <div class="absolute top-1/2 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent -translate-y-1/2 hidden md:block"></div>
+      <div class="w-16 h-16 rounded-2xl bg-[#02150a] border-2 border-emerald-400 flex items-center justify-center shadow-[0_0_30px_rgba(0,255,136,0.5)] relative z-10">
+        <img src="assets/chatbot.jpeg" alt="Bracas Company" class="w-10 h-10 object-cover mix-blend-screen opacity-95 rounded-xl">
+      </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL TIPO DIAGRAMA (GRID SUPERIOR) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+      
+      <!-- BLOQUE I: GESTIÓN AMBIENTAL - SGA (Ocupa 7 columnas) -->
+      <div class="lg:col-span-7 bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] relative group hover:border-emerald-400 transition-all">
+        <div class="flex items-center justify-between border-b border-emerald-500/30 pb-4 mb-6">
+          <h2 class="text-emerald-400 font-extrabold text-lg sm:text-xl tracking-wide flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(0,255,136,1)]"></span>
+            I. GESTIÓN AMBIENTAL - SGA
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <!-- Lista de puntos -->
+          <div class="md:col-span-7 space-y-3">
+            <div class="flex items-center gap-3 bg-emerald-950/40 border border-emerald-500/20 p-3.5 rounded-xl">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)] shrink-0"></span>
+              <span class="text-sm font-medium text-gray-200">Implementación de SGA</span>
+            </div>
+            <div class="flex items-center gap-3 bg-emerald-950/40 border border-emerald-500/20 p-3.5 rounded-xl">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)] shrink-0"></span>
+              <span class="text-sm font-medium text-gray-200">Gestión Ambiental y Sostenibilidad</span>
+            </div>
+            <div class="flex items-center gap-3 bg-emerald-950/40 border border-emerald-500/20 p-3.5 rounded-xl">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)] shrink-0"></span>
+              <span class="text-sm font-medium text-gray-200">Software y Soluciones Ambientales</span>
+            </div>
+          </div>
+
+          <!-- Sub-panel secundario (Asesorías/Soporte) -->
+          <div class="md:col-span-5 bg-black/50 border border-emerald-500/30 rounded-2xl p-4 flex flex-col gap-2 shadow-[inset_0_0_15px_rgba(0,255,136,0.1)]">
+            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Ecosistema Verde</div>
+            <div class="text-xs text-gray-300 flex items-center gap-2">🔹 Asesorías</div>
+            <div class="text-xs text-gray-300 flex items-center gap-2">🔹 Consultoría</div>
+            <div class="text-xs text-gray-300 flex items-center gap-2">🔹 Soporte técnico</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE II: IOT Y SENSORES INTELIGENTES - SMART HOME (Ocupa 5 columnas) -->
+      <div class="lg:col-span-5 bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] relative group hover:border-emerald-400 transition-all">
+        <div class="flex items-center justify-between border-b border-emerald-500/30 pb-4 mb-6">
+          <h2 class="text-emerald-400 font-extrabold text-base sm:text-lg tracking-wide flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(0,255,136,1)]"></span>
+            II. IOT Y SENSORES
+          </h2>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-400 text-black text-[11px] font-black shadow-[0_0_12px_rgba(0,255,136,0.6)]">SMARTBASIC</span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-emerald-950/50 border border-emerald-500/30 p-3.5 rounded-xl">
+            <p class="font-bold text-emerald-300 text-sm">Sensores IoT</p>
+            <span class="text-xs text-gray-400">(Humo, Agua, etc.)</span>
+          </div>
+          <div class="bg-emerald-950/50 border border-emerald-500/30 p-3.5 rounded-xl">
+            <p class="font-bold text-emerald-300 text-sm">Paquetes SMART</p>
+            <span class="text-xs text-gray-400">(BASIC, PLUS, PRO, ENTERPRISE)</span>
+          </div>
+          <div class="bg-black/50 border border-emerald-500/30 p-3.5 rounded-xl flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-300">Dashboard de Monitoreo</span>
+            <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-[10px] font-bold border border-teal-500/30">Hub</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BLOQUE III: EDUCACIÓN Y CAPACITACIÓN EN SOSTENIBILIDAD (Ancho completo abajo) -->
+    <div class="bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] relative">
+      <div class="border-b border-emerald-500/30 pb-4 mb-6">
+        <h2 class="text-emerald-400 font-extrabold text-lg sm:text-xl tracking-wide flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(0,255,136,1)]"></span>
+          III. EDUCACIÓN Y CAPACITACIÓN EN SOSTENIBILIDAD
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-black shrink-0 shadow-[0_0_10px_rgba(0,255,136,0.3)]">01</div>
+          <div>
+            <p class="font-bold text-white text-sm mb-0.5">Capacitación en Sostenibilidad</p>
+            <span class="text-xs text-gray-400">Programas especializados y SGA.</span>
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-black shrink-0 shadow-[0_0_10px_rgba(0,255,136,0.3)]">02</div>
+          <div>
+            <p class="font-bold text-white text-sm mb-0.5">Tecnologías Verdes</p>
+            <span class="text-xs text-gray-400">Formación avanzada ecológica.</span>
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-black shrink-0 shadow-[0_0_10px_rgba(0,255,136,0.3)]">03</div>
+          <div>
+            <p class="font-bold text-white text-sm mb-0.5">Educación Continua</p>
+            <span class="text-xs text-gray-400">Certificación permanente.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

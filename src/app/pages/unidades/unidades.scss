@@ -1,0 +1,34 @@
+
+.unidades-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18; /* Opacidad sutil de fondo */
+    z-index: -1;
+  }
+
+  .cyber-glow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 9999px;
+    filter: blur(160px);
+    pointer-events: none;
+    z-index: -1;
+  }
+}

@@ -1,3 +1,6 @@
+import { Unidades } from "./pages/unidades/unidades";
+import { Contacto } from "./pages/contacto/contacto";
+import { NosotrosComponent } from "./pages/nosotros/nosotros.component";
 import { Routes } from '@angular/router';
 import { LandingComponent } from './pages/landing/landing';
 import { ProductListComponent } from './pages/products/product-list/product-list';
@@ -15,12 +18,8 @@ export const routes: Routes = [
   { path: 'cart', component: CartComponent },
   
   // Apuntando temporalmente a LandingComponent mientras creas sus vistas dedicadas
-  { path: 'nosotros', component: LandingComponent },
-  { path: 'unidades', component: LandingComponent },
   { path: 'soluciones', component: LandingComponent },
-  { path: 'contacto', component: LandingComponent },
 
-  // Unidades de Negocio Existentes
   { path: 'fundacion-segat', component: Segat },
   { path: 'facebrand-digital', loadComponent: () => import('./pages/facebrand/facebrand').then(m => m.FacebrandComponent) },
   { path: 'brades', loadComponent: () => import('./pages/brades/brades').then(m => m.BradesComponent) },
@@ -31,6 +30,10 @@ export const routes: Routes = [
   { path: 'products', component: ProductListComponent, canActivate: [authGuard] },
   { path: 'products/new', component: ProductFormComponent, canActivate: [authGuard] },
   { path: 'products/edit/:id', component: ProductFormComponent, canActivate: [authGuard] },
+  { path: 'nosotros', component: NosotrosComponent },
+
   
-  { path: '**', redirectTo: '' }
+  { path: "contacto", component: Contacto },
+  { path: "unidades", component: Unidades },
+  { path: "**", redirectTo: "" },
 ];

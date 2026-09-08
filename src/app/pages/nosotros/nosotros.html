@@ -1,103 +1,162 @@
-<div class="min-h-screen bg-[#010c06] text-white pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-  <!-- Efectos de iluminación ambiental de fondo -->
-  <div class="absolute top-20 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="min-h-screen bg-[#010c06] text-white pt-24 pb-20 px-4 sm:px-8 relative overflow-hidden font-sans">
+  <!-- Brillo ambiental de fondo -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
-    <!-- Encabezado de Sección -->
-    <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-4 shadow-[0_0_15px_rgba(0,255,136,0.2)]">
-        <span>1</span> Despliegue: NOSOTROS
+    
+    <!-- ENCABEZADO DE SECCIÓN -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="w-8 h-8 rounded-full bg-emerald-500 text-black font-black flex items-center justify-center text-sm shadow-[0_0_15px_rgba(0,255,136,0.6)]">1</span>
+        <span class="text-emerald-400 font-extrabold tracking-widest uppercase text-sm">Despliegue: NOSOTROS</span>
       </div>
-      <h1 class="font-display font-bold text-3xl sm:text-5xl tracking-tight mb-3">
-        Nuestra Esencia, Nuestra Gente, <span class="text-emerald-400">Nuestro Propósito</span>
+      <p class="text-gray-400 text-sm ml-11">Conoce nuestra historia, propósito y equipo</p>
+    </div>
+
+    <!-- TÍTULO PRINCIPAL -->
+    <div class="text-center mb-16">
+      <h1 class="font-extrabold text-4xl sm:text-6xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 drop-shadow-[0_0_25px_rgba(0,255,136,0.6)] mb-3">
+        NOSOTROS
       </h1>
-      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
-        Conoce nuestra historia, liderazgo y los valores fundamentales que impulsan este ecosistema empresarial sostenible.
+      <p class="text-emerald-400/80 tracking-[0.2em] uppercase text-xs sm:text-sm font-semibold">
+        Nuestra esencia, nuestra gente, nuestro propósito
       </p>
     </div>
 
-    <!-- Contenedor Principal con las 3 Tarjetas Neón -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+    <!-- GRID DE 3 TARJETAS -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
       
-      <!-- Tarjeta 1: Historia y Fundamentos -->
-      <div class="bg-[#02150a]/80 backdrop-blur-xl border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:border-emerald-400 transition-all group">
-        <div class="h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 border border-emerald-500/20 relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#010c06] via-transparent to-transparent z-10"></div>
-          <div class="w-full h-full bg-emerald-950/40 flex items-center justify-center text-emerald-400 font-bold text-lg group-hover:scale-105 transition-transform duration-500">
-            ⛰️ [Origen y Hitos Clave]
+      <!-- TARJETA 1: HISTORIA Y FUNDAMENTOS -->
+      <div class="bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] flex flex-col justify-between group hover:border-emerald-400 transition-all">
+        <div>
+          <!-- Visual superior simulado (Montaña / Bandera) -->
+          <div class="h-36 rounded-2xl bg-gradient-to-b from-emerald-950/60 to-black/60 border border-emerald-500/30 mb-6 relative overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="text-center relative z-10">
+              <span class="text-3xl">🏔️</span>
+              <p class="text-xs text-emerald-300 mt-2 font-bold tracking-wider">ORIGEN DEL ECOSISTEMA</p>
+            </div>
           </div>
-        </div>
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-            📖
+
+          <h3 class="text-emerald-400 font-extrabold text-xl mb-4 tracking-wide border-b border-emerald-500/30 pb-3">
+            Historia y Fundamentos
+          </h3>
+
+          <ul class="space-y-3 text-gray-300 text-sm mb-6">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Origen del ecosistema
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Hitos clave
+            </li>
+          </ul>
+
+          <!-- Timeline interno -->
+          <div class="space-y-2 border-l-2 border-emerald-500/30 pl-4 ml-2 my-4">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40">2022</span>
+              <span class="text-gray-300 font-medium">Fundado</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40">2023</span>
+              <span class="text-gray-300 font-medium">Lanzamiento SEGAT</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40">2025</span>
+              <span class="text-gray-300 font-medium">Consolidador BC</span>
+            </div>
           </div>
-          <h2 class="text-xl font-bold text-white tracking-wide">Historia y Fundamentos</h2>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-300">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Origen del ecosistema</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Hitos clave:</li>
-        </ul>
-        <!-- Línea de tiempo interna -->
-        <div class="mt-4 pl-4 border-l-2 border-emerald-500/30 space-y-2 text-xs sm:text-sm text-gray-400">
-          <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-500/40">2022</span> Fundado</div>
-          <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-500/40">2023</span> Lanzamiento SEGAT</div>
-          <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-500/40">2025</span> Consolidador BC</div>
         </div>
       </div>
 
-      <!-- Tarjeta 2: Equipo y Liderazgo -->
-      <div class="bg-[#02150a]/80 backdrop-blur-xl border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:border-emerald-400 transition-all group">
-        <div class="h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 border border-emerald-500/20 relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#010c06] via-transparent to-transparent z-10"></div>
-          <div class="w-full h-full bg-emerald-950/40 flex items-center justify-center text-emerald-400 font-bold text-lg group-hover:scale-105 transition-transform duration-500">
-            👥 [Liderazgo y Talento]
+      <!-- TARJETA 2: EQUIPO Y LIDERAZGO -->
+      <div class="bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] flex flex-col justify-between group hover:border-emerald-400 transition-all">
+        <div>
+          <!-- Visual superior silueta equipo -->
+          <div class="h-36 rounded-2xl bg-gradient-to-b from-emerald-950/60 to-black/60 border border-emerald-500/30 mb-6 relative overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="text-center relative z-10">
+              <span class="text-3xl">👥</span>
+              <p class="text-xs text-emerald-300 mt-2 font-bold tracking-wider">TALENTO HUMANO</p>
+            </div>
           </div>
+
+          <h3 class="text-emerald-400 font-extrabold text-xl mb-4 tracking-wide border-b border-emerald-500/30 pb-3">
+            Equipo y Liderazgo
+          </h3>
+
+          <ul class="space-y-3 text-gray-300 text-sm mb-6">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Consejo de Administración
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Equipos Ejecutivos por Unidad
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Talento y cultura
+            </li>
+          </ul>
         </div>
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-            👥
-          </div>
-          <h2 class="text-xl font-bold text-white tracking-wide">Equipo y Liderazgo</h2>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-300">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Consejo de Administración</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Equipos Ejecutivos por Unidad</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Talento y cultura</li>
-        </ul>
       </div>
 
-      <!-- Tarjeta 3: Valores y Cultura -->
-      <div class="bg-[#02150a]/80 backdrop-blur-xl border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:border-emerald-400 transition-all group">
-        <div class="h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 border border-emerald-500/20 relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#010c06] via-transparent to-transparent z-10"></div>
-          <div class="w-full h-full bg-emerald-950/40 flex items-center justify-center text-emerald-400 font-bold text-lg group-hover:scale-105 transition-transform duration-500">
-            💚 [Cultura Sostenible]
+      <!-- TARJETA 3: VALORES Y CULTURA -->
+      <div class="bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_35px_rgba(0,0,0,0.9)] flex flex-col justify-between group hover:border-emerald-400 transition-all">
+        <div>
+          <!-- Visual superior manos brote -->
+          <div class="h-36 rounded-2xl bg-gradient-to-b from-emerald-950/60 to-black/60 border border-emerald-500/30 mb-6 relative overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="text-center relative z-10">
+              <span class="text-3xl">🌱💚</span>
+              <p class="text-xs text-emerald-300 mt-2 font-bold tracking-wider">NUESTRA ESENCIA</p>
+            </div>
           </div>
+
+          <h3 class="text-emerald-400 font-extrabold text-xl mb-4 tracking-wide border-b border-emerald-500/30 pb-3">
+            Valores y Cultura
+          </h3>
+
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Nuestros principios
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Innovación y colaboración
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Integridad
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Creatividad
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Responsabilidad
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(0,255,136,1)]"></span>
+              Excelencia
+            </li>
+          </ul>
         </div>
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-            💚
-          </div>
-          <h2 class="text-xl font-bold text-white tracking-wide">Valores y Cultura</h2>
-        </div>
-        <ul class="space-y-2.5 text-sm text-gray-300">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Nuestros principios</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Innovación y colaboración</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Integridad</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Creatividad</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Responsabilidad</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Excelencia</li>
-        </ul>
       </div>
 
     </div>
 
-    <!-- Frase Inferior Estilizada -->
-    <div class="text-center bg-emerald-950/40 border border-emerald-500/30 rounded-2xl py-4 px-6 shadow-[0_0_20px_rgba(0,255,136,0.1)]">
-      <p class="text-emerald-400 font-medium italic text-sm sm:text-base">
-        "Más que una empresa, un ecosistema con propósito"
+    <!-- BANNER INFERIOR DE CIERRE -->
+    <div class="bg-[#02150a]/90 backdrop-blur-xl border-2 border-emerald-500/40 rounded-2xl p-6 text-center shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+      <p class="text-emerald-300 font-bold tracking-wide text-sm sm:text-base">
+        “Más que una empresa, un ecosistema con propósito”
       </p>
     </div>
+
   </div>
 </div>

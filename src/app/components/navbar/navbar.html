@@ -12,11 +12,11 @@
 
     <!-- Navigation Links para Computador (Escritorio) -->
     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-base font-semibold">
-      <a href="#nosotros" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+      <a routerLink="/nosotros" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
         <span>Nosotros</span>
         <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
       </a>
-      <a href="#unidades" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+      <a routerLink="/unidades" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
         <span>Unidades</span>
         <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
       </a>
@@ -24,11 +24,11 @@
         <span>Soluciones</span>
         <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
       </a>
-      <a href="#impacto" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+      <a routerLink="/fundacion-segat" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
         <span>Impacto SEGAT</span>
         <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
       </a>
-      <a href="#contacto" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
+      <a routerLink="/contacto" class="relative text-gray-300 hover:text-emerald-400 transition-colors py-1 group">
         <span>Contacto</span>
         <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-emerald-400 shadow-[0_0_12px_rgba(0,255,136,1)] transition-all duration-300 group-hover:w-full rounded-full"></span>
       </a>
@@ -52,11 +52,11 @@
 
   <!-- Menú Desplegable Móvil (Alineado a la derecha y con color neón) -->
   <div *ngIf="isMobileMenuOpen" class="md:hidden absolute top-full left-0 right-0 bg-[#010c06]/98 backdrop-blur-xl border-b border-emerald-500/30 shadow-[0_20px_40px_rgba(0,0,0,0.9)] px-6 py-6 flex flex-col gap-4 animate-fadeIn text-right">
-    <a href="#nosotros" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/nosotros" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
       <span class="text-xs text-gray-500">01</span>
       <span>Nosotros</span>
     </a>
-    <a href="#unidades" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/unidades" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
       <span class="text-xs text-gray-500">02</span>
       <span>Unidades</span>
     </a>
@@ -64,12 +64,13 @@
       <span class="text-xs text-gray-500">03</span>
       <span>Soluciones</span>
     </a>
-    <a href="#impacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/fundacion-segat" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
       <span class="text-xs text-gray-500">04</span>
       <span>Impacto SEGAT</span>
     </a>
-    <a href="#contacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 flex items-center justify-between transition-colors">
+    <a routerLink="/contacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 flex items-center justify-between transition-colors">
       <span class="text-xs text-gray-500">05</span>
       <span>Contacto</span>
     </a>
   </div>
+</header>

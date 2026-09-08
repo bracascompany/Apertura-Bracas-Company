@@ -56,7 +56,7 @@ export class App implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1800);
+    }, 1000);
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -65,7 +65,7 @@ export class App implements OnInit {
         this.isLoading = true;
         setTimeout(() => {
           this.isLoading = false;
-        }, 1800);
+        }, 1000);
       }
     });
   }
