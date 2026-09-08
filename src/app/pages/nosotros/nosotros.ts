@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './nosotros.html',
   styleUrls: ['./nosotros.scss']
 })
-export class NosotrosComponent {}
+export class Nosotros {}
