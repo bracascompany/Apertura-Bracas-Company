@@ -1,43 +1,52 @@
-
-<div class="min-h-screen bg-[#000502] flex flex-col items-center justify-center relative overflow-hidden font-sans select-none p-6">
+<div class="auth-container">
   <!-- Efectos de fondo y scanlines -->
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,20,10,0.8)_0%,#000301_80%)] pointer-events-none"></div>
   <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(18,255,128,0)_50%,rgba(0,255,136,0.2)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
 
   <!-- Tarjeta de Login Cyber-Neon -->
-  <div class="relative z-10 w-full max-w-md bg-[#02150a]/90 backdrop-blur-2xl border border-emerald-500/40 rounded-2xl p-8 shadow-[0_0_30px_rgba(0,255,136,0.15)]">
+  <div class="auth-card relative z-10">
     
     <!-- Encabezado -->
-    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 mb-3 shadow-[0_0_20px_rgba(0,255,136,0.4)] overflow-hidden"><img src="assets/loading.png" alt="Logo" class="w-full h-full object-cover scale-110 drop-shadow-[0_0_10px_rgba(0,255,136,0.8)]"></div>
-      <h2 class="text-2xl font-bold text-emerald-400 tracking-wider uppercase drop-shadow-[0_0_8px_rgba(0,255,136,0.6)]">
+    <div class="auth-header">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 mb-3 shadow-[0_0_20px_rgba(0,255,136,0.4)] overflow-hidden">
+        <img src="assets/loading.png" alt="Logo" class="w-full h-full object-cover scale-110 drop-shadow-[0_0_10px_rgba(0,255,136,0.8)]">
+      </div>
+      <h1 class="text-2xl font-bold uppercase tracking-wider">
         Bienvenido de nuevo
-      </h2>
-      <p class="text-xs text-emerald-300/70 tracking-widest uppercase mt-1">
+      </h1>
+      <p class="text-xs tracking-widest uppercase mt-1">
         Ingresa tus credenciales para gestionar tu inventario
       </p>
     </div>
 
-    <!-- Formulario -->
-    <form class="space-y-5">
-      <div>
-        <label class="block text-xs font-mono text-emerald-300/90 tracking-wider uppercase mb-2">Correo Electrónico</label>
-        <input type="email" placeholder="name@example.com" class="w-full bg-[#000804] border border-emerald-500/30 rounded-lg px-4 py-3 text-emerald-100 placeholder-emerald-700/60 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all font-mono text-sm">
+    <!-- Alerta de Error -->
+    <div *ngIf="errorMessage" class="error-alert mb-4">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Formulario Reactivo -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div class="form-group">
+        <label>Correo Electrónico</label>
+        <input type="email" formControlName="email" placeholder="name@example.com">
       </div>
 
-      <div>
-        <label class="block text-xs font-mono text-emerald-300/90 tracking-wider uppercase mb-2">Contraseña</label>
-        <input type="password" placeholder="••••••••" class="w-full bg-[#000804] border border-emerald-500/30 rounded-lg px-4 py-3 text-emerald-100 placeholder-emerald-700/60 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all font-mono text-sm">
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="••••••••">
       </div>
 
-      <button type="submit" class="w-full mt-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-black font-bold uppercase tracking-widest py-3.5 rounded-lg shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-all transform active:scale-[0.98]">
-        Iniciar Sesión
+      <button type="submit" [disabled]="loading" class="btn-submit">
+        {{ loading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
       </button>
     </form>
+
   </div>
 
   <!-- Pie de página técnico -->
-  <div class="mt-6 text-center z-10">
+  <div class="mt-6 text-center z-10 absolute bottom-6">
     <p class="text-[10px] text-emerald-400/50 tracking-[0.4em] font-mono uppercase">
       BRACAS SECURE ACCESS // SYSTEM SECURED
     </p>
   </div>
+</div>
