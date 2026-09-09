@@ -70,7 +70,7 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000); // Súbele a 2.5 segundos para que luzca el canvas de carga
+    }, 100); // Súbele a 2.5 segundos para que luzca el canvas de carga
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -79,7 +79,7 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
         this.isLoading = true;
         setTimeout(() => {
           this.isLoading = false;
-        }, 1000);
+        }, 100);
       }
     });
   }
