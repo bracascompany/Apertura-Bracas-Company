@@ -1,6 +1,6 @@
-<!-- Componente Bot o Asistente Global -->
-<app-bracas-company-bot></app-bracas-company-bot>
+<app-bracas-company-bot *ngIf="isLandingRoute && !isLoginRoute"></app-bracas-company-bot>
 
+<!-- Componente Bot o Asistente Global -->
 <!-- Contenedores de Cuestionarios por Empresa (Versión Única y Optimizada) -->
 <div class="space-y-6">
   

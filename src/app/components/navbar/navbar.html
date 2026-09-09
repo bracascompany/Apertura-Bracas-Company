@@ -36,9 +36,12 @@
 
     <!-- Acciones (Login + Botón Hamburguesa Móvil) -->
     <div class="flex items-center gap-3">
-      <a href="#login" class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] transition-all">
-        Login
-      </a>
+      <!-- MODIFICADO: Botón de Login con la secuencia de arranque tipo consola -->
+      <button (click)="triggerSystemBoot()" class="relative px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-400 hover:text-black hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] transition-all overflow-hidden group cursor-pointer flex items-center gap-2">
+        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>Login</span>
+      </button>
 
       <!-- Botón Hamburguesa para Celular -->
       <button (click)="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 focus:outline-none shadow-[0_0_15px_rgba(0,255,136,0.2)]">
@@ -74,3 +77,52 @@
     </a>
   </div>
 </header>
+
+<!-- NUEVO: PANTALLA DE ARRANQUE TIPO CONSOLA (Se activa al hacer click en Login) -->
+<div *ngIf="isBooting" class="fixed inset-0 z-[9999] bg-[#010c06] flex flex-col items-center justify-center overflow-hidden transition-opacity duration-500">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,136,0.25)_0%,transparent_70%)] pointer-events-none animate-pulse"></div>
+
+  <div class="relative flex items-center justify-center w-40 h-40 z-10">
+    <div class="absolute inset-0 rounded-full border-4 border-emerald-500/20 border-t-emerald-400 animate-spin shadow-[0_0_35px_rgba(0,255,136,0.6)]"></div>
+    <div class="absolute w-28 h-28 rounded-full bg-emerald-950/80 blur-md"></div>
+    <img src="assets/loading.png" alt="Bracas Boot" class="w-20 h-20 object-cover mix-blend-screen relative z-20 animate-bounce">
+  </div>
+
+  <div class="mt-6 text-center z-10">
+    <p class="text-xs text-emerald-400 font-extrabold tracking-[0.4em] uppercase mb-3 animate-pulse">
+      ESTABLECIENDO CONEXIÓN SEGURA...
+    </p>
+    <div class="w-48 h-1.5 bg-emerald-950 rounded-full mx-auto overflow-hidden border border-emerald-500/30">
+      <div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-300 animate-loadingBar shadow-[0_0_12px_rgba(0,255,136,0.9)]"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PANTALLA DE ARRANQUE ESTILO PLAYSTATION 2 (LIMPIA Y AMPLIADA) -->
+<div *ngIf="isBooting" class="fixed inset-0 z-[9999] bg-[#000502] flex flex-col items-center justify-center overflow-hidden font-sans select-none animate-fadeIn">
+  
+  <!-- Fondo con gradiente profundo y líneas de escaneo (Scanlines) -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,20,10,0.95)_0%,#000301_80%)]"></div>
+  <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(18,255,128,0)_50%,rgba(0,255,136,0.2)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
+
+  <!-- Núcleo Central / Logo de Bracas Ampliado y Protagonista -->
+  <div class="relative w-56 h-56 flex items-center justify-center z-10">
+    <div class="absolute inset-0 rounded-full bg-emerald-500/25 blur-2xl animate-ping"></div>
+    <div class="absolute inset-0 rounded-full border-2 border-emerald-400/40 animate-spin shadow-[0_0_50px_rgba(0,255,136,0.6)]" style="animation-duration: 10s;"></div>
+    
+    <!-- Imagen del logo considerablemente más grande -->
+    <img src="assets/loading.png" alt="Bracas System Boot" class="w-36 h-36 object-cover mix-blend-screen relative z-20 drop-shadow-[0_0_25px_rgba(0,255,136,1)] scale-110">
+  </div>
+
+  <!-- Texto de estado y bloques de Memory Card -->
+  <div class="mt-10 text-center z-20 flex flex-col items-center gap-3">
+    <p class="text-xs text-emerald-300/95 tracking-[0.6em] font-mono uppercase drop-shadow-[0_0_10px_rgba(0,255,136,0.9)]">
+      BRACAS ECOSYSTEM // MEMORY CARD LOADED
+    </p>
+    <div class="flex items-center gap-2.5 mt-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shadow-[0_0_12px_rgba(0,255,136,1)]"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70 animate-pulse" style="animation-delay: 0.2s;"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/40 animate-pulse" style="animation-delay: 0.4s;"></span>
+    </div>
+  </div>
+</div>
