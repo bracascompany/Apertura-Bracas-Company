@@ -1,3 +1,4 @@
+import { RouterLink } from "@angular/router";
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 
 class HexNode {
@@ -80,6 +81,7 @@ class Pulse {
 }
 
 @Component({
+  imports: [RouterLink],
   selector: 'app-landing',
   templateUrl: './landing.html',     // ✅ Nombre correcto
   styleUrls: ['./landing.scss']      // ✅ Nombre correcto

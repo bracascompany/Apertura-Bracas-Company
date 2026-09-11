@@ -35,5 +35,7 @@ export const routes: Routes = [
   
   { path: "contacto", component: Contacto },
   { path: "unidades", component: Unidades },
-  { path: "**", redirectTo: "" },
+      { path: "agrotech", loadComponent: () => import("./pages/agrotech/agrotech").then(m => m.Agrotech) },
+    { path: "software-empresarial", loadComponent: () => import("./pages/software-empresarial/software-empresarial").then(m => m.SoftwareEmpresarial) },
+    { path: "**", redirectTo: "" },
 ];
