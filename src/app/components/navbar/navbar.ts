@@ -27,6 +27,9 @@ export class NavbarComponent implements OnInit {
   // Estado del menú hamburguesa en móvil
   isMobileMenuOpen: boolean = false;
 
+  // NUEVO: Estado para la secuencia de arranque estilo consola (Xbox / Play)
+  isBooting: boolean = false;
+
   ngOnInit() {
     this.checkRoute(this.router.url);
     this.router.events.pipe(
@@ -42,6 +45,17 @@ export class NavbarComponent implements OnInit {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+  }
+
+  // NUEVO: Disparador del arranque de consola al hacer click en Login
+  triggerSystemBoot() {
+    this.isBooting = true;
+    
+    // Simula los 1.8s de secuencia de arranque y luego redirige al login
+    setTimeout(() => {
+      this.isBooting = false;
+      this.router.navigate(['/login']);
+    }, 1800);
   }
 
   private checkRoute(url: string) {

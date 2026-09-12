@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-soluciones-page',
-  standalone: true,
-  imports: [CommonModule],
+  selector: 'app-soluciones',
+  imports: [],
   templateUrl: './soluciones.html',
-  styleUrl: './soluciones.scss'
+  styleUrl: './soluciones.scss',
 })
-export class SolucionesPageComponent {}
+export class Soluciones {}

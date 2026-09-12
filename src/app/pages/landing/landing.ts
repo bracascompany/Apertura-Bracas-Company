@@ -1,4 +1,6 @@
+import { Router, RouterLink } from "@angular/router";
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 class HexNode {
   x: number;
@@ -81,12 +83,16 @@ class Pulse {
 
 @Component({
   selector: 'app-landing',
-  templateUrl: './landing.html',     // ✅ Nombre correcto
-  styleUrls: ['./landing.scss']      // ✅ Nombre correcto
+  standalone: true, // Asegúrate de que tenga esto si es standalone
+  imports: [CommonModule, RouterLink], // <--- ¡AQUÍ ESTABA EL PROBLEMA!
+  templateUrl: './landing.html',
+  styleUrls: ['./landing.scss']
 })
-export class LandingComponent implements AfterViewInit, OnDestroy {
+export class Landing implements AfterViewInit, OnDestroy {
   @ViewChild('heroCircuitCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('heroInteractiveNode') nodeCardRef!: ElementRef<HTMLDivElement>;
+
+  constructor(private router: Router) {}
 
   private ctx!: CanvasRenderingContext2D;
   private width = 0;
@@ -181,5 +187,13 @@ export class LandingComponent implements AfterViewInit, OnDestroy {
 
     this.animFrameId = requestAnimationFrame(this.animate);
   };
-  
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.location.href = `/#${sectionId}`;
+    }
+  }
 }

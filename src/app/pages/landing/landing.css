@@ -21,6 +21,7 @@
   margin: 0 0 15px 0;
   display: inline-block;
   background: linear-gradient(90deg, #01180b 0%, #052711 50%, #16a34a 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
