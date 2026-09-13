@@ -9,10 +9,11 @@ import { LoginComponent } from './pages/auth/login/login';
 import { RegisterComponent } from './pages/auth/register/register';
 import { CartComponent } from './pages/cart/cart';
 import { Segat } from './pages/segat/segat';
+import { AgrotechComponent } from './pages/agrotech/agrotech';
+import { SolucionesComponent } from './pages/soluciones/soluciones';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-// <-- ¡FALTA ESTA LÍNEA AQUÍ! Redirige la raíz a la landing -->
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
 
   { path: 'landing', component: Landing },
@@ -20,10 +21,10 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
 
-  // Apuntando temporalmente a LandingComponent mientras creas sus vistas dedicadas
-  { path: 'soluciones', component: Landing },
-
+  { path: 'soluciones', component: SolucionesComponent },
   { path: 'fundacion-segat', component: Segat },
+  { path: 'agrotech', component: AgrotechComponent },
+
   {
     path: 'facebrand-digital',
     loadComponent: () => import('./pages/facebrand/facebrand').then((m) => m.FacebrandComponent),
