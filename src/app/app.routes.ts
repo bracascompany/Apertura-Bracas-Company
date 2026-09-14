@@ -51,5 +51,10 @@ export const routes: Routes = [
 
   { path: 'contacto', component: ContactoComponent },
   { path: 'unidades', component: Unidades },
+
+    {
+    path: 'multimedia',
+    loadComponent: () => import('./pages/multimedia/multimedia').then((m) => m.MultimediaComponent),
+  },
   { path: '**', redirectTo: '' },
 ];
