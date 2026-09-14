@@ -1,4 +1,4 @@
-describe('Misión: Tiend-App Status Check', () => {
+describe('Misión: Bracascompany-App Status Check', () => {
   it('Debe cargar la página principal', () => {
     // Visitamos la página raíz definida en cypress.config.js
     cy.visit('/');

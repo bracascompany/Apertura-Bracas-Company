@@ -14,11 +14,11 @@ async function sendReport() {
     const { data, error } = await resend.emails.send({
       from: 'QA Robot <onboarding@resend.dev>',
       to: ['facebranddigital@gmail.com'], // <--- CAMBIA ESTO POR TU CORREO
-      subject: '🚀 Tiend-App: Cypress Test Passed',
+      subject: '🚀 Bracascompany-App: Cypress Test Passed',
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #4CAF50; border-radius: 8px;">
           <h2 style="color: #4CAF50;">✅ ¡Prueba de Login Exitosa!</h2>
-          <p>El robot de automatización ha verificado <strong>Tiend-App</strong> correctamente.</p>
+          <p>El robot de automatización ha verificado <strong>Bracascompany-App</strong> correctamente.</p>
           <p><strong>Entorno:</strong> Ubuntu Linux (brXeon)</p>
           <p><strong>Status:</strong> 200 OK</p>
           <hr>

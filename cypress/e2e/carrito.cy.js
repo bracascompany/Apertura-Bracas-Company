@@ -1,4 +1,4 @@
-describe('DCCF: Flujo de Carrito - Tiend-App', () => {
+describe('DCCF: Flujo de Carrito - Bracascompany-App', () => {
 
   it('Debe agregar productos y verificar el total', () => {
 

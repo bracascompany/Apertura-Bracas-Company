@@ -1,4 +1,4 @@
-describe('DCCF: Login - Tiend-App', () => {
+describe('DCCF: Login - Bracascompany-App', () => {
 
   it('Debe iniciar sesión correctamente', () => {
 
