@@ -55,19 +55,19 @@
 
   <!-- Menú Desplegable Móvil (Alineado a la derecha y con color neón) -->
   <div *ngIf="isMobileMenuOpen" class="md:hidden absolute top-full left-0 right-0 bg-[#010c06]/98 backdrop-blur-xl border-b border-emerald-500/30 shadow-[0_20px_40px_rgba(0,0,0,0.9)] px-6 py-6 flex flex-col gap-4 animate-fadeIn text-right">
-    <a routerLink="/nosotros" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/nosotros" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-end transition-colors">
       <span>Nosotros</span>
     </a>
-    <a routerLink="/unidades" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/unidades" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-end transition-colors">
       <span>Unidades</span>
     </a>
-    <a href="#soluciones" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a href="#soluciones" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-end transition-colors">
       <span>Soluciones</span>
     </a>
-    <a routerLink="/fundacion-segat" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-between transition-colors">
+    <a routerLink="/fundacion-segat" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 border-b border-emerald-500/10 flex items-center justify-end transition-colors">
       <span>Impacto SEGAT</span>
     </a>
-    <a routerLink="/contacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 flex items-center justify-between transition-colors">
+    <a routerLink="/contacto" (click)="closeMobileMenu()" class="text-emerald-400 hover:text-white font-semibold text-base py-2 flex items-center justify-end transition-colors">
       <span>Contacto</span>
     </a>
   </div>
