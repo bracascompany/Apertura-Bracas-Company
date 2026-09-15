@@ -1,5 +1,15 @@
 <app-bracas-company-bot *ngIf="isLandingRoute && !isLoginRoute"></app-bracas-company-bot>
+<!-- Fondo Global de Circuitos Animados -->
+<div class="fixed inset-0 pointer-events-none z-0">
+  <canvas #heroCircuitCanvas class="w-full h-full block"></canvas>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#010c06] via-[#010c06]/85 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-[#010c06] via-transparent to-[#010c06]/60"></div>
+</div>
 
+<!-- Contenido dinámico de tus rutas (Aquí se cargarán tus páginas) -->
+<div class="relative z-10">
+  <router-outlet></router-outlet>
+</div>
 <!-- Componente Bot o Asistente Global -->
 <!-- Contenedores de Cuestionarios por Empresa (Versión Única y Optimizada) -->
 <div class="space-y-6">

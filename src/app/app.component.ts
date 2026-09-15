@@ -48,7 +48,7 @@ import { BracasCompanyBotComponent } from './components/bracas-company-bot/braca
       </div>
     </div>
 
-    <!-- VISTA PRINCIPAL DE LA APLICACIÓN (Encima del fondo con z-10 o relativo) -->
+    <!-- VISTA PRINCIPAL DE LA APLICACIÓN -->
     <div class="relative z-10 flex flex-col min-h-screen">
       <app-navbar></app-navbar>
       <main class="flex-grow">
@@ -72,11 +72,13 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000); // Puedes ajustarlo a 2500 si prefieres que la pantalla de carga dure un poco más
+    }, 1000);
   }
 
   ngAfterViewInit() {
-    this.initCanvas();
+    setTimeout(() => {
+      this.initCanvas();
+    }, 100);
   }
 
   ngOnDestroy() {
@@ -85,7 +87,11 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private initCanvas() {
-    if (!this.canvasRef) return;
+    if (!this.canvasRef || !this.canvasRef.nativeElement) {
+      setTimeout(() => this.initCanvas(), 100);
+      return;
+    }
+    
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d')!;
     this.resizeCanvas();
@@ -105,7 +111,7 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   private initParticles() {
     this.particles = [];
     const numParticles = Math.floor(window.innerWidth / 35);
-    for (let i = 0; i < numParticles; i++) {
+    for (let i =0; i < numParticles; i++) {
       this.particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -133,7 +139,6 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
       if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-      // DIBUJAR ROMBOS EN LUGAR DE CÍRCULOS
       const size = p.radius * 2.2;
       this.ctx.save();
       this.ctx.translate(p.x, p.y);
@@ -141,7 +146,6 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
       this.ctx.fillRect(-size / 2, -size / 2, size, size);
       this.ctx.restore();
 
-      // Líneas de conexión entre nodos cercanos
       for (let j = i + 1; j < this.particles.length; j++) {
         let p2 = this.particles[j];
         let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
