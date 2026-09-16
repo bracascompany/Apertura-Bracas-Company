@@ -22,7 +22,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- Card 1: Producción y Cosecha -->
-      <div class="glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+      <div (click)="openVideoModal('Producción & Cosecha', 'https://www.youtube.com/watch?v=BU77lTxF5KY')" class="cursor-pointer glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
         <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
         <div class="text-center space-y-2">
           <h3 class="text-xl font-bold font-display text-white tracking-wide">Producción & Cosecha</h3>
@@ -30,9 +30,9 @@
         <div class="flex justify-around items-center py-4">
           <div class="flex flex-col items-center space-y-2 text-brand-400">
             <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-2xl shadow-inner">
-              <i class="fa-solid fa-seedling"></i>
+              <i class="fa-solid fa-earth-americas"></i>
             </div>
-            <span class="text-xs text-gray-300 font-medium">agrotech</span>
+            <span class="text-xs text-gray-300 font-medium">cultivos IoT</span>
           </div>
           <div class="flex flex-col items-center space-y-2 text-brand-400">
             <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-2xl shadow-inner">
@@ -47,7 +47,7 @@
       </div>
 
       <!-- Card 2: Procesamiento & Cadena de Frío -->
-      <div class="glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+      <div (click)="openVideoModal('Procesamiento & Logística', 'https://www.youtube.com/watch?v=l5djXZcO85Q')" class="cursor-pointer glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
         <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
         <div class="text-center space-y-2">
           <h3 class="text-xl font-bold font-display text-white tracking-wide">Procesamiento & Logística</h3>
@@ -58,6 +58,12 @@
               <i class="fa-solid fa-snowflake"></i>
             </div>
             <span class="text-xs text-gray-300 font-medium">cadena de frío</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 text-brand-400">
+            <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-2xl shadow-inner">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <span class="text-xs text-gray-300 font-medium">logística ágil</span>
           </div>
           <div class="flex flex-col items-center space-y-2 text-brand-400">
             <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-2xl shadow-inner">
@@ -72,7 +78,7 @@
       </div>
 
       <!-- Card 3: Sostenibilidad & Trazabilidad -->
-      <div class="glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+      <div (click)="openVideoModal('Sostenibilidad & Trazabilidad', 'https://www.youtube.com/watch?v=qEvexutF0Co')" class="cursor-pointer glass-card p-8 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
         <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
         <div class="text-center space-y-2">
           <h3 class="text-xl font-bold font-display text-white tracking-wide">Sostenibilidad & Trazabilidad</h3>
@@ -97,5 +103,23 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+<div *ngIf="selectedVideoUrl" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
+  <div class="relative w-full max-w-2xl bg-[#0a0f0d] border border-brand-500/40 rounded-3xl p-6 shadow-[0_0_40px_rgba(0,255,136,0.2)] text-white">
+    
+    <button (click)="closeVideoModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brand-400 text-xl font-bold transition-colors z-10">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+      <i class="fa-brands fa-youtube text-red-500 text-xl"></i> {{ selectedTitle }}
+    </h3>
+
+    <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-brand-500/20 bg-black">
+      <iframe [src]="selectedVideoUrl" class="w-full h-full border-0" allowfullscreen></iframe>
+    </div>
+
   </div>
 </div>
