@@ -25,7 +25,7 @@
       <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
         
         <!-- SMART BASIC -->
-        <div class="glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+        <div (click)="openModal('BASIC')" class="cursor-pointer glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
           <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
           <h3 class="text-lg font-bold font-display text-white tracking-wide">SMART BASIC</h3>
           <p class="text-xs text-gray-400 min-h-[36px]">HARDWARE + INSTALACIÓN BÁSICA + CONFIGURACIÓN.</p>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- SMART PLUS -->
-        <div class="glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+        <div (click)="openModal('PLUS')" class="cursor-pointer glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
           <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
           <h3 class="text-lg font-bold font-display text-white tracking-wide">SMART PLUS</h3>
           <p class="text-xs text-gray-400 min-h-[36px]">HARDWARE + SOFTWARE + CONFIGURACIÓN + CAPACITACIÓN.</p>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- SMART PRO -->
-        <div class="glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+        <div (click)="openModal('PRO')" class="cursor-pointer glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
           <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
           <h3 class="text-lg font-bold font-display text-white tracking-wide">SMART PRO</h3>
           <p class="text-xs text-gray-400 min-h-[36px]">HARDWARE + SOFTWARE + INTEGRACIÓN + DASHBOARD + SOPORTE.</p>
@@ -55,7 +55,7 @@
         </div>
 
         <!-- SMART ENTERPRISE -->
-        <div class="glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
+        <div (click)="openModal('ENTERPRISE')" class="cursor-pointer glass-card p-6 rounded-3xl border border-brand-500/30 bg-[#010c06]/60 backdrop-blur-xl space-y-4 shadow-2xl relative overflow-hidden group hover:border-brand-500/60 transition-all">
           <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
           <h3 class="text-lg font-bold font-display text-white tracking-wide">SMART ENTERPRISE</h3>
           <p class="text-xs text-gray-400 min-h-[36px]">DIAGNÓSTICO + DISEÑO + SOFTWARE + INTEGRACIÓN + SOPORTE + ANALÍTICA.</p>
@@ -111,5 +111,46 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+<div *ngIf="selectedPackage" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
+  <div class="relative w-full max-w-lg bg-[#0a0f0d] border border-brand-500/40 rounded-3xl p-6 md:p-8 shadow-[0_0_40px_rgba(0,255,136,0.15)] text-white">
+    
+    <button (click)="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-brand-400 text-xl font-bold transition-colors">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="flex items-center gap-3.5 mb-4">
+      <div class="p-3 bg-brand-500/10 border border-brand-500/30 rounded-2xl text-brand-400">
+        <i class="fa-solid fa-cubes text-xl"></i>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold tracking-wide text-white">{{ selectedPackage.title }}</h3>
+        <p class="text-xs text-brand-400 font-semibold uppercase tracking-wider">{{ selectedPackage.subtitle }}</p>
+      </div>
+    </div>
+
+    <p class="text-gray-300 text-sm mb-6 leading-relaxed">{{ selectedPackage.description }}</p>
+
+    <div class="bg-black/50 border border-brand-500/20 rounded-2xl p-4 mb-6">
+      <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Qué incluye este paquete:</h4>
+      <ul class="space-y-2.5">
+        <li *ngFor="let feature of selectedPackage.features" class="flex items-start gap-2.5 text-sm text-gray-200">
+          <i class="fa-solid fa-check text-brand-400 text-xs mt-1"></i>
+          <span>{{ feature }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-center justify-end gap-3">
+      <button (click)="closeModal()" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 transition-all border border-white/10">
+        Cerrar
+      </button>
+      <button routerLink="/contacto" (click)="closeModal()" class="px-6 py-2.5 rounded-full text-xs font-bold bg-brand-500 hover:bg-brand-400 text-black transition-all shadow-[0_0_20px_rgba(0,255,136,0.4)]">
+        Cotizar Paquete
+      </button>
+    </div>
+
   </div>
 </div>
