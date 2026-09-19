@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -10,14 +11,16 @@ import { filter } from 'rxjs/operators';
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
   isLandingPage = false;
   isSegatRoute = false;
   isStylesRoute = false;
   isBradesRoute = false;
   isCmRoute = false;
   isFbdRoute = false;
-  isFacebrandGeneralRoute = false;
+  
+  activeModal: string | null = null;
+  private routerSub!: Subscription;
 
   constructor(private router: Router) {}
 
