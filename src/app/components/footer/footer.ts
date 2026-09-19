@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
@@ -18,43 +18,49 @@ export class FooterComponent implements OnInit, OnDestroy {
   isBradesRoute = false;
   isCmRoute = false;
   isFbdRoute = false;
+  isFacebrandGeneralRoute = false;
   
   activeModal: string | null = null;
   private routerSub!: Subscription;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.checkRoute(this.router.url);
-
-    this.router.events.pipe(
-      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
+    this.routerSub = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
       this.checkRoute(event.urlAfterRedirects);
     });
   }
 
-  private checkRoute(url: string): void {
-    // Normalizamos la URL por si tiene parámetros o barras al final
-    const cleanUrl = url.split('?')[0].toLowerCase();
-
-    this.isSegatRoute = cleanUrl.includes('/segat') || cleanUrl.includes('fundacion-segat');
-    this.isStylesRoute = cleanUrl.includes('/bracas-styles') || cleanUrl.includes('/styles');
-    this.isBradesRoute = cleanUrl.includes('/brades');
-    this.isCmRoute = cleanUrl.includes('/cm-studio') || cleanUrl.includes('/contmarkets');
-    this.isFbdRoute = cleanUrl.includes('/face-brand-digital') || cleanUrl.includes('/fbd');
-    this.isFacebrandGeneralRoute = cleanUrl.includes('/facebrand');
-    
-    // La landing principal solo aplica si estamos estrictamente en la raíz ('/' o '') 
-    // y NINGUNA de las banderas de subempresas es verdadera.
-    const isSubRouteActive = this.isSegatRoute || this.isStylesRoute || this.isBradesRoute || 
-                             this.isCmRoute || this.isFbdRoute || this.isFacebrandGeneralRoute;
-
-    this.isLandingPage = (cleanUrl === '/' || cleanUrl === '') && !isSubRouteActive;
+  ngOnDestroy() {
+    if (this.routerSub) {
+      this.routerSub.unsubscribe();
+    }
   }
 
-  onSubscribe(event: Event): void {
+  private checkRoute(url: string) {
+    const cleanUrl = url.split('?')[0];
+    this.isLandingPage = cleanUrl.includes('/landing') || cleanUrl === '/';
+    this.isSegatRoute = cleanUrl.includes('segat');
+    this.isStylesRoute = cleanUrl.includes('styles');
+    this.isBradesRoute = cleanUrl.includes('brades');
+    this.isCmRoute = cleanUrl.includes('cm-studio');
+    this.isFbdRoute = cleanUrl.includes('facebrand-digital');
+    this.isFacebrandGeneralRoute = cleanUrl.includes('/facebrand');
+  }
+
+  openModal(type: string) {
+    this.activeModal = type;
+  }
+
+  closeModal() {
+    this.activeModal = null;
+  }
+
+  onSubscribe(event: Event) {
     event.preventDefault();
-    alert('¡Gracias por suscribirte a nuestro newsletter!');
+    alert('¡Gracias por suscribirte a Bracas Company!');
   }
 }
