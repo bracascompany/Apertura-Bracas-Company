@@ -1,0 +1,8 @@
+<div (click)="openTrailer('https://www.youtube.com/shorts/cDP26LVva3g', 'Facebrand Digital')" 
+     class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer flex justify-between items-center group">
+  <div>
+    <p class="font-bold text-emerald-300 text-sm group-hover:text-emerald-400">Facebrand Digital ▶</p>
+    <p class="text-xs text-gray-400 ml-3">Identidad y marketing digital</p>
+  </div>
+  <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded-md border border-emerald-500/30 font-semibold">Ver Trailer</span>
+</div>

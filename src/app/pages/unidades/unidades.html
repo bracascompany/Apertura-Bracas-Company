@@ -30,22 +30,21 @@
             <h3 class="text-emerald-400 font-bold text-base sm:text-lg">Consumo & Estilo de Vida</h3>
           </div>
 
-          <!-- Imagen representativa -->
           <div class="mb-5 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_0_15px_rgba(0,255,136,0.15)] bg-black/40">
             <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Consumo y Estilo de Vida" class="w-full h-36 object-cover hover:scale-105 transition-transform duration-500 opacity-90">
           </div>
           
           <div class="space-y-3 mb-6">
             <a href="https://bracasfood.vercel.app" target="_blank" rel="noopener noreferrer" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Bracasfood ↗</p>
+              <p class="font-bold text-emerald-300 text-sm">Bracasfood ↗</p>
               <p class="text-xs text-gray-400 ml-3">Alimentos</p>
             </a>
             <a routerLink="/bracas-styles" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Bracas Styles</p>
+              <p class="font-bold text-emerald-300 text-sm">Bracas Styles</p>
               <p class="text-xs text-gray-400 ml-3">Moda, ropa y accesorios</p>
             </a>
             <a routerLink="/brades" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Brades Taller</p>
+              <p class="font-bold text-emerald-300 text-sm">Brades Taller</p>
               <p class="text-xs text-gray-400 ml-3">Confección y fabricación</p>
             </a>
           </div>
@@ -61,22 +60,28 @@
             <h3 class="text-emerald-400 font-bold text-base sm:text-lg">Creatividad & Media</h3>
           </div>
 
-          <!-- Imagen representativa -->
           <div class="mb-5 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_0_15px_rgba(0,255,136,0.15)] bg-black/40">
             <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Creatividad y Media" class="w-full h-36 object-cover hover:scale-105 transition-transform duration-500 opacity-90">
           </div>
           
           <div class="space-y-3 mb-6">
             <a routerLink="/cm-studio" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• C&M</p>
+              <p class="font-bold text-emerald-300 text-sm">C&M</p>
               <p class="text-xs text-gray-400 ml-3">Content & Marketing</p>
             </a>
-            <a routerLink="/facebrand-digital" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Facebrand Digital</p>
-              <p class="text-xs text-gray-400 ml-3">Identidad y marketing digital</p>
-            </a>
+
+            <!-- FACEBRAND DIGITAL: ACTIVA EL TRAILER CON YOUTUBE SHORTS -->
+            <div (click)="openTrailer('https://www.youtube.com/shorts/cDP26LVva3g', 'Facebrand Digital')" 
+                 class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer flex justify-between items-center group">
+              <div>
+                <p class="font-bold text-emerald-300 text-sm group-hover:text-emerald-400">Facebrand Digital ▶</p>
+                <p class="text-xs text-gray-400 ml-3">Identidad y marketing digital</p>
+              </div>
+              <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded-md border border-emerald-500/30 font-semibold">Ver Trailer</span>
+            </div>
+
             <a routerLink="/cm-studio" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• J&B RecMusic Studios</p>
+              <p class="font-bold text-emerald-300 text-sm">J&B RecMusic Studios</p>
               <p class="text-xs text-gray-400 ml-3">Producción musical y audiovisual</p>
             </a>
           </div>
@@ -92,22 +97,21 @@
             <h3 class="text-emerald-400 font-bold text-base sm:text-lg">Innovación & Tecnología</h3>
           </div>
 
-          <!-- Imagen representativa -->
           <div class="mb-5 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_0_15px_rgba(0,255,136,0.15)] bg-black/40">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Innovación y Tecnología" class="w-full h-36 object-cover hover:scale-105 transition-transform duration-500 opacity-90">
           </div>
           
           <div class="space-y-3 mb-6">
             <a routerLink="/cm-studio" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Bracas Tech</p>
+              <p class="font-bold text-emerald-300 text-sm">Bracas Tech</p>
               <p class="text-xs text-gray-400 ml-3">Hardware y software</p>
             </a>
             <a routerLink="/fundacion-segat" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Intelligent SGA</p>
+              <p class="font-bold text-emerald-300 text-sm">Intelligent SGA</p>
               <p class="text-xs text-gray-400 ml-3">Gestión ambiental inteligente</p>
             </a>
             <a routerLink="/soluciones" class="block bg-emerald-950/40 border border-emerald-500/20 p-2.5 rounded-xl hover:border-emerald-400/60 hover:bg-emerald-900/30 transition-all cursor-pointer">
-              <p class="font-bold text-emerald-300 text-sm">• Smart Business Integrator</p>
+              <p class="font-bold text-emerald-300 text-sm">Smart Business Integrator</p>
               <p class="text-xs text-gray-400 ml-3">Soluciones integrales</p>
             </a>
           </div>
@@ -123,4 +127,31 @@
     </div>
 
   </div>
+
+  <!-- MODAL DE VIDEO TRAILER FLOTANTE -->
+  <div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+    <div class="relative w-full max-w-sm bg-[#02150a] border-2 border-emerald-500/60 rounded-3xl p-4 shadow-[0_0_50px_rgba(0,255,136,0.3)]">
+      
+      <!-- Botón de Cerrar Modal -->
+      <button (click)="closeTrailer()" class="absolute -top-3 -right-3 w-9 h-9 bg-emerald-500 text-black font-bold rounded-full flex items-center justify-center hover:bg-emerald-400 transition-colors shadow-lg z-10">
+        ✕
+      </button>
+
+      <!-- Título de la Empresa -->
+      <h3 class="text-emerald-400 font-bold text-center text-lg mb-3 tracking-wide">
+        {{ selectedEmpresaTitle }} - Trailer
+      </h3>
+
+      <!-- Reproductor YouTube Shorts (Iframe Vertical) -->
+      <div class="rounded-2xl overflow-hidden border border-emerald-500/40 bg-black aspect-[9/16] relative">
+        <iframe [src]="selectedVideoUrl" 
+                class="w-full h-full absolute inset-0 border-0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
 </div>

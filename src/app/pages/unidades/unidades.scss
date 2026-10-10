@@ -1,4 +1,3 @@
-
 .unidades-container {
   min-height: 100vh;
   position: relative;
@@ -31,4 +30,18 @@
     pointer-events: none;
     z-index: -1;
   }
+}
+
+/* Animación para la aparición suave del modal de video */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
 }
